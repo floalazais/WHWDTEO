@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Event { }
+public class W_Event { }
 
 #region Inputs Events
 
-public class OnCrossButton : Event { }
-public class OnTriangleButton : Event { }
-public class OnSquareButton : Event { }
-public class OnRoundButton : Event { }
+public class OnCrossButton : W_Event { }
+public class OnTriangleButton : W_Event { }
+public class OnSquareButton : W_Event { }
+public class OnRoundButton : W_Event { }
 
-public class OnRightStickMove : Event
+public class OnRightStickMove : W_Event
 {
     public Vector3 move;
     public OnRightStickMove(Vector3 pVec)
@@ -19,7 +19,7 @@ public class OnRightStickMove : Event
     }
 }
 
-public class OnLeftStickMove : Event
+public class OnLeftStickMove : W_Event
 {
     public Vector3 move;
     public OnLeftStickMove(Vector3 pVec)
@@ -28,32 +28,32 @@ public class OnLeftStickMove : Event
     }
 }
 
-public class OnTouch : Event { }
-public class OnReleaseTouch : Event { }
+public class OnTouch : W_Event { }
+public class OnReleaseTouch : W_Event { }
 
 #endregion
 
 #region Gamepad Events
 
-public class ONR1Button : Event { }
-public class ONR2ButtonDown : Event { }
-public class ONR2ButtonUp : Event { }
-public class ONL1Button : Event { }
-public class ONL2Button : Event { }
+public class ONR1Button : W_Event { }
+public class ONR2ButtonDown : W_Event { }
+public class ONR2ButtonUp : W_Event { }
+public class ONL1Button : W_Event { }
+public class ONL2Button : W_Event { }
 
-public class OnMenuButton : Event { }
-public class OnShareButton : Event { }
-public class OnOptionsButton : Event { }
+public class OnMenuButton : W_Event { }
+public class OnShareButton : W_Event { }
+public class OnOptionsButton : W_Event { }
 
-public class OnLeftStickButton : Event { }
-public class OnRightStickButton : Event { }
+public class OnLeftStickButton : W_Event { }
+public class OnRightStickButton : W_Event { }
 
-public class OnDPadRightButton : Event { }
-public class OnDPadLeftButton : Event { }
-public class OnDPadBottomButton : Event { }
-public class OnDPadUpButton : Event { }
+public class OnDPadRightButton : W_Event { }
+public class OnDPadLeftButton : W_Event { }
+public class OnDPadBottomButton : W_Event { }
+public class OnDPadUpButton : W_Event { }
 
-public class OnVibrate : Event
+public class OnVibrate : W_Event
 {
     public bool right;
     public bool both;
@@ -64,13 +64,13 @@ public class OnVibrate : Event
     }
 }
 
-public class OnStopVibrate : Event { }
+public class OnStopVibrate : W_Event { }
 #endregion
 
 #region PS4 Events
 
-public class OnLightSwitchColor : Event { }
-public class OnLightFlash : Event { }
+public class OnLightSwitchColor : W_Event { }
+public class OnLightFlash : W_Event { }
 #endregion
 
 public class EventsManager
@@ -87,14 +87,14 @@ public class EventsManager
         }
     }
 
-    public delegate void EventDelegate<T>(T e) where T : Event;
-    private delegate void EventDelegate(Event e);
+    public delegate void EventDelegate<T>(T e) where T : W_Event;
+    private delegate void EventDelegate(W_Event e);
 
     private Dictionary<System.Type, EventDelegate> delegates = new Dictionary<System.Type, EventDelegate>();
     private Dictionary<System.Delegate, EventDelegate> delegateLookup = new Dictionary<System.Delegate, EventDelegate>();
 
-    //Events.Instance.AddListener<Event>(Event);
-    public void AddListener<T>(EventDelegate<T> del) where T : Event
+    //Events.Instance.AddListener<W_Event>(W_Event);
+    public void AddListener<T>(EventDelegate<T> del) where T : W_Event
     {
         if (delegateLookup.ContainsKey(del))
             return;
@@ -116,7 +116,7 @@ public class EventsManager
         }
     }
 
-    public void RemoveListener<T>(EventDelegate<T> del) where T : Event
+    public void RemoveListener<T>(EventDelegate<T> del) where T : W_Event
     {
         EventDelegate internalDelegate;
         if (delegateLookup.TryGetValue(del, out internalDelegate))
@@ -139,8 +139,8 @@ public class EventsManager
         }
     }
 
-    //EventsManager.Instance.Raise(new Event(param = null));
-    public void Raise(Event e)
+    //EventsManager.Instance.Raise(new W_Event(param = null));
+    public void Raise(W_Event e)
     {
         EventDelegate del;
         if (delegates.TryGetValue(e.GetType(), out del))
