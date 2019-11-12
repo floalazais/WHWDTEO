@@ -36,7 +36,8 @@ public class OnReleaseTouch : Event { }
 #region Gamepad Events
 
 public class ONR1Button : Event { }
-public class ONR2Button : Event { }
+public class ONR2ButtonDown : Event { }
+public class ONR2ButtonUp : Event { }
 public class ONL1Button : Event { }
 public class ONL2Button : Event { }
 

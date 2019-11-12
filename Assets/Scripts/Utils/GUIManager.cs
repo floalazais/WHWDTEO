@@ -15,7 +15,7 @@ public class GUIManager : MonoBehaviour
         EventsManager.Instance.AddListener<OnCrossButton>(UpdateTextCross);
 
         EventsManager.Instance.AddListener<ONR1Button>(UpdateTextR1);
-        EventsManager.Instance.AddListener<ONR2Button>(UpdateTextR2);
+        EventsManager.Instance.AddListener<ONR2ButtonDown>(UpdateTextR2);
         EventsManager.Instance.AddListener<ONL1Button>(UpdateTextL1);
         EventsManager.Instance.AddListener<ONL2Button>(UpdateTextL2);
 
@@ -85,7 +85,7 @@ public class GUIManager : MonoBehaviour
         textToDisplay = "R1 Button";
     }
 
-    public void UpdateTextR2(ONR2Button e)
+    public void UpdateTextR2(ONR2ButtonDown e)
     {
         textToDisplay = "R2 Button";
     }
@@ -154,7 +154,7 @@ public class GUIManager : MonoBehaviour
         EventsManager.Instance.RemoveListener<OnCrossButton>(UpdateTextCross);
 
         EventsManager.Instance.RemoveListener<ONR1Button>(UpdateTextR1);
-        EventsManager.Instance.RemoveListener<ONR2Button>(UpdateTextR2);
+        EventsManager.Instance.RemoveListener<ONR2ButtonDown>(UpdateTextR2);
         EventsManager.Instance.RemoveListener<ONL1Button>(UpdateTextL1);
         EventsManager.Instance.RemoveListener<ONL2Button>(UpdateTextL2);
 

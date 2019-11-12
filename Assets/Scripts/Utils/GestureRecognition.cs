@@ -18,9 +18,9 @@ public class GestureRecognition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventsManager.Instance.AddListener<OnTouch>(StartGesture);
-        EventsManager.Instance.AddListener<OnReleaseTouch>(CalculateTouchGestures);
-        EventsManager.Instance.AddListener<OnRightStickMove>(CalculateJoystickGestures);
+        //EventsManager.Instance.AddListener<OnTouch>(StartGesture);
+        //EventsManager.Instance.AddListener<OnReleaseTouch>(CalculateTouchGestures);
+        //EventsManager.Instance.AddListener<OnRightStickMove>(CalculateJoystickGestures);
     }
 
     void StartGesture(OnTouch e)
@@ -117,5 +117,12 @@ public class GestureRecognition : MonoBehaviour
             _isTurningRight = false;
             _isTurningLeft = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        EventsManager.Instance.RemoveListener<OnTouch>(StartGesture);
+        EventsManager.Instance.RemoveListener<OnReleaseTouch>(CalculateTouchGestures);
+        EventsManager.Instance.RemoveListener<OnRightStickMove>(CalculateJoystickGestures);
     }
 }
