@@ -905,7 +905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085822f6da2b34d4dbcb0204fb9513f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _playerSpeed: 2
+  _cameraMovementSpeed: 15
   _cameraAutomaticRotationSpeed: 3
   _cameraManualRotationSpeed: 5
   _cameraTargetOffset: {x: 0, y: 1, z: 0}
@@ -913,8 +914,6 @@ MonoBehaviour:
   _cameraDeadZoneYAngle: 15
   _cameraMaxDistanceToPlayer: 5
   _cameraMinDistanceToPlayer: 2
-  _cameraFollow: {fileID: 1572083506}
-  _cameraLookAt: {fileID: 1478818113}
   _cameraLayerMask:
     serializedVersion: 2
     m_Bits: 512
