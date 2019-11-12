@@ -19,7 +19,6 @@ public class InputManager : MonoBehaviour
 
         bool crossButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.CROSS_BUTTON_ACTION);
         if (crossButton) EventsManager.Instance.Raise(new OnCrossButton());
-        print(crossButton);
 
         bool roundButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.ROUND_BUTTON_ACTION);
         if (roundButton) EventsManager.Instance.Raise(new OnRoundButton());

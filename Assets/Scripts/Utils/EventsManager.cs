@@ -28,6 +28,9 @@ public class OnLeftStickMove : Event
     }
 }
 
+public class OnTouch : Event { }
+public class OnReleaseTouch : Event { }
+
 #endregion
 
 #region Gamepad Events

@@ -59,6 +59,7 @@ public class GUIManager : MonoBehaviour
             EventsManager.Instance.Raise(new OnStopVibrate());
     }
 
+    #region Text Display
     public void UpdateTextCross(OnCrossButton e)
     {
         textToDisplay = "cross button";
@@ -143,6 +144,7 @@ public class GUIManager : MonoBehaviour
     {
         textToDisplay = "Bottom D-Pad Button";
     }
+    #endregion
 
     private void OnDestroy()
     {

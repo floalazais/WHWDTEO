@@ -36,6 +36,11 @@ public class PS4Controller : MonoBehaviour
     public Vector2 firstPosition {  get { return _firstTouchPostion; } }
     public Vector2 secondTouchPosition {  get { return _secondTouchPosition; } }
 
+    public bool _touch1isTouching, _touch2isTouching = false;
+    public bool _exTouch1isTouching, _exTouch2isTouching = false;
+    /*public bool touch1isTouching { get { return _touch1isTouching; } }
+    public bool touch2isTouching { get { return _touch2isTouching; } }*/
+
     // Start is called before the first frame update
     void Start()
     {
@@ -124,7 +129,7 @@ public class PS4Controller : MonoBehaviour
 
     void HandleTouchpad(IDualShock4Extension ds4)
     {
-        for(int i = 0; i < ds4.maxTouches; i++)
+        /*for(int i = 0; i < ds4.maxTouches; i++)
         {
             if (!ds4.IsTouching(i)) continue;
 
@@ -133,12 +138,19 @@ public class PS4Controller : MonoBehaviour
 
             if (i == 0) _firstTouchPostion = position;
             else if (i == 1) _secondTouchPosition = position;
-        }
+        }*/
 
-        /*bool touch1isTouching, touch2isTouching;
-        Vector2 touch1Pos, touch2Pos;
-        touch1isTouching = ext.GetTouchPosition(0, out touch1Pos);
-        touch2isTouching = ext.GetTouchPosition(1, out touch2Pos);*/
+
+        _exTouch1isTouching = ds4.GetTouchPosition(0, out _firstTouchPostion);
+        if (_touch1isTouching != _exTouch1isTouching)
+        {
+            _touch1isTouching = _exTouch1isTouching;
+            if (_touch1isTouching) EventsManager.Instance.Raise(new OnTouch());
+            else EventsManager.Instance.Raise(new OnReleaseTouch());
+        }
+             
+        //We won't need a second touch
+        _touch2isTouching = ds4.GetTouchPosition(1, out _secondTouchPosition);
     }
 
     void GetRotation()
