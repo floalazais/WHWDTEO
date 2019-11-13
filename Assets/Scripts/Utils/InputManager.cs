@@ -32,11 +32,14 @@ public class InputManager : MonoBehaviour
 
         #region Behind Buttons
 
-        bool R1Button = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.R1_BUTTON_ACTION);
-        if (R1Button) EventsManager.Instance.Raise(new ONR1Button());
+        bool R1ButtonDown = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.R1_BUTTON_ACTION);
+        if (R1ButtonDown) EventsManager.Instance.Raise(new ONR1Button());
 
-        bool R2Button = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.R2_BUTTON_ACTION);
-        if (R2Button) EventsManager.Instance.Raise(new ONR2Button());
+        bool R2ButtonDown = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.R2_BUTTON_ACTION);
+        if (R2ButtonDown) EventsManager.Instance.Raise(new ONR2ButtonDown());
+
+        bool R2ButtonUp = Utils_Variables.REWIRED_PLAYER.GetButtonUp(Utils_Variables.R2_BUTTON_ACTION);
+        if (R2ButtonUp) EventsManager.Instance.Raise(new ONR2ButtonUp());
 
         bool L1Button = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.L1_BUTTON_ACTION);
         if (L1Button) EventsManager.Instance.Raise(new ONL1Button());
