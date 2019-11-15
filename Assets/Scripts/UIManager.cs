@@ -24,23 +24,19 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventsManager.Instance.AddListener<OnRoundButton>(RemoveScreen);
         _currentScreen = _descriptionObjectScreen;
     }
 
     public void OnDescriptionObject()
     {
-        _currentScreen.gameObject.SetActive(false);
+        if(_currentScreen != null) _currentScreen.gameObject.SetActive(false);
         _currentScreen = _descriptionObjectScreen;
         _currentScreen.gameObject.SetActive(true);
     }
 
-    void RemoveScreen(OnRoundButton e)
+    public void RemoveScreen()
     {
-        if (GameManager.instance.state != Enums.E_GAMESTATE.DESCRIPTION) return;
-
         _currentScreen.gameObject.SetActive(false);
         _currentScreen = null;
-        GameManager.instance.SetModeInspection();
     }
 }

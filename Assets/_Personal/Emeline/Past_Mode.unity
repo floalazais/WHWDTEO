@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 430269621}
   - component: {fileID: 430269624}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Past Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2501,7 +2501,7 @@ GameObject:
   - component: {fileID: 1310740138}
   - component: {fileID: 1310740139}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PastManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2533,6 +2533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb46c970803714b40887f0d03b53692c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pastZone: {fileID: 430269624}
 --- !u!1 &1439482945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2808,7 @@ GameObject:
   - component: {fileID: 1700266819}
   - component: {fileID: 1700266822}
   - component: {fileID: 1700266823}
+  - component: {fileID: 1700266824}
   m_Layer: 0
   m_Name: Past Object
   m_TagString: Untagged
@@ -2916,6 +2918,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1700266824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700266817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f21a9ad5172fb4e832cdb700a3e03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -360
+  maxX: 360
+  minY: -180
+  maxY: 180
+  sensX: 100
+  sensY: 100
 --- !u!1 &1711461224
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,14 +11,6 @@ public class PastObject : MonoBehaviour
     Vector3 _originalPosition;
     Quaternion _originalRotation;
 
-    Enums.E_PAST_OBJECT_STATE _state = Enums.E_PAST_OBJECT_STATE.NOT_DISCOVERED;
-
-    private void Awake()
-    {
-        EventsManager.Instance.AddListener<OnCrossButton>(SetModeInteract);
-        EventsManager.Instance.AddListener<OnRoundButton>(SetModeNearPlayer);
-    }
-    // Start is called before the first frame update
     void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
@@ -38,50 +30,29 @@ public class PastObject : MonoBehaviour
         if(PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
     }
 
-    void SetModeInteract(OnCrossButton e)
+    public void SetModeInteract()
     {
-        if(_state == Enums.E_PAST_OBJECT_STATE.INSPECTED)
-        {
-            UIManager.instance.OnDescriptionObject();
-            GameManager.instance.SetModeDescription();
-            return;
-        }
-
-        if (_state != Enums.E_PAST_OBJECT_STATE.NEAR_PLAYER) return;
-
-        _state = Enums.E_PAST_OBJECT_STATE.INSPECTED;
-
         transform.position = InspectionMode.instance.objectViewTransform.position;
         _meshRenderer.enabled = true;
         _text.enabled = false;
-
-        GameManager.instance.SetModeInspection(); //TO-DO : Architecture
     }
 
-    void SetModeNearPlayer(OnRoundButton e = null)
+    public void SetModeNearPlayer()
     {
-        if (e != null && GameManager.instance.state != Enums.E_GAMESTATE.INSPECTION) return;
-
-        _state = Enums.E_PAST_OBJECT_STATE.NEAR_PLAYER;
-
         _text.enabled = true;
         _meshRenderer.enabled = true;
         transform.position = _originalPosition;
         transform.rotation = _originalRotation;
-
-        GameManager.instance.SetModePlay();
     }
 
-    void SetModeDiscovered()
+    public void SetModeDiscovered()
     {
-        _state = Enums.E_PAST_OBJECT_STATE.DISCOVERED;
         _text.enabled = false;
         _meshRenderer.enabled = true;
     }
 
     public void SetModeNotDiscovered()
     {
-        _state = Enums.E_PAST_OBJECT_STATE.NOT_DISCOVERED;
         _meshRenderer.enabled = false;
         _text.enabled = false;
         _collider.isTrigger = true;
@@ -94,7 +65,7 @@ public class PastObject : MonoBehaviour
 
         if (distance < 3f)
         {
-            SetModeNearPlayer();
+            PastManager.instance.SetNearObject(this);
         }
 
         else if(distance > 5.5f)
@@ -106,20 +77,7 @@ public class PastObject : MonoBehaviour
         else
         {
             SetModeDiscovered();
+            //PastManager.instance.ResetNearPastObject(this);
         }
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (!other.GetComponent<SphereCollider>()) return;
-
-        SetModeDiscovered();
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!other.GetComponent<SphereCollider>() || _state == Enums.E_PAST_OBJECT_STATE.INSPECTED) return;
-
-        SetModeNotDiscovered();
-    }*/
 }

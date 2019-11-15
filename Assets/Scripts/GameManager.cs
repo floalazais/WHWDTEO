@@ -32,13 +32,8 @@ public class GameManager : MonoBehaviour
         _state = Enums.E_GAMESTATE.PLAY;
     }
 
-    public void SetModeInspection()
+    public void SetModeNotPlay()
     {
-        _state = Enums.E_GAMESTATE.INSPECTION;
-    }
-
-    public void SetModeDescription()
-    {
-        _state = Enums.E_GAMESTATE.DESCRIPTION;
+        _state = Enums.E_GAMESTATE.NOT_PLAY;
     }
 }
