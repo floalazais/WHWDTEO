@@ -10,58 +10,39 @@ public class MyCharacter : MonoBehaviour
     // The movement speed of this character
     public float moveSpeed = 3.0f;
 
-    // The bullet speed
-    public float bulletSpeed = 15.0f;
-
-    // Assign a prefab to this in the inspector.
-    // The prefab must have a Rigidbody component on it in order to work.
-    public GameObject bulletPrefab;
+    public static MyCharacter instance { get { return _instance; } }
+    static MyCharacter _instance;
 
     private CharacterController cc;
     private Vector3 moveVector;
-    private bool fire;
 
     void Awake()
     {
+        if (_instance != null)
+        {
+            Debug.LogError("ALREADY INSTANCE CREATED " + name);
+            Destroy(_instance);
+        }
+
+        _instance = this;
+
         // Get the character controller
         cc = GetComponent<CharacterController>();
-        EventsManager.Instance.AddListener<OnLeftStickMove>(Move);
-        EventsManager.Instance.AddListener<OnRightStickMove>(Move);
     }
 
     void Update()
     {
-        ProcessInput();
-    }
-
-    void Move(OnLeftStickMove e)
-    {
-        if (moveVector == e.move) return;
-
-        moveVector = e.move;
-    }
-
-    void Move(OnRightStickMove e)
-    {
-        if (moveVector == e.move) return;
-
-        moveVector = e.move;
+       if(GameManager.instance.state == Enums.E_GAMESTATE.PLAY) ProcessInput();
     }
 
     private void ProcessInput()
     {
         // Process movement
-        if (moveVector.x != 0.0f || moveVector.y != 0.0f)
+        if (InputManager.instance.rightHorizontalAxis != 0.0f || InputManager.instance.rightVerticalAxis != 0.0f)
         {
-            //Vector3 moveVec = new Vector3(moveVector.x, 0, moveVector.y);
+            Vector3 moveVec = new Vector3(InputManager.instance.rightHorizontalAxis, 0, InputManager.instance.rightVerticalAxis);
 
-            cc.Move(moveVector * moveSpeed * Time.deltaTime);
+            cc.Move(moveVec * moveSpeed * Time.deltaTime);
         }
-    }
-
-    private void OnDestroy()
-    {
-        EventsManager.Instance.RemoveListener<OnLeftStickMove>(Move);
-        EventsManager.Instance.RemoveListener<OnRightStickMove>(Move);
     }
 }
