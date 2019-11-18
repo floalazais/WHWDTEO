@@ -773,8 +773,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1524467, y: 1, z: 2.091886}
-  m_Center: {x: 0.048238136, y: 0, z: 0.031147797}
+  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &892430455
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 2
-  _cameraMovementSpeed: 30
+  _cameraMovementSpeed: 100
   _cameraVerticalRotationSpeed: 5
   _cameraHorizontalRotationSpeed: 250
   _cameraMinHeight: -1
