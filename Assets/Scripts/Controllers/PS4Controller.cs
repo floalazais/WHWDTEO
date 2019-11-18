@@ -4,6 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class to communicate with the PS4 controller.
+/// Get specific values (acceleration, gyroscope...) and activate special features (lights, vibrations...)
+/// </summary>
 public class PS4Controller : MonoBehaviour
 {
     IDualShock4Extension ds4 = null;

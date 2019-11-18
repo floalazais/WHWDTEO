@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class to recognize special gestures with the touch pad and/or the joystick
+/// </summary>
 public class GestureRecognition : MonoBehaviour
 {
     Vector2 _firstInputPosition, _endInputPosition;
