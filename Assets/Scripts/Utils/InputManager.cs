@@ -5,7 +5,33 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager instance { get { return _instance; } }
+    static InputManager _instance;
+
     private Vector3 _moveVector = Vector3.zero;
+
+    float _rightHorizontalAxis = 0;
+    float _rightVerticalAxis = 0;
+
+    float _leftHorizontalAxis = 0;
+    float _leftVerticalAxis = 0;
+
+    public float rightHorizontalAxis {  get { return _rightHorizontalAxis; } }
+    public float rightVerticalAxis {  get { return _rightVerticalAxis; } }
+
+    public float leftHorizontalAxis {  get { return _leftHorizontalAxis; } }
+    public float leftVerticalAxis {  get { return _leftVerticalAxis; } }
+
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Debug.LogError("ALREADY INSTANCE CREATED " + name);
+            Destroy(_instance);
+        }
+
+        _instance = this;
+    }
 
     // Update is called once per frame
     void Update()
@@ -62,23 +88,11 @@ public class InputManager : MonoBehaviour
 
         #region Sticks
 
-        float horizontalLeftStick = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.LEFT_STICK_HORIZONTAL); // get input by name or action id
-        float verticalLeftStick = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.LEFT_STICK_VERTICAL);
+        _leftHorizontalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.LEFT_STICK_HORIZONTAL); // get input by name or action id
+        _leftVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.LEFT_STICK_VERTICAL);
 
-        if(horizontalLeftStick != 0.0f || verticalLeftStick != 0.0f)
-        {
-            Vector3 lPosition = new Vector3(horizontalLeftStick, 0, verticalLeftStick);
-            EventsManager.Instance.Raise(new OnLeftStickMove(lPosition));
-        }
-
-        float horizontalRightStick = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.RIGHT_STICK_HORIZONTAL); // get input by name or action id
-        float verticalRightStick = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.RIGHT_STICK_VERTICAL);
-
-        if (horizontalRightStick != 0.0f || verticalRightStick != 0.0f)
-        {
-            Vector3 lPosition = new Vector3(horizontalRightStick, 0, verticalRightStick);
-            EventsManager.Instance.Raise(new OnRightStickMove(lPosition));
-        }
+        _rightHorizontalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.RIGHT_STICK_HORIZONTAL); // get input by name or action id
+        _rightVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.RIGHT_STICK_VERTICAL);
 
         bool leftStickButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.LEFT_STICK_BUTTON_ACTION);
         if (leftStickButton) EventsManager.Instance.Raise(new OnLeftStickButton());
