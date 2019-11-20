@@ -60,15 +60,15 @@ public class PastObject : MonoBehaviour
 
     void CheckPlayerDistance()
     {
-        float distance = Vector3.Distance(transform.position, MyCharacter.instance.transform.position);
-        Debug.DrawLine(MyCharacter.instance.transform.position, transform.position);
+        float distance = Vector3.Distance(transform.position, Controller.instance.transform.position);
+        //Debug.DrawLine(MyCharacter.instance.transform.position, transform.position);
 
-        if (distance < 3f)
+        if (distance < 1.5f)
         {
             PastManager.instance.SetNearObject(this);
         }
 
-        else if(distance > 5.5f)
+        else if(distance > 3f)
         {
             if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
             SetModeNotDiscovered();
@@ -77,7 +77,6 @@ public class PastObject : MonoBehaviour
         else
         {
             SetModeDiscovered();
-            //PastManager.instance.ResetNearPastObject(this);
         }
     }
 }

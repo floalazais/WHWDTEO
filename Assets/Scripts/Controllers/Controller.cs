@@ -22,6 +22,19 @@ public class Controller : MonoBehaviour
     [SerializeField] private Transform _lookAt;
     [SerializeField] private Transform _follow;
 
+    public static Controller instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("INSTANCE ALREADY CREATED " + name);
+            Destroy(instance);
+        }
+
+        instance = this;
+    }
+
     float DistanceFromPointToLine(Vector3 point, Vector3 linePointA, Vector3 linePointB)
     {
         return Math.Abs((linePointB.z - linePointA.z) * point.x - (linePointB.x - linePointA.x) * point.z + linePointB.x * linePointA.z - linePointB.z * linePointA.x) / (linePointB - linePointA).magnitude;
@@ -56,27 +69,18 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+
         RaycastHit wallHit = new RaycastHit ();
         
         Vector3 lMoveVector = Vector3.zero;
         Quaternion lCameraRotationY = GetAxisRotation (_camera.transform.rotation, false, true, false);
-        
-        if (Input.GetKey(KeyCode.Z))
+
+        if (InputManager.instance.leftHorizontalAxis != 0.0f || InputManager.instance.leftVerticalAxis != 0.0f)
         {
-            lMoveVector += lCameraRotationY * Vector3.forward;
+            lMoveVector += lCameraRotationY * (Vector3.forward * InputManager.instance.leftVerticalAxis + Vector3.right * InputManager.instance.leftHorizontalAxis);
         }
-        if (Input.GetKey(KeyCode.Q))
-        {
-            lMoveVector += lCameraRotationY * Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            lMoveVector += lCameraRotationY * Vector3.back;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            lMoveVector += lCameraRotationY * Vector3.right;
-        }
+
         lMoveVector.y = 0.0f;
         lMoveVector = lMoveVector.normalized * _playerSpeed * Time.deltaTime;
         if (Physics.Linecast(transform.position, transform.position + lMoveVector, out wallHit, ~_cameraLayerMask))
@@ -87,26 +91,26 @@ public class Controller : MonoBehaviour
 
         Vector3 lCameraLookAt = transform.position + lCameraRotationY * Vector3.right * _cameraRightDistanceToPlayer + Vector3.up * _cameraUpDistanceToPlayer;
 
-        if (Input.GetKey (KeyCode.UpArrow) && _camera.transform.position.y < _cameraMaxHeight + transform.position.y)
+        if (InputManager.instance.rightVerticalAxis < 0.0f && _camera.transform.position.y > _cameraMinHeight + transform.position.y)
         {
-            lCameraOffset += Vector3.up * _cameraVerticalRotationSpeed * Time.deltaTime;
+            lCameraOffset += Vector3.up * InputManager.instance.rightVerticalAxis * _cameraVerticalRotationSpeed * Time.deltaTime;
         }
-        if (Input.GetKey (KeyCode.LeftArrow))
+        if (InputManager.instance.rightHorizontalAxis < 0.0f)
         {
-            lCameraLookAt = RotatePointAroundPivot (lCameraLookAt, transform.position, Vector3.down * _cameraHorizontalRotationSpeed * Time.deltaTime);
+            lCameraLookAt = RotatePointAroundPivot (lCameraLookAt, transform.position, Vector3.up * InputManager.instance.rightHorizontalAxis * _cameraHorizontalRotationSpeed * Time.deltaTime);
         }
-        if (Input.GetKey (KeyCode.DownArrow) && _camera.transform.position.y > _cameraMinHeight + transform.position.y)
+        if (InputManager.instance.rightVerticalAxis > 0.0f && _camera.transform.position.y < _cameraMaxHeight + transform.position.y)
         {
-            lCameraOffset += Vector3.down * _cameraVerticalRotationSpeed * Time.deltaTime;
+            lCameraOffset += Vector3.up * InputManager.instance.rightVerticalAxis * _cameraVerticalRotationSpeed * Time.deltaTime;
         }
-        if (Input.GetKey (KeyCode.RightArrow))
+        if (InputManager.instance.rightHorizontalAxis > 0.0f)
         {
-            lCameraLookAt = RotatePointAroundPivot (lCameraLookAt, transform.position, Vector3.up * _cameraHorizontalRotationSpeed * Time.deltaTime);
+            lCameraLookAt = RotatePointAroundPivot (lCameraLookAt, transform.position, Vector3.up * InputManager.instance.rightHorizontalAxis * _cameraHorizontalRotationSpeed * Time.deltaTime);
         }
 
-        if (!Input.GetKey (KeyCode.UpArrow) && !Input.GetKey (KeyCode.DownArrow))
+        if (InputManager.instance.rightVerticalAxis == 0.0f)
         {
-            lCameraOffset.y *= 0.75f;
+            //lCameraOffset.y *= 0.75f;
         }
 
         Quaternion lNewCameraRotation = GetAxisRotation (Quaternion.LookRotation (transform.position - lCameraLookAt), false, true, false) * Quaternion.Euler (0, 90, 0);
@@ -151,10 +155,5 @@ public class Controller : MonoBehaviour
 
         _lookAt.position = lCameraLookAt;
         _follow.position = lCameraFollow;
-    }
-
-    void FixedUpdate()
-    {
-        ;
     }
 }
