@@ -10,14 +10,17 @@ public class Controller : MonoBehaviour
 
     [SerializeField] private float _playerSpeed;
     [SerializeField] private float _cameraMovementSpeed;
-    [SerializeField] private float _cameraAutomaticRotationSpeed;
-    [SerializeField] private float _cameraManualRotationSpeed;
-    [SerializeField] private Vector3 _cameraTargetOffset;
-    [SerializeField] private float _cameraDeadZoneXAngle;
-    [SerializeField] private float _cameraDeadZoneYAngle;
-    [SerializeField] private float _cameraMaxDistanceToPlayer;
-    [SerializeField] private float _cameraMinDistanceToPlayer;
+    [SerializeField] private float _cameraVerticalRotationSpeed;
+    [SerializeField] private float _cameraHorizontalRotationSpeed;
+    [SerializeField] private float _cameraMinHeight;
+    [SerializeField] private float _cameraMaxHeight;
+    [SerializeField] private float _cameraBackDistanceToPlayer;
+    [SerializeField] private float _cameraRightDistanceToPlayer;
+    [SerializeField] private float _cameraUpDistanceToPlayer;
     [SerializeField] private LayerMask _cameraLayerMask;
+
+    [SerializeField] private Transform _lookAt;
+    [SerializeField] private Transform _follow;
 
     float DistanceFromPointToLine(Vector3 point, Vector3 linePointA, Vector3 linePointB)
     {
@@ -43,16 +46,21 @@ public class Controller : MonoBehaviour
             Debug.LogError("could not get main camera.");
         }
 
-        _camera.transform.position = transform.position + Vector3.forward * _cameraMinDistanceToPlayer + _cameraTargetOffset;
-        _camera.transform.LookAt(transform.position + Vector3.back * _cameraMaxDistanceToPlayer);
+        _camera.transform.position = transform.position + Vector3.right * _cameraRightDistanceToPlayer;
+        _camera.transform.LookAt(_camera.transform.position + Vector3.back * _cameraBackDistanceToPlayer);
     }
+
+    Vector3 lCameraOffset = Vector3.zero;
+    Vector3 lerpLookAt = Vector3.zero;
 
     // Update is called once per frame
     void Update()
     {
+        RaycastHit wallHit = new RaycastHit ();
+        
         Vector3 lMoveVector = Vector3.zero;
         Quaternion lCameraRotationY = GetAxisRotation (_camera.transform.rotation, false, true, false);
-
+        
         if (Input.GetKey(KeyCode.Z))
         {
             lMoveVector += lCameraRotationY * Vector3.forward;
@@ -69,99 +77,84 @@ public class Controller : MonoBehaviour
         {
             lMoveVector += lCameraRotationY * Vector3.right;
         }
-        lMoveVector = lMoveVector.normalized * _playerSpeed * Time.deltaTime;
         lMoveVector.y = 0.0f;
+        lMoveVector = lMoveVector.normalized * _playerSpeed * Time.deltaTime;
+        if (Physics.Linecast(transform.position, transform.position + lMoveVector, out wallHit, ~_cameraLayerMask))
+        {
+            transform.position = wallHit.point;
+        }
         transform.position += lMoveVector;
 
-        Vector3 lCameraFollow = _camera.transform.position - _cameraTargetOffset;
+        Vector3 lCameraLookAt = transform.position + lCameraRotationY * Vector3.right * _cameraRightDistanceToPlayer + Vector3.up * _cameraUpDistanceToPlayer;
 
-        RaycastHit wallHit = new RaycastHit ();
-        if (Physics.Linecast (transform.position, lCameraFollow, out wallHit, ~_cameraLayerMask))
+        if (Input.GetKey (KeyCode.UpArrow) && _camera.transform.position.y < _cameraMaxHeight + transform.position.y)
         {
-            lCameraFollow = wallHit.point;
-            print("collided wall at " + wallHit.point);
+            lCameraOffset += Vector3.up * _cameraVerticalRotationSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey (KeyCode.LeftArrow))
+        {
+            lCameraLookAt = RotatePointAroundPivot (lCameraLookAt, transform.position, Vector3.down * _cameraHorizontalRotationSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey (KeyCode.DownArrow) && _camera.transform.position.y > _cameraMinHeight + transform.position.y)
+        {
+            lCameraOffset += Vector3.down * _cameraVerticalRotationSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey (KeyCode.RightArrow))
+        {
+            lCameraLookAt = RotatePointAroundPivot (lCameraLookAt, transform.position, Vector3.up * _cameraHorizontalRotationSpeed * Time.deltaTime);
         }
 
-        Quaternion lCameraRotation = _camera.transform.rotation;
-
-        float lDistanceToCameraPlane = DistanceFromPointToLine (transform.position, lCameraFollow, lCameraFollow + lCameraRotation * Vector3.right);
-
-        Vector3 translation = Vector3.zero;
-        if (lDistanceToCameraPlane < _cameraMinDistanceToPlayer)
+        if (!Input.GetKey (KeyCode.UpArrow) && !Input.GetKey (KeyCode.DownArrow))
         {
-            translation += lCameraRotationY * Vector3.back * (_cameraMinDistanceToPlayer - lDistanceToCameraPlane);
-            print("camera too close from target, distance is : " + lDistanceToCameraPlane);
-        }
-        if (lDistanceToCameraPlane > _cameraMaxDistanceToPlayer)
-        {
-            translation += lCameraRotationY * Vector3.forward * (lDistanceToCameraPlane - _cameraMaxDistanceToPlayer);
-            print ("camera too far from target, distance is : " + lDistanceToCameraPlane);
-        }
-        translation *= Time.deltaTime * _cameraMovementSpeed;
-        _camera.transform.position = Vector3.Lerp (_camera.transform.position, lCameraFollow + translation + _cameraTargetOffset, Time.deltaTime * _cameraMovementSpeed);
-
-        float lXAngleBetweenPlayerAndCamera = _camera.transform.rotation.eulerAngles.x;
-        float lYAngleBetweenPlayerAndCamera = Quaternion.FromToRotation (lCameraRotation * Vector3.forward, transform.position - _camera.transform.position).eulerAngles.y;
-
-        if (lXAngleBetweenPlayerAndCamera > 180)
-        {
-            lXAngleBetweenPlayerAndCamera -= 360;
-        }
-        if (lYAngleBetweenPlayerAndCamera > 180)
-        {
-            lYAngleBetweenPlayerAndCamera -= 360;
+            lCameraOffset.y *= 0.75f;
         }
 
-        Vector3 lCameraFinalRotation = Vector3.zero;
+        Quaternion lNewCameraRotation = GetAxisRotation (Quaternion.LookRotation (transform.position - lCameraLookAt), false, true, false) * Quaternion.Euler (0, 90, 0);
 
-        if (Input.GetKey (KeyCode.UpArrow) && lXAngleBetweenPlayerAndCamera > -_cameraDeadZoneXAngle)
+        Vector3 lLineCastCameraPoint = lCameraLookAt;
+        lLineCastCameraPoint.y = transform.position.y;
+
+        if (Physics.Linecast (transform.position, lLineCastCameraPoint, out wallHit, ~_cameraLayerMask))
         {
-            lCameraFinalRotation += Vector3.left * _cameraDeadZoneXAngle * _cameraManualRotationSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey (KeyCode.LeftArrow) && lYAngleBetweenPlayerAndCamera < _cameraDeadZoneYAngle)
-        {
-            lCameraFinalRotation += Vector3.down * _cameraDeadZoneXAngle * _cameraManualRotationSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey (KeyCode.DownArrow) && lXAngleBetweenPlayerAndCamera < _cameraDeadZoneXAngle)
-        {
-            lCameraFinalRotation += Vector3.right * _cameraDeadZoneXAngle * _cameraManualRotationSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey (KeyCode.RightArrow) && lYAngleBetweenPlayerAndCamera > -_cameraDeadZoneYAngle)
-        {
-            lCameraFinalRotation += Vector3.up * _cameraDeadZoneXAngle * _cameraManualRotationSpeed * Time.deltaTime;
+            lCameraLookAt += lCameraRotationY * Vector3.left * Mathf.Clamp(_cameraRightDistanceToPlayer - wallHit.distance, 0.1f, _cameraRightDistanceToPlayer);
         }
 
-        lYAngleBetweenPlayerAndCamera += lCameraFinalRotation.y;
+        Vector3 lCameraFollow = lCameraLookAt + lNewCameraRotation * Vector3.back * _cameraBackDistanceToPlayer + lCameraOffset;
 
-        if (Math.Abs(lYAngleBetweenPlayerAndCamera) > _cameraDeadZoneYAngle)
+        lLineCastCameraPoint = lCameraFollow;
+        lLineCastCameraPoint.y = lCameraLookAt.y;
+
+        float lCameraHeightAfterCollision;
+        if (Physics.Linecast (lCameraLookAt, lLineCastCameraPoint, out wallHit, ~_cameraLayerMask))
         {
-            if (lYAngleBetweenPlayerAndCamera > 0)
+            lCameraHeightAfterCollision = (Mathf.Clamp (_cameraBackDistanceToPlayer - wallHit.distance, 0.0f, _cameraBackDistanceToPlayer) / _cameraBackDistanceToPlayer) * (_cameraMaxHeight + transform.position.y);
+            lCameraFollow += lNewCameraRotation * Vector3.forward * (_cameraBackDistanceToPlayer - wallHit.distance) + Vector3.up * lCameraHeightAfterCollision;
+            lCameraLookAt.y = lCameraFollow.y;
+        } else {
+            lLineCastCameraPoint = transform.position + lNewCameraRotation * Vector3.right * _cameraBackDistanceToPlayer;
+            lLineCastCameraPoint.y = transform.position.y;
+            if (Physics.Linecast(transform.position, lLineCastCameraPoint, out wallHit, ~_cameraLayerMask))
             {
-                lCameraFinalRotation += new Vector3(0, (lYAngleBetweenPlayerAndCamera - _cameraDeadZoneYAngle) * _cameraAutomaticRotationSpeed * Time.deltaTime, 0);
-                print("correcting y angle of " + lYAngleBetweenPlayerAndCamera + " degrees.");
-            } else {
-                lCameraFinalRotation += new Vector3(0, (lYAngleBetweenPlayerAndCamera + _cameraDeadZoneYAngle) * _cameraAutomaticRotationSpeed * Time.deltaTime, 0);
-                print ("correcting negative y angle of " + (lYAngleBetweenPlayerAndCamera) + " degrees.");
+                float rate = Mathf.Clamp (_cameraBackDistanceToPlayer - wallHit.distance, 0.0f, _cameraBackDistanceToPlayer) / _cameraBackDistanceToPlayer;
+                lCameraHeightAfterCollision = rate * (_cameraMaxHeight + transform.position.y);
+                lCameraFollow += lNewCameraRotation * Vector3.forward * rate * _cameraBackDistanceToPlayer + Vector3.up * lCameraHeightAfterCollision;
+                lCameraLookAt.y = lCameraFollow.y;
             }
         }
 
-        lXAngleBetweenPlayerAndCamera += lCameraFinalRotation.x;
+        //lerpLookAt = new Vector3 (Mathf.Lerp (lerpLookAt.x, lCameraLookAt.x, Time.deltaTime * _cameraMovementSpeed), Mathf.Lerp (lerpLookAt.y, lCameraLookAt.y, Time.deltaTime * _cameraMovementSpeed / 100), Mathf.Lerp (lerpLookAt.z, lCameraLookAt.z, Time.deltaTime * _cameraMovementSpeed));
 
-        if (Math.Abs (lXAngleBetweenPlayerAndCamera) > _cameraDeadZoneXAngle)
-        {
-            if (lXAngleBetweenPlayerAndCamera > 0)
-            {
-                lCameraFinalRotation += new Vector3 ((_cameraDeadZoneXAngle - lXAngleBetweenPlayerAndCamera) * _cameraAutomaticRotationSpeed * Time.deltaTime, 0, 0);
-                print ("correcting x angle of " + lXAngleBetweenPlayerAndCamera + " degrees.");
-            } else {
-                lCameraFinalRotation += new Vector3 ((-_cameraDeadZoneXAngle - lXAngleBetweenPlayerAndCamera) * _cameraAutomaticRotationSpeed * Time.deltaTime, 0, 0);
-                print ("correcting negative x angle of " + (lXAngleBetweenPlayerAndCamera) + " degrees.");
-            }
-        }
-        //print("Player is at " + lDistanceToCameraPlane + " from camera plane and turned " + lAbsoluteYAngleBetweenPlayerAndCamera + " degrees horizontally and " + lAbsoluteXAngleBetweenPlayerAndCamera + " degrees vertically.");
+        _camera.transform.position = Vector3.Lerp (_camera.transform.position, lCameraFollow, Time.deltaTime * _cameraMovementSpeed);
+        //_camera.transform.position = new Vector3(Mathf.Lerp(_camera.transform.position.x, lCameraFollow.x, Time.deltaTime * _cameraMovementSpeed), Mathf.Lerp (_camera.transform.position.y, lCameraFollow.y, Time.deltaTime * _cameraMovementSpeed / 100), Mathf.Lerp (_camera.transform.position.z, lCameraFollow.z, Time.deltaTime * _cameraMovementSpeed));
+        _camera.transform.rotation = Quaternion.Slerp (_camera.transform.rotation, Quaternion.LookRotation (lCameraLookAt - _camera.transform.position), Time.deltaTime * _cameraMovementSpeed);
+        _camera.transform.Rotate (0, 0, -_camera.transform.rotation.eulerAngles.z);
 
-        _camera.transform.Rotate(lCameraFinalRotation);
-        _camera.transform.rotation = Quaternion.Slerp (_camera.transform.rotation, _camera.transform.rotation * Quaternion.Euler (lCameraFinalRotation), Time.deltaTime * _cameraAutomaticRotationSpeed * 0.25f);
-        _camera.transform.Rotate(0, 0, -lCameraRotation.eulerAngles.z);
+        _lookAt.position = lCameraLookAt;
+        _follow.position = lCameraFollow;
+    }
+
+    void FixedUpdate()
+    {
+        ;
     }
 }
