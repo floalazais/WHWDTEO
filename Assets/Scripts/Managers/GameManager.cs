@@ -36,4 +36,9 @@ public class GameManager : MonoBehaviour
     {
         _state = Enums.E_GAMESTATE.NOT_PLAY;
     }
+
+    public void SetModeManipulation()
+    {
+        _state = Enums.E_GAMESTATE.MANIPULATION;
+    }
 }

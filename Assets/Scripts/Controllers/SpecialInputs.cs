@@ -11,7 +11,7 @@ public class SpecialInputs : MonoBehaviour
     [SerializeField] float _spamGap = 0.5f;
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         EventsManager.Instance.AddListener<ONR2ButtonDown>(ButtonDown);
         EventsManager.Instance.AddListener<ONR2ButtonUp>(ButtonUp);
@@ -39,5 +39,5 @@ public class SpecialInputs : MonoBehaviour
         if (_spamCount < 3) return;
         else if (_spamCount >= 3 && _spamCount < 15) print("spam");
         else print("spam long");
-    }
+    }*/
 }
