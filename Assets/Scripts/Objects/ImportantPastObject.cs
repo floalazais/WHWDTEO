@@ -48,6 +48,11 @@ public class ImportantPastObject : PastObject
     {
         WantedInteraction _currentInteraction = _test[_index];
 
+        switch (_currentInteraction.interactionType)
+        {
+            case Enums.E_INTERACT_TYPE.HOLD:
+                break;
+        }
         if (InputManager.instance.IsButtonPressed(_currentInteraction.gamepadButton))
         {
             Invoke("NextStep", _currentInteraction.delayBeforeNewAction);
