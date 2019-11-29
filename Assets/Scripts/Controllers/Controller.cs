@@ -72,6 +72,8 @@ public class Controller : MonoBehaviour
     Vector3 lCameraOffset = Vector3.zero;
     Vector3 lerpLookAt = Vector3.zero;
 
+    float _blendValue = 0.0f;
+
     // Update is called once per frame
     void Update()
     {
@@ -108,8 +110,10 @@ public class Controller : MonoBehaviour
         if (Mathf.Abs(leftJoystick.x) >= _joystickDeadZone || Mathf.Abs(leftJoystick.y) >= _joystickDeadZone)
         {
             lMoveVector += lCameraRotationY * (Vector3.forward * leftJoystick.y + Vector3.right * leftJoystick.x);
-            transform.rotation = Quaternion.Slerp (transform.rotation, lCameraRotationY * Quaternion.LookRotation (new Vector3 (-leftJoystick.x, 0, -leftJoystick.y)), _CharacterRotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp (transform.rotation, lCameraRotationY * Quaternion.LookRotation (new Vector3 (leftJoystick.x, 0, leftJoystick.y)), _CharacterRotationSpeed * Time.deltaTime);
         }
+        _blendValue = Mathf.Lerp(_blendValue, leftJoystick.magnitude, Time.deltaTime * 10);
+        GetComponent<Animator>().SetFloat("Blend", _blendValue);
 
         lMoveVector.y = 0.0f;
         lMoveVector = lMoveVector.normalized * _CharacterSpeed * Time.deltaTime;
