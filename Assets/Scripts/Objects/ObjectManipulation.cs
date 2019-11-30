@@ -13,9 +13,6 @@ public class ObjectManipulation : MonoBehaviour
     [SerializeField] float sensX = 500.0f;
     [SerializeField] float sensY = 500.0f;
 
-    float rotationY = 0.0f;
-    float rotationX = 0.0f;
-
     // Update is called once per frame
     void Update()
     {
@@ -24,10 +21,6 @@ public class ObjectManipulation : MonoBehaviour
 
     void Manipulation()
     {
-        rotationX += InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime;
-        rotationY += InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime;
-        //rotationX = Mathf.Clamp(rotationX, minX, maxX);
-        rotationY = Mathf.Clamp(rotationY, minY, maxY);
-        transform.localEulerAngles = new Vector3(rotationY, -rotationX, 0);
+        transform.Rotate(new Vector3(-InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime, -InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime, 0), Space.World);
     }
 }
