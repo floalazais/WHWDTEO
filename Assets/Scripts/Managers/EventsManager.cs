@@ -5,11 +5,6 @@ public class W_Event { }
 
 #region Inputs Events
 
-public class OnCrossButton : W_Event { }
-public class OnTriangleButton : W_Event { }
-public class OnSquareButton : W_Event { }
-public class OnRoundButton : W_Event { }
-
 public class OnRightStickMove : W_Event
 {
     public Vector3 move;
@@ -34,24 +29,6 @@ public class OnReleaseTouch : W_Event { }
 #endregion
 
 #region Gamepad Events
-
-public class ONR1Button : W_Event { }
-public class ONR2ButtonDown : W_Event { }
-public class ONR2ButtonUp : W_Event { }
-public class ONL1Button : W_Event { }
-public class ONL2Button : W_Event { }
-
-public class OnMenuButton : W_Event { }
-public class OnShareButton : W_Event { }
-public class OnOptionsButton : W_Event { }
-
-public class OnLeftStickButton : W_Event { }
-public class OnRightStickButton : W_Event { }
-
-public class OnDPadRightButton : W_Event { }
-public class OnDPadLeftButton : W_Event { }
-public class OnDPadBottomButton : W_Event { }
-public class OnDPadUpButton : W_Event { }
 
 public class OnVibrate : W_Event
 {

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PastObject : MonoBehaviour
 {
-    MeshRenderer _meshRenderer = null;
-    Collider _collider = null;
-    TextMeshPro _text = null;
-    Vector3 _originalPosition;
-    Quaternion _originalRotation;
+    protected MeshRenderer _meshRenderer = null;
+    protected Collider _collider = null;
+    protected TextMeshPro _text = null;
+    protected Vector3 _originalPosition;
+    protected Quaternion _originalRotation;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class PastObject : MonoBehaviour
         if(PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
     }
 
-    public void SetModeInteract()
+    public virtual void SetModeInteract()
     {
         transform.position = InspectionMode.instance.objectViewTransform.position;
         _meshRenderer.enabled = true;
@@ -58,7 +58,7 @@ public class PastObject : MonoBehaviour
         _collider.isTrigger = true;
     }
 
-    void CheckPlayerDistance()
+    protected void CheckPlayerDistance()
     {
         float distance = Vector3.Distance(transform.position, Controller.instance.transform.position);
         //Debug.DrawLine(MyCharacter.instance.transform.position, transform.position);

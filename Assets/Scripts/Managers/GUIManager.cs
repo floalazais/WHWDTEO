@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GUIManager : MonoBehaviour
 {
-    public string textToDisplay = "";
+    /*public string textToDisplay = "";
 
     // Start is called before the first frame update
     void Start()
@@ -169,5 +169,5 @@ public class GUIManager : MonoBehaviour
         EventsManager.Instance.RemoveListener<OnDPadLeftButton>(UpdateTextDPadLeft);
         EventsManager.Instance.RemoveListener<OnDPadBottomButton>(UpdateTextDPadDown);
         EventsManager.Instance.RemoveListener<OnDPadUpButton>(UpdateTextDPadUp);
-    }
+    }*/
 }
