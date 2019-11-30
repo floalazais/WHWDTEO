@@ -24,10 +24,12 @@ public class ObjectManipulation : MonoBehaviour
 
     void Manipulation()
     {
+        //transform.rotation = Camera.main.transform.rotation * Quaternion.Euler(rotationY, -rotationX, 0);
         rotationX += InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime;
         rotationY += InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime;
+        //transform.Rotate(new Vector3(InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime, -InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime, 0));
         //rotationX = Mathf.Clamp(rotationX, minX, maxX);
-        rotationY = Mathf.Clamp(rotationY, minY, maxY);
+        //rotationY = Mathf.Clamp(rotationY, minY, maxY);
         transform.localEulerAngles = new Vector3(rotationY, -rotationX, 0);
     }
 }

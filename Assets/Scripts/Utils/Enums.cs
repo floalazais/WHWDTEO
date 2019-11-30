@@ -21,11 +21,18 @@ public static class Enums
 
     public enum E_GAMEPAD_BUTTON
     {
-        L1,
-        L2,
-        R1,
-        R2,
-        CROSS,
+        L1_BUTTON,
+        L2_BUTTON,
+        R1_BUTTON,
+        R2_BUTTON,
+        CROSS_BUTTON,
+        ROUND_BUTTON,
+        TRIANGLE_BUTTON,
+        SQUARE_BUTTON,
+        LEFT_STICK_HORIZONTAL,
+        LEFT_STICK_VERTICAL,
+        RIGHT_STICK_HORIZONTAL,
+        RIGHT_STICK_VERTICAL,
         NB_BUTTONS
 
     }
