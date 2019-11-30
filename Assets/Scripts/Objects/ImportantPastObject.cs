@@ -6,13 +6,14 @@ using UnityEngine;
 [System.Serializable]
 public struct WantedInteraction
 {
-    public string gamepadButton; //Make an enum
+    public Enums.E_GAMEPAD_BUTTON gamepadButton;
     public Enums.E_INTERACT_TYPE interactionType;
     public float delayBeforeNewAction;
 }
 
 public class ImportantPastObject : PastObject
 {
+    public static float holdTime = 2.0f;
     public WantedInteraction[] _test;
     int _index = 0;
 
@@ -53,7 +54,7 @@ public class ImportantPastObject : PastObject
             case Enums.E_INTERACT_TYPE.HOLD:
                 break;
         }
-        if (InputManager.instance.IsButtonPressed(_currentInteraction.gamepadButton))
+        if (InputManager.instance.IsButtonPressed(_currentInteraction.gamepadButton.ToString()))
         {
             Invoke("NextStep", _currentInteraction.delayBeforeNewAction);
         }

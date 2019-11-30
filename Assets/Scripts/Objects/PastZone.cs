@@ -11,7 +11,6 @@ public class PastZone : MonoBehaviour
     {
         _collider = GetComponent<Collider>();
         _meshRenderer = GetComponent<MeshRenderer>();
-        print(_meshRenderer);
 
         _meshRenderer.enabled = false;
         _collider.enabled = false;
