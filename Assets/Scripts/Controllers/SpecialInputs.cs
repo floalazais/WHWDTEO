@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +12,6 @@ struct Spam_Button
 
 public class SpecialInputs : MonoBehaviour
 {
-    float _buttonDownTime = 0;
-    float _buttonUpTime = 0;
     int _spamCount = 0;
 
     [SerializeField] float _spamGap = 1f;
@@ -20,10 +19,15 @@ public class SpecialInputs : MonoBehaviour
 
     [SerializeField] List<Spam_Button> _spamButtons = new List<Spam_Button>();
 
+    float[] _buttonsHoldTime = new float[(int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS];
+
     // Start is called before the first frame update
     void Start()
     {
-
+        for (int i = 0; i < (int) Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
+        {
+            _buttonsHoldTime[i] = -1.0f;
+        }
     }
 
     private void Update()
@@ -35,20 +39,37 @@ public class SpecialInputs : MonoBehaviour
             spamButton.timer = _spamGap;
         }*/
 
-        print(IsButtonSpam(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON));
+        //print(IsButtonSpam(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON));
 
-        for(int i = 0; i < (int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
+        for (int i = 0; i < (int) Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
         {
-            Enums.E_GAMEPAD_BUTTON pressedButton = (Enums.E_GAMEPAD_BUTTON)i;
+            Enums.E_GAMEPAD_BUTTON lTestedButton = (Enums.E_GAMEPAD_BUTTON) i;
 
-            if (InputManager.instance.IsButtonPressed(pressedButton.ToString()))
+            if (InputManager.instance.IsButtonPressed(lTestedButton.ToString()))
             {
-                print(pressedButton.ToString());
+                print(lTestedButton.ToString());
                 Spam_Button spamButton;
-                spamButton.buttonPressed = pressedButton;
+                spamButton.buttonPressed = lTestedButton;
                 spamButton.timer = _spamGap;
 
                 _spamButtons.Add(spamButton);
+
+                _buttonsHoldTime[i] = 0.0f;
+            }
+
+            if (InputManager.instance.IsButtonReleased(lTestedButton.ToString()))
+            {
+                _buttonsHoldTime[i] = -1.0f;
+            }
+
+            if (_buttonsHoldTime[i] != -1.0f)
+            {
+                _buttonsHoldTime[i] += Time.deltaTime;
+            }
+
+            if (IsButtonHold(lTestedButton))
+            {
+                print(lTestedButton.ToString() + " is hold.");
             }
         }
 
@@ -81,21 +102,9 @@ public class SpecialInputs : MonoBehaviour
         return false;
     }
 
-    void ButtonDown()
+    bool IsButtonHold(Enums.E_GAMEPAD_BUTTON pButton)
     {
-        _buttonDownTime = Time.fixedTime;
-    }
-
-    void ButtonUp()
-    {
-        _buttonUpTime = Time.fixedTime;
-        if (_buttonUpTime - _buttonDownTime < _spamGap)
-        {
-            _spamCount++;
-            GetSpamLenght();
-        }
-
-        else _spamCount = 0;
+        return _buttonsHoldTime[(int)pButton] >= ImportantPastObject.holdTime;
     }
 
     void GetSpamLenght()
