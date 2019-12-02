@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,8 +16,11 @@ public class GestureRecognition : MonoBehaviour
     float _newAngle, _oldAngle;
     bool _isRight = false;
 
-    bool _isTurningRight = false;
-    bool _isTurningLeft = false;
+    bool _isLSTurningRight = false;
+    bool _isLSTurningLeft = false;
+
+    bool _isRSTurningRight = false;
+    bool _isRSTurningLeft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -76,24 +80,24 @@ public class GestureRecognition : MonoBehaviour
         if (currentPosition.x > 0 && currentPosition.y > -permissionZone && currentPosition.y < permissionZone)
         {
             print("right");
-            if (_isTurningRight || _isTurningLeft) print("360 no scope");
+            if (_isRSTurningRight || _isRSTurningLeft) print("360 no scope");
         }
         else if (currentPosition.x < 0 && currentPosition.y > -permissionZone && currentPosition.y < permissionZone)
         {
             print("left");
-            if (_isTurningRight || _isTurningLeft) print("half-circle");
+            if (_isRSTurningRight || _isRSTurningLeft) print("half-circle");
         }
 
         else if (currentPosition.y > 0 && currentPosition.x > -permissionZone && currentPosition.x < permissionZone)
         {
             print("up");
-            if (_isTurningRight || _isTurningLeft) print("G");
+            if (_isRSTurningRight || _isRSTurningLeft) print("G");
         }
 
         else if (currentPosition.y < 0 && currentPosition.x > -permissionZone && currentPosition.x < permissionZone)
         {
             print("down");
-            if (_isTurningRight || _isTurningLeft) print("Arc");
+            if (_isRSTurningRight || _isRSTurningLeft) print("Arc");
         }
 
         //print("origin : " + e.move.x + " , " + e.move.z);
@@ -106,20 +110,25 @@ public class GestureRecognition : MonoBehaviour
 
         if (lAngleDifference > 0)
         {
-            _isTurningRight = true;
-            _isTurningLeft = false;
+            _isRSTurningRight = true;
+            _isRSTurningLeft = false;
         }
         else if (lAngleDifference < 0)
         {
-            _isTurningRight = false;
-            _isTurningLeft = true;
+            _isRSTurningRight = false;
+            _isRSTurningLeft = true;
         }
 
         else
         {
-            _isTurningRight = false;
-            _isTurningLeft = false;
+            _isRSTurningRight = false;
+            _isRSTurningLeft = false;
         }
+    }
+
+    public bool IsStickRolling(Enums.E_GAMEPAD_BUTTON pButton, Enums.E_ROLL_DIRECTION pRollDirection)
+    {
+        return pRollDirection == Enums.E_ROLL_DIRECTION.LEFT ? _isRSTurningLeft : _isRSTurningRight;
     }
 
     private void OnDestroy()
