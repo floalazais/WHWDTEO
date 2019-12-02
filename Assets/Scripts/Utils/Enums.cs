@@ -19,6 +19,12 @@ public static class Enums
         DESCRIPTION
     }
 
+    public enum E_ROLL_DIRECTION
+    {
+        LEFT,
+        RIGHT
+    }
+
     public enum E_GAMEPAD_BUTTON
     {
         L1_BUTTON,
@@ -29,10 +35,21 @@ public static class Enums
         ROUND_BUTTON,
         TRIANGLE_BUTTON,
         SQUARE_BUTTON,
+        LEFT_STICK,
         LEFT_STICK_HORIZONTAL,
         LEFT_STICK_VERTICAL,
+        RIGHT_STICK,
         RIGHT_STICK_HORIZONTAL,
         RIGHT_STICK_VERTICAL,
+        PS_BUTTON,
+        SHARE_BUTTON,
+        OPTIONS_BUTTON,
+        LEFT_STICK_BUTTON,
+        RIGHT_STICK_BUTTON,
+        D_PAD_RIGHT_BUTTON,
+        D_PAD_LEFT_BUTTON,
+        D_PAD_UP_BUTTON,
+        D_PAD_DOWN_BUTTON,
         NB_BUTTONS
 
     }
@@ -41,7 +58,8 @@ public static class Enums
     {
         HOLD,
         SPAM,
-        ROLL,
+        ROLL_RIGHT,
+        ROLL_LEFT,
         PRESSED
     }
 }
