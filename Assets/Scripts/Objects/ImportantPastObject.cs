@@ -54,6 +54,22 @@ public class ImportantPastObject : PastObject
             case Enums.E_INTERACT_TYPE.HOLD:
                 lIsValidated = InputManager.instance.IsButtonHold(_currentInteraction.gamepadButton);
                 break;
+
+            case Enums.E_INTERACT_TYPE.SPAM:
+                lIsValidated = InputManager.instance.IsButtonSpam(_currentInteraction.gamepadButton);
+                break;
+
+            case Enums.E_INTERACT_TYPE.PRESSED:
+                lIsValidated = InputManager.instance.IsButtonPressed(_currentInteraction.gamepadButton);
+                break;
+
+            case Enums.E_INTERACT_TYPE.ROLL_RIGHT:
+                lIsValidated = InputManager.instance.IsStickRolling(Enums.E_ROLL_DIRECTION.RIGHT);
+                break;
+
+            case Enums.E_INTERACT_TYPE.ROLL_LEFT:
+                lIsValidated = InputManager.instance.IsStickRolling(Enums.E_ROLL_DIRECTION.LEFT);
+                break;
         }
 
         if (lIsValidated)

@@ -15,6 +15,20 @@ public class InputManager : MonoBehaviour
     public float leftVerticalAxis { get; private set; }
     #endregion
 
+    #region Roll Input
+    float _newAngle, _oldAngle;
+
+    bool _isLSTurningRight = false;
+    bool _isLSTurningLeft = false;
+
+    bool _isRSTurningRight = false;
+    bool _isRSTurningLeft = false;
+
+    bool _isRollingRight = false;
+    bool _isRollingLeft = false;
+
+    #endregion
+
     #region Hold Input
 
     float[] _buttonsHoldTime = new float[(int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS];
@@ -72,7 +86,7 @@ public class InputManager : MonoBehaviour
 
     #region Special Input Functions
 
-        #region Hold Input Functions
+    #region Hold Input Functions
 
     void InitializeButtonsHoldTime()
     {
@@ -90,7 +104,7 @@ public class InputManager : MonoBehaviour
 
     #endregion
 
-        #region Spam Input Functions
+    #region Spam Input Functions
 
     void UpdateSpamButtonsTimer()
     {
@@ -121,17 +135,71 @@ public class InputManager : MonoBehaviour
 
     #endregion
 
+    #region Roll Input Functions
+
+    public bool IsStickRolling(Enums.E_ROLL_DIRECTION pRollDirection)
+    {
+        return pRollDirection == Enums.E_ROLL_DIRECTION.LEFT ? _isRollingRight : _isRollingLeft;
+    }
+
+    public bool IsStickTurning(Enums.E_ROLL_DIRECTION pRollDirection)
+    {
+        return pRollDirection == Enums.E_ROLL_DIRECTION.LEFT ? _isRSTurningRight : _isRSTurningLeft;
+    }
+
+    void UpdateRollAngle()
+    {
+        _oldAngle = _newAngle;
+        _newAngle = Mathf.Atan2(rightHorizontalAxis, rightVerticalAxis) * Mathf.Rad2Deg;
+
+        if (_newAngle < 0f) _newAngle += 360f;
+        float lAngleDifference = _newAngle - _oldAngle;
+
+        if (lAngleDifference > 0)
+        {
+            _isRSTurningRight = true;
+            _isRSTurningLeft = false;
+            _isRollingLeft = false;
+        }
+
+        if (lAngleDifference < 0)
+        {
+            _isRSTurningLeft = true;
+            _isRSTurningRight = false;
+            _isRollingRight = false;
+        }
+
+        //Complete turn
+        if (_newAngle >= 250f && _isRSTurningRight) _isRollingRight = true;
+        if (_newAngle <= 110f && _isRSTurningLeft) _isRollingLeft = true;
+
+    }
+
+    void ResetAngle()
+    {
+        _oldAngle = 0;
+        _newAngle = 0;
+
+        _isRSTurningLeft = false;
+        _isRSTurningRight = false;
+
+        _isRollingLeft = false;
+        _isRollingRight = false;
+    }
+
+    #endregion
+
     #endregion
 
     // Update is called once per frame
     void Update()
     {
-        GetInput();
+        UpdateInput();
     }
 
-    private void GetInput()
+    private void UpdateInput()
     {
-        #region Sticks
+        #region Update Sticks
 
         leftHorizontalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Enums.E_GAMEPAD_BUTTON.LEFT_STICK_HORIZONTAL.ToString()); // get input by name or action id
         leftVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Enums.E_GAMEPAD_BUTTON.LEFT_STICK_VERTICAL.ToString());
@@ -140,7 +208,14 @@ public class InputManager : MonoBehaviour
         rightVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Enums.E_GAMEPAD_BUTTON.RIGHT_STICK_VERTICAL.ToString());
         #endregion
 
-        #region Update Special Inputs
+        #region Update Special Joysticks Inputs
+
+        if (rightHorizontalAxis != 0 || rightHorizontalAxis != 0) UpdateRollAngle();
+        else ResetAngle();
+
+        #endregion
+
+        #region Update Special Button Inputs
 
         for (int i = 0; i < (int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
         {
