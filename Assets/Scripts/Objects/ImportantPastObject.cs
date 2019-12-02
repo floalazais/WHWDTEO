@@ -13,8 +13,7 @@ public struct WantedInteraction
 
 public class ImportantPastObject : PastObject
 {
-    public static float holdTime = 2.0f;
-    public WantedInteraction[] _test;
+    public WantedInteraction[] _wantedInteractionArray;
     int _index = 0;
 
     // Start is called before the first frame update
@@ -47,14 +46,17 @@ public class ImportantPastObject : PastObject
 
     void CheckInputOrder()
     {
-        WantedInteraction _currentInteraction = _test[_index];
+        WantedInteraction _currentInteraction = _wantedInteractionArray[_index];
+        bool lIsValidated = false;
 
         switch (_currentInteraction.interactionType)
         {
             case Enums.E_INTERACT_TYPE.HOLD:
+                lIsValidated = InputManager.instance.IsButtonHold(_currentInteraction.gamepadButton);
                 break;
         }
-        if (InputManager.instance.IsButtonPressed(_currentInteraction.gamepadButton.ToString()))
+
+        if (lIsValidated)
         {
             Invoke("NextStep", _currentInteraction.delayBeforeNewAction);
         }
@@ -63,6 +65,6 @@ public class ImportantPastObject : PastObject
     void NextStep()
     {
         _index++;
-        if (_index >= _test.Length) print("end");
+        if (_index >= _wantedInteractionArray.Length) print("end");
     }
 }

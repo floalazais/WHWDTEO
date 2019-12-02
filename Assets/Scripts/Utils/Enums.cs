@@ -33,6 +33,15 @@ public static class Enums
         LEFT_STICK_VERTICAL,
         RIGHT_STICK_HORIZONTAL,
         RIGHT_STICK_VERTICAL,
+        PS_BUTTON,
+        SHARE_BUTTON,
+        OPTIONS_BUTTON,
+        LEFT_STICK_BUTTON,
+        RIGHT_STICK_BUTTON,
+        D_PAD_RIGHT_BUTTON,
+        D_PAD_LEFT_BUTTON,
+        D_PAD_UP_BUTTON,
+        D_PAD_DOWN_BUTTON,
         NB_BUTTONS
 
     }

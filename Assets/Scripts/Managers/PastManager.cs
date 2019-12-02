@@ -35,13 +35,13 @@ public class PastManager : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.instance.IsButtonReleased(Utils_Variables.ROUND_BUTTON_ACTION)) GoToPreviousState();
-        if (InputManager.instance.IsButtonPressed(Utils_Variables.CROSS_BUTTON_ACTION)) SetInteractMode();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) GoToPreviousState();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) SetInteractMode();
 
         if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
 
-        if (InputManager.instance.IsButtonPressed(Utils_Variables.R2_BUTTON_ACTION)) DisplayPastZone();
-        if (InputManager.instance.IsButtonReleased(Utils_Variables.R2_BUTTON_ACTION)) RemovePastZone();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayPastZone();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) RemovePastZone();
     }
 
     void RemovePastZone()
