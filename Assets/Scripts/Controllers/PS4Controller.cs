@@ -36,12 +36,11 @@ public class PS4Controller : MonoBehaviour
     Vector3 _acceleration;
     public Vector3 acceleration { get { return _acceleration; } }
 
-    Vector2 _firstTouchPostion, _secondTouchPosition;
-    public Vector2 firstPosition {  get { return _firstTouchPostion; } }
-    public Vector2 secondTouchPosition {  get { return _secondTouchPosition; } }
+    bool _wasFingerOnTouchpad = false;
+    bool _isFingerOnTouchpad = false;
 
-    public bool _touch1isTouching, _touch2isTouching = false;
-    public bool _exTouch1isTouching, _exTouch2isTouching = false;
+    Vector2 _fingerPositionOnTouchpad;
+
     /*public bool touch1isTouching { get { return _touch1isTouching; } }
     public bool touch2isTouching { get { return _touch2isTouching; } }*/
 
@@ -131,6 +130,21 @@ public class PS4Controller : MonoBehaviour
 
     #region PS4 Special Inputs / Variables
 
+    public bool IsTouchpadPressed()
+    {
+        return !_wasFingerOnTouchpad && _isFingerOnTouchpad;
+    }
+
+    public bool IsTouchpadReleased()
+    {
+        return _wasFingerOnTouchpad && !_isFingerOnTouchpad;
+    }
+
+    public Vector2 GetFingerPositionOnTouchpad()
+    {
+        return _fingerPositionOnTouchpad;
+    }
+
     void HandleTouchpad(IDualShock4Extension ds4)
     {
         /*for(int i = 0; i < ds4.maxTouches; i++)
@@ -145,7 +159,7 @@ public class PS4Controller : MonoBehaviour
         }*/
 
 
-        _exTouch1isTouching = ds4.GetTouchPosition(0, out _firstTouchPostion);
+        /*_exTouch1isTouching = ds4.GetTouchPosition(0, out _firstTouchPostion);
         if (_touch1isTouching != _exTouch1isTouching)
         {
             _touch1isTouching = _exTouch1isTouching;
@@ -154,7 +168,14 @@ public class PS4Controller : MonoBehaviour
         }
              
         //We won't need a second touch
-        _touch2isTouching = ds4.GetTouchPosition(1, out _secondTouchPosition);
+        _touch2isTouching = ds4.GetTouchPosition(1, out _secondTouchPosition);*/
+
+        _wasFingerOnTouchpad = _isFingerOnTouchpad;
+        _isFingerOnTouchpad = ds4.IsTouching(0);
+        if (_isFingerOnTouchpad)
+        {
+            ds4.GetTouchPosition(0, out _fingerPositionOnTouchpad);
+        }
     }
 
     void GetRotation()

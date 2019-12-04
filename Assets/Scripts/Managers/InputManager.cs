@@ -1,4 +1,5 @@
-﻿using Rewired;
+﻿using System;
+using Rewired;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,15 @@ public class InputManager : MonoBehaviour
     #region Hold Input
 
     float[] _buttonsHoldTime = new float[(int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS];
-    public float holdTime = 2.0f;
+    [SerializeField] float holdTime = 2.0f;
+
+    #endregion
+
+    #region Click Input
+
+    float[] _buttonsClickValidityTime = new float[(int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS];
+    [SerializeField] float clickMaximumHoldTime = 2.0f;
+    [SerializeField] float clickValidityTime = 2.0f;
 
     #endregion
 
@@ -51,6 +60,12 @@ public class InputManager : MonoBehaviour
 
     #endregion
 
+    #region Swipe Input
+
+    [SerializeField] float _swipeValidityTime = 0.5f;
+
+    #endregion
+
     private void Awake()
     {
         if (_instance != null)
@@ -65,6 +80,7 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         InitializeButtonsHoldTime();
+        InitializeButtonsClickValidityTime();
     }
 
     #region Basic Input Functions
@@ -101,6 +117,22 @@ public class InputManager : MonoBehaviour
         return _buttonsHoldTime[(int)pButton] >= holdTime;
     }
 
+    #endregion
+
+    #region Click Input Functions
+
+    void InitializeButtonsClickValidityTime()
+    {
+        for (int i = 0; i < (int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
+        {
+            _buttonsClickValidityTime[i] = -1.0f;
+        }
+    }
+
+    public bool IsButtonClicked(Enums.E_GAMEPAD_BUTTON pButton)
+    {
+        return _buttonsClickValidityTime[(int)pButton] >= 0.0f;
+    }
 
     #endregion
 
@@ -189,12 +221,81 @@ public class InputManager : MonoBehaviour
 
     #endregion
 
+    #region Move Input Functions
+
+    public bool IsStickMoving(Enums.E_MOVE_DIRECTION pMoveDirection)
+    {
+        if (pMoveDirection == Enums.E_MOVE_DIRECTION.LEFT)
+        {
+            return rightHorizontalAxis < -0.75f && Mathf.Abs(rightVerticalAxis) < 0.25f;
+        }
+        else if (pMoveDirection == Enums.E_MOVE_DIRECTION.RIGHT)
+        {
+            return rightHorizontalAxis > 0.75f && Mathf.Abs(rightVerticalAxis) < 0.25f;
+        }
+        else if (pMoveDirection == Enums.E_MOVE_DIRECTION.UP)
+        {
+            return rightVerticalAxis > 0.75f && Mathf.Abs(rightHorizontalAxis) < 0.25f;
+        }
+        else if (pMoveDirection == Enums.E_MOVE_DIRECTION.DOWN)
+        {
+            return rightVerticalAxis < -0.75f && Mathf.Abs(rightHorizontalAxis) < 0.25f;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    #endregion
+
+    #region Swipe Input Functions
+
+    Vector2 _startPosition;
+    Vector2 _endPosition;
+
+    float _swipeTimer = -1.0f;
+
+    public bool IsSwiping(Enums.E_SWIPE_DIRECTION pSwipeDirection)
+    {
+        if (_swipeTimer <= 0.0f) return false;
+
+        Vector2 _swipeMovement = _endPosition - _startPosition;
+
+        //print(_endPosition);
+
+        if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.LEFT)
+        {
+            return _swipeMovement.x < -0.5f && Mathf.Abs(_swipeMovement.y) < 0.25f;
+        }
+        else if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.RIGHT)
+        {
+            return _swipeMovement.x > 0.5f && Mathf.Abs(_swipeMovement.y) < 0.25f;
+        }
+        else if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.UP)
+        {
+            return _swipeMovement.y > 0.5f && Mathf.Abs(_swipeMovement.x) < 0.25f;
+        }
+        else if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.DOWN)
+        {
+            return _swipeMovement.y < -0.5f && Mathf.Abs(_swipeMovement.x) < 0.25f;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    #endregion
+
     #endregion
 
     // Update is called once per frame
     void Update()
     {
         UpdateInput();
+
+        print(IsSwiping(Enums.E_SWIPE_DIRECTION.DOWN));
     }
 
     private void UpdateInput()
@@ -234,16 +335,50 @@ public class InputManager : MonoBehaviour
 
             if (IsButtonReleased(lTestedButton))
             {
+                if (_buttonsHoldTime[i] <= clickMaximumHoldTime)
+                {
+                    _buttonsClickValidityTime[i] = clickValidityTime;
+                }
                 _buttonsHoldTime[i] = -1.0f;
             }
 
-            if (_buttonsHoldTime[i] != -1.0f)
+            if (_buttonsHoldTime[i] >= 0.0f)
             {
                 _buttonsHoldTime[i] += Time.deltaTime;
+            }
+
+            if (_buttonsClickValidityTime[i] >= 0.0f)
+            {
+                _buttonsClickValidityTime[i] -= Time.deltaTime;
+                if (_buttonsClickValidityTime[i] < 0.0f)
+                {
+                    _buttonsClickValidityTime[i] = -1.0f;
+                }
             }
         }
 
         UpdateSpamButtonsTimer();
+
+        #endregion
+
+        #region Update Swipe
+
+        if (PS4Controller.Instance.IsTouchpadPressed())
+        {
+            _startPosition = PS4Controller.Instance.GetFingerPositionOnTouchpad();
+        } else if (PS4Controller.Instance.IsTouchpadReleased()) {
+            _endPosition = PS4Controller.Instance.GetFingerPositionOnTouchpad();
+            _swipeTimer = _swipeValidityTime;
+        }
+
+        if (_swipeTimer > 0.0f)
+        {
+            _swipeTimer -= Time.deltaTime;
+            if (_swipeTimer <= 0.0f)
+            {
+                _swipeTimer = -1.0f;
+            }
+        }
 
         #endregion
     }

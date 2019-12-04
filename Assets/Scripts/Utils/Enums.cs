@@ -19,6 +19,22 @@ public static class Enums
         DESCRIPTION
     }
 
+    public enum E_MOVE_DIRECTION
+    {
+        LEFT,
+        RIGHT,
+        UP,
+        DOWN
+    }
+
+    public enum E_SWIPE_DIRECTION
+    {
+        LEFT,
+        RIGHT,
+        UP,
+        DOWN
+    }
+
     public enum E_ROLL_DIRECTION
     {
         LEFT,
@@ -58,8 +74,9 @@ public static class Enums
     {
         HOLD,
         SPAM,
-        ROLL_RIGHT,
-        ROLL_LEFT,
-        PRESSED
+        CLICK,
+        MOVE,
+        SWIPE,
+        ROLL
     }
 }

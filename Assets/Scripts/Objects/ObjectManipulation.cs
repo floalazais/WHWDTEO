@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class ObjectManipulation : MonoBehaviour
 {
-    [SerializeField] float minX = -360.0f;
-    [SerializeField] float maxX = 360.0f;
-
-    [SerializeField] float minY = -180.0f;
-    [SerializeField] float maxY = 180.0f;
-
     [SerializeField] float sensX = 500.0f;
     [SerializeField] float sensY = 500.0f;
 
