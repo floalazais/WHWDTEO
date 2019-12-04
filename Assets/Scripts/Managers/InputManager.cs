@@ -262,8 +262,6 @@ public class InputManager : MonoBehaviour
 
         Vector2 _swipeMovement = _endPosition - _startPosition;
 
-        //print(_endPosition);
-
         if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.LEFT)
         {
             return _swipeMovement.x < -0.5f && Mathf.Abs(_swipeMovement.y) < 0.25f;

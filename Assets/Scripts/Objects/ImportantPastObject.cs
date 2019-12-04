@@ -2,13 +2,50 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
 
 [System.Serializable]
 public struct WantedInteraction
 {
-    public Enums.E_GAMEPAD_BUTTON gamepadButton;
     public Enums.E_INTERACT_TYPE interactionType;
-    public float delayBeforeNewAction;
+    public Enums.E_GAMEPAD_BUTTON gamepadButton;
+    public Enums.E_MOVE_DIRECTION moveDirection;
+    public Enums.E_ROLL_DIRECTION rollDirection;
+    public Enums.E_SWIPE_DIRECTION swipeDirection;
+    [Range(0, 10)]
+    public int spamCount;
+    [Range(0.0f, 10.0f)]
+    public float holdTime;
+    [Range(0.0f, 10.0f)]
+    public float delayBeforeNewInteraction;
+}
+
+[CustomPropertyDrawer(typeof(WantedInteraction))]
+public class WantedInteractionDrawer : PropertyDrawer
+{
+    public override VisualElement CreatePropertyGUI(SerializedProperty property)
+    {
+        // Create property container element.
+        VisualElement container = new VisualElement();
+
+        // Create property fields.
+        PropertyField interactionTypeField = new PropertyField(property.FindPropertyRelative("interactionType"));
+        PropertyField gamepadButtonField = new PropertyField(property.FindPropertyRelative("gamepadButton"));
+        PropertyField moveDirectionField = new PropertyField(property.FindPropertyRelative("moveDirection"), "Move Direction");
+        PropertyField rollDirectionField = new PropertyField(property.FindPropertyRelative("rollDirection"), "Roll Direction");
+        PropertyField swipeDirectionField = new PropertyField(property.FindPropertyRelative("swipeDirection"), "Swipe Direction");
+        PropertyField spamCountField = new PropertyField(property.FindPropertyRelative("spamCount"), "Spam Count");
+        PropertyField holdTimeField = new PropertyField(property.FindPropertyRelative("holdTime"), "Hold Time");
+        PropertyField delayBeforeNewInteractionField = new PropertyField(property.FindPropertyRelative("holdTime"), "Hold Time");
+
+        // Add fields to the container.
+        container.Add(interactionTypeField);
+        container.Add(gamepadButtonField);
+
+        return container;
+    }
 }
 
 public class ImportantPastObject : PastObject
@@ -59,22 +96,26 @@ public class ImportantPastObject : PastObject
                 lIsValidated = InputManager.instance.IsButtonSpam(_currentInteraction.gamepadButton);
                 break;
 
-            case Enums.E_INTERACT_TYPE.PRESSED:
-                lIsValidated = InputManager.instance.IsButtonPressed(_currentInteraction.gamepadButton);
+            case Enums.E_INTERACT_TYPE.CLICK:
+                lIsValidated = InputManager.instance.IsButtonClicked(_currentInteraction.gamepadButton);
                 break;
 
-            case Enums.E_INTERACT_TYPE.ROLL_RIGHT:
-                lIsValidated = InputManager.instance.IsStickRolling(Enums.E_ROLL_DIRECTION.RIGHT);
+            case Enums.E_INTERACT_TYPE.MOVE:
+                lIsValidated = InputManager.instance.IsStickMoving(Enums.E_MOVE_DIRECTION.RIGHT);
                 break;
 
-            case Enums.E_INTERACT_TYPE.ROLL_LEFT:
+            case Enums.E_INTERACT_TYPE.ROLL:
                 lIsValidated = InputManager.instance.IsStickRolling(Enums.E_ROLL_DIRECTION.LEFT);
+                break;
+
+            case Enums.E_INTERACT_TYPE.SWIPE:
+                lIsValidated = InputManager.instance.IsSwiping(Enums.E_SWIPE_DIRECTION.LEFT);
                 break;
         }
 
         if (lIsValidated)
         {
-            Invoke("NextStep", _currentInteraction.delayBeforeNewAction);
+            Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
         }
     }
 

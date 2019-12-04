@@ -734,10 +734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f21a9ad5172fb4e832cdb700a3e03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -360
-  maxX: 360
-  minY: -180
-  maxY: 180
   sensX: 100
   sensY: 100
 --- !u!1 &497116830
@@ -921,7 +917,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2a6cad08b8e954388d9af6c7c78ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wantedInteractionArray: []
+  _wantedInteractionArray:
+  - interactionType: 0
+    gamepadButton: 0
+    rollDirectionArgument: 0
+    moveDirectionArgument: 0
+    swipeDirectionArgument: 0
+    spamCountArgument: 0
+    holdTimeArgument: 0
+    delayBeforeNewAction: 0
 --- !u!65 &808763510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1298,6 +1302,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641122446692052348, guid: ad3dd04fd6edf0044bab120e9b047af9,
+        type: 3}
+      propertyPath: clickMaximumHoldTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641122446692052348, guid: ad3dd04fd6edf0044bab120e9b047af9,
+        type: 3}
+      propertyPath: clickValidityTime
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad3dd04fd6edf0044bab120e9b047af9, type: 3}
