@@ -934,7 +934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &808763508
 Transform:
   m_ObjectHideFlags: 0
@@ -969,39 +969,34 @@ MonoBehaviour:
     rollDirection: 0
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 2
-  - interactionType: 0
-    gamepadButton: 1
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    holdTime: 0
-    delayBeforeNewInteraction: 0
-  - interactionType: 1
-    gamepadButton: 4
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    holdTime: 0
-    delayBeforeNewInteraction: 1
-  - interactionType: 0
-    gamepadButton: 2
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    holdTime: 0
-    delayBeforeNewInteraction: 0
   - interactionType: 0
     gamepadButton: 0
     moveDirection: 0
     rollDirection: 0
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
+    delayBeforeNewInteraction: 0
+  - interactionType: 2
+    gamepadButton: 4
+    moveDirection: 0
+    rollDirection: 0
+    swipeDirection: 0
+    spamCount: 0
+    delayBeforeNewInteraction: 1
+  - interactionType: 2
+    gamepadButton: 6
+    moveDirection: 0
+    rollDirection: 0
+    swipeDirection: 0
+    spamCount: 0
+    delayBeforeNewInteraction: 0
+  - interactionType: 1
+    gamepadButton: 1
+    moveDirection: 0
+    rollDirection: 0
+    swipeDirection: 0
+    spamCount: 0
     delayBeforeNewInteraction: 3
   - interactionType: 5
     gamepadButton: 11
@@ -1009,7 +1004,6 @@ MonoBehaviour:
     rollDirection: 2
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 0
 --- !u!65 &808763510
 BoxCollider:
