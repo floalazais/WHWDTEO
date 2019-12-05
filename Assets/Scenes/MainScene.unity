@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05016867, g: 0.07014238, b: 0.1078479, a: 1}
+  m_IndirectSpecularColor: {r: 0.15350187, g: 0.065810665, b: 0.10055956, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -971,7 +971,6 @@ MonoBehaviour:
     rollDirection: 0
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 2
   - interactionType: 0
     gamepadButton: 1
@@ -979,7 +978,6 @@ MonoBehaviour:
     rollDirection: 0
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 0
   - interactionType: 1
     gamepadButton: 4
@@ -987,7 +985,6 @@ MonoBehaviour:
     rollDirection: 0
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 1
   - interactionType: 0
     gamepadButton: 2
@@ -995,7 +992,6 @@ MonoBehaviour:
     rollDirection: 0
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 0
   - interactionType: 0
     gamepadButton: 0
@@ -1003,7 +999,6 @@ MonoBehaviour:
     rollDirection: 0
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 3
   - interactionType: 5
     gamepadButton: 11
@@ -1011,7 +1006,6 @@ MonoBehaviour:
     rollDirection: 2
     swipeDirection: 0
     spamCount: 0
-    holdTime: 0
     delayBeforeNewInteraction: 0
 --- !u!65 &808763510
 BoxCollider:
@@ -2860,7 +2854,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2903,8 +2897,8 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 5800
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
@@ -2916,13 +2910,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959627960}
-  m_LocalRotation: {x: -0, y: 0.9879606, z: -0.15470625, w: 0}
+  m_LocalRotation: {x: -0, y: 0.99835235, z: -0.057380475, w: 0}
   m_LocalPosition: {x: -1.69, y: 3.41, z: 8.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1157175047}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.800001, y: 180.00002, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.5790005, y: 180.00002, z: 0}
 --- !u!114 &2017817948 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1522532089970554030, guid: 6483524770adb894990bb6493eefa6dc,

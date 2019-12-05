@@ -17,12 +17,17 @@ public struct WantedInteraction
     [Range(0, 10)]
     public int spamCount;
     [Range(0.0f, 10.0f)]
-    public float holdTime;
-    [Range(0.0f, 10.0f)]
     public float delayBeforeNewInteraction;
 }
 
-[CustomPropertyDrawer(typeof(WantedInteraction))]
+[System.Serializable]
+public struct HoldConstraint
+{
+    public int index;
+    public Enums.E_GAMEPAD_BUTTON gamepadButton;
+}
+
+/*[CustomPropertyDrawer(typeof(WantedInteraction))]
 public class WantedInteractionDrawer : PropertyDrawer
 {
     public override VisualElement CreatePropertyGUI(SerializedProperty property)
@@ -46,12 +51,15 @@ public class WantedInteractionDrawer : PropertyDrawer
 
         return container;
     }
-}
+}*/
 
 public class ImportantPastObject : PastObject
 {
     public WantedInteraction[] _wantedInteractionArray;
     int _index = 0;
+    bool _isEnd = false;
+    bool _isStepValidated = false;
+    List<HoldConstraint> _holdConstraintList = new List<HoldConstraint>();
 
     // Start is called before the first frame update
     void Start()
@@ -84,12 +92,47 @@ public class ImportantPastObject : PastObject
     void CheckInputOrder()
     {
         WantedInteraction _currentInteraction = _wantedInteractionArray[_index];
+
+        for (int i = 0; i < _holdConstraintList.Count; i++)
+        {
+            if (_currentInteraction.interactionType == Enums.E_INTERACT_TYPE.RELEASE_HOLD && _currentInteraction.gamepadButton == _holdConstraintList[i].gamepadButton) continue;
+            if (!InputManager.instance.IsButtonDown(_holdConstraintList[i].gamepadButton))
+            {
+                _index = _holdConstraintList[i].index;
+                _holdConstraintList.RemoveAll(h2 => h2.index >= _holdConstraintList.Find(h => h.gamepadButton == _holdConstraintList[i].gamepadButton).index);
+                for (int j = 0; j < _index; j++)
+                {
+                    if (_wantedInteractionArray[j].interactionType == Enums.E_INTERACT_TYPE.HOLD)
+                    {
+                        HoldConstraint newHoldConstraint;
+                        newHoldConstraint.gamepadButton = _wantedInteractionArray[j].gamepadButton;
+                        newHoldConstraint.index = j;
+                        _holdConstraintList.Add(newHoldConstraint);
+                    } else if (_wantedInteractionArray[j].interactionType == Enums.E_INTERACT_TYPE.RELEASE_HOLD) {
+                        _holdConstraintList.Remove(_holdConstraintList.Find(h => h.gamepadButton == _wantedInteractionArray[j].gamepadButton));
+                    }
+                }
+                return;
+            }
+        }
+
+        if (_isEnd || _isStepValidated) return;
+
         bool lIsValidated = false;
+
+        print("button : " + _currentInteraction.gamepadButton + " interaction wanted : " + _currentInteraction.interactionType);
 
         switch (_currentInteraction.interactionType)
         {
             case Enums.E_INTERACT_TYPE.HOLD:
-                lIsValidated = InputManager.instance.IsButtonHold(_currentInteraction.gamepadButton);
+                lIsValidated = InputManager.instance.IsButtonPressed(_currentInteraction.gamepadButton);
+                if (lIsValidated)
+                {
+                    HoldConstraint newHoldConstraint;
+                    newHoldConstraint.gamepadButton = _currentInteraction.gamepadButton;
+                    newHoldConstraint.index = _index;
+                    _holdConstraintList.Add(newHoldConstraint);
+                }
                 break;
 
             case Enums.E_INTERACT_TYPE.SPAM:
@@ -101,20 +144,32 @@ public class ImportantPastObject : PastObject
                 break;
 
             case Enums.E_INTERACT_TYPE.MOVE:
-                lIsValidated = InputManager.instance.IsStickMoving(Enums.E_MOVE_DIRECTION.RIGHT);
+                Enums.E_MOVE_DIRECTION lMoveDirection = _currentInteraction.moveDirection;
+                lIsValidated = InputManager.instance.IsStickMoving(lMoveDirection);
                 break;
 
             case Enums.E_INTERACT_TYPE.ROLL:
-                lIsValidated = InputManager.instance.IsStickRolling(Enums.E_ROLL_DIRECTION.LEFT);
+                Enums.E_ROLL_DIRECTION lRollDirection = _currentInteraction.rollDirection;
+                lIsValidated = InputManager.instance.IsStickRolling(lRollDirection);
                 break;
 
             case Enums.E_INTERACT_TYPE.SWIPE:
-                lIsValidated = InputManager.instance.IsSwiping(Enums.E_SWIPE_DIRECTION.LEFT);
+                Enums.E_SWIPE_DIRECTION lSwipeDirection = _currentInteraction.swipeDirection;
+                lIsValidated = InputManager.instance.IsSwiping(lSwipeDirection);
+                break;
+
+            case Enums.E_INTERACT_TYPE.RELEASE_HOLD:
+                lIsValidated = InputManager.instance.IsButtonReleased(_currentInteraction.gamepadButton);
+                if (lIsValidated)
+                {
+                    _holdConstraintList.Remove(_holdConstraintList.Find(h => h.gamepadButton == _currentInteraction.gamepadButton));
+                }
                 break;
         }
 
         if (lIsValidated)
         {
+            _isStepValidated = true;
             Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
         }
     }
@@ -122,6 +177,11 @@ public class ImportantPastObject : PastObject
     void NextStep()
     {
         _index++;
-        if (_index >= _wantedInteractionArray.Length) print("end");
+        _isStepValidated = false;
+        if (_index >= _wantedInteractionArray.Length)
+        {
+            _isEnd = true;
+            print("end sequence");
+        }
     }
 }
