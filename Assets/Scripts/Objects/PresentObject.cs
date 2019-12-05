@@ -14,18 +14,36 @@ public class PresentObject : MonoBehaviour
         _collider = GetComponent<Collider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        print(name);
-        if (!other.GetComponent<SphereCollider>()) return;
+        if (PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
+    }
+
+    void CheckPlayerDistance()
+    {
+        float distance = Vector3.Distance(transform.position, Controller.instance.transform.position);
+        //Debug.DrawLine(MyCharacter.instance.transform.position, transform.position);
+
+        if (distance > 3f)
+        {
+            //if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+            SetModePresent();
+        }
+
+        else
+        {
+            SetModePast();
+        }
+    }
+
+    void SetModePast()
+    {
         _meshRenderer.enabled = false;
         _collider.isTrigger = true;
     }
 
-    private void OnTriggerExit(Collider other)
+    void SetModePresent()
     {
-        print(name);
-        if (!other.GetComponent<SphereCollider>()) return;
         _meshRenderer.enabled = true;
         _collider.isTrigger = false;
     }

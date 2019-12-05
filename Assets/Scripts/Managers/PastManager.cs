@@ -60,7 +60,6 @@ public class PastManager : MonoBehaviour
 
     void SetPresentMode()
     {
-        print(_pastObjectsArray.Length);
         _state = Enums.E_PAST_STATE.PRESENT;
 
         int length = _pastObjectsArray.Length;
@@ -83,8 +82,6 @@ public class PastManager : MonoBehaviour
     void SetSearchMode()
     {
         _state = Enums.E_PAST_STATE.SEARCH_MODE;
-        string floriantastort = _state.ToString();
-        print(floriantastort);
         _pastObjectNearPlayer = null;
     }
 
