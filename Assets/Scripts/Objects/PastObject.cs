@@ -22,7 +22,7 @@ public class PastObject : MonoBehaviour
 
         _meshRenderer.enabled = false;
         _collider.isTrigger = true;
-        _text.enabled = false;
+        if(_text != null) _text.enabled = false;
     }
 
     private void Update()
@@ -34,12 +34,12 @@ public class PastObject : MonoBehaviour
     {
         transform.position = InspectionMode.instance.objectViewTransform.position;
         _meshRenderer.enabled = true;
-        _text.enabled = false;
+        if(_text != null) _text.enabled = false;
     }
 
     public void SetModeNearPlayer()
     {
-        _text.enabled = true;
+        if(_text != null) _text.enabled = true;
         _meshRenderer.enabled = true;
         transform.position = _originalPosition;
         transform.rotation = _originalRotation;
@@ -47,14 +47,14 @@ public class PastObject : MonoBehaviour
 
     public void SetModeDiscovered()
     {
-        _text.enabled = false;
+        if(_text != null) _text.enabled = false;
         _meshRenderer.enabled = true;
     }
 
     public void SetModeNotDiscovered()
     {
         _meshRenderer.enabled = false;
-        _text.enabled = false;
+        if(_text != null) _text.enabled = false;
         _collider.isTrigger = true;
     }
 
