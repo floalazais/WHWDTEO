@@ -65,10 +65,6 @@ public class Controller : MonoBehaviour
         _camera.transform.LookAt(_camera.transform.position + Vector3.back * _cameraBackDistanceToPlayer);
     }
 
-    enum Direction { Front, Left, Back, Right};
-
-    Direction _characterRotation = Direction.Front;
-
     Vector3 lCameraOffset = Vector3.zero;
     Vector3 lerpLookAt = Vector3.zero;
 
