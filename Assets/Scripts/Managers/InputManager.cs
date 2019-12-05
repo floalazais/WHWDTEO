@@ -19,11 +19,8 @@ public class InputManager : MonoBehaviour
     #region Roll Input
     float _newAngle, _oldAngle;
 
-    bool _isLSTurningRight = false;
-    bool _isLSTurningLeft = false;
-
-    bool _isRSTurningRight = false;
-    bool _isRSTurningLeft = false;
+    bool _isTurningRight = false;
+    bool _isTurningLeft = false;
 
     bool _isRollingRight = false;
     bool _isRollingLeft = false;
@@ -171,12 +168,12 @@ public class InputManager : MonoBehaviour
 
     public bool IsStickRolling(Enums.E_ROLL_DIRECTION pRollDirection)
     {
-        return pRollDirection == Enums.E_ROLL_DIRECTION.LEFT ? _isRollingRight : _isRollingLeft;
+        return pRollDirection == Enums.E_ROLL_DIRECTION.RIGHT ? _isRollingRight : _isRollingLeft;
     }
 
     public bool IsStickTurning(Enums.E_ROLL_DIRECTION pRollDirection)
     {
-        return pRollDirection == Enums.E_ROLL_DIRECTION.LEFT ? _isRSTurningRight : _isRSTurningLeft;
+        return pRollDirection == Enums.E_ROLL_DIRECTION.RIGHT ? _isTurningRight : _isTurningLeft;
     }
 
     void UpdateRollAngle()
@@ -189,21 +186,21 @@ public class InputManager : MonoBehaviour
 
         if (lAngleDifference > 0)
         {
-            _isRSTurningRight = true;
-            _isRSTurningLeft = false;
+            _isTurningRight = true;
+            _isTurningLeft = false;
             _isRollingLeft = false;
         }
 
         if (lAngleDifference < 0)
         {
-            _isRSTurningLeft = true;
-            _isRSTurningRight = false;
+            _isTurningLeft = true;
+            _isTurningRight = false;
             _isRollingRight = false;
         }
 
         //Complete turn
-        if (_newAngle >= 250f && _isRSTurningRight) _isRollingRight = true;
-        if (_newAngle <= 110f && _isRSTurningLeft) _isRollingLeft = true;
+        if (_newAngle >= 250f && _isTurningRight) _isRollingRight = true;
+        if (_newAngle <= 110f && _isTurningLeft) _isRollingLeft = true;
 
     }
 
@@ -212,8 +209,8 @@ public class InputManager : MonoBehaviour
         _oldAngle = 0;
         _newAngle = 0;
 
-        _isRSTurningLeft = false;
-        _isRSTurningRight = false;
+        _isTurningLeft = false;
+        _isTurningRight = false;
 
         _isRollingLeft = false;
         _isRollingRight = false;
@@ -292,8 +289,6 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         UpdateInput();
-
-        print(IsSwiping(Enums.E_SWIPE_DIRECTION.DOWN));
     }
 
     private void UpdateInput()
