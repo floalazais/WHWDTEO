@@ -24,16 +24,6 @@ public class PastManager : MonoBehaviour
         }
 
         _instance = this;
-
-        AddListener();
-    }
-
-    void AddListener()
-    {
-        EventsManager.Instance.AddListener<ONR2ButtonDown>(DisplayPastZone);
-        EventsManager.Instance.AddListener<ONR2ButtonUp>(RemovePastZone);
-        EventsManager.Instance.AddListener<OnCrossButton>(SetInteractMode);
-        EventsManager.Instance.AddListener<OnRoundButton>(GoToPreviousState);
     }
 
     private void Start()
@@ -43,7 +33,18 @@ public class PastManager : MonoBehaviour
         _pastObjectsArray = GameObject.FindObjectsOfType<PastObject>();
     }
 
-    void RemovePastZone(ONR2ButtonUp e)
+    private void Update()
+    {
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) GoToPreviousState();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) SetInteractMode();
+
+        if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayPastZone();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) RemovePastZone();
+    }
+
+    void RemovePastZone()
     {
         if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
 
@@ -51,7 +52,7 @@ public class PastManager : MonoBehaviour
         _pastZone.Remove();
     }
 
-    void DisplayPastZone(ONR2ButtonDown e)
+    void DisplayPastZone()
     {
         SetSearchMode();
         _pastZone.Display();
@@ -82,6 +83,8 @@ public class PastManager : MonoBehaviour
     void SetSearchMode()
     {
         _state = Enums.E_PAST_STATE.SEARCH_MODE;
+        string floriantastort = _state.ToString();
+        print(floriantastort);
         _pastObjectNearPlayer = null;
     }
 
@@ -92,10 +95,12 @@ public class PastManager : MonoBehaviour
         _pastObjectNearPlayer.SetModeNearPlayer();
     }
 
-    void SetInteractMode(OnCrossButton e = null)
+    void SetInteractMode()
     {
         if(_state == Enums.E_PAST_STATE.INTERACT)
         {
+            if (_pastObjectNearPlayer.GetComponent<ImportantPastObject>() != null) return;
+
             UIManager.instance.OnDescriptionObject();
             _state = Enums.E_PAST_STATE.DESCRIPTION;
 
@@ -110,7 +115,7 @@ public class PastManager : MonoBehaviour
         GameManager.instance.SetModeNotPlay();
     }
 
-    void GoToPreviousState(OnRoundButton e)
+    void GoToPreviousState()
     {
         if (_state == Enums.E_PAST_STATE.DESCRIPTION)
         {
@@ -128,13 +133,5 @@ public class PastManager : MonoBehaviour
 
             return;
         }
-    }
-
-    private void OnDestroy()
-    {
-        EventsManager.Instance.RemoveListener<ONR2ButtonDown>(DisplayPastZone);
-        EventsManager.Instance.RemoveListener<ONR2ButtonUp>(RemovePastZone);
-        EventsManager.Instance.RemoveListener<OnCrossButton>(SetInteractMode);
-        EventsManager.Instance.RemoveListener<OnRoundButton>(GoToPreviousState);
     }
 }

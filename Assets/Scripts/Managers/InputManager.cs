@@ -1,4 +1,5 @@
-﻿using Rewired;
+﻿using System;
+using Rewired;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,19 +9,62 @@ public class InputManager : MonoBehaviour
     public static InputManager instance { get { return _instance; } }
     static InputManager _instance;
 
-    private Vector3 _moveVector = Vector3.zero;
+    #region Sticks
+    public float rightHorizontalAxis { get; private set; }
+    public float rightVerticalAxis { get; private set; }
+    public float leftHorizontalAxis { get; private set; }
+    public float leftVerticalAxis { get; private set; }
+    #endregion
 
-    float _rightHorizontalAxis = 0;
-    float _rightVerticalAxis = 0;
+    #region Roll Input
+    float _newAngle, _oldAngle;
 
-    float _leftHorizontalAxis = 0;
-    float _leftVerticalAxis = 0;
+    bool _isLSTurningRight = false;
+    bool _isLSTurningLeft = false;
 
-    public float rightHorizontalAxis {  get { return _rightHorizontalAxis; } }
-    public float rightVerticalAxis {  get { return _rightVerticalAxis; } }
+    bool _isRSTurningRight = false;
+    bool _isRSTurningLeft = false;
 
-    public float leftHorizontalAxis {  get { return _leftHorizontalAxis; } }
-    public float leftVerticalAxis {  get { return _leftVerticalAxis; } }
+    bool _isRollingRight = false;
+    bool _isRollingLeft = false;
+
+    #endregion
+
+    #region Hold Input
+
+    float[] _buttonsHoldTime = new float[(int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS];
+    [SerializeField] float holdTime = 2.0f;
+
+    #endregion
+
+    #region Click Input
+
+    float[] _buttonsClickValidityTime = new float[(int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS];
+    [SerializeField] float clickMaximumHoldTime = 2.0f;
+    [SerializeField] float clickValidityTime = 2.0f;
+
+    #endregion
+
+    #region Spam Input
+
+    struct Spam_Button
+    {
+        public Enums.E_GAMEPAD_BUTTON buttonPressed;
+        public float timer;
+    }
+
+    List<Spam_Button> _spamButtons = new List<Spam_Button>();
+
+    [SerializeField] float _spamGap = 1f;
+    [SerializeField] int _numberSpam = 3;
+
+    #endregion
+
+    #region Swipe Input
+
+    [SerializeField] float _swipeValidityTime = 0.5f;
+
+    #endregion
 
     private void Awake()
     {
@@ -33,87 +77,307 @@ public class InputManager : MonoBehaviour
         _instance = this;
     }
 
+    private void Start()
+    {
+        InitializeButtonsHoldTime();
+        InitializeButtonsClickValidityTime();
+    }
+
+    #region Basic Input Functions
+    public bool IsButtonPressed(Enums.E_GAMEPAD_BUTTON pButton)
+    {
+        return Utils_Variables.REWIRED_PLAYER.GetButtonDown(pButton.ToString());
+    }
+
+    public bool IsButtonReleased(Enums.E_GAMEPAD_BUTTON pButton)
+    {
+        return Utils_Variables.REWIRED_PLAYER.GetButtonUp(pButton.ToString());
+    }
+
+    public bool IsButtonDown(Enums.E_GAMEPAD_BUTTON pButton)
+    {
+        return Utils_Variables.REWIRED_PLAYER.GetButton(pButton.ToString());
+    }
+    #endregion
+
+    #region Special Input Functions
+
+    #region Hold Input Functions
+
+    void InitializeButtonsHoldTime()
+    {
+        for (int i = 0; i < (int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
+        {
+            _buttonsHoldTime[i] = -1.0f;
+        }
+    }
+
+    public bool IsButtonHold(Enums.E_GAMEPAD_BUTTON pButton)
+    {
+        return _buttonsHoldTime[(int)pButton] >= holdTime;
+    }
+
+    #endregion
+
+    #region Click Input Functions
+
+    void InitializeButtonsClickValidityTime()
+    {
+        for (int i = 0; i < (int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
+        {
+            _buttonsClickValidityTime[i] = -1.0f;
+        }
+    }
+
+    public bool IsButtonClicked(Enums.E_GAMEPAD_BUTTON pButton)
+    {
+        return _buttonsClickValidityTime[(int)pButton] >= 0.0f;
+    }
+
+    #endregion
+
+    #region Spam Input Functions
+
+    void UpdateSpamButtonsTimer()
+    {
+        for (int i = 0; i < _spamButtons.Count; i++)
+        {
+            Spam_Button lSpamButton = _spamButtons[i];
+            lSpamButton.timer -= Time.deltaTime;
+
+            _spamButtons[i] = lSpamButton;
+            if (_spamButtons[i].timer <= 0.0f) _spamButtons.RemoveAt(i);
+        }
+    }
+
+    public bool IsButtonSpam(Enums.E_GAMEPAD_BUTTON pButton)
+    {
+        int countButtonInArray = 0;
+
+        for (int i = 0; i < _spamButtons.Count; i++)
+        {
+            if (_spamButtons[i].buttonPressed == pButton) countButtonInArray++;
+        }
+
+        if (countButtonInArray >= _numberSpam) return true;
+
+        return false;
+    }
+
+
+    #endregion
+
+    #region Roll Input Functions
+
+    public bool IsStickRolling(Enums.E_ROLL_DIRECTION pRollDirection)
+    {
+        return pRollDirection == Enums.E_ROLL_DIRECTION.LEFT ? _isRollingRight : _isRollingLeft;
+    }
+
+    public bool IsStickTurning(Enums.E_ROLL_DIRECTION pRollDirection)
+    {
+        return pRollDirection == Enums.E_ROLL_DIRECTION.LEFT ? _isRSTurningRight : _isRSTurningLeft;
+    }
+
+    void UpdateRollAngle()
+    {
+        _oldAngle = _newAngle;
+        _newAngle = Mathf.Atan2(rightHorizontalAxis, rightVerticalAxis) * Mathf.Rad2Deg;
+
+        if (_newAngle < 0f) _newAngle += 360f;
+        float lAngleDifference = _newAngle - _oldAngle;
+
+        if (lAngleDifference > 0)
+        {
+            _isRSTurningRight = true;
+            _isRSTurningLeft = false;
+            _isRollingLeft = false;
+        }
+
+        if (lAngleDifference < 0)
+        {
+            _isRSTurningLeft = true;
+            _isRSTurningRight = false;
+            _isRollingRight = false;
+        }
+
+        //Complete turn
+        if (_newAngle >= 250f && _isRSTurningRight) _isRollingRight = true;
+        if (_newAngle <= 110f && _isRSTurningLeft) _isRollingLeft = true;
+
+    }
+
+    void ResetAngle()
+    {
+        _oldAngle = 0;
+        _newAngle = 0;
+
+        _isRSTurningLeft = false;
+        _isRSTurningRight = false;
+
+        _isRollingLeft = false;
+        _isRollingRight = false;
+    }
+
+    #endregion
+
+    #region Move Input Functions
+
+    public bool IsStickMoving(Enums.E_MOVE_DIRECTION pMoveDirection)
+    {
+        if (pMoveDirection == Enums.E_MOVE_DIRECTION.LEFT)
+        {
+            return rightHorizontalAxis < -0.75f && Mathf.Abs(rightVerticalAxis) < 0.25f;
+        }
+        else if (pMoveDirection == Enums.E_MOVE_DIRECTION.RIGHT)
+        {
+            return rightHorizontalAxis > 0.75f && Mathf.Abs(rightVerticalAxis) < 0.25f;
+        }
+        else if (pMoveDirection == Enums.E_MOVE_DIRECTION.UP)
+        {
+            return rightVerticalAxis > 0.75f && Mathf.Abs(rightHorizontalAxis) < 0.25f;
+        }
+        else if (pMoveDirection == Enums.E_MOVE_DIRECTION.DOWN)
+        {
+            return rightVerticalAxis < -0.75f && Mathf.Abs(rightHorizontalAxis) < 0.25f;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    #endregion
+
+    #region Swipe Input Functions
+
+    Vector2 _startPosition;
+    Vector2 _endPosition;
+
+    float _swipeTimer = -1.0f;
+
+    public bool IsSwiping(Enums.E_SWIPE_DIRECTION pSwipeDirection)
+    {
+        if (_swipeTimer <= 0.0f) return false;
+
+        Vector2 _swipeMovement = _endPosition - _startPosition;
+
+        if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.LEFT)
+        {
+            return _swipeMovement.x < -0.5f && Mathf.Abs(_swipeMovement.y) < 0.25f;
+        }
+        else if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.RIGHT)
+        {
+            return _swipeMovement.x > 0.5f && Mathf.Abs(_swipeMovement.y) < 0.25f;
+        }
+        else if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.UP)
+        {
+            return _swipeMovement.y > 0.5f && Mathf.Abs(_swipeMovement.x) < 0.25f;
+        }
+        else if (pSwipeDirection == Enums.E_SWIPE_DIRECTION.DOWN)
+        {
+            return _swipeMovement.y < -0.5f && Mathf.Abs(_swipeMovement.x) < 0.25f;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    #endregion
+
+    #endregion
+
     // Update is called once per frame
     void Update()
     {
-        GetInput();
+        UpdateInput();
+
+        print(IsSwiping(Enums.E_SWIPE_DIRECTION.DOWN));
     }
 
-    private void GetInput()
+    private void UpdateInput()
     {
-        #region Right Buttons
+        #region Update Sticks
 
-        bool crossButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.CROSS_BUTTON_ACTION);
-        if (crossButton) EventsManager.Instance.Raise(new OnCrossButton());
+        leftHorizontalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Enums.E_GAMEPAD_BUTTON.LEFT_STICK_HORIZONTAL.ToString()); // get input by name or action id
+        leftVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Enums.E_GAMEPAD_BUTTON.LEFT_STICK_VERTICAL.ToString());
 
-        bool roundButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.ROUND_BUTTON_ACTION);
-        if (roundButton) EventsManager.Instance.Raise(new OnRoundButton());
-
-        bool triangleButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.TRIANGLE_BUTTON_ACTION);
-        if (triangleButton) EventsManager.Instance.Raise(new OnTriangleButton());
-
-        bool squareButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.SQUARE_BUTTON_ACTION);
-        if (squareButton) EventsManager.Instance.Raise(new OnSquareButton());
+        rightHorizontalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Enums.E_GAMEPAD_BUTTON.RIGHT_STICK_HORIZONTAL.ToString()); // get input by name or action id
+        rightVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Enums.E_GAMEPAD_BUTTON.RIGHT_STICK_VERTICAL.ToString());
         #endregion
 
-        #region Behind Buttons
+        #region Update Special Joysticks Inputs
 
-        bool R1ButtonDown = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.R1_BUTTON_ACTION);
-        if (R1ButtonDown) EventsManager.Instance.Raise(new ONR1Button());
+        if (rightHorizontalAxis != 0 || rightHorizontalAxis != 0) UpdateRollAngle();
+        else ResetAngle();
 
-        bool R2ButtonDown = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.R2_BUTTON_ACTION);
-        if (R2ButtonDown) EventsManager.Instance.Raise(new ONR2ButtonDown());
-
-        bool R2ButtonUp = Utils_Variables.REWIRED_PLAYER.GetButtonUp(Utils_Variables.R2_BUTTON_ACTION);
-        if (R2ButtonUp) EventsManager.Instance.Raise(new ONR2ButtonUp());
-
-        bool L1Button = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.L1_BUTTON_ACTION);
-        if (L1Button) EventsManager.Instance.Raise(new ONL1Button());
-
-        bool L2Button = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.L2_BUTTON_ACTION);
-        if (L2Button) EventsManager.Instance.Raise(new ONL2Button());
         #endregion
 
-        #region Menu buttons
+        #region Update Special Button Inputs
 
-        bool playstationButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.MENU_BUTTON_ACTION);
-        if (playstationButton) EventsManager.Instance.Raise(new OnMenuButton());
+        for (int i = 0; i < (int)Enums.E_GAMEPAD_BUTTON.NB_BUTTONS; i++)
+        {
+            Enums.E_GAMEPAD_BUTTON lTestedButton = (Enums.E_GAMEPAD_BUTTON)i;
 
-        bool shareButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.SHARE_BUTTON_ACTION);
-        if (shareButton) EventsManager.Instance.Raise(new OnShareButton());
+            if (IsButtonPressed(lTestedButton))
+            {
+                Spam_Button spamButton;
+                spamButton.buttonPressed = lTestedButton;
+                spamButton.timer = _spamGap;
 
-        bool optionsButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.OPTIONS_BUTTON_ACTION);
-        if (optionsButton) EventsManager.Instance.Raise(new OnOptionsButton());
+                _spamButtons.Add(spamButton);
+
+                _buttonsHoldTime[i] = 0.0f;
+            }
+
+            if (IsButtonReleased(lTestedButton))
+            {
+                if (_buttonsHoldTime[i] <= clickMaximumHoldTime)
+                {
+                    _buttonsClickValidityTime[i] = clickValidityTime;
+                }
+                _buttonsHoldTime[i] = -1.0f;
+            }
+
+            if (_buttonsHoldTime[i] >= 0.0f)
+            {
+                _buttonsHoldTime[i] += Time.deltaTime;
+            }
+
+            if (_buttonsClickValidityTime[i] >= 0.0f)
+            {
+                _buttonsClickValidityTime[i] -= Time.deltaTime;
+                if (_buttonsClickValidityTime[i] < 0.0f)
+                {
+                    _buttonsClickValidityTime[i] = -1.0f;
+                }
+            }
+        }
+
+        UpdateSpamButtonsTimer();
+
         #endregion
 
-        #region Sticks
+        #region Update Swipe
 
-        _leftHorizontalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.LEFT_STICK_HORIZONTAL); // get input by name or action id
-        _leftVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.LEFT_STICK_VERTICAL);
+        if (PS4Controller.Instance.IsTouchpadPressed())
+        {
+            _startPosition = PS4Controller.Instance.GetFingerPositionOnTouchpad();
+        } else if (PS4Controller.Instance.IsTouchpadReleased()) {
+            _endPosition = PS4Controller.Instance.GetFingerPositionOnTouchpad();
+            _swipeTimer = _swipeValidityTime;
+        }
 
-        _rightHorizontalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.RIGHT_STICK_HORIZONTAL); // get input by name or action id
-        _rightVerticalAxis = Utils_Variables.REWIRED_PLAYER.GetAxis(Utils_Variables.RIGHT_STICK_VERTICAL);
+        if (_swipeTimer > 0.0f)
+        {
+            _swipeTimer -= Time.deltaTime;
+            if (_swipeTimer <= 0.0f)
+            {
+                _swipeTimer = -1.0f;
+            }
+        }
 
-        bool leftStickButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.LEFT_STICK_BUTTON_ACTION);
-        if (leftStickButton) EventsManager.Instance.Raise(new OnLeftStickButton());
-
-        bool rightStickButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.RIGHT_STICK_BUTTON_ACTION);
-        if (rightStickButton) EventsManager.Instance.Raise(new OnRightStickButton());
-        #endregion
-
-        #region Left Buttons
-
-        bool dPadRightButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.D_PAD_RIGHT_BUTTON_ACTION);
-        if (dPadRightButton) EventsManager.Instance.Raise(new OnDPadRightButton());
-
-        bool dPadLeftButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.D_PAD_LEFT_BUTTON_ACTION);
-        if (dPadLeftButton) EventsManager.Instance.Raise(new OnDPadLeftButton());
-
-        bool dPadUpButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.D_PAD_UP_BUTTON_ACTION);
-        if (dPadUpButton) EventsManager.Instance.Raise(new OnDPadUpButton());
-
-        bool dPadDownButton = Utils_Variables.REWIRED_PLAYER.GetButtonDown(Utils_Variables.D_PAD_DOWN_BUTTON_ACTION);
-        if (dPadDownButton) EventsManager.Instance.Raise(new OnDPadBottomButton());
         #endregion
     }
 }
