@@ -16,6 +16,7 @@ public class PresentObject : MonoBehaviour
 
     private void Update()
     {
+        if (PastManager.instance.state == Enums.E_PAST_STATE.PRESENT) SetModePresent();
         if (PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
     }
 
