@@ -38,7 +38,7 @@ public class PastManager : MonoBehaviour
         if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) GoToPreviousState();
         if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) SetInteractMode();
 
-        if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+        //if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
 
         if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayPastZone();
         if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) RemovePastZone();
@@ -46,7 +46,7 @@ public class PastManager : MonoBehaviour
 
     void RemovePastZone()
     {
-        if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+        //if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
 
         SetPresentMode();
         _pastZone.Remove();
@@ -61,8 +61,15 @@ public class PastManager : MonoBehaviour
     void SetPresentMode()
     {
         _state = Enums.E_PAST_STATE.PRESENT;
+        GameManager.instance.SetModePlay();
 
         int length = _pastObjectsArray.Length;
+        if (_pastObjectNearPlayer != null)
+        {
+            _pastObjectNearPlayer.SetModeNearPlayer();
+            _pastObjectNearPlayer.SetModeNotDiscovered();
+            _pastObjectNearPlayer = null;
+        }
 
         for(int i = 0; i < length; i++)
         {
