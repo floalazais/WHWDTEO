@@ -53,6 +53,10 @@ public class PastObject : MonoBehaviour
 
     public void SetModeNotDiscovered()
     {
+        //If we desactive the past zone when interacting 
+        transform.position = _originalPosition;
+        transform.rotation = _originalRotation;
+
         _meshRenderer.enabled = false;
         if(_text != null) _text.enabled = false;
         _collider.isTrigger = true;
@@ -65,7 +69,7 @@ public class PastObject : MonoBehaviour
 
         if (distance < 1.5f)
         {
-            PastManager.instance.SetNearObject(this);
+            PastManager.instance.SetNearObjectToInteractionState(this);
         }
 
         else if(distance > 3f)
