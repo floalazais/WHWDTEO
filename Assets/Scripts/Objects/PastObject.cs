@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PastObject : MonoBehaviour
 {
     protected MeshRenderer _meshRenderer = null;
     protected Collider _collider = null;
-    protected TextMeshPro _text = null;
+    [SerializeField] protected Text _text = null;
     protected Vector3 _originalPosition;
     protected Quaternion _originalRotation;
 
@@ -15,7 +16,6 @@ public class PastObject : MonoBehaviour
     {
         _meshRenderer = GetComponent<MeshRenderer>();
         _collider = GetComponent<Collider>();
-        _text = GetComponentInChildren<TextMeshPro>();
 
         _originalPosition = transform.position;
         _originalRotation = transform.rotation;
