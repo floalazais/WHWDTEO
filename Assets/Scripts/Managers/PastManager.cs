@@ -45,11 +45,11 @@ public class PastManager : MonoBehaviour
     #region State Methods
     void SetPresentMode()
     {
+        //If we desactive the past zone when reading an object description
+        if (_state == Enums.E_PAST_STATE.DESCRIPTION) UIManager.instance.RemoveScreen();
+
         _state = Enums.E_PAST_STATE.PRESENT;
         GameManager.instance.SetModePlay();
-
-        //If we desactive the past zone when reading an object description
-        if(_state == Enums.E_PAST_STATE.DESCRIPTION) UIManager.instance.RemoveScreen();
 
         if (_pastObjectNearPlayer != null)
         {
