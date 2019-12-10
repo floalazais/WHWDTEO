@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PastManager : MonoBehaviour
 {
-    [SerializeField] PastZone _pastZone;
+    [SerializeField] PastZone _pastZone = null;
 
     public static PastManager instance { get { return _instance; } }
     static PastManager _instance;
