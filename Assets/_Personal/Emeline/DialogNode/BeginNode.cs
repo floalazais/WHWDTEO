@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using XNode;
+
+public class BeginNode : DialogNode {
+
+    [Output] public string Start;
+
+	// Use this for initialization
+	protected override void Init() {
+		base.Init();
+	}
+
+    public override bool Update()
+    {
+        return true;
+    }
+
+    public override DialogNode GetNextNode()
+    {
+        return GetOutputPort("Start").Connection.node as DialogNode;
+    }
+}
