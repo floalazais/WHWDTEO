@@ -23,10 +23,8 @@ public partial class AkBuildPreprocessor
 			case UnityEditor.BuildTarget.iOS:
 			case UnityEditor.BuildTarget.tvOS:
 				return "iOS";
-
-			case UnityEditor.BuildTarget.StandaloneLinux:
+                
 			case UnityEditor.BuildTarget.StandaloneLinux64:
-			case UnityEditor.BuildTarget.StandaloneLinuxUniversal:
 				return "Linux";
 
 #if UNITY_2017_3_OR_NEWER

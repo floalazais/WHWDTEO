@@ -1,3 +1,6 @@
+using System.Configuration;
+using UnityEditor;
+
 public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 {
 	[UnityEngine.HideInInspector]
@@ -401,11 +404,12 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 #endregion
 
 #if UNITY_EDITOR
-	[UnityEditor.MenuItem("Edit/Project Settings/Wwise Initialization Settings")]
-	private static void WwiseInitializationSettingsMenuItem()
+	[UnityEditor.SettingsProvider]
+	private static UnityEditor.SettingsProvider WwiseInitializationSettingsMenuItem()
 	{
-		UnityEditor.Selection.activeObject = Instance;
-	}
+        var provider = AssetSettingsProvider.CreateProviderFromObject("Wwise Initialization Settings", Instance);
+        return provider;
+    }
 
 	private static readonly string SettingsRelativeDirectory = System.IO.Path.Combine("Wwise", "Resources");
 	private static readonly string SettingsAssetDirectory = System.IO.Path.Combine("Assets", SettingsRelativeDirectory);

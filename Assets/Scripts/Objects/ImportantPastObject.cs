@@ -83,7 +83,6 @@ public class ImportantPastObject : PastObject
 
     public override void SetModeInteract()
     {
-        print("mdlol");
         GameManager.instance.SetModeManipulation();
     }
 
