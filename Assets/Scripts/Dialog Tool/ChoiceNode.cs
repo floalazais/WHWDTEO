@@ -22,8 +22,21 @@ public class ChoiceNode : DialogNode {
     // Use this for initialization
     protected override void Init() {
 		base.Init();
-		
+        
+
 	}
+
+    public string[] GetChoicesText()
+    {
+        string[] choicesTextArray = new string[choicesArray.Length];
+
+        for(int i = 0; i < choicesArray.Length; i++)
+        {
+            choicesTextArray[i] = choicesArray[i].label;
+        }
+
+        return choicesTextArray;
+    }
 
     public override bool Update()
     {

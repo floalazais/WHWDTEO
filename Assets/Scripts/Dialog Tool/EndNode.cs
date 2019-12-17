@@ -16,8 +16,15 @@ public class EndNode : DialogNode {
 
     public override bool Update()
     {
+        if (Input.GetKey(KeyCode.Return)) return true;
+
         Debug.Log(EndText);
-        return true;
+        return false;
+    }
+
+    public string GetEndText()
+    {
+        return EndText;
     }
 
     public override DialogNode GetNextNode()

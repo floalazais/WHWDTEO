@@ -20,8 +20,16 @@ public class CharacterTalkNode : DialogNode {
 
     public override bool Update()
     {
+        if (Input.GetKey(KeyCode.Return)) return true;
+
         Debug.Log(dialogLine);
-        return true;
+        return false;
+
+    }
+
+    public string GetDialogText()
+    {
+        return dialogLine;
     }
 
     public override DialogNode GetNextNode()
