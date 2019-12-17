@@ -4,27 +4,56 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance { get { return _instance; } }
-    static UIManager _instance;
+    public static UIManager instance { get; private set; }
 
     [SerializeField] RectTransform _descriptionObjectScreen = null;
     RectTransform _currentScreen = null;
+    RectTransform _choicePanel = null;
+    RectTransform _dialogPanel = null;
 
     private void Awake()
     {
-        if (_instance != null)
+        if (instance != null)
         {
             Debug.LogError("ALREADY INSTANCE CREATED " + name);
-            Destroy(_instance);
+            Destroy(instance);
         }
 
-        _instance = this;
+        instance = this;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _currentScreen = _descriptionObjectScreen;
+        _choicePanel = ChoicePanel.instance.GetComponent<RectTransform>();
+        _dialogPanel = DialogPanel.instance.GetComponent<RectTransform>();
+
+        _choicePanel.gameObject.SetActive(false);
+        _dialogPanel.gameObject.SetActive(false);
+    }
+
+    public void OnStartDialog()
+    {
+        OnDialogScreen();
+    }
+
+    public void OnEndDialog()
+    {
+        if (_currentScreen != null) _currentScreen.gameObject.SetActive(false);
+    }
+
+    public void OnDialogScreen()
+    {
+        if(_currentScreen != null) _currentScreen.gameObject.SetActive(false);
+        _currentScreen = _dialogPanel;
+        _currentScreen.gameObject.SetActive(true);
+    }
+
+    public void OnChoiceScreen()
+    {
+        _currentScreen.gameObject.SetActive(false);
+        _currentScreen = _choicePanel;
+        _currentScreen.gameObject.SetActive(true);
     }
 
     public void OnDescriptionObject()
