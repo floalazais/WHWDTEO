@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PastObject : MonoBehaviour
 {
     protected MeshRenderer _meshRenderer = null;
-    protected Collider _collider = null;
     [SerializeField] protected Text _text = null;
     protected Vector3 _originalPosition;
     protected Quaternion _originalRotation;
@@ -15,13 +14,11 @@ public class PastObject : MonoBehaviour
     void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        _collider = GetComponent<Collider>();
 
         _originalPosition = transform.position;
         _originalRotation = transform.rotation;
 
         _meshRenderer.enabled = false;
-        _collider.isTrigger = true;
         if(_text != null) _text.enabled = false;
     }
 
@@ -59,7 +56,6 @@ public class PastObject : MonoBehaviour
 
         _meshRenderer.enabled = false;
         if(_text != null) _text.enabled = false;
-        _collider.isTrigger = true;
     }
 
     protected void CheckPlayerDistance()
