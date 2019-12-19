@@ -3,31 +3,6 @@ using UnityEngine;
 
 public class W_Event { }
 
-#region Inputs Events
-
-public class OnRightStickMove : W_Event
-{
-    public Vector3 move;
-    public OnRightStickMove(Vector3 pVec)
-    {
-        move = pVec;
-    }
-}
-
-public class OnLeftStickMove : W_Event
-{
-    public Vector3 move;
-    public OnLeftStickMove(Vector3 pVec)
-    {
-        move = pVec;
-    }
-}
-
-public class OnTouch : W_Event { }
-public class OnReleaseTouch : W_Event { }
-
-#endregion
-
 #region Gamepad Events
 
 public class OnVibrate : W_Event
@@ -49,6 +24,30 @@ public class OnStopVibrate : W_Event { }
 public class OnLightSwitchColor : W_Event { }
 public class OnLightFlash : W_Event { }
 #endregion
+
+public class OnAnimatorEvent : W_Event
+{
+    public Enums.E_CHARACTER character;
+    public string animatorParameter;
+
+    public OnAnimatorEvent(Enums.E_CHARACTER pCharacter, string pAnimatorParameter)
+    {
+        character = pCharacter;
+        animatorParameter = pAnimatorParameter;
+    }
+}
+
+public class OnFacialEvent : W_Event
+{
+    public Enums.E_CHARACTER character;
+    public string facialParameter;
+
+    public OnFacialEvent(Enums.E_CHARACTER pCharacter, string pFacialParameter)
+    {
+        character = pCharacter;
+        facialParameter = pFacialParameter;
+    }
+}
 
 public class EventsManager
 {

@@ -10,6 +10,8 @@ abstract public class DialogNode : Node {
 		base.Init();
 	}
 
+    abstract public void Activate();
+
     abstract public bool Update();
 
     abstract public DialogNode GetNextNode();

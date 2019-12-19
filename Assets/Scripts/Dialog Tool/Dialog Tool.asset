@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: -360}
+  position: {x: -952, y: -456}
   ports:
     keys:
     - previousDialog
@@ -48,8 +48,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: End
-        node: {fileID: -2015838537923302582}
+      - fieldName: previous
+        node: {fileID: -8084922982687748693}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -60,8 +60,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: End
-        node: {fileID: 7206071785717321129}
+      - fieldName: previous
+        node: {fileID: -8084922982687748693}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -72,8 +72,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: End
-        node: {fileID: -2505604878473283510}
+      - fieldName: previous
+        node: {fileID: -8084922982687748693}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -83,10 +83,159 @@ MonoBehaviour:
   choicesArray:
   - label: Sorry I don't speak Latin.
     locked: 0
+    condition: 
   - label: Alea jacta est.
-    locked: 0
+    locked: 1
+    condition: isLatin
   - label: Boi
     locked: 0
+    condition: 
+--- !u!114 &-8084922982687748693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa1788b7843f90479df5824303e0861, type: 3}
+  m_Name: Set Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -472, y: -392}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: -8084922982687748693}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: choicesArray 2
+        node: {fileID: -8407647499133055060}
+        reroutePoints: []
+      - fieldName: choicesArray 1
+        node: {fileID: -8407647499133055060}
+        reroutePoints: []
+      - fieldName: choicesArray 0
+        node: {fileID: -8407647499133055060}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: -8084922982687748693}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previousDialog
+        node: {fileID: 1494326511061582494}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  condition: isLatin
+  value: 1
+--- !u!114 &-5439921764588534594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f543eb20c73d96e4586afdedf1e21112, type: 3}
+  m_Name: RP
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: -856}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: -5439921764588534594}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: -5439921764588534594}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  RP: 0
+  POINTS: 0
+  char1: 0
+  char2: 1
+--- !u!114 &-2725108823555014843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2418c5e2de09a543be67f832b232443, type: 3}
+  m_Name: Character Talk
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 344, y: -392}
+  ports:
+    keys:
+    - previousDialog
+    - nextDialog
+    values:
+    - _fieldName: previousDialog
+      _node: {fileID: -2725108823555014843}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: choicesArray 1
+        node: {fileID: 1494326511061582494}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextDialog
+      _node: {fileID: -2725108823555014843}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: End
+        node: {fileID: 7206071785717321129}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previousDialog: 
+  nextDialog: 
+  characterName: 0
+  dialogSound: 
+  animator: Neutral
+  facialTrigger: NeutralFace
+  dialogLine: Is aeda quid.
 --- !u!114 &-2505604878473283510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +249,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 328, y: -136}
+  position: {x: 728, y: -8}
   ports:
     keys:
     - End
@@ -110,15 +259,64 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: choicesArray 2
-        node: {fileID: -8407647499133055060}
+      - fieldName: nextDialog
+        node: {fileID: 718213071348032324}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   End: 0
-  EndText: Quo vadis?
+--- !u!114 &-2493722349996356203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2418c5e2de09a543be67f832b232443, type: 3}
+  m_Name: Character Talk
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 344, y: -712}
+  ports:
+    keys:
+    - previousDialog
+    - nextDialog
+    values:
+    - _fieldName: previousDialog
+      _node: {fileID: -2493722349996356203}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: choicesArray 0
+        node: {fileID: 1494326511061582494}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextDialog
+      _node: {fileID: -2493722349996356203}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: End
+        node: {fileID: -2015838537923302582}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previousDialog: 
+  nextDialog: 
+  characterName: 0
+  dialogSound: 
+  animator: Sad
+  facialTrigger: SadFace
+  dialogLine: Mea culpa.
 --- !u!114 &-2015838537923302582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +330,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 328, y: -392}
+  position: {x: 744, y: -696}
   ports:
     keys:
     - End
@@ -142,15 +340,14 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: choicesArray 0
-        node: {fileID: -8407647499133055060}
+      - fieldName: nextDialog
+        node: {fileID: -2493722349996356203}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   End: 0
-  EndText: Mea culpa.
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +367,193 @@ MonoBehaviour:
   - {fileID: -2015838537923302582}
   - {fileID: 7206071785717321129}
   - {fileID: -2505604878473283510}
+  - {fileID: -5439921764588534594}
+  - {fileID: 1877041512595107027}
+  - {fileID: -8084922982687748693}
+  - {fileID: -2493722349996356203}
+  - {fileID: -2725108823555014843}
+  - {fileID: 718213071348032324}
+  - {fileID: 1494326511061582494}
+--- !u!114 &718213071348032324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2418c5e2de09a543be67f832b232443, type: 3}
+  m_Name: Character Talk
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 344, y: -24}
+  ports:
+    keys:
+    - previousDialog
+    - nextDialog
+    values:
+    - _fieldName: previousDialog
+      _node: {fileID: 718213071348032324}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: choicesArray 2
+        node: {fileID: 1494326511061582494}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextDialog
+      _node: {fileID: 718213071348032324}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: End
+        node: {fileID: -2505604878473283510}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previousDialog: 
+  nextDialog: 
+  characterName: 0
+  dialogSound: 
+  animator: Question
+  facialTrigger: QuestionFace
+  dialogLine: Quid?
+--- !u!114 &1494326511061582494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd07f228fd2c0e6409df1523c8ccc223, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -152, y: -440}
+  ports:
+    keys:
+    - previousDialog
+    - choicesArray
+    - choicesArray 0
+    - choicesArray 1
+    - choicesArray 2
+    values:
+    - _fieldName: previousDialog
+      _node: {fileID: 1494326511061582494}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: next
+        node: {fileID: -8084922982687748693}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choicesArray
+      _node: {fileID: 1494326511061582494}
+      _typeQualifiedName: Choice[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choicesArray 0
+      _node: {fileID: 1494326511061582494}
+      _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previousDialog
+        node: {fileID: -2493722349996356203}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choicesArray 1
+      _node: {fileID: 1494326511061582494}
+      _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previousDialog
+        node: {fileID: -2725108823555014843}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choicesArray 2
+      _node: {fileID: 1494326511061582494}
+      _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previousDialog
+        node: {fileID: 718213071348032324}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  previousDialog: 
+  choicesArray:
+  - label: Sorry I don't speak Latin.
+    locked: 0
+    condition: 
+  - label: Alea jacta est.
+    locked: 1
+    condition: isLatin
+  - label: Boi
+    locked: 0
+    condition: 
+--- !u!114 &1877041512595107027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef010c8abb7df43b8c9d072a08ed43, type: 3}
+  m_Name: Camera
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -248, y: -856}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: 1877041512595107027}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: 1877041512595107027}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  moveName: 
 --- !u!114 &4128182323248793593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +567,7 @@ MonoBehaviour:
   m_Name: Character Talk
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -696, y: -376}
+  position: {x: -1304, y: -440}
   ports:
     keys:
     - previousDialog
@@ -215,12 +599,12 @@ MonoBehaviour:
       _dynamic: 0
   previousDialog: 
   nextDialog: 
+  characterName: 0
+  dialogSound: bla
+  animator: Smile
+  facialTrigger: HappyFace
   dialogLine: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum."'
+    tempor incididunt ut labore et dolore magna aliqua.."'
 --- !u!114 &7144757908433787454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +618,7 @@ MonoBehaviour:
   m_Name: Begin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1016, y: -376}
+  position: {x: -1720, y: -424}
   ports:
     keys:
     - Start
@@ -265,7 +649,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 328, y: -264}
+  position: {x: 744, y: -376}
   ports:
     keys:
     - End
@@ -275,12 +659,11 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: choicesArray 1
-        node: {fileID: -8407647499133055060}
+      - fieldName: nextDialog
+        node: {fileID: -2725108823555014843}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   End: 0
-  EndText: Atque iste ea des.
