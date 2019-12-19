@@ -64,13 +64,11 @@ public class ImportantPastObject : PastObject
     void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        _collider = GetComponent<Collider>();
 
         _originalPosition = transform.position;
         _originalRotation = transform.rotation;
 
         _meshRenderer.enabled = false;
-        _collider.isTrigger = true;
         _text.enabled = false;
     }
 
