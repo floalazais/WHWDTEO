@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode;
 
-public class EndNode : DialogNode {
+[NodeTint("#1061e3")]
+public class CameraNode : DialogNode
+{
+    [Input(ShowBackingValue.Never)] public string previous;
+    [Output(ShowBackingValue.Never)] public string next;
 
-    [Input(ShowBackingValue.Never)] public int End;
+    public string moveName; 
 
-    // Use this for initialization
     protected override void Init()
     {
         base.Init();
@@ -15,12 +17,12 @@ public class EndNode : DialogNode {
 
     public override void Activate()
     {
-        UIManager.instance.OnEndDialog();
+
     }
 
     public override bool Update()
     {
-        return true;
+        return false;
     }
 
     public override DialogNode GetNextNode()

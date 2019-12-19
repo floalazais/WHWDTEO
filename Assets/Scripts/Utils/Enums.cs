@@ -80,4 +80,17 @@ public static class Enums
         SWIPE,
         ROLL
     }
+
+    public enum E_RP_ACTION
+    {
+        ADD,
+        REMOVE
+    }
+
+    public enum E_CHARACTER
+    {
+        AVA,
+        MIA,
+        CALEB
+    }
 }

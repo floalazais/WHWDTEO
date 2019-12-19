@@ -12,6 +12,11 @@ public class BeginNode : DialogNode {
 		base.Init();
 	}
 
+    public override void Activate()
+    {
+
+    }
+
     public override bool Update()
     {
         return true;

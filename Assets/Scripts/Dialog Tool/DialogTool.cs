@@ -8,6 +8,8 @@ public class DialogTool : NodeGraph {
 
     DialogNode currentNode = null;
 
+    public Dictionary<string, bool> variablesDictionary = new Dictionary<string, bool>();
+
     public void StartDialog()
     {
         for (int i = 0; i < nodes.Count; i++)
@@ -26,30 +28,13 @@ public class DialogTool : NodeGraph {
         if (currentNode == null)
         {
             Debug.Log("dialogue fini");
-            UIManager.instance.OnEndDialog();
             return true;
         }
 
         if (currentNode.Update())
         {
             currentNode = currentNode.GetNextNode();
-            if (currentNode as ChoiceNode)
-            {
-                UIManager.instance.OnChoiceScreen();
-                ChoicePanel.instance.FillChoicesTextZone((currentNode as ChoiceNode).GetChoicesText());
-            }
-
-            else if(currentNode as CharacterTalkNode)
-            {
-                UIManager.instance.OnDialogScreen();
-                DialogPanel.instance.FillTextZone((currentNode as CharacterTalkNode).GetDialogText());
-            }
-
-            else if (currentNode as EndNode)
-            {
-                UIManager.instance.OnDialogScreen();
-                DialogPanel.instance.FillTextZone((currentNode as EndNode).GetEndText());
-            }
+            currentNode.Activate();
         }
 
         return false;
