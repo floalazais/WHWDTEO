@@ -348,6 +348,38 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   End: 0
+--- !u!114 &-1925813642066124139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ffcfc2ad640ad40842e9a3b25d8a2e, type: 3}
+  m_Name: Begin
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1704, y: -440}
+  ports:
+    keys:
+    - Start
+    values:
+    - _fieldName: Start
+      _node: {fileID: -1925813642066124139}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previousDialog
+        node: {fileID: 4128182323248793593}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Start: 
+  dialogName: latinTest
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +395,6 @@ MonoBehaviour:
   nodes:
   - {fileID: 4128182323248793593}
   - {fileID: -8407647499133055060}
-  - {fileID: 7144757908433787454}
   - {fileID: -2015838537923302582}
   - {fileID: 7206071785717321129}
   - {fileID: -2505604878473283510}
@@ -374,6 +405,7 @@ MonoBehaviour:
   - {fileID: -2725108823555014843}
   - {fileID: 718213071348032324}
   - {fileID: 1494326511061582494}
+  - {fileID: -1925813642066124139}
 --- !u!114 &718213071348032324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +611,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Start
-        node: {fileID: 7144757908433787454}
+        node: {fileID: -1925813642066124139}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -600,42 +632,11 @@ MonoBehaviour:
   previousDialog: 
   nextDialog: 
   characterName: 0
-  dialogSound: bla
+  dialogSound: boum
   animator: Smile
   facialTrigger: HappyFace
   dialogLine: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua.."'
---- !u!114 &7144757908433787454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ffcfc2ad640ad40842e9a3b25d8a2e, type: 3}
-  m_Name: Begin
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -1720, y: -424}
-  ports:
-    keys:
-    - Start
-    values:
-    - _fieldName: Start
-      _node: {fileID: 7144757908433787454}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: previousDialog
-        node: {fileID: 4128182323248793593}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Start: 
 --- !u!114 &7206071785717321129
 MonoBehaviour:
   m_ObjectHideFlags: 0

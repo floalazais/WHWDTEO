@@ -33,9 +33,9 @@ public class CharacterTalkNode : DialogNode {
 
     public override bool Update()
     {
-        if (Input.GetKey(KeyCode.Return)) return true;
+        if (Input.GetKeyDown(KeyCode.Return)) return true;
 
-        //Debug.Log(dialogLine);
+        Debug.Log(dialogLine);
         return false;
 
     }
