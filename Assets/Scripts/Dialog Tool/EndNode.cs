@@ -15,7 +15,6 @@ public class EndNode : DialogNode {
 
     public override void Activate()
     {
-        UIManager.instance.OnEndDialog();
     }
 
     public override bool Update()

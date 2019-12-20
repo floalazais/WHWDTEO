@@ -7,6 +7,8 @@ public class BeginNode : DialogNode {
 
     [Output] public string Start;
 
+    public string dialogName;
+
 	// Use this for initialization
 	protected override void Init() {
 		base.Init();

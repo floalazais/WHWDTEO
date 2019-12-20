@@ -10,12 +10,14 @@ public class DialogTool : NodeGraph {
 
     public Dictionary<string, bool> variablesDictionary = new Dictionary<string, bool>();
 
-    public void StartDialog()
+    public void StartDialog(string pDialogName)
     {
         for (int i = 0; i < nodes.Count; i++)
         {
             if (nodes[i] as BeginNode)
             {
+                if ((nodes[i] as BeginNode).dialogName != pDialogName) continue;
+
                 UIManager.instance.OnStartDialog();
                 currentNode = nodes[i] as DialogNode;
                 return;
@@ -33,6 +35,7 @@ public class DialogTool : NodeGraph {
 
         if (currentNode.Update())
         {
+            Debug.Log("lala");
             currentNode = currentNode.GetNextNode();
             currentNode.Activate();
         }
