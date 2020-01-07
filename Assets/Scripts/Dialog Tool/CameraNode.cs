@@ -8,7 +8,7 @@ public class CameraNode : DialogNode
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public string moveName; 
+    public string moveName;
 
     protected override void Init()
     {
