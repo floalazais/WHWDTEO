@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3641122445196871812
+--- !u!1 &501190063
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,66 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3641122445196871819}
-  - component: {fileID: 3641122445196871818}
+  - component: {fileID: 501190064}
+  - component: {fileID: 501190065}
   m_Layer: 0
-  m_Name: Special Inputs
+  m_Name: DialogManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3641122445196871819
+--- !u!4 &501190064
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641122445196871812}
+  m_GameObject: {fileID: 501190063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3641122445750895308}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501190065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501190063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f208933f263e87b47b3c54afd613eda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogGraph: {fileID: 11400000, guid: 0ab4f97ee5324b64ebf045949797ea41, type: 2}
+--- !u!1 &1142673422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142673423}
+  - component: {fileID: 1142673424}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1142673423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142673422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,19 +75,19 @@ Transform:
   m_Father: {fileID: 3641122445750895308}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3641122445196871818
+--- !u!114 &1142673424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641122445196871812}
+  m_GameObject: {fileID: 1142673422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed163a8453c8244418f7d72130b26419, type: 3}
+  m_Script: {fileID: 11500000, guid: bd4c294a2985fe745a2b32a43c94edcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spamGap: 0.5
+  test: 0
 --- !u!1 &3641122445455538338
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3641122445750895308}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3641122445455538336
 MonoBehaviour:
@@ -118,11 +162,11 @@ Transform:
   - {fileID: 3641122445974296980}
   - {fileID: 3641122446692052323}
   - {fileID: 3641122446319390472}
-  - {fileID: 3641122446186374724}
   - {fileID: 3641122445455538337}
   - {fileID: 3641122447115098183}
   - {fileID: 3641122446305895513}
-  - {fileID: 3641122445196871819}
+  - {fileID: 501190064}
+  - {fileID: 1142673423}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -340,7 +384,7 @@ MonoBehaviour:
         _ruleSets: []
     actions:
     - _id: 0
-      _name: Left Stick Horizontal
+      _name: LEFT_STICK_HORIZONTAL
       _type: 0
       _descriptiveName: Left Stick Horizontal
       _positiveDescriptiveName: Left Stick Move Right
@@ -349,7 +393,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 6
-      _name: Right Stick Horizontal
+      _name: RIGHT_STICK_HORIZONTAL
       _type: 0
       _descriptiveName: Right Stick Horizontal
       _positiveDescriptiveName: Right Stick Move Right
@@ -358,7 +402,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 1
-      _name: Left Stick Vertical
+      _name: LEFT_STICK_VERTICAL
       _type: 0
       _descriptiveName: Left Stick Vertical
       _positiveDescriptiveName: Left Stick Move Right
@@ -367,7 +411,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 7
-      _name: Right Stick Vertical
+      _name: RIGHT_STICK_VERTICAL
       _type: 0
       _descriptiveName: Right Stick Vertical
       _positiveDescriptiveName: Right Stick Move Right
@@ -376,7 +420,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 2
-      _name: Cross Button
+      _name: CROSS_BUTTON
       _type: 1
       _descriptiveName: Cross Button
       _positiveDescriptiveName: 
@@ -385,7 +429,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 3
-      _name: Round Button
+      _name: ROUND_BUTTON
       _type: 1
       _descriptiveName: Round Button
       _positiveDescriptiveName: 
@@ -394,7 +438,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 4
-      _name: Triangle Button
+      _name: TRIANGLE_BUTTON
       _type: 1
       _descriptiveName: Triangle Button
       _positiveDescriptiveName: 
@@ -403,7 +447,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 5
-      _name: Square Button
+      _name: SQUARE_BUTTON
       _type: 1
       _descriptiveName: Square Button
       _positiveDescriptiveName: 
@@ -412,7 +456,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 8
-      _name: R1 Button
+      _name: R1_BUTTON
       _type: 1
       _descriptiveName: R1 Button
       _positiveDescriptiveName: 
@@ -421,7 +465,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 11
-      _name: L1 Button
+      _name: L1_BUTTON
       _type: 1
       _descriptiveName: L1 Button
       _positiveDescriptiveName: 
@@ -430,7 +474,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 10
-      _name: L2 Button
+      _name: L2_BUTTON
       _type: 1
       _descriptiveName: L2 Button
       _positiveDescriptiveName: 
@@ -439,7 +483,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 9
-      _name: R2 Button
+      _name: R2_BUTTON
       _type: 1
       _descriptiveName: R2 Button
       _positiveDescriptiveName: 
@@ -448,7 +492,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 18
-      _name: PlayStation Button
+      _name: PS_BUTTON
       _type: 1
       _descriptiveName: PlayStation Button
       _positiveDescriptiveName: 
@@ -457,7 +501,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 19
-      _name: Share Button
+      _name: SHARE_BUTTON
       _type: 1
       _descriptiveName: Share Button
       _positiveDescriptiveName: 
@@ -466,7 +510,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 20
-      _name: Options Button
+      _name: OPTIONS_BUTTON
       _type: 1
       _descriptiveName: Options Button
       _positiveDescriptiveName: 
@@ -475,7 +519,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 21
-      _name: Left Stick Button
+      _name: LEFT_STICK_BUTTON
       _type: 1
       _descriptiveName: Left Stick Button
       _positiveDescriptiveName: 
@@ -484,7 +528,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 22
-      _name: Right Stick Button
+      _name: RIGHT_STICK_BUTTON
       _type: 1
       _descriptiveName: Right Stick Button
       _positiveDescriptiveName: 
@@ -493,7 +537,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 23
-      _name: D-Pad Right
+      _name: D_PAD_RIGHT_BUTTON
       _type: 1
       _descriptiveName: D-Pad Right
       _positiveDescriptiveName: 
@@ -502,7 +546,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 26
-      _name: D-Pad Left
+      _name: D_PAD_LEFT_BUTTON
       _type: 1
       _descriptiveName: D-Pad Left
       _positiveDescriptiveName: 
@@ -511,7 +555,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 25
-      _name: D-Pad Up
+      _name: D_PAD_UP_BUTTON
       _type: 1
       _descriptiveName: D-Pad Up
       _positiveDescriptiveName: 
@@ -520,7 +564,7 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 24
-      _name: D-Pad Down
+      _name: D_PAD_DOWN_BUTTON
       _type: 1
       _descriptiveName: D-Pad Down
       _positiveDescriptiveName: 
@@ -912,7 +956,7 @@ MonoBehaviour:
     controllerMapLayoutManagerRuleSets: []
     controllerMapEnablerRuleSets: []
     playerIdCounter: 2
-    actionIdCounter: 27
+    actionIdCounter: 29
     actionCategoryIdCounter: 1
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 1
@@ -929,50 +973,6 @@ MonoBehaviour:
     controllerMapEnablerSetIdCounter: 0
   _controllerDataFiles: {fileID: 11400000, guid: d21d2b20df8369642b76aafbb2576ba7,
     type: 2}
---- !u!1 &3641122446186374726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3641122446186374724}
-  - component: {fileID: 3641122446186374725}
-  m_Layer: 0
-  m_Name: Gesture Recognition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3641122446186374724
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641122446186374726}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3641122445750895308}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3641122446186374725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641122446186374726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9e25ba087cac04c88639e254166816, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  permissionZone: 0.5
 --- !u!1 &3641122446305895514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1002,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3641122445750895308}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3641122446305895512
 MonoBehaviour:
@@ -1060,10 +1060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22b73cfd62f4054d90b32a136c690e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _touch1isTouching: 0
-  _touch2isTouching: 0
-  _exTouch1isTouching: 0
-  _exTouch2isTouching: 0
 --- !u!1 &3641122446692052349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de03c202bdefde843b0b20d2ed8e37b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdTime: 2
+  clickMaximumHoldTime: 2
+  clickValidityTime: 2
+  _spamGap: 1
+  _numberSpam: 3
+  _swipeValidityTime: 0.5
 --- !u!1 &3641122447115098176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3641122445750895308}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3641122447115098182
 MonoBehaviour:

@@ -2,26 +2,23 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PastObject : MonoBehaviour
 {
     protected MeshRenderer _meshRenderer = null;
-    protected Collider _collider = null;
-    protected TextMeshPro _text = null;
+    [SerializeField] protected Text _text = null;
     protected Vector3 _originalPosition;
     protected Quaternion _originalRotation;
 
     void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        _collider = GetComponent<Collider>();
-        _text = GetComponentInChildren<TextMeshPro>();
 
         _originalPosition = transform.position;
         _originalRotation = transform.rotation;
 
         _meshRenderer.enabled = false;
-        _collider.isTrigger = true;
         if(_text != null) _text.enabled = false;
     }
 
@@ -53,9 +50,12 @@ public class PastObject : MonoBehaviour
 
     public void SetModeNotDiscovered()
     {
+        //If we desactive the past zone when interacting 
+        transform.position = _originalPosition;
+        transform.rotation = _originalRotation;
+
         _meshRenderer.enabled = false;
         if(_text != null) _text.enabled = false;
-        _collider.isTrigger = true;
     }
 
     protected void CheckPlayerDistance()
@@ -65,7 +65,7 @@ public class PastObject : MonoBehaviour
 
         if (distance < 1.5f)
         {
-            PastManager.instance.SetNearObject(this);
+            PastManager.instance.SetNearObjectToInteractionState(this);
         }
 
         else if(distance > 3f)

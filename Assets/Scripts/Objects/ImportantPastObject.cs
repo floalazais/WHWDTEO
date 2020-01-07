@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
 [System.Serializable]
@@ -65,14 +64,11 @@ public class ImportantPastObject : PastObject
     void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        _collider = GetComponent<Collider>();
-        _text = GetComponentInChildren<TextMeshPro>();
 
         _originalPosition = transform.position;
         _originalRotation = transform.rotation;
 
         _meshRenderer.enabled = false;
-        _collider.isTrigger = true;
         _text.enabled = false;
     }
 
@@ -85,7 +81,6 @@ public class ImportantPastObject : PastObject
 
     public override void SetModeInteract()
     {
-        print("mdlol");
         GameManager.instance.SetModeManipulation();
     }
 
