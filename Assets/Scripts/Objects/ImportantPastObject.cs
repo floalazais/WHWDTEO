@@ -75,7 +75,7 @@ public class ImportantPastObject : PastObject
     // Update is called once per frame
     void Update()
     {
-        if (PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
+        //if (PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
         if (PastManager.instance.state == Enums.E_PAST_STATE.INTERACT) CheckInputOrder();
     }
 

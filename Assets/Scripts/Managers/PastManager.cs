@@ -40,6 +40,44 @@ public class PastManager : MonoBehaviour
 
         if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayPastZone();
         if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) RemovePastZone();
+
+        if (state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
+    }
+
+    protected void CheckPlayerDistance()
+    {
+        float lShortestDistance = 0;
+
+        for (int i = 0; i < _pastObjectsArray.Length; i++)
+        {
+            PastObject lPastObject = _pastObjectsArray[i];
+
+            float distance = Vector3.Distance(lPastObject.transform.position, Controller.instance.transform.position);
+            if (i == 0) lShortestDistance = distance;
+            //Debug.DrawLine(MyCharacter.instance.transform.position, transform.position);
+
+            if (distance < 1.5f)
+            {
+                if (distance <= lShortestDistance)
+                {
+                    lShortestDistance = distance;
+                    SetNearObjectToInteractionState(lPastObject);
+                }
+            }
+
+            else if (distance > 3f)
+            {
+                if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+                lPastObject.SetModeNotDiscovered();
+            }
+
+            else
+            {
+                if (_pastObjectNearPlayer == lPastObject) _pastObjectNearPlayer = null;
+                lPastObject.SetModeDiscovered();
+            }
+
+        }
     }
 
     #region State Methods
@@ -128,7 +166,7 @@ public class PastManager : MonoBehaviour
 
     public void SetNearPastObjectInDiscoveredMode(PastObject pObject)
     {
-        if(_pastObjectNearPlayer == pObject)
+        if (_pastObjectNearPlayer == pObject)
         {
             _pastObjectNearPlayer.SetModeDiscovered();
             _pastObjectNearPlayer = null;
@@ -140,5 +178,5 @@ public class PastManager : MonoBehaviour
     {
         _pastObjectNearPlayer = pObject;
         _pastObjectNearPlayer.SetModeNearPlayer();
-    }  
+    }
 }
