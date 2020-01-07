@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class DialogManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DialogManager : MonoBehaviour
 
     public DialogTool _dialogGraph;
     bool dialogRunning = false;
+
+    public PlayableDirector playableDirector = null;
 
     void Awake()
     {
@@ -32,6 +35,12 @@ public class DialogManager : MonoBehaviour
     void Update()
     {
         if (!dialogRunning) return;
+
+        if (_dialogGraph.timelineLaunched != null)
+        {
+            TimelineManager.instance.PlayTimeline(_dialogGraph.timelineLaunched);
+            _dialogGraph.timelineLaunched = null;
+        }
 
         if (_dialogGraph.UpdateNodes())
         {
