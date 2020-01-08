@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: Begin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1704, y: -440}
+  position: {x: -1784, y: -456}
   ports:
     keys:
     - Start
@@ -371,8 +371,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: previousDialog
-        node: {fileID: 4128182323248793593}
+      - fieldName: previous
+        node: {fileID: -1740837937825492019}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: Launch Timeline
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1608, y: -648}
+  position: {x: -1560, y: -456}
   ports:
     keys:
     - previous
@@ -405,7 +405,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Start
-        node: {fileID: 7718309065816628674}
+        node: {fileID: -1925813642066124139}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -416,8 +416,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: End
-        node: {fileID: 7202587844464478040}
+      - fieldName: previousDialog
+        node: {fileID: 4128182323248793593}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -636,7 +636,6 @@ MonoBehaviour:
   previous: 
   next: 
   moveName: 
-  test: {fileID: 7533806372316389584, guid: d7b20b57038bf05428e5b4662d4aef84, type: 3}
 --- !u!114 &4128182323248793593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,8 +660,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: Start
-        node: {fileID: -1925813642066124139}
+      - fieldName: next
+        node: {fileID: -1740837937825492019}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -710,10 +709,7 @@ MonoBehaviour:
       _node: {fileID: 7202587844464478040}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: next
-        node: {fileID: -1740837937825492019}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -772,10 +768,7 @@ MonoBehaviour:
       _node: {fileID: 7718309065816628674}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: previous
-        node: {fileID: -1740837937825492019}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0

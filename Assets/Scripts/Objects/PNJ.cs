@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PNJ : MonoBehaviour
 {
+    public string dialogName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class PNJ : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                DialogManager.instance.StartDialog("latinTest");
+                DialogManager.instance.StartDialog(dialogName);
                 GameManager.instance.SetModeNotPlay();
             }
         }
