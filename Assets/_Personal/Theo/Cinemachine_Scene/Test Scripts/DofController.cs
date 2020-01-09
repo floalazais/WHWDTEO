@@ -25,6 +25,5 @@ public class DofController : MonoBehaviour
         if (dofEnabled) dofComponent.focusMode.SetValue(new DepthOfFieldModeParameter(DepthOfFieldMode.UsePhysicalCamera, true));
         else dofComponent.focusMode.SetValue(new DepthOfFieldModeParameter(DepthOfFieldMode.Off, true));
         dofComponent.focusDistance.SetValue(new MinFloatParameter(focusDist, 0.1f, true));
-        Debug.Log(dofComponent.focusDistance);
     }
 }
