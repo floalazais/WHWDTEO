@@ -22,15 +22,12 @@ public class PastObject : MonoBehaviour
         if(_text != null) _text.enabled = false;
     }
 
-    private void Update()
-    {
-        if(PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
-    }
-
     public virtual void SetModeInteract()
     {
         transform.position = InspectionMode.instance.objectViewTransform.position;
         _meshRenderer.enabled = true;
+        gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
+
         if(_text != null) _text.enabled = false;
     }
 
@@ -40,6 +37,8 @@ public class PastObject : MonoBehaviour
         _meshRenderer.enabled = true;
         transform.position = _originalPosition;
         transform.rotation = _originalRotation;
+
+        gameObject.layer = Utils_Variables.LAYER_CAMERA_COLLISION;
     }
 
     public void SetModeDiscovered()
@@ -56,27 +55,7 @@ public class PastObject : MonoBehaviour
 
         _meshRenderer.enabled = false;
         if(_text != null) _text.enabled = false;
-    }
 
-    protected void CheckPlayerDistance()
-    {
-        float distance = Vector3.Distance(transform.position, Controller.instance.transform.position);
-        //Debug.DrawLine(MyCharacter.instance.transform.position, transform.position);
-
-        if (distance < 1.5f)
-        {
-            PastManager.instance.SetNearObjectToInteractionState(this);
-        }
-
-        else if(distance > 3f)
-        {
-            if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
-            SetModeNotDiscovered();
-        }
-
-        else
-        {
-            SetModeDiscovered();
-        }
+        gameObject.layer = Utils_Variables.LAYER_CAMERA_COLLISION;
     }
 }

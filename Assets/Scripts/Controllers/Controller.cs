@@ -178,9 +178,9 @@ public class Controller : MonoBehaviour
         _lookAt.position = Vector3.Lerp(_lookAt.position, lCameraLookAt, _cameraMovementSpeed * Time.deltaTime);
         _follow.position = Vector3.Lerp(_follow.position, lCameraFollow, _cameraMovementSpeed * Time.deltaTime);
 
-        _camera.transform.position = _follow.position;
+        /*_camera.transform.position = _follow.position;
         _camera.transform.rotation = Quaternion.LookRotation (_lookAt.position - _camera.transform.position);
-        _camera.transform.Rotate (0, 0, -_camera.transform.rotation.eulerAngles.z);
+        _camera.transform.Rotate (0, 0, -_camera.transform.rotation.eulerAngles.z);*/
     }
 
     void OnDrawGizmos()

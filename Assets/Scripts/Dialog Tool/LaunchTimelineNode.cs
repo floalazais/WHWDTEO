@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
+using XNode;
 
-[NodeTint("#1061e3")]
-public class CameraNode : DialogNode
-{
+public class LaunchTimelineNode : DialogNode {
+
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public string moveName;
+    public TimelineAsset timelineAsset;
 
     protected override void Init()
     {
@@ -17,16 +19,16 @@ public class CameraNode : DialogNode
 
     public override void Activate()
     {
-
+        (graph as DialogTool).timelineLaunched = timelineAsset;
     }
 
     public override bool Update()
     {
-        return false;
+        return true;
     }
 
     public override DialogNode GetNextNode()
     {
-        return null;
+        return GetOutputPort("next").Connection.node as DialogNode;
     }
 }

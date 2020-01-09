@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 using XNode;
 
 [CreateAssetMenu]
@@ -9,6 +11,7 @@ public class DialogTool : NodeGraph {
     DialogNode currentNode = null;
 
     public Dictionary<string, bool> variablesDictionary = new Dictionary<string, bool>();
+    public TimelineAsset timelineLaunched = null;
 
     public void StartDialog(string pDialogName)
     {
@@ -27,17 +30,17 @@ public class DialogTool : NodeGraph {
 
     public bool UpdateNodes()
     {
-        if (currentNode == null)
-        {
-            Debug.Log("dialogue fini");
-            return true;
-        }
-
         if (currentNode.Update())
         {
             Debug.Log("lala");
             currentNode = currentNode.GetNextNode();
-            currentNode.Activate();
+            if (currentNode != null)
+            {
+                currentNode.Activate();
+            } else {
+                Debug.Log("dialogue fini");
+                return true;
+            }
         }
 
         return false;
