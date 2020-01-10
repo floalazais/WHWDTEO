@@ -7,10 +7,9 @@ public class DialogManager : MonoBehaviour
 {
     public static DialogManager instance { get; private set; }
 
+    [SerializeField] Cinemachine.CinemachineVirtualCamera gameplayCamera;
     public DialogTool _dialogGraph;
     bool dialogRunning = false;
-
-    public PlayableDirector playableDirector = null;
 
     void Awake()
     {
@@ -27,8 +26,12 @@ public class DialogManager : MonoBehaviour
     {
         if (dialogRunning) return;
 
-        dialogRunning = true;
-        _dialogGraph.StartDialog(pDialogName);
+        dialogRunning = _dialogGraph.StartDialog(pDialogName);
+
+        if (dialogRunning)
+        {
+            GameManager.instance.SetGameStateNarration();
+        }
     }
 
     // Update is called once per frame
@@ -36,10 +39,15 @@ public class DialogManager : MonoBehaviour
     {
         if (!dialogRunning) return;
 
-        if (_dialogGraph.timelineLaunched != null)
+        if (_dialogGraph.currentTimeline != null)
         {
-            TimelineManager.instance.PlayTimeline(_dialogGraph.timelineLaunched);
-            _dialogGraph.timelineLaunched = null;
+            TimelineManager.instance.PlayTimeline(_dialogGraph.currentTimeline);
+            if (_dialogGraph.staticTimeline)
+            {
+                gameplayCamera.Priority = 0;
+            }
+            _dialogGraph.currentTimeline = null;
+            _dialogGraph.staticTimeline = false;
         }
 
         if (_dialogGraph.UpdateNodes())
@@ -47,7 +55,8 @@ public class DialogManager : MonoBehaviour
             dialogRunning = false;
 
             UIManager.instance.OnEndDialog();
-            GameManager.instance.SetModePlay();
+            GameManager.instance.SetGameStateExploration();
+            gameplayCamera.Priority = 10;
         }
     }
 }

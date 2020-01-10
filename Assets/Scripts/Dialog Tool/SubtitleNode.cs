@@ -5,12 +5,16 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using XNode;
 
-public class LaunchTimelineNode : DialogNode {
+[NodeWidth(400)]
+public class SubtitleNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public TimelineAsset timelineAsset;
+    [SerializeField] [TextArea(3, 5)] string subtitle = "";
+
+    public float displayTime = 0.0f;
+    float timer = 0.0f;
 
     protected override void Init()
     {
@@ -19,13 +23,21 @@ public class LaunchTimelineNode : DialogNode {
 
     public override void Activate()
     {
-        (graph as DialogTool).currentTimeline = timelineAsset;
-        (graph as DialogTool).staticTimeline = true;
+        timer = 0.0f;
+        UIManager.instance.OnDialogScreen();
+        DialogPanel.instance.FillTextZone(subtitle);
     }
 
     public override bool Update()
     {
-        return true;
+        timer += Time.deltaTime;
+        if (timer >= displayTime)
+        {
+            UIManager.instance.OnEndDialog();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public override DialogNode GetNextNode()

@@ -6,9 +6,9 @@ public static class Enums
 {
     public enum E_GAMESTATE
     {
-        PLAY,
-        NOT_PLAY,
-        MANIPULATION
+        EXPLORATION,
+        MANIPULATION,
+        NARRATION
     }
 
     public enum E_PAST_STATE

@@ -67,7 +67,7 @@ public class PastManager : MonoBehaviour
 
             else if (distance > 3f)
             {
-                if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+                if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
                 lPastObject.SetModeNotDiscovered();
             }
 
@@ -87,7 +87,7 @@ public class PastManager : MonoBehaviour
         if (_state == Enums.E_PAST_STATE.DESCRIPTION) UIManager.instance.RemoveScreen();
 
         _state = Enums.E_PAST_STATE.PRESENT;
-        GameManager.instance.SetModePlay();
+        GameManager.instance.SetGameStateExploration();
 
         if (_pastObjectNearPlayer != null)
         {
@@ -128,7 +128,7 @@ public class PastManager : MonoBehaviour
         _state = Enums.E_PAST_STATE.INTERACT;
         _pastObjectNearPlayer.SetModeInteract();
 
-        GameManager.instance.SetModeNotPlay();
+        GameManager.instance.SetGameStateNarration();
     }
 
     void GoToPreviousState()
@@ -145,7 +145,7 @@ public class PastManager : MonoBehaviour
         {
             SetNearObjectToInteractionState(_pastObjectNearPlayer);
             _state = Enums.E_PAST_STATE.SEARCH_MODE;
-            GameManager.instance.SetModePlay();
+            GameManager.instance.SetGameStateExploration();
 
             return;
         }

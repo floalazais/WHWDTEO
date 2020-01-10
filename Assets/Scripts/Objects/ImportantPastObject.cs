@@ -81,7 +81,7 @@ public class ImportantPastObject : PastObject
 
     public override void SetModeInteract()
     {
-        GameManager.instance.SetModeManipulation();
+        GameManager.instance.SetGameStateManipulation();
     }
 
     void CheckInputOrder()

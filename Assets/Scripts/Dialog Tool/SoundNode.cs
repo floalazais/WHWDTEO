@@ -5,12 +5,12 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using XNode;
 
-public class LaunchTimelineNode : DialogNode {
+public class SoundNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public TimelineAsset timelineAsset;
+    public AK.Wwise.Event sound;
 
     protected override void Init()
     {
@@ -19,8 +19,7 @@ public class LaunchTimelineNode : DialogNode {
 
     public override void Activate()
     {
-        (graph as DialogTool).currentTimeline = timelineAsset;
-        (graph as DialogTool).staticTimeline = true;
+        SoundManager.instance.PlaySound(sound.Id);
     }
 
     public override bool Update()

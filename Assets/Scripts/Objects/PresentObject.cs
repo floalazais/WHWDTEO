@@ -25,7 +25,7 @@ public class PresentObject : MonoBehaviour
 
         if (distance > 3f)
         {
-            //if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+            //if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
             SetModePresent();
         }
 

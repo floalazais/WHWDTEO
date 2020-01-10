@@ -5,7 +5,6 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance { get; private set; }
-    public int test;
 
     private void Awake()
     {
@@ -18,8 +17,8 @@ public class SoundManager : MonoBehaviour
         instance = this;
     }
 
-    public void PlaySound(string pSoundName)
+    public void PlaySound(uint eventId)
     {
-        print(pSoundName);
+        AkSoundEngine.PostEvent(eventId, gameObject);
     }
 }

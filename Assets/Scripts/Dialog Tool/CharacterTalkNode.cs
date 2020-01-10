@@ -25,7 +25,7 @@ public class CharacterTalkNode : DialogNode {
     {
         UIManager.instance.OnDialogScreen();
         DialogPanel.instance.FillTextZone(dialogLine);
-        SoundManager.instance.PlaySound(dialogSound);
+        //SoundManager.instance.PlaySound(dialogSound);
 
         EventsManager.Instance.Raise(new OnAnimatorEvent(characterName, animator));
         EventsManager.Instance.Raise(new OnFacialEvent(characterName, facialTrigger));
@@ -34,10 +34,8 @@ public class CharacterTalkNode : DialogNode {
     public override bool Update()
     {
         if (Input.GetKeyDown(KeyCode.Return)) return true;
-
-        Debug.Log(dialogLine);
+        
         return false;
-
     }
 
     public override DialogNode GetNextNode()

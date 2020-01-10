@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class TimelineManager : MonoBehaviour
 {
     public static TimelineManager instance { get; private set; }
-    public PlayableDirector playableDirector = null;
+    [SerializeField] PlayableDirector playableDirector = null;
 
     private void Awake()
     {

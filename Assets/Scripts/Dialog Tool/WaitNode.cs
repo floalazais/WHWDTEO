@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
+using XNode;
 
-[NodeTint("#1061e3")]
-public class CameraNode : DialogNode
-{
+public class WaitNode : DialogNode {
+
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public string moveName;
+    public float waitTime = 0.0f;
+    float timer = 0.0f;
 
     protected override void Init()
     {
@@ -17,16 +20,22 @@ public class CameraNode : DialogNode
 
     public override void Activate()
     {
-
+        timer = 0.0f;
     }
 
     public override bool Update()
     {
-        return false;
+        timer += Time.deltaTime;
+        if (timer >= waitTime)
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public override DialogNode GetNextNode()
     {
-        return null;
+        return GetOutputPort("next").Connection.node as DialogNode;
     }
 }

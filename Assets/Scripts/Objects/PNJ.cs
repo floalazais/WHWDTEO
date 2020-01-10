@@ -27,7 +27,7 @@ public class PNJ : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 DialogManager.instance.StartDialog(dialogName);
-                GameManager.instance.SetModeNotPlay();
+                GameManager.instance.SetGameStateNarration();
             }
         }
     }

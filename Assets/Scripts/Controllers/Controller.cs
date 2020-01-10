@@ -62,20 +62,16 @@ public class Controller : MonoBehaviour
         {
             Debug.LogError("could not get main camera.");
         }
-
-        _camera.transform.position = transform.position + Vector3.right * _cameraRightDistanceToPlayer;
-        _camera.transform.LookAt(_camera.transform.position + Vector3.back * _cameraBackDistanceToPlayer);
     }
 
     Vector3 lCameraOffset = Vector3.zero;
-    Vector3 lerpLookAt = Vector3.zero;
 
     float _blendValue = 0.0f;
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.state != Enums.E_GAMESTATE.PLAY) return;
+        if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
 
         RaycastHit wallHit = new RaycastHit ();
         

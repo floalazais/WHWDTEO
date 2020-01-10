@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     static GameManager _instance;
 
     public Enums.E_GAMESTATE state { get { return _state; } }
-    Enums.E_GAMESTATE _state = Enums.E_GAMESTATE.PLAY;
+    Enums.E_GAMESTATE _state = Enums.E_GAMESTATE.EXPLORATION;
 
     void Awake()
     {
@@ -24,21 +24,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AkSoundEngine.PostEvent("Event_Sine_Test", gameObject);
+
     }
 
-    public void SetModePlay()
+    public void SetGameStateExploration()
     {
-        _state = Enums.E_GAMESTATE.PLAY;
+        _state = Enums.E_GAMESTATE.EXPLORATION;
     }
 
-    public void SetModeNotPlay()
-    {
-        _state = Enums.E_GAMESTATE.NOT_PLAY;
-    }
-
-    public void SetModeManipulation()
+    public void SetGameStateManipulation()
     {
         _state = Enums.E_GAMESTATE.MANIPULATION;
+    }
+
+    public void SetGameStateNarration()
+    {
+        _state = Enums.E_GAMESTATE.NARRATION;
     }
 }

@@ -11,9 +11,10 @@ public class DialogTool : NodeGraph {
     DialogNode currentNode = null;
 
     public Dictionary<string, bool> variablesDictionary = new Dictionary<string, bool>();
-    public TimelineAsset timelineLaunched = null;
+    public TimelineAsset currentTimeline = null;
+    public bool staticTimeline = false;
 
-    public void StartDialog(string pDialogName)
+    public bool StartDialog(string pDialogName)
     {
         for (int i = 0; i < nodes.Count; i++)
         {
@@ -23,22 +24,21 @@ public class DialogTool : NodeGraph {
 
                 UIManager.instance.OnStartDialog();
                 currentNode = nodes[i] as DialogNode;
-                return;
+                return true;
             }
         }
+        return false;
     }
 
     public bool UpdateNodes()
     {
         if (currentNode.Update())
         {
-            Debug.Log("lala");
             currentNode = currentNode.GetNextNode();
             if (currentNode != null)
             {
                 currentNode.Activate();
             } else {
-                Debug.Log("dialogue fini");
                 return true;
             }
         }
