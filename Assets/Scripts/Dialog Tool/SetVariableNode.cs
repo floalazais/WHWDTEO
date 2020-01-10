@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[NodeTint("#f5bd25")]
+[NodeTint("#e056fd")]
 public class SetVariableNode : DialogNode
 {
     [Input(ShowBackingValue.Never)] public string previous;

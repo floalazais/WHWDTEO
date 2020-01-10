@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using XNode;
 
+[NodeTint("#aaffaa")]
 public class LaunchTimelineNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;

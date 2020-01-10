@@ -6,6 +6,7 @@ using UnityEngine.Timeline;
 using XNode;
 
 [NodeWidth(400)]
+[NodeTint("#8888ff")]
 public class SubtitleNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;

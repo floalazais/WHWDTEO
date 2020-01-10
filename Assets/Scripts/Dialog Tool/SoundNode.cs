@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using XNode;
 
+[NodeTint("#ff5555")]
 public class SoundNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
