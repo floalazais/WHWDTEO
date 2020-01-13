@@ -42,10 +42,7 @@ public class DialogManager : MonoBehaviour
         if (_dialogGraph.currentTimeline != null)
         {
             TimelineManager.instance.PlayTimeline(_dialogGraph.currentTimeline);
-            if (_dialogGraph.staticTimeline)
-            {
-                gameplayCamera.Priority = 0;
-            }
+            gameplayCamera.Priority = 0;
             _dialogGraph.currentTimeline = null;
             _dialogGraph.staticTimeline = false;
         }
