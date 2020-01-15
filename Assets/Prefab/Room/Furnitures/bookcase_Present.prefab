@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6837792422722975782}
   - component: {fileID: 2575972425590997520}
   - component: {fileID: 8107385527340531433}
-  - component: {fileID: 2189353517327940553}
+  - component: {fileID: 510819031736877581}
   m_Layer: 0
   m_Name: bookcase_Present
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2189353517327940553
+--- !u!114 &510819031736877581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,6 +88,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7548013330759436853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263d2cf77d0193b4bb267f888d7ec66e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0692d5c884701c54da067fa30a9154c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _memoryObjectMaterial: {fileID: 2100000, guid: 7148038d93384db4ab9e89b2e310478f,
+    type: 2}
+  _presentObjectMaterial: {fileID: 2100000, guid: 9088ce32f546e09468d8df4e9a5f4e33,
+    type: 2}
+  _memoryObjectFilter: {fileID: -5178661895559278292, guid: 6401c8a5d019db1498380d5d99a647b3,
+    type: 3}
+  _presentObjectFilter: {fileID: -5178661895559278292, guid: 6401c8a5d019db1498380d5d99a647b3,
+    type: 3}

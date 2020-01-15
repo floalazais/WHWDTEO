@@ -12,8 +12,8 @@ public class Choice
     public string condition;
 }
 
-[NodeTint("#dd444b")]
 [NodeWidth(350)]
+[NodeTint("#8888ff")]
 public class ChoiceNode : DialogNode {
     [Input(ShowBackingValue.Never)] public string previousDialog;
     [Output(dynamicPortList = true)] public Choice[] choicesArray;
@@ -67,18 +67,22 @@ public class ChoiceNode : DialogNode {
         {
             Debug.Log(choicesArray[0].label);
             selectedChoice = 0;
+            UIManager.instance.OnEndDialog();
             return true;
         } else if (Input.GetKeyDown(KeyCode.Q)) {
             Debug.Log(choicesArray[1].label);
             selectedChoice = 1;
+            UIManager.instance.OnEndDialog();
             return true;
         } else if(Input.GetKeyDown(KeyCode.S)) {
             Debug.Log(choicesArray[2].label);
             selectedChoice = 2;
+            UIManager.instance.OnEndDialog();
             return true;
         } else if (Input.GetKeyDown(KeyCode.D)) {
             Debug.Log(choicesArray[3].label);
             selectedChoice = 3;
+            UIManager.instance.OnEndDialog();
             return true;
         } else {
             return false;

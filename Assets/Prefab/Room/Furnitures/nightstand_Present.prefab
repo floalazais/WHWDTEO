@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3788102416323852014}
   - component: {fileID: 5316795870812245208}
   - component: {fileID: 1942604806859059233}
-  - component: {fileID: 60908311013552606}
+  - component: {fileID: 5187076366218337442}
   m_Layer: 0
   m_Name: nightstand_Present
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &60908311013552606
+--- !u!114 &5187076366218337442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,6 +88,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 200782691272934653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263d2cf77d0193b4bb267f888d7ec66e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0692d5c884701c54da067fa30a9154c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _memoryObjectMaterial: {fileID: 2100000, guid: 5f1a83d02e7fbf64d862f995c7d2151b,
+    type: 2}
+  _presentObjectMaterial: {fileID: 2100000, guid: 252ac7cf4bafb6746acb81b4aa861fa6,
+    type: 2}
+  _memoryObjectFilter: {fileID: -5178661895559278292, guid: 5d4466a7677c8f5449b147edefbb8983,
+    type: 3}
+  _presentObjectFilter: {fileID: -5178661895559278292, guid: 5d4466a7677c8f5449b147edefbb8983,
+    type: 3}

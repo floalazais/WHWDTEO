@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using XNode;
 
+[NodeTint("#aaffaa")]
 public class LaunchTimelineNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
@@ -19,7 +20,8 @@ public class LaunchTimelineNode : DialogNode {
 
     public override void Activate()
     {
-        (graph as DialogTool).timelineLaunched = timelineAsset;
+        (graph as DialogTool).currentTimeline = timelineAsset;
+        (graph as DialogTool).staticTimeline = true;
     }
 
     public override bool Update()

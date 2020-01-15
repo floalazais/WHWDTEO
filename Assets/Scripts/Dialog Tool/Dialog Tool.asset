@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -952, y: -456}
+  position: {x: -1128, y: -456}
   ports:
     keys:
     - previousDialog
@@ -27,8 +27,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: nextDialog
-        node: {fileID: 4128182323248793593}
+      - fieldName: next
+        node: {fileID: -7859931040485317923}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -90,6 +90,37 @@ MonoBehaviour:
   - label: Boi
     locked: 0
     condition: 
+--- !u!114 &-8389326123350892951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263de3211da909640b75b635a594c2ba, type: 3}
+  m_Name: End
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1744.9204, y: -20.562653}
+  ports:
+    keys:
+    - End
+    values:
+    - _fieldName: End
+      _node: {fileID: -8389326123350892951}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: next
+        node: {fileID: 636811761898765958}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  End: 0
 --- !u!114 &-8084922982687748693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +134,7 @@ MonoBehaviour:
   m_Name: Set Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -472, y: -392}
+  position: {x: -744, y: -456}
   ports:
     keys:
     - previous
@@ -114,13 +145,13 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: choicesArray 2
-        node: {fileID: -8407647499133055060}
-        reroutePoints: []
       - fieldName: choicesArray 1
         node: {fileID: -8407647499133055060}
         reroutePoints: []
       - fieldName: choicesArray 0
+        node: {fileID: -8407647499133055060}
+        reroutePoints: []
+      - fieldName: choicesArray 2
         node: {fileID: -8407647499133055060}
         reroutePoints: []
       _direction: 0
@@ -132,8 +163,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: previousDialog
-        node: {fileID: 1494326511061582494}
+      - fieldName: previous
+        node: {fileID: -286446309862100687}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -143,7 +174,7 @@ MonoBehaviour:
   next: 
   condition: isLatin
   value: 1
---- !u!114 &-5439921764588534594
+--- !u!114 &-7859931040485317923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,41 +183,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f543eb20c73d96e4586afdedf1e21112, type: 3}
-  m_Name: RP
+  m_Script: {fileID: 11500000, guid: 9da88ffa825a09a498f79541d410ccfa, type: 3}
+  m_Name: Subtitle
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -648, y: -856}
+  position: {x: -1560, y: -456}
   ports:
     keys:
     - previous
     - next
     values:
     - _fieldName: previous
-      _node: {fileID: -5439921764588534594}
+      _node: {fileID: -7859931040485317923}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: next
+        node: {fileID: -1740837937825492019}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: next
-      _node: {fileID: -5439921764588534594}
+      _node: {fileID: -7859931040485317923}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: previousDialog
+        node: {fileID: -8407647499133055060}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   previous: 
   next: 
-  RP: 0
-  POINTS: 0
-  char1: 0
-  char2: 1
---- !u!114 &-2725108823555014843
+  subtitle: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.."'
+  displayTime: 2
+--- !u!114 &-4427720381009376016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,47 +231,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2418c5e2de09a543be67f832b232443, type: 3}
-  m_Name: Character Talk
+  m_Script: {fileID: 11500000, guid: aa1b27753f55b2f4b82203ea9aa16243, type: 3}
+  m_Name: Sound
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 344, y: -392}
+  position: {x: -2056, y: -456}
   ports:
     keys:
-    - previousDialog
-    - nextDialog
+    - previous
+    - next
     values:
-    - _fieldName: previousDialog
-      _node: {fileID: -2725108823555014843}
+    - _fieldName: previous
+      _node: {fileID: -4427720381009376016}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: choicesArray 1
-        node: {fileID: 1494326511061582494}
+      - fieldName: Start
+        node: {fileID: -1925813642066124139}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: nextDialog
-      _node: {fileID: -2725108823555014843}
+    - _fieldName: next
+      _node: {fileID: -4427720381009376016}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: End
-        node: {fileID: 7206071785717321129}
+      - fieldName: previous
+        node: {fileID: -1740837937825492019}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  previousDialog: 
-  nextDialog: 
-  characterName: 0
-  dialogSound: 
-  animator: Neutral
-  facialTrigger: NeutralFace
-  dialogLine: Is aeda quid.
+  previous: 
+  next: 
+  sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &-2505604878473283510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +284,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 728, y: -8}
+  position: {x: 552, y: -248}
   ports:
     keys:
     - End
@@ -259,15 +294,15 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: nextDialog
-        node: {fileID: 718213071348032324}
+      - fieldName: next
+        node: {fileID: 7781472178324555007}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   End: 0
---- !u!114 &-2493722349996356203
+--- !u!114 &-2371883043321434834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,47 +311,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2418c5e2de09a543be67f832b232443, type: 3}
-  m_Name: Character Talk
+  m_Script: {fileID: 11500000, guid: 9da88ffa825a09a498f79541d410ccfa, type: 3}
+  m_Name: Subtitle
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 344, y: -712}
+  position: {x: 136, y: -408}
   ports:
     keys:
-    - previousDialog
-    - nextDialog
+    - previous
+    - next
     values:
-    - _fieldName: previousDialog
-      _node: {fileID: -2493722349996356203}
+    - _fieldName: previous
+      _node: {fileID: -2371883043321434834}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: choicesArray 0
+      - fieldName: choicesArray 1
         node: {fileID: 1494326511061582494}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: nextDialog
-      _node: {fileID: -2493722349996356203}
+    - _fieldName: next
+      _node: {fileID: -2371883043321434834}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: End
-        node: {fileID: -2015838537923302582}
+        node: {fileID: 7206071785717321129}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  previousDialog: 
-  nextDialog: 
-  characterName: 0
-  dialogSound: 
-  animator: Sad
-  facialTrigger: SadFace
-  dialogLine: Mea culpa.
+  previous: 
+  next: 
+  subtitle: Is aeda quid.
+  displayTime: 1
 --- !u!114 &-2015838537923302582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +362,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 744, y: -696}
+  position: {x: 552, y: -568}
   ports:
     keys:
     - End
@@ -340,8 +372,8 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: nextDialog
-        node: {fileID: -2493722349996356203}
+      - fieldName: next
+        node: {fileID: 6356772583871047855}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -361,7 +393,7 @@ MonoBehaviour:
   m_Name: Begin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1784, y: -456}
+  position: {x: -2344, y: -456}
   ports:
     keys:
     - Start
@@ -372,7 +404,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: previous
-        node: {fileID: -1740837937825492019}
+        node: {fileID: -4427720381009376016}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -393,7 +425,7 @@ MonoBehaviour:
   m_Name: Launch Timeline
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1560, y: -456}
+  position: {x: -1816, y: -456}
   ports:
     keys:
     - previous
@@ -404,8 +436,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: Start
-        node: {fileID: -1925813642066124139}
+      - fieldName: next
+        node: {fileID: -4427720381009376016}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -416,8 +448,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: previousDialog
-        node: {fileID: 4128182323248793593}
+      - fieldName: previous
+        node: {fileID: -7859931040485317923}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -425,7 +457,53 @@ MonoBehaviour:
       _dynamic: 0
   previous: 
   next: 
-  timelineAsset: {fileID: 11400000, guid: a20d4d7e49f995145856472df5cb2225, type: 2}
+  timelineAsset: {fileID: 11400000, guid: 7b59e8b6403ab8041a4f95262e866521, type: 2}
+--- !u!114 &-286446309862100687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a35df02d040a54891a3c7c0b69cbf3, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -520, y: -456}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: -286446309862100687}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: next
+        node: {fileID: -8084922982687748693}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: -286446309862100687}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previousDialog
+        node: {fileID: 1494326511061582494}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  waitTime: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,24 +517,27 @@ MonoBehaviour:
   m_Name: Dialog Tool
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 4128182323248793593}
   - {fileID: -8407647499133055060}
   - {fileID: -2015838537923302582}
   - {fileID: 7206071785717321129}
   - {fileID: -2505604878473283510}
-  - {fileID: -5439921764588534594}
-  - {fileID: 1877041512595107027}
   - {fileID: -8084922982687748693}
-  - {fileID: -2493722349996356203}
-  - {fileID: -2725108823555014843}
-  - {fileID: 718213071348032324}
   - {fileID: 1494326511061582494}
   - {fileID: -1925813642066124139}
-  - {fileID: 7718309065816628674}
   - {fileID: -1740837937825492019}
-  - {fileID: 7202587844464478040}
-  timelineLaunched: {fileID: 0}
---- !u!114 &718213071348032324
+  - {fileID: -286446309862100687}
+  - {fileID: -7859931040485317923}
+  - {fileID: -4427720381009376016}
+  - {fileID: 6356772583871047855}
+  - {fileID: -2371883043321434834}
+  - {fileID: 7781472178324555007}
+  - {fileID: 7054848892712347561}
+  - {fileID: -8389326123350892951}
+  - {fileID: 636811761898765958}
+  - {fileID: 0}
+  currentTimeline: {fileID: 0}
+  staticTimeline: 0
+--- !u!114 &636811761898765958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -465,47 +546,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2418c5e2de09a543be67f832b232443, type: 3}
-  m_Name: Character Talk
+  m_Script: {fileID: 11500000, guid: c8fd129f7a06c334fb12b7d561a2bc91, type: 3}
+  m_Name: Play Timeline
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 344, y: -24}
+  position: {x: -2056, y: -8}
   ports:
     keys:
-    - previousDialog
-    - nextDialog
+    - previous
+    - next
     values:
-    - _fieldName: previousDialog
-      _node: {fileID: 718213071348032324}
+    - _fieldName: previous
+      _node: {fileID: 636811761898765958}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: choicesArray 2
-        node: {fileID: 1494326511061582494}
+      - fieldName: Start
+        node: {fileID: 7054848892712347561}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: nextDialog
-      _node: {fileID: 718213071348032324}
+    - _fieldName: next
+      _node: {fileID: 636811761898765958}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: End
-        node: {fileID: -2505604878473283510}
+        node: {fileID: -8389326123350892951}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  previousDialog: 
-  nextDialog: 
-  characterName: 0
-  dialogSound: 
-  animator: Question
-  facialTrigger: QuestionFace
-  dialogLine: Quid?
+  previous: 
+  next: 
+  timelineAsset: {fileID: 11400000, guid: 7b59e8b6403ab8041a4f95262e866521, type: 2}
 --- !u!114 &1494326511061582494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +596,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -152, y: -440}
+  position: {x: -296, y: -456}
   ports:
     keys:
     - previousDialog
@@ -534,7 +611,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: next
-        node: {fileID: -8084922982687748693}
+        node: {fileID: -286446309862100687}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -554,8 +631,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: previousDialog
-        node: {fileID: -2493722349996356203}
+      - fieldName: previous
+        node: {fileID: 6356772583871047855}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -566,8 +643,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: previousDialog
-        node: {fileID: -2725108823555014843}
+      - fieldName: previous
+        node: {fileID: -2371883043321434834}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -578,8 +655,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: previousDialog
-        node: {fileID: 718213071348032324}
+      - fieldName: previous
+        node: {fileID: 7781472178324555007}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -636,7 +713,7 @@ MonoBehaviour:
   previous: 
   next: 
   moveName: 
---- !u!114 &4128182323248793593
+--- !u!114 &6356772583871047855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,49 +722,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2418c5e2de09a543be67f832b232443, type: 3}
-  m_Name: Character Talk
+  m_Script: {fileID: 11500000, guid: 9da88ffa825a09a498f79541d410ccfa, type: 3}
+  m_Name: Subtitle
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1304, y: -440}
+  position: {x: 136, y: -568}
   ports:
     keys:
-    - previousDialog
-    - nextDialog
+    - previous
+    - next
     values:
-    - _fieldName: previousDialog
-      _node: {fileID: 4128182323248793593}
+    - _fieldName: previous
+      _node: {fileID: 6356772583871047855}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: next
-        node: {fileID: -1740837937825492019}
+      - fieldName: choicesArray 0
+        node: {fileID: 1494326511061582494}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: nextDialog
-      _node: {fileID: 4128182323248793593}
+    - _fieldName: next
+      _node: {fileID: 6356772583871047855}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: previousDialog
-        node: {fileID: -8407647499133055060}
+      - fieldName: End
+        node: {fileID: -2015838537923302582}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  previousDialog: 
-  nextDialog: 
-  characterName: 0
-  dialogSound: boum
-  animator: Smile
-  facialTrigger: HappyFace
-  dialogLine: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.."'
---- !u!114 &7202587844464478040
+  previous: 
+  next: 
+  subtitle: Mea cula.
+  displayTime: 1
+--- !u!114 &7054848892712347561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -696,25 +769,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263de3211da909640b75b635a594c2ba, type: 3}
-  m_Name: End
+  m_Script: {fileID: 11500000, guid: 19ffcfc2ad640ad40842e9a3b25d8a2e, type: 3}
+  m_Name: Begin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1352, y: -664}
+  position: {x: -2392, y: -8}
   ports:
     keys:
-    - End
+    - Start
     values:
-    - _fieldName: End
-      _node: {fileID: 7202587844464478040}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+    - _fieldName: Start
+      _node: {fileID: 7054848892712347561}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 0
+      connections:
+      - fieldName: previous
+        node: {fileID: 636811761898765958}
+        reroutePoints: []
+      _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  End: 0
+  Start: 
+  dialogName: introTL
 --- !u!114 &7206071785717321129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +805,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 744, y: -376}
+  position: {x: 552, y: -408}
   ports:
     keys:
     - End
@@ -738,15 +815,15 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: nextDialog
-        node: {fileID: -2725108823555014843}
+      - fieldName: next
+        node: {fileID: -2371883043321434834}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   End: 0
---- !u!114 &7718309065816628674
+--- !u!114 &7781472178324555007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -755,23 +832,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ffcfc2ad640ad40842e9a3b25d8a2e, type: 3}
-  m_Name: Begin
+  m_Script: {fileID: 11500000, guid: 9da88ffa825a09a498f79541d410ccfa, type: 3}
+  m_Name: Subtitle
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1836.0339, y: -659.6836}
+  position: {x: 136, y: -248}
   ports:
     keys:
-    - Start
+    - previous
+    - next
     values:
-    - _fieldName: Start
-      _node: {fileID: 7718309065816628674}
+    - _fieldName: previous
+      _node: {fileID: 7781472178324555007}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: choicesArray 2
+        node: {fileID: 1494326511061582494}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: 7781472178324555007}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: End
+        node: {fileID: -2505604878473283510}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Start: 
-  dialogName: test
+  previous: 
+  next: 
+  subtitle: Quid?
+  displayTime: 1

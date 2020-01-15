@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1517923071712767732}
   - component: {fileID: 7515303000479372482}
   - component: {fileID: 4284947625176459323}
-  - component: {fileID: 3768946259361834298}
+  - component: {fileID: 3481695869489745987}
   m_Layer: 0
   m_Name: ceilingLight_Present
   m_TagString: Untagged
@@ -81,7 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3768946259361834298
+--- !u!114 &3481695869489745987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,6 +90,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2543380561256897767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263d2cf77d0193b4bb267f888d7ec66e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0692d5c884701c54da067fa30a9154c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _memoryObjectMaterial: {fileID: 2100000, guid: 0479dd530c5c2034c8e816cc687c7ddf,
+    type: 2}
+  _presentObjectMaterial: {fileID: 2100000, guid: 303a7e6f9ab189a4fae3f62a6a97109e,
+    type: 2}
+  _memoryObjectFilter: {fileID: -5178661895559278292, guid: def46a9ae9ae153479c0ce42a5a98726,
+    type: 3}
+  _presentObjectFilter: {fileID: -5178661895559278292, guid: def46a9ae9ae153479c0ce42a5a98726,
+    type: 3}
