@@ -52,7 +52,7 @@ public class WantedInteractionDrawer : PropertyDrawer
     }
 }*/
 
-public class ImportantPastObject : PastObject
+public class ImportantPastObject : MonoBehaviour
 {
     /*public WantedInteraction[] _wantedInteractionArray;
     int _index = 0;
