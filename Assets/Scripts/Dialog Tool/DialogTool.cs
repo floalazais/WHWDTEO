@@ -22,7 +22,6 @@ public class DialogTool : NodeGraph {
             {
                 if ((nodes[i] as BeginNode).dialogName != pDialogName) continue;
 
-                UIManager.instance.OnStartDialog();
                 currentNode = nodes[i] as DialogNode;
                 return true;
             }
