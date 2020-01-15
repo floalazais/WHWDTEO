@@ -17,17 +17,20 @@ public class W_Object : MonoBehaviour
     {
         _meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
+
+        SetModePresent();
     }
 
     public virtual void SetModePresent()
     {
         if (_presentObjectMaterial == null && _presentObjectFilter == null)
         {
-            _meshRenderer = null;
+            _meshRenderer.enabled = false;
             return;
         }
 
         _meshFilter = _presentObjectFilter;
+        _meshRenderer.enabled = true;
         _meshRenderer.material = _presentObjectMaterial; 
     }
 
@@ -35,11 +38,12 @@ public class W_Object : MonoBehaviour
     {
         if (_memoryObjectMaterial == null && _memoryObjectFilter == null)
         {
-            _meshRenderer = null;
+            _meshRenderer.enabled = false;
             return;
         }
 
         _meshFilter = _memoryObjectFilter;
+        _meshRenderer.enabled = true;
         _meshRenderer.material = _memoryObjectMaterial;
     }
 }
