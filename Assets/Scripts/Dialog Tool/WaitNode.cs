@@ -5,13 +5,13 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using XNode;
 
-[NodeTint("#aaffaa")]
-public class LaunchTimelineNode : DialogNode {
+public class WaitNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public TimelineAsset timelineAsset;
+    public float waitTime = 0.0f;
+    float timer = 0.0f;
 
     protected override void Init()
     {
@@ -20,13 +20,18 @@ public class LaunchTimelineNode : DialogNode {
 
     public override void Activate()
     {
-        (graph as DialogTool).currentTimeline = timelineAsset;
-        (graph as DialogTool).staticTimeline = true;
+        timer = 0.0f;
     }
 
     public override bool Update()
     {
-        return true;
+        timer += Time.deltaTime;
+        if (timer >= waitTime)
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public override DialogNode GetNextNode()

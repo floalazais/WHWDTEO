@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
+using XNode;
 
-[NodeTint("#1061e3")]
-public class CameraNode : DialogNode
-{
+[NodeTint("#ff5555")]
+public class SoundNode : DialogNode {
+
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public string moveName;
+    public AK.Wwise.Event sound;
 
     protected override void Init()
     {
@@ -17,16 +20,16 @@ public class CameraNode : DialogNode
 
     public override void Activate()
     {
-
+        SoundManager.instance.PlaySound(sound.Id);
     }
 
     public override bool Update()
     {
-        return false;
+        return true;
     }
 
     public override DialogNode GetNextNode()
     {
-        return null;
+        return GetOutputPort("next").Connection.node as DialogNode;
     }
 }

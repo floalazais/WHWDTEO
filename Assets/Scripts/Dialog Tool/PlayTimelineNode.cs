@@ -6,12 +6,13 @@ using UnityEngine.Timeline;
 using XNode;
 
 [NodeTint("#aaffaa")]
-public class LaunchTimelineNode : DialogNode {
+public class PlayTimelineNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
     public TimelineAsset timelineAsset;
+    float timer = 0.0f;
 
     protected override void Init()
     {
@@ -21,12 +22,20 @@ public class LaunchTimelineNode : DialogNode {
     public override void Activate()
     {
         (graph as DialogTool).currentTimeline = timelineAsset;
-        (graph as DialogTool).staticTimeline = true;
+        timer = 0.0f;
     }
 
     public override bool Update()
     {
-        return true;
+        timer += Time.deltaTime;
+        if (timer >= timelineAsset.duration)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override DialogNode GetNextNode()

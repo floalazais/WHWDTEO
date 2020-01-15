@@ -8,4 +8,8 @@ public class DisplayLog: MonoBehaviour
     {
         Debug.Log("Signal: " + s);
     }
+
+    public void LaunchSound(AK.Wwise.Event e){
+        SoundManager.instance.PlaySound(e.Id);
+    }
 }
