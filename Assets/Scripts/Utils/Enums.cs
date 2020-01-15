@@ -11,10 +11,10 @@ public static class Enums
         NARRATION
     }
 
-    public enum E_PAST_STATE
+    public enum E_LEVEL_STATE
     {
         PRESENT,
-        SEARCH_MODE,
+        MEMORY_MODE,
         INTERACT,
         DESCRIPTION
     }

@@ -52,9 +52,9 @@ public class WantedInteractionDrawer : PropertyDrawer
     }
 }*/
 
-public class ImportantPastObject : PastObject
+public class ImportantPastObject : MonoBehaviour
 {
-    public WantedInteraction[] _wantedInteractionArray;
+    /*public WantedInteraction[] _wantedInteractionArray;
     int _index = 0;
     bool _isEnd = false;
     bool _isStepValidated = false;
@@ -76,7 +76,7 @@ public class ImportantPastObject : PastObject
     void Update()
     {
         //if (PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
-        if (PastManager.instance.state == Enums.E_PAST_STATE.INTERACT) CheckInputOrder();
+        if (PastManager.instance.state == Enums.E_LEVEL_STATE.INTERACT) CheckInputOrder();
     }
 
     public override void SetModeInteract()
@@ -178,5 +178,5 @@ public class ImportantPastObject : PastObject
             _isEnd = true;
             print("end sequence");
         }
-    }
+    }*/
 }

@@ -9,11 +9,11 @@ public class PastManager : MonoBehaviour
     public static PastManager instance { get { return _instance; } }
     static PastManager _instance;
 
-    public Enums.E_PAST_STATE state { get { return _state; } }
-    Enums.E_PAST_STATE _state = Enums.E_PAST_STATE.PRESENT;
+    public Enums.E_LEVEL_STATE state { get { return _state; } }
+    Enums.E_LEVEL_STATE _state = Enums.E_LEVEL_STATE.PRESENT;
 
-    PastObject[] _pastObjectsArray;
-    PastObject _pastObjectNearPlayer;
+    W_Object[] _objectsArray;
+    ObjectInteractable _objectNearPlayer;
 
     void Awake()
     {
@@ -30,7 +30,7 @@ public class PastManager : MonoBehaviour
     {
         if (_pastZone == null) Debug.LogError("NO PAST ZONE AFFECTED IN " + _pastZone);
 
-        _pastObjectsArray = GameObject.FindObjectsOfType<PastObject>();
+        _objectsArray = GameObject.FindObjectsOfType<W_Object>();
     }
 
     private void Update()
@@ -41,42 +41,53 @@ public class PastManager : MonoBehaviour
         if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayPastZone();
         if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) RemovePastZone();
 
-        if (state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
+        CheckPlayerDistance();
     }
 
     protected void CheckPlayerDistance()
     {
-        float lShortestDistance = 0;
+        float lShortestDistance = 1.5f;
+        W_Object lNearestObject = null;
 
-        for (int i = 0; i < _pastObjectsArray.Length; i++)
+        for (int i = 0; i < _objectsArray.Length; i++)
         {
-            PastObject lPastObject = _pastObjectsArray[i];
+            W_Object lObject = _objectsArray[i];
 
-            float distance = Vector3.Distance(lPastObject.transform.position, Controller.instance.transform.position);
-            if (i == 0) lShortestDistance = distance;
-            //Debug.DrawLine(MyCharacter.instance.transform.position, transform.position);
+            float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
 
-            if (distance < 1.5f)
-            {
-                if (distance <= lShortestDistance)
-                {
-                    lShortestDistance = distance;
-                    SetNearObjectToInteractionState(lPastObject);
-                }
-            }
-
-            else if (distance > 3f)
+            if (distance > 3f)
             {
                 if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
-                lPastObject.SetModeNotDiscovered();
+                lObject.SetModePresent();
             }
 
             else
             {
-                if (_pastObjectNearPlayer == lPastObject) _pastObjectNearPlayer = null;
-                lPastObject.SetModeDiscovered();
-            }
+                if (state == Enums.E_LEVEL_STATE.MEMORY_MODE) lObject.SetModeMemory();
 
+                if (distance < 1.5f)
+                {
+                    if (distance <= lShortestDistance)
+                    {
+                        lShortestDistance = distance;
+                        lNearestObject = lObject;
+                    } 
+                }
+
+                else
+                {
+                    if (_objectNearPlayer == lObject)
+                    {
+                        _objectNearPlayer.SetFarPlayerMode();
+                        _objectNearPlayer = null;
+                    }
+                }
+            }
+        }
+
+        if(lNearestObject != null)
+        {
+            SetNearObject(lNearestObject);
         }
     }
 
@@ -84,70 +95,47 @@ public class PastManager : MonoBehaviour
     void SetPresentMode()
     {
         //If we desactive the past zone when reading an object description
-        if (_state == Enums.E_PAST_STATE.DESCRIPTION) UIManager.instance.RemoveScreen();
+        if (_state == Enums.E_LEVEL_STATE.DESCRIPTION) UIManager.instance.RemoveScreen();
 
-        _state = Enums.E_PAST_STATE.PRESENT;
+        _state = Enums.E_LEVEL_STATE.PRESENT;
         GameManager.instance.SetGameStateExploration();
 
-        if (_pastObjectNearPlayer != null)
+        if (_objectNearPlayer != null)
         {
-            _pastObjectNearPlayer.SetModeNotDiscovered();
-            _pastObjectNearPlayer = null;
+            _objectNearPlayer.SetFarPlayerMode();
+            _objectNearPlayer = null;
         }
 
-        int length = _pastObjectsArray.Length;
+        int length = _objectsArray.Length;
         for (int i = 0; i < length; i++)
         {
-            _pastObjectsArray[i].SetModeNotDiscovered();
+            _objectsArray[i].SetModePresent();
         }
     }
 
-    void SetSearchMode()
+    void SetMemoryMode()
     {
-        _state = Enums.E_PAST_STATE.SEARCH_MODE;
-        _pastObjectNearPlayer = null;
+        _state = Enums.E_LEVEL_STATE.MEMORY_MODE;
+        _objectNearPlayer = null;
     }
 
     void SetInteractMode()
     {
-        //Can't interact anymore when there is a description
-        if (_state == Enums.E_PAST_STATE.DESCRIPTION) return;
+        if (_objectNearPlayer == null) return;
 
-        if (_state == Enums.E_PAST_STATE.INTERACT)
-        {
-            if (_pastObjectNearPlayer.GetComponent<ImportantPastObject>() != null) return;
+        _state = Enums.E_LEVEL_STATE.INTERACT;
+        GameManager.instance.SetGameStateManipulation();
 
-            UIManager.instance.OnDescriptionObject();
-            _state = Enums.E_PAST_STATE.DESCRIPTION;
-
-            return;
-        }
-
-        if (_pastObjectNearPlayer == null) return;
-
-        _state = Enums.E_PAST_STATE.INTERACT;
-        _pastObjectNearPlayer.SetModeInteract();
-
-        GameManager.instance.SetGameStateNarration();
+        _objectNearPlayer.Interact();
     }
 
     void GoToPreviousState()
     {
-        if (_state == Enums.E_PAST_STATE.DESCRIPTION)
+        if(_state == Enums.E_LEVEL_STATE.INTERACT)
         {
-            UIManager.instance.RemoveScreen();
-            _state = Enums.E_PAST_STATE.INTERACT;
-
-            return;
-        }
-
-        if (_state == Enums.E_PAST_STATE.INTERACT)
-        {
-            SetNearObjectToInteractionState(_pastObjectNearPlayer);
-            _state = Enums.E_PAST_STATE.SEARCH_MODE;
+            PutNearObject();
             GameManager.instance.SetGameStateExploration();
-
-            return;
+            _state = Enums.E_LEVEL_STATE.PRESENT;
         }
     }
     #endregion
@@ -160,23 +148,32 @@ public class PastManager : MonoBehaviour
 
     void DisplayPastZone()
     {
-        SetSearchMode();
+        SetMemoryMode();
         _pastZone.Display();
     }
 
-    public void SetNearPastObjectInDiscoveredMode(PastObject pObject)
+    void PutNearObject()
     {
-        if (_pastObjectNearPlayer == pObject)
+        _objectNearPlayer.SetNearPlayerMode();
+    }
+
+    public void SetNearPastObjectInMemoryMode(W_Object pObject)
+    {
+        if (_objectNearPlayer == pObject)
         {
-            _pastObjectNearPlayer.SetModeDiscovered();
-            _pastObjectNearPlayer = null;
+            _objectNearPlayer.SetModeMemory();
+            _objectNearPlayer = null;
         }
     }
 
-    //TO-DO BE SURE THERE IS ONLY ONE CLOSE OBJECT
-    public void SetNearObjectToInteractionState(PastObject pObject)
+    public void SetNearObject(W_Object pObject)
     {
-        _pastObjectNearPlayer = pObject;
-        _pastObjectNearPlayer.SetModeNearPlayer();
+        ObjectInteractable lObjectInteractable = pObject as ObjectInteractable;
+
+        if (lObjectInteractable == null) return;
+        if (lObjectInteractable == _objectNearPlayer) return;
+
+        _objectNearPlayer = lObjectInteractable;
+        _objectNearPlayer.SetNearPlayerMode();
     }
 }

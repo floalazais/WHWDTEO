@@ -15,7 +15,7 @@ public class PNJ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PastManager.instance.state == Enums.E_PAST_STATE.PRESENT) CheckPlayerDistance();
+        if (PastManager.instance.state == Enums.E_LEVEL_STATE.PRESENT) CheckPlayerDistance();
     }
 
     protected void CheckPlayerDistance()

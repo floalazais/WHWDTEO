@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3908012793824840138}
   - component: {fileID: 5433322819114218492}
   - component: {fileID: 1755140766727425797}
-  - component: {fileID: 7668053049544642309}
+  - component: {fileID: 4309714486762745482}
   m_Layer: 0
   m_Name: Outlet_Present
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7668053049544642309
+--- !u!114 &4309714486762745482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,6 +88,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 29085616743021529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263d2cf77d0193b4bb267f888d7ec66e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0692d5c884701c54da067fa30a9154c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _memoryObjectMaterial: {fileID: 2100000, guid: 27b23ba7d46ff6943ba63c931857548a,
+    type: 2}
+  _presentObjectMaterial: {fileID: 2100000, guid: 8fa561c5fa70647488e86d0fcd038334,
+    type: 2}
+  _memoryObjectFilter: {fileID: -5178661895559278292, guid: 1d232cfc9d660ac408bc1586c85a416a,
+    type: 3}
+  _presentObjectFilter: {fileID: -5178661895559278292, guid: 1d232cfc9d660ac408bc1586c85a416a,
+    type: 3}
