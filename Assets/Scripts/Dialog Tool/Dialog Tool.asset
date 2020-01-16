@@ -363,8 +363,7 @@ MonoBehaviour:
   sound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 8ad0839df6ab44e4b98bc00df1bd0fd3,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &-2505604878473283510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,8 +633,9 @@ MonoBehaviour:
   - {fileID: 2989960645335015476}
   - {fileID: -6188556347979328103}
   - {fileID: 3912966449017715303}
-  - {fileID: 0}
   - {fileID: -6839775266803312558}
+  - {fileID: 4987522958133786217}
+  - {fileID: 0}
   currentTimeline: {fileID: 0}
   staticTimeline: 0
 --- !u!114 &68794166851150579
@@ -883,7 +883,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: previous
-        node: {fileID: -6839775266803312558}
+        node: {fileID: 4987522958133786217}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -982,7 +982,13 @@ MonoBehaviour:
         node: {fileID: 0}
         reroutePoints: []
       - fieldName: next
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: next
         node: {fileID: -6839775266803312558}
+        reroutePoints: []
+      - fieldName: next
+        node: {fileID: 4987522958133786217}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
