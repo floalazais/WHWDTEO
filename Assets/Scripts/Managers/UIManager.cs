@@ -36,6 +36,8 @@ public class UIManager : MonoBehaviour
 
     public void RemoveScreen()
     {
+        if (_currentScreen == null) return;
+
         _currentScreen.gameObject.SetActive(false);
         _currentScreen = null;
     }
