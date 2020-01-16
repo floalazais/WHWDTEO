@@ -54,6 +54,7 @@ public class DialogManager : MonoBehaviour
             UIManager.instance.OnEndDialog();
             GameManager.instance.SetGameStateExploration();
             gameplayCamera.Priority = 10;
+            PastManager.instance.Refresh();
         }
     }
 }

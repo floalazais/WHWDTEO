@@ -26,32 +26,6 @@ public struct HoldConstraint
     public Enums.E_GAMEPAD_BUTTON gamepadButton;
 }
 
-/*[CustomPropertyDrawer(typeof(WantedInteraction))]
-public class WantedInteractionDrawer : PropertyDrawer
-{
-    public override VisualElement CreatePropertyGUI(SerializedProperty property)
-    {
-        // Create property container element.
-        VisualElement container = new VisualElement();
-
-        // Create property fields.
-        PropertyField interactionTypeField = new PropertyField(property.FindPropertyRelative("interactionType"));
-        PropertyField gamepadButtonField = new PropertyField(property.FindPropertyRelative("gamepadButton"));
-        PropertyField moveDirectionField = new PropertyField(property.FindPropertyRelative("moveDirection"), "Move Direction");
-        PropertyField rollDirectionField = new PropertyField(property.FindPropertyRelative("rollDirection"), "Roll Direction");
-        PropertyField swipeDirectionField = new PropertyField(property.FindPropertyRelative("swipeDirection"), "Swipe Direction");
-        PropertyField spamCountField = new PropertyField(property.FindPropertyRelative("spamCount"), "Spam Count");
-        PropertyField holdTimeField = new PropertyField(property.FindPropertyRelative("holdTime"), "Hold Time");
-        PropertyField delayBeforeNewInteractionField = new PropertyField(property.FindPropertyRelative("holdTime"), "Hold Time");
-
-        // Add fields to the container.
-        container.Add(interactionTypeField);
-        container.Add(gamepadButtonField);
-
-        return container;
-    }
-}*/
-
 public class ImportantPastObject : MonoBehaviour
 {
     /*public WantedInteraction[] _wantedInteractionArray;
