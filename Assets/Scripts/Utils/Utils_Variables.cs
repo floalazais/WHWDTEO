@@ -10,4 +10,7 @@ public static class Utils_Variables
     //public static Dictionary<Enums.E_GAMEPAD_BUTTON, string> GAMEPAD_BUTTONS= new Dictionary<Enums.E_GAMEPAD_BUTTON, string>
     //TO-DO : Initialiser valeur dans un Init GM
     public static Player REWIRED_PLAYER { get { return ReInput.players.GetPlayer(PLAYER_ID); } }
+
+    public static int LAYER_CAMERA_COLLISION = 9;
+    public static int LAYER_OBJECT_INTERACT = 10;
 }

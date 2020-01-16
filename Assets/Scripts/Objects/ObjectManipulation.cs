@@ -10,7 +10,7 @@ public class ObjectManipulation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PastManager.instance.state == Enums.E_PAST_STATE.INTERACT) Manipulation();
+        if (PastManager.instance.state == Enums.E_LEVEL_STATE.INTERACT) Manipulation();
     }
 
     void Manipulation()

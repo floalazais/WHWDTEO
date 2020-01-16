@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 1516373545888247362}
   - component: {fileID: 7516572699258836084}
   - component: {fileID: 4281993475126405261}
-  - component: {fileID: 5240264287172729981}
-  - component: {fileID: 5148398041477161321}
+  - component: {fileID: 5342946686669497851}
   m_Layer: 0
   m_Name: radiator_Present
   m_TagString: Untagged
@@ -80,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &5240264287172729981
+--- !u!114 &5342946686669497851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,19 +88,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544644206008278097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263d2cf77d0193b4bb267f888d7ec66e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0692d5c884701c54da067fa30a9154c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &5148398041477161321
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544644206008278097}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.35019577, y: 1.0656843, z: 0.89362586}
-  m_Center: {x: 0.018827371, y: 0.5323472, z: 0}
+  _memoryObjectMaterial: {fileID: 2100000, guid: 3140e3e9900d0d44fbd31d1a674cefaa,
+    type: 2}
+  _presentObjectMaterial: {fileID: 2100000, guid: c147a6f4303642a4ca8afa3c922b4432,
+    type: 2}
+  _memoryObjectFilter: {fileID: -5178661895559278292, guid: aa606ceead41b7845882a0b3cb7f2e99,
+    type: 3}
+  _presentObjectFilter: {fileID: -5178661895559278292, guid: aa606ceead41b7845882a0b3cb7f2e99,
+    type: 3}

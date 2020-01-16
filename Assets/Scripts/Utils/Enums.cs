@@ -6,15 +6,15 @@ public static class Enums
 {
     public enum E_GAMESTATE
     {
-        PLAY,
-        NOT_PLAY,
-        MANIPULATION
+        EXPLORATION,
+        MANIPULATION,
+        NARRATION
     }
 
-    public enum E_PAST_STATE
+    public enum E_LEVEL_STATE
     {
         PRESENT,
-        SEARCH_MODE,
+        MEMORY_MODE,
         INTERACT,
         DESCRIPTION
     }
@@ -79,5 +79,18 @@ public static class Enums
         MOVE,
         SWIPE,
         ROLL
+    }
+
+    public enum E_RP_ACTION
+    {
+        ADD,
+        REMOVE
+    }
+
+    public enum E_CHARACTER
+    {
+        AVA,
+        MIA,
+        CALEB
     }
 }
