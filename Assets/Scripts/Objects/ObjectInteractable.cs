@@ -7,9 +7,9 @@ public abstract class ObjectInteractable : W_Object
 {
     public enum InteractionTime { PAST, PRESENT, BOTH}
 
-    [SerializeField] protected Image _text = null;
+    [SerializeField] protected Image _iconUI = null;
 
-    public InteractionTime _interactionTime = InteractionTime.BOTH;
+    public InteractionTime interactionTime = InteractionTime.BOTH;
 
     [SerializeField] protected bool _interactable = true;
 
@@ -25,30 +25,30 @@ public abstract class ObjectInteractable : W_Object
 
     protected virtual void Init()
     {
-        if(_text == null)
+        if(_iconUI == null)
         {
             Debug.LogError("no text affected to " + name);
             return;
         }
 
-        _text.enabled = false;
+        _iconUI.enabled = false;
     }
 
     public virtual void SetNearPlayerMode()
     {
         if (!_interactable) return;
 
-        _text.enabled = true;
+        _iconUI.enabled = true;
     }
 
     public virtual void SetFarPlayerMode()
     {
-        _text.enabled = false;
+        _iconUI.enabled = false;
     }
 
     public virtual void Interact()
     {
-        _text.enabled = false;
+        _iconUI.enabled = false;
     }
 
     public override void SetModePresent()

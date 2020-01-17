@@ -179,10 +179,13 @@ public class PastManager : MonoBehaviour
         
         if (lObjectInteractable == _objectNearPlayer) return;
 
-        if (lObjectInteractable._interactionTime == ObjectInteractable.InteractionTime.PAST && _state == Enums.E_LEVEL_STATE.PRESENT)
+        if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PAST && _state == Enums.E_LEVEL_STATE.PRESENT)
         {
             return;
-        } else if (lObjectInteractable._interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE) {
+        }
+
+        else if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE)
+        {
             return;
         }
 
