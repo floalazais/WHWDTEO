@@ -7,7 +7,7 @@ public abstract class ObjectInteractable : W_Object
 {
     public enum InteractionTime { PAST, PRESENT, BOTH}
 
-    [SerializeField] protected Text _text = null;
+    [SerializeField] protected Image _text = null;
 
     public InteractionTime _interactionTime = InteractionTime.BOTH;
 
