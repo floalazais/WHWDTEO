@@ -8,7 +8,7 @@ using XNode;
 
 [NodeTint("#e056fd")]
 [NodeWidth(300)]
-public class SetInteractableObjectActiveStateNode : DialogNode {
+public class SetObjectStateNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
@@ -23,13 +23,13 @@ public class SetInteractableObjectActiveStateNode : DialogNode {
 
     public override void Activate()
     {
-        List<ObjectInteractable> interactables = GameObject.FindObjectsOfType<ObjectInteractable>().ToList();
+        List<ObjectInteractable> objects = GameObject.FindObjectsOfType<ObjectInteractable>().ToList();
 
-        foreach (ObjectInteractable interactable in interactables)
+        foreach (ObjectInteractable obj in objects)
         {
-            if (interactable.name == _objectName)
+            if (obj.name == _objectName)
             {
-                interactable.SetInteractable(_activeState);
+                obj.SetInteractable(_activeState);
                 return;
             }
         }
