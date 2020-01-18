@@ -24,10 +24,10 @@ public class ObjectViewable : ObjectInteractable
 
     public override void Interact()
     {
+        base.Interact();
+
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
-
-        _text.enabled = false;
     }
 
     public override void SetModePresent()

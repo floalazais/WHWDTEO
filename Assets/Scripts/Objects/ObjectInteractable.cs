@@ -3,48 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectInteractable : W_Object
+public abstract class ObjectInteractable : W_Object
 {
-    [SerializeField] protected Text _text = null;
+    public enum InteractionTime { PAST, PRESENT, BOTH}
+
+    [SerializeField] protected Image _iconUI = null;
+
+    public InteractionTime interactionTime = InteractionTime.BOTH;
+
+    [SerializeField] protected bool _interactable = true;
 
     private void Start()
     {
+        _meshRenderer = GetComponent<MeshRenderer>();
+        _meshFilter = GetComponent<MeshFilter>();
+
+        SetModePresent();
+
         Init();
     }
 
     protected virtual void Init()
     {
-        if(_text == null)
+        if(_iconUI == null)
         {
-            Debug.LogError("no text afefcted to " + name);
+            Debug.LogError("no text affected to " + name);
             return;
         }
 
-        _text.enabled = false;
+        _iconUI.enabled = false;
     }
 
     public virtual void SetNearPlayerMode()
     {
-        _text.enabled = true;
+        if (!_interactable) return;
+
+        _iconUI.enabled = true;
     }
 
     public virtual void SetFarPlayerMode()
     {
-        _text.enabled = false;
+        _iconUI.enabled = false;
     }
 
     public virtual void Interact()
     {
-
+        _iconUI.enabled = false;
     }
 
     public override void SetModePresent()
     {
         base.SetModePresent();
+
     }
 
     public override void SetModeMemory()
     {
         base.SetModeMemory();
+    }
+
+    public void SetInteractable(bool pInteractable)
+    {
+        _interactable = pInteractable;
     }
 }

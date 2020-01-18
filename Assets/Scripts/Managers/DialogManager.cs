@@ -8,6 +8,7 @@ public class DialogManager : MonoBehaviour
     public static DialogManager instance { get; private set; }
 
     [SerializeField] Cinemachine.CinemachineVirtualCamera gameplayCamera;
+    [SerializeField] GameObject Mia;
     public DialogTool _dialogGraph;
     bool dialogRunning = false;
 
@@ -31,6 +32,7 @@ public class DialogManager : MonoBehaviour
         if (dialogRunning)
         {
             GameManager.instance.SetGameStateNarration();
+            Mia.SetActive(false);
         }
     }
 
@@ -54,6 +56,8 @@ public class DialogManager : MonoBehaviour
             UIManager.instance.OnEndDialog();
             GameManager.instance.SetGameStateExploration();
             gameplayCamera.Priority = 10;
+            PastManager.instance.Refresh();
+            Mia.SetActive(true);
         }
     }
 }
