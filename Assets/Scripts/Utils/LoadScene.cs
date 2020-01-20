@@ -8,7 +8,7 @@ public class LoadScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene(Utils_Variables.PAST_SCENE_NAME);
+        SceneManager.LoadScene(W_SceneManager.instance.sceneToLoad);
     }
 
 }

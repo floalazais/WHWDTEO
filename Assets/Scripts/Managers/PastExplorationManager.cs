@@ -11,6 +11,7 @@ public class PastExplorationManager : MonoBehaviour
     Plush _objectNearPlayer;
 
     [SerializeField] float _interactionRadius = 1.5f;
+    [SerializeField] float _timer = 60f;
 
     void Awake()
     {
@@ -39,6 +40,35 @@ public class PastExplorationManager : MonoBehaviour
         if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) SetInteractMode();
 
         if (GameManager.instance.state == Enums.E_GAMESTATE.EXPLORATION) CheckPlayerDistance();
+
+        CheckEndExploration();
+    }
+
+    void CheckEndExploration()
+    {
+        _timer -= Time.deltaTime;
+
+        if (_timer <= 0) print("end explo lose");
+
+        else
+        {
+            bool lSuccess = true;
+
+            foreach (Plush plush in _objectsArray)
+            {
+                if (!plush.inspected)
+                {
+                    lSuccess = false;
+                    break;
+                }
+            }
+
+            if (lSuccess)
+            {
+                print("explo win");
+                DialogManager.instance.StartDialog("toHandTL");
+            }
+        }
     }
 
     protected void CheckPlayerDistance()

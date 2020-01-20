@@ -12,7 +12,7 @@ public class Plush : MonoBehaviour
 
     [SerializeField] protected Image _iconUI = null;
 
-    bool _inspected = false;
+    public bool inspected { get; private set; }
 
     Vector3 wallHitPosition;
 
@@ -26,6 +26,7 @@ public class Plush : MonoBehaviour
         _originalPosition = transform.position;
         _originalRotation = transform.rotation;
 
+        inspected = false;
         _iconUI.enabled = false;
         _collider = GetComponent<Collider>();
 
@@ -75,15 +76,16 @@ public class Plush : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.layer != Utils_Variables.LAYER_OBJECT_INTERACT || _inspected) return;
+        if (gameObject.layer != Utils_Variables.LAYER_OBJECT_INTERACT || inspected) return;
 
         RaycastHit hitInfo = new RaycastHit();
         if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
         {
+            print(hitInfo.collider.name);
             if (hitInfo.collider.gameObject == _partToFind)
             {
                 print("trouvé !");
-                _inspected = true;
+                inspected = true;
             }
         }
     }
