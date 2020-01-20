@@ -20,6 +20,10 @@ public class ObjectViewable : ObjectInteractable
         transform.position = _originalPosition;
         transform.rotation = _originalRotation;
         gameObject.layer = Utils_Variables.LAYER_CAMERA_COLLISION;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.layer = Utils_Variables.LAYER_CAMERA_COLLISION;
+        }
     }
 
     public override void Interact()
@@ -28,6 +32,10 @@ public class ObjectViewable : ObjectInteractable
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
+        }
         GameManager.instance.SetGameStateManipulation();
     }
 

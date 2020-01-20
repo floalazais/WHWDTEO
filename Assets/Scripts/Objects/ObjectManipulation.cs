@@ -7,6 +7,8 @@ public class ObjectManipulation : MonoBehaviour
     [SerializeField] float sensX = 500.0f;
     [SerializeField] float sensY = 500.0f;
 
+    [SerializeField] Camera _camera;
+
     // Update is called once per frame
     void Update()
     {
@@ -15,6 +17,6 @@ public class ObjectManipulation : MonoBehaviour
 
     void Manipulation()
     {
-        transform.Rotate(new Vector3(-InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime, -InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime, 0), Space.World);
+        transform.Rotate(_camera.transform.rotation * new Vector3(InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime, -InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime, 0), Space.World);
     }
 }
