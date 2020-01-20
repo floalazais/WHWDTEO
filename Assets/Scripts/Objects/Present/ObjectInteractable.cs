@@ -49,6 +49,7 @@ public abstract class ObjectInteractable : W_Object
     public virtual void Interact()
     {
         _iconUI.enabled = false;
+        SoundManager.instance.PlaySound("Play_Begin_Memory");
     }
 
     public override void SetModePresent()
