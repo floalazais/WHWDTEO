@@ -60,4 +60,17 @@ public class DialogManager : MonoBehaviour
             Mia.SetActive(true);
         }
     }
+
+    public void SetVariableValue(string variableName, bool value)
+    {
+        if (!_dialogGraph.variablesDictionary.ContainsKey(variableName))
+        {
+            _dialogGraph.variablesDictionary.Add(variableName, value);
+        }
+
+        else
+        {
+            _dialogGraph.variablesDictionary[variableName] = value;
+        }
+    }
 }

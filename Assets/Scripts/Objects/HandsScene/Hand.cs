@@ -16,6 +16,7 @@ public class Hand : MonoBehaviour
     public bool Interact()
     {
         _iconUI.enabled = false;
+        SoundManager.instance.PlaySound("Play_Begin_Memory");
         return true;
     }
 
