@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class W_SceneManager : MonoBehaviour
 {
     public static W_SceneManager instance { get; private set; }
+    public string sceneToLoad = Utils_Variables.PAST_SCENE_NAME;
 
     void Awake()
     {
@@ -20,6 +21,7 @@ public class W_SceneManager : MonoBehaviour
 
     public void SwitchScene(string pSceneName)
     {
-        SceneManager.LoadScene(pSceneName);
+        sceneToLoad = pSceneName;
+        SceneManager.LoadScene(Utils_Variables.LOAD_SCENE_NAME);
     }
 }

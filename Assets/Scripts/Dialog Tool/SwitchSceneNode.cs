@@ -19,6 +19,7 @@ public class SwitchSceneNode : DialogNode
 
     public override void Activate()
     {
+        GameManager.instance.SetGameStateExploration();
         W_SceneManager.instance.SwitchScene(sceneName);
     }
 
