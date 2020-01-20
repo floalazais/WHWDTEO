@@ -71,6 +71,7 @@ public class PastManager : MonoBehaviour
                 if (state == Enums.E_LEVEL_STATE.MEMORY_MODE) lObject.SetModeMemory();
 
                 if (lObject as ObjectInteractable == null) continue;
+                if (!(lObject as ObjectInteractable).interactable) continue;
 
                 if (distance > _interactionRadius)
                 {
