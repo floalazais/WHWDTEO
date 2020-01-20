@@ -36,6 +36,8 @@ public class ImportantPastObject : ObjectViewable
 
     bool _isManipulated = false;
 
+    [SerializeField] string _dialogName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,8 @@ public class ImportantPastObject : ObjectViewable
     {
         base.Interact();
         _isManipulated = true;
+        UIManager.instance.OnManipulationScreen();
+        ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
     }
 
     void CheckInputOrder()
@@ -149,6 +153,7 @@ public class ImportantPastObject : ObjectViewable
     {
         _index++;
         _isStepValidated = false;
+
         if (_index >= _wantedInteractionArray.Length)
         {
             _isEnd = true;
@@ -156,7 +161,9 @@ public class ImportantPastObject : ObjectViewable
             _isManipulated = false;
             interactable = false;
 
-            DialogManager.instance.StartDialog("test");
+            DialogManager.instance.StartDialog(_dialogName);
         }
+
+        else ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType);
     }
 }

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     RectTransform _currentScreen = null;
     RectTransform _choicePanel = null;
     RectTransform _dialogPanel = null;
+    RectTransform _manipulationPanel = null;
 
     private void Awake()
     {
@@ -27,9 +28,11 @@ public class UIManager : MonoBehaviour
     {
         _choicePanel = ChoicePanel.instance.GetComponent<RectTransform>();
         _dialogPanel = DialogPanel.instance.GetComponent<RectTransform>();
+        _manipulationPanel = ManipulationPanel.instance.GetComponent<RectTransform>();
 
         _choicePanel.gameObject.SetActive(false);
         _dialogPanel.gameObject.SetActive(false);
+        _manipulationPanel.gameObject.SetActive(false);
     }
 
     public void OnStartDialog()
@@ -51,8 +54,15 @@ public class UIManager : MonoBehaviour
 
     public void OnChoiceScreen()
     {
-        _currentScreen.gameObject.SetActive(false);
+        if (_currentScreen != null) _currentScreen.gameObject.SetActive(false);
         _currentScreen = _choicePanel;
+        _currentScreen.gameObject.SetActive(true);
+    }
+
+    public void OnManipulationScreen()
+    {
+        if (_currentScreen != null) _currentScreen.gameObject.SetActive(false);
+        _currentScreen = _manipulationPanel;
         _currentScreen.gameObject.SetActive(true);
     }
 
