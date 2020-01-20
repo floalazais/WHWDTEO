@@ -11,7 +11,7 @@ public abstract class ObjectInteractable : W_Object
 
     public InteractionTime interactionTime = InteractionTime.BOTH;
 
-    [SerializeField] protected bool _interactable = true;
+    [SerializeField] public bool interactable = true;
 
     private void Start()
     {
@@ -36,7 +36,7 @@ public abstract class ObjectInteractable : W_Object
 
     public virtual void SetNearPlayerMode()
     {
-        if (!_interactable) return;
+        if (!interactable) return;
 
         _iconUI.enabled = true;
     }
@@ -64,6 +64,6 @@ public abstract class ObjectInteractable : W_Object
 
     public void SetInteractable(bool pInteractable)
     {
-        _interactable = pInteractable;
+        interactable = pInteractable;
     }
 }

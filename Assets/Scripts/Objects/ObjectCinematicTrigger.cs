@@ -10,13 +10,13 @@ public class ObjectCinematicTrigger : ObjectInteractable
     {
         base.Interact();
 
-        if (!_interactable)
+        if (!interactable)
         {
             GameManager.instance.SetGameStateExploration();
             return;
         }
 
-        _interactable = false;
+        interactable = false;
 
         DialogManager.instance.StartDialog(dialogName);
         GameManager.instance.SetGameStateNarration();

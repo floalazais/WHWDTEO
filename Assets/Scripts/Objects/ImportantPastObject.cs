@@ -26,36 +26,38 @@ public struct HoldConstraint
     public Enums.E_GAMEPAD_BUTTON gamepadButton;
 }
 
-public class ImportantPastObject : MonoBehaviour
+public class ImportantPastObject : ObjectViewable
 {
-    /*public WantedInteraction[] _wantedInteractionArray;
+    public WantedInteraction[] _wantedInteractionArray;
     int _index = 0;
     bool _isEnd = false;
     bool _isStepValidated = false;
     List<HoldConstraint> _holdConstraintList = new List<HoldConstraint>();
 
+    bool _isManipulated = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        Init();
+
         _meshRenderer = GetComponent<MeshRenderer>();
+        _meshFilter = GetComponent<MeshFilter>();
 
-        _originalPosition = transform.position;
-        _originalRotation = transform.rotation;
-
-        _meshRenderer.enabled = false;
-        _text.enabled = false;
+        SetModePresent();
     }
 
     // Update is called once per frame
     void Update()
     {
         //if (PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
-        if (PastManager.instance.state == Enums.E_LEVEL_STATE.INTERACT) CheckInputOrder();
+        if (_isManipulated) CheckInputOrder();
     }
 
-    public override void SetModeInteract()
+    public override void Interact()
     {
-        GameManager.instance.SetGameStateManipulation();
+        base.Interact();
+        _isManipulated = true;
     }
 
     void CheckInputOrder()
@@ -151,6 +153,10 @@ public class ImportantPastObject : MonoBehaviour
         {
             _isEnd = true;
             print("end sequence");
+            _isManipulated = false;
+            interactable = false;
+
+            DialogManager.instance.StartDialog("test");
         }
-    }*/
+    }
 }
