@@ -12,7 +12,7 @@ public class ObjectManipulation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PastManager.instance.state == Enums.E_LEVEL_STATE.INTERACT) Manipulation();
+        if (gameObject.layer == Utils_Variables.LAYER_OBJECT_INTERACT) Manipulation();
     }
 
     void Manipulation()
