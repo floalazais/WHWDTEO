@@ -2,18 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchSceneNode : MonoBehaviour
+[NodeWidth(350)]
+[NodeTint("#c242f5")]
+public class SwitchSceneNode : DialogNode
 {
+    [Input(ShowBackingValue.Never)] public string previous;
+    [Output(ShowBackingValue.Never)] public string next;
 
-    // Start is called before the first frame update
-    void Start()
+    public string sceneName;
+
+    // Use this for initialization
+    protected override void Init()
     {
-        
+        base.Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Activate()
     {
-        
+        W_SceneManager.instance.SwitchScene(sceneName);
+    }
+
+    public override bool Update()
+    {
+        return true;
+    }
+
+    public override DialogNode GetNextNode()
+    {
+        return null;
     }
 }
