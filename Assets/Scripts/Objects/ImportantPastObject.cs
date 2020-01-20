@@ -161,6 +161,11 @@ public class ImportantPastObject : ObjectViewable
             _isManipulated = false;
             interactable = false;
 
+            //Disable the object at the end of manipulation
+            _meshRenderer.enabled = false;
+
+            UIManager.instance.RemoveScreen();
+
             DialogManager.instance.StartDialog(_dialogName);
         }
 

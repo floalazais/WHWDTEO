@@ -9,8 +9,7 @@ public class PastManager : MonoBehaviour
     [SerializeField] float _interactionRadius = 1.5f;
     [SerializeField] float _memoryZoneRadius = 3.0f;
 
-    public static PastManager instance { get { return _instance; } }
-    static PastManager _instance;
+    public static PastManager instance { get; private set; }
 
     public Enums.E_LEVEL_STATE state { get { return _state; } }
     Enums.E_LEVEL_STATE _state = Enums.E_LEVEL_STATE.PRESENT;
@@ -20,13 +19,13 @@ public class PastManager : MonoBehaviour
 
     void Awake()
     {
-        if (_instance != null)
+        if (instance != null)
         {
             Debug.LogError("ALREADY INSTANCE CREATED " + name);
-            Destroy(_instance);
+            Destroy(instance);
         }
 
-        _instance = this;
+        instance = this;
     }
 
     private void Start()
