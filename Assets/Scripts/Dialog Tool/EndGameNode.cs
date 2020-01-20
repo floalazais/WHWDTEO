@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[NodeWidth(350)]
-[NodeTint("#c242f5")]
-public class SwitchSceneNode : DialogNode
+public class EndGameNode : DialogNode
 {
     [Input(ShowBackingValue.Never)] public string previous;
 
-    public string sceneName;
-
-    // Use this for initialization
     protected override void Init()
     {
         base.Init();
@@ -18,8 +13,7 @@ public class SwitchSceneNode : DialogNode
 
     public override void Activate()
     {
-        GameManager.instance.SetGameStateExploration();
-        W_SceneManager.instance.SwitchScene(sceneName);
+        Application.Quit();
     }
 
     public override bool Update()
