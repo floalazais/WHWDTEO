@@ -48,7 +48,6 @@ public class CanvasObject : MonoBehaviour
 
     public virtual void SetMediumPlayerMode()
     {
-        print("medium " + transform.parent.name);
         _objectText.text = "";
         _arrowImg.enabled = true;
         _interactionImg.enabled = false;
@@ -56,7 +55,6 @@ public class CanvasObject : MonoBehaviour
 
     public virtual void SetClosePlayerMode()
     {
-        print("close " + transform.parent.name);
         _objectText.text = _objectName;
         _arrowImg.enabled = true;
         _interactionImg.enabled = false;
@@ -64,7 +62,6 @@ public class CanvasObject : MonoBehaviour
 
     public virtual void SetClosestPlayerMode()
     {
-        print("closest " + transform.parent.name);
         _objectText.text = _objectInteraction;
         _arrowImg.enabled = true;
         _interactionImg.enabled = true;
