@@ -10,7 +10,7 @@ public class Plush : MonoBehaviour
     [SerializeField] Transform _cameraFollow;
     [SerializeField] Transform _cameraLookAt;
 
-    [SerializeField] protected Image _iconUI = null;
+    [SerializeField] protected CanvasObject _canvas = null;
 
     public bool inspected { get; private set; }
 
@@ -27,7 +27,6 @@ public class Plush : MonoBehaviour
         _originalRotation = transform.rotation;
 
         inspected = false;
-        _iconUI.enabled = false;
         _collider = GetComponent<Collider>();
 
         SetFarPlayerMode();
@@ -35,7 +34,8 @@ public class Plush : MonoBehaviour
 
     public void Interact()
     {
-        _iconUI.enabled = false;
+        _canvas.SetFarPlayerMode();
+
         _collider.isTrigger = true;
         SoundManager.instance.PlaySound("Play_Begin_Memory");
 
@@ -50,9 +50,20 @@ public class Plush : MonoBehaviour
         GameManager.instance.SetGameStateManipulation();
     }
 
+    public void SetClosePlayerMode()
+    {
+        _canvas.SetClosePlayerMode();
+    }
+
+    public void SetMediumPlayerMode()
+    {
+        _canvas.SetMediumPlayerMode();
+    }
+
     public void SetNearPlayerMode()
     {
-        _iconUI.enabled = true;
+        _canvas.SetClosestPlayerMode();
+
         _collider.isTrigger = false;
 
         transform.position = _originalPosition;
@@ -68,7 +79,8 @@ public class Plush : MonoBehaviour
 
     public void SetFarPlayerMode()
     {
-        _iconUI.enabled = false;
+        _canvas.SetFarPlayerMode();
+
         _collider.isTrigger = false;
 
         transform.position = _originalPosition;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7574534894108291429}
   - component: {fileID: 1460610925088148307}
   - component: {fileID: 5150332979333363626}
-  - component: {fileID: 2565724532176032567}
+  - component: {fileID: 4637854872367616099}
   m_Layer: 0
   m_Name: tapeRecorder_Past
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2565724532176032567
+--- !u!114 &4637854872367616099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6865032304506880886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0692d5c884701c54da067fa30a9154c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba180cda07017b41844c64996600e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _memoryObjectMaterial: {fileID: 2100000, guid: 879ae157b9cd02c4f86c84adceb02eee,
@@ -98,3 +98,7 @@ MonoBehaviour:
     type: 3}
   _presentObjectFilter: {fileID: 0}
   _meshRenderer: {fileID: 0}
+  _iconUI: {fileID: 0}
+  interactionTime: 0
+  interactable: 1
+  dialogName: recorderTL
