@@ -91,27 +91,27 @@ public class PastManager : MonoBehaviour
                     if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PAST && _state == Enums.E_LEVEL_STATE.PRESENT)
                     {
                         lObjectInteractable.SetFarPlayerMode();
-                        return;
+                        continue;
                     }
 
                     else if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE)
                     {
                         lObjectInteractable.SetFarPlayerMode();
-                        return;
+                        continue;
                     }
 
                     //If we are close but can't interact
                     if (distance <= _closeRadius)
                     {
                         lObjectInteractable.SetClosePlayerMode();
-                        return;
+                        continue;
                     }
 
                     //If we are a bit close but can't interact
                     if (distance <= _memoryZoneRadius)
                     {
                         lObjectInteractable.SetMediumPlayerMode();
-                        return;
+                        continue;
                     }
 
                     //lObjectInteractable.SetFarPlayerMode();

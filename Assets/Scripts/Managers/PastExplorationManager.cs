@@ -85,7 +85,7 @@ public class PastExplorationManager : MonoBehaviour
             if (lObject.inspected)
             {
                 lObject.SetFarPlayerMode();
-                return;
+                continue;
             }
 
             float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
@@ -113,14 +113,14 @@ public class PastExplorationManager : MonoBehaviour
                     if (distance <= _closeRadius)
                     {
                         lObject.SetClosePlayerMode();
-                        return;
+                        continue;
                     }
 
                     //If we are a bit close but can't interact
                     if (distance <= _memoryZoneRadius)
                     {
                         lObject.SetMediumPlayerMode();
-                        return;
+                        continue;
                     }
 
                     //lObjectInteractable.SetFarPlayerMode();
@@ -131,7 +131,11 @@ public class PastExplorationManager : MonoBehaviour
                     if (distance <= lShortestDistance)
                     {
                         lShortestDistance = distance;
+                        if (lNearestObject != null) lNearestObject.SetClosePlayerMode();
                         lNearestObject = lObject;
+                    }
+                    else {
+                        lObject.SetClosePlayerMode();
                     }
                 }
             }
@@ -166,8 +170,9 @@ public class PastExplorationManager : MonoBehaviour
 
     public void SetNearObject(Plush pObject)
     {
+        print(("pute"));
         if (pObject == _objectNearPlayer) return;
-
+        print(("salope"));
         _objectNearPlayer = pObject;
         _objectNearPlayer.SetNearPlayerMode();
     }

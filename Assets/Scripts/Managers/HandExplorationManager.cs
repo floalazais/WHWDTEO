@@ -11,6 +11,10 @@ public class HandExplorationManager : MonoBehaviour
     int _index = 0;
 
     [SerializeField] float _interactionRadius = 1.5f;
+    [SerializeField] float _closeRadius = 2.0f;
+    [SerializeField] float _memoryZoneRadius = 3.0f;
+
+    Hand _currentHand = null;
 
     void Awake()
     {
@@ -30,7 +34,7 @@ public class HandExplorationManager : MonoBehaviour
         _objectsArray = GameObject.FindObjectsOfType<Hand>().ToList();
         SortHandsByName();
 
-        for(int i = 0; i < _objectsArray.Count; i++)
+        for (int i = 0; i < _objectsArray.Count; i++)
         {
             _objectsArray[i].gameObject.SetActive(false);
         }
@@ -47,7 +51,9 @@ public class HandExplorationManager : MonoBehaviour
     {
         if (_index - 1 >= 0) _objectsArray[_index - 1].gameObject.SetActive(false);
 
-        _objectsArray[_index].gameObject.SetActive(true);
+        _currentHand = _objectsArray[_index];
+        _currentHand.gameObject.SetActive(true);
+
     }
 
     void Update()
@@ -58,38 +64,44 @@ public class HandExplorationManager : MonoBehaviour
 
     protected void CheckPlayerDistance()
     {
-        float lShortestDistance = _interactionRadius;
-        Hand lNearestObject = null;
+        float distance = Vector3.Distance(_currentHand.transform.position, Controller.instance.transform.position);
 
-        for (int i = 0; i < _objectsArray.Count; i++)
+        //If we're too far from the player
+        if (distance > _memoryZoneRadius)
         {
-            Hand lObject = _objectsArray[i];
+            _currentHand.SetFarPlayerMode();
+        }
 
-            float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
-
+        else
+        {
             if (distance > _interactionRadius)
             {
-                if (_objectNearPlayer == lObject)
+                if (_objectNearPlayer == _currentHand)
                 {
                     _objectNearPlayer.SetFarPlayerMode();
                     _objectNearPlayer = null;
+                }
+
+                //If we are close but can't interact
+                if (distance <= _closeRadius)
+                {
+                    _currentHand.SetClosePlayerMode();
+                    return;
+                }
+
+                //If we are a bit close but can't interact
+                if (distance <= _memoryZoneRadius)
+                {
+                    _currentHand.SetMediumPlayerMode();
+                    return;
                 }
             }
 
             else
             {
-                if (distance <= lShortestDistance)
-                {
-                    lShortestDistance = distance;
-                    lNearestObject = lObject;
-                }
+                SetNearObject(_currentHand);
             }
 
-        }
-
-        if (lNearestObject != null)
-        {
-            SetNearObject(lNearestObject);
         }
     }
 
@@ -97,18 +109,17 @@ public class HandExplorationManager : MonoBehaviour
     {
         if (_objectNearPlayer == null) return;
 
-        if (_objectNearPlayer.Interact())
+        _objectNearPlayer.Interact();
+
+        _index++;
+
+        if (_index >= _objectsArray.Count)
         {
-            _index++;
-
-            if(_index >= _objectsArray.Count)
-            {
-                DialogManager.instance.StartDialog("toDialogTL");
-                return;
-            }
-
-            SetActiveHand();
+            DialogManager.instance.StartDialog("toDialogTL");
+            return;
         }
+
+        SetActiveHand();
     }
 
     public void SetNearObject(Hand pObject)

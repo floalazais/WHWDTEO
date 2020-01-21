@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 15a7e547be190f54e9fcd28241154a30, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 1585523451}
+  m_SkySettings: {fileID: 1597601472}
   m_SkySettingsFromProfile: {fileID: -4772814257748482079, guid: 15a7e547be190f54e9fcd28241154a30,
     type: 2}
 --- !u!114 &122747612
@@ -1409,6 +1409,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 770591108}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &771771299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+    type: 3}
+  m_PrefabInstance: {fileID: 1856908249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &840094610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1836,6 +1842,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 664034680}
+  - {fileID: 771771299}
   m_Father: {fileID: 323626495305781106}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2588,7 +2595,7 @@ Transform:
   m_Father: {fileID: 274254398}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1585523451
+--- !u!114 &1597601472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3177,6 +3184,90 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1856908249
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1301512275}
+    m_Modifications:
+    - target: {fileID: 9172993636837630404, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_Name
+      value: Plush (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630411, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172993636837630409, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: _cameraFollow
+      value: 
+      objectReference: {fileID: 1572083506}
+    - target: {fileID: 9172993636837630409, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: _cameraLookAt
+      value: 
+      objectReference: {fileID: 1478818113}
+    - target: {fileID: 9172993636837630410, guid: 8fa8c033510739c4ea7c3f482e9a8960,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1058841313}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fa8c033510739c4ea7c3f482e9a8960, type: 3}
 --- !u!1 &1924196285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,7 +3492,7 @@ MonoBehaviour:
   _interactionRadius: 1.5
   _closeRadius: 2
   _memoryZoneRadius: 3
-  _timer: 60
+  _timer: 200
 --- !u!4 &1986305328
 Transform:
   m_ObjectHideFlags: 0

@@ -5,28 +5,37 @@ using UnityEngine.UI;
 
 public class Hand : MonoBehaviour
 {
-    [SerializeField] protected Image _iconUI = null;
+    [SerializeField] protected CanvasObject _canvas = null;
 
-    // Start is called before the first frame update
     void Start()
     {
-        _iconUI.enabled = false;
+        SetFarPlayerMode();
     }
 
-    public bool Interact()
+    public void Interact()
     {
-        _iconUI.enabled = false;
+        _canvas.SetFarPlayerMode();
+
         SoundManager.instance.PlaySound("Play_Begin_Memory");
-        return true;
+    }
+
+    public void SetClosePlayerMode()
+    {
+        _canvas.SetClosePlayerMode();
+    }
+
+    public void SetMediumPlayerMode()
+    {
+        _canvas.SetMediumPlayerMode();
     }
 
     public void SetNearPlayerMode()
     {
-        _iconUI.enabled = true;
+        _canvas.SetClosestPlayerMode();
     }
 
     public void SetFarPlayerMode()
     {
-        _iconUI.enabled = false;
+        _canvas.SetFarPlayerMode();
     }
 }
