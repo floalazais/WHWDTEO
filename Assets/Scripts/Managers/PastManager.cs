@@ -151,12 +151,16 @@ public class PastManager : MonoBehaviour
     {
         SetPresentMode();
         _pastZone.Remove();
+
+        SoundManager.instance.PlaySound("Play_End_Memory");
     }
 
     void DisplayPastZone()
     {
         SetMemoryMode();
         _pastZone.Display();
+
+        //SoundManager.instance.PlaySound("Play_Begin_Memory");
     }
 
     void PutNearObject()
