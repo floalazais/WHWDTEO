@@ -128,7 +128,8 @@ public class InputManager : MonoBehaviour
 
     public bool IsButtonClicked(Enums.E_GAMEPAD_BUTTON pButton)
     {
-        return _buttonsClickValidityTime[(int)pButton] >= 0.0f;
+        //return _buttonsClickValidityTime[(int)pButton] >= 0.0f;
+        return IsButtonPressed(pButton);
     }
 
     #endregion

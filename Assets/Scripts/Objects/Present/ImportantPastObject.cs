@@ -36,6 +36,8 @@ public class ImportantPastObject : ObjectViewable
 
     bool _isManipulated = false;
 
+    float _timerBetweenTwoSteps = 0.0f;
+
     [SerializeField] string _dialogName;
 
     // Start is called before the first frame update
@@ -87,11 +89,24 @@ public class ImportantPastObject : ObjectViewable
                         _holdConstraintList.Remove(_holdConstraintList.Find(h => h.gamepadButton == _wantedInteractionArray[j].gamepadButton));
                     }
                 }
+                _isStepValidated = false;
                 return;
             }
         }
 
-        if (_isEnd || _isStepValidated) return;
+        if (_isEnd) return;
+
+        if (_isStepValidated)
+        {
+            _timerBetweenTwoSteps -= Time.deltaTime;
+            if (_timerBetweenTwoSteps < 0.0f)
+            {
+                _timerBetweenTwoSteps = 0.0f;
+                NextStep();
+            } else {
+                return;
+            }
+        }
 
         bool lIsValidated = false;
 
@@ -145,7 +160,8 @@ public class ImportantPastObject : ObjectViewable
         if (lIsValidated)
         {
             _isStepValidated = true;
-            Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
+            _timerBetweenTwoSteps = _currentInteraction.delayBeforeNewInteraction;
+            //Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
         }
     }
 

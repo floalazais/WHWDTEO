@@ -181,6 +181,7 @@ public class PastManager : MonoBehaviour
     {
         if(_state == Enums.E_LEVEL_STATE.INTERACT)
         {
+            if ((_objectNearPlayer as ImportantPastObject) != null) return;
             PutNearObject();
             GameManager.instance.SetGameStateExploration();
             _state = Enums.E_LEVEL_STATE.PRESENT;
