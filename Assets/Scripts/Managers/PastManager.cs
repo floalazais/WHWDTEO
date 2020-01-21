@@ -7,6 +7,7 @@ public class PastManager : MonoBehaviour
 {
     [SerializeField] PastZone _pastZone = null;
     [SerializeField] float _interactionRadius = 1.5f;
+    [SerializeField] float _closeRadius = 2.0f;
     [SerializeField] float _memoryZoneRadius = 3.0f;
 
     public static PastManager instance { get; private set; }
@@ -60,34 +61,74 @@ public class PastManager : MonoBehaviour
 
             float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
 
+            //If we're too far from the player
             if (distance > _memoryZoneRadius)
             {
                 lObject.SetModePresent();
             }
 
+            //If we're not
             else
             {
                 if (state == Enums.E_LEVEL_STATE.MEMORY_MODE) lObject.SetModeMemory();
 
-                if (lObject as ObjectInteractable == null) continue;
-                if (!(lObject as ObjectInteractable).interactable) continue;
+                ObjectInteractable lObjectInteractable = lObject as ObjectInteractable;
 
+                if (lObjectInteractable == null) continue;
+                if (!lObjectInteractable.interactable) continue;
+
+                //If the object is too far from being interactable with player
                 if (distance > _interactionRadius)
                 {
+                    //If the closest object is now too far
                     if (_objectNearPlayer == lObject)
                     {
                         _objectNearPlayer.SetFarPlayerMode();
                         _objectNearPlayer = null;
                     }
+
+                    //Conditions to avoid being interactable when we're not in the good time
+                    if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PAST && _state == Enums.E_LEVEL_STATE.PRESENT)
+                    {
+                        lObjectInteractable.SetFarPlayerMode();
+                        return;
+                    }
+
+                    else if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE)
+                    {
+                        lObjectInteractable.SetFarPlayerMode();
+                        return;
+                    }
+
+                    //If we are close but can't interact
+                    if (distance <= _closeRadius)
+                    {
+                        lObjectInteractable.SetClosePlayerMode();
+                        return;
+                    }
+
+                    //If we are a bit close but can't interact
+                    if (distance <= _memoryZoneRadius)
+                    {
+                        lObjectInteractable.SetMediumPlayerMode();
+                        return;
+                    }
+
+                    //lObjectInteractable.SetFarPlayerMode();
                 }
 
+                //If we can interact with the object
                 else
                 {
+                    //Searching for the closest object
                     if (distance <= lShortestDistance)
                     {
                         lShortestDistance = distance;
+                        if(lNearestObject != null) (lNearestObject as ObjectInteractable).SetClosePlayerMode();
                         lNearestObject = lObject;
                     } 
+
+                    else lObjectInteractable.SetClosePlayerMode();
                 }
             }
         }

@@ -11,6 +11,9 @@ public class PastExplorationManager : MonoBehaviour
     Plush _objectNearPlayer;
 
     [SerializeField] float _interactionRadius = 1.5f;
+    [SerializeField] float _closeRadius = 2.0f;
+    [SerializeField] float _memoryZoneRadius = 3.0f;
+
     [SerializeField] float _timer = 60f;
 
     void Awake()
@@ -79,24 +82,57 @@ public class PastExplorationManager : MonoBehaviour
         for (int i = 0; i < _objectsArray.Count; i++)
         {
             Plush lObject = _objectsArray[i];
+            if (lObject.inspected)
+            {
+                lObject.SetFarPlayerMode();
+                return;
+            }
 
             float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
 
-            if (distance > _interactionRadius)
+            //If we're too far from the player
+            if (distance > _memoryZoneRadius)
             {
-                if (_objectNearPlayer == lObject)
-                {
-                    _objectNearPlayer.SetFarPlayerMode();
-                    _objectNearPlayer = null;
-                }
+                lObject.SetFarPlayerMode();
             }
 
+            //If we're not
             else
             {
-                if (distance <= lShortestDistance)
+                //If the object is too far from being interactable with player
+                if (distance > _interactionRadius)
                 {
-                    lShortestDistance = distance;
-                    lNearestObject = lObject;
+                    //If the closest object is now too far
+                    if (_objectNearPlayer == lObject)
+                    {
+                        _objectNearPlayer.SetFarPlayerMode();
+                        _objectNearPlayer = null;
+                    }
+
+                    //If we are close but can't interact
+                    if (distance <= _closeRadius)
+                    {
+                        lObject.SetClosePlayerMode();
+                        return;
+                    }
+
+                    //If we are a bit close but can't interact
+                    if (distance <= _memoryZoneRadius)
+                    {
+                        lObject.SetMediumPlayerMode();
+                        return;
+                    }
+
+                    //lObjectInteractable.SetFarPlayerMode();
+                }
+
+                else
+                {
+                    if (distance <= lShortestDistance)
+                    {
+                        lShortestDistance = distance;
+                        lNearestObject = lObject;
+                    }
                 }
             }
 
