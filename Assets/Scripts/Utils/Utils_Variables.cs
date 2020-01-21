@@ -17,4 +17,8 @@ public static class Utils_Variables
     public static string PRESENT_SCENE_NAME = "MainScene";
     public static string LOAD_SCENE_NAME = "LoadScene";
     public static string PAST_SCENE_NAME = "PastScene";
+
+    public static string OBJECT_CANVAS_TEXT = "Text";
+    public static string OBJECT_CANVAS_INTERACTION = "artInteractionButton";
+    public static string OBJECT_CANVAS_ARROW = "artInteractionIndicator";
 }

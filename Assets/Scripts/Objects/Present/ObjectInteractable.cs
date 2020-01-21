@@ -7,7 +7,8 @@ public abstract class ObjectInteractable : W_Object
 {
     public enum InteractionTime { PAST, PRESENT, BOTH}
 
-    [SerializeField] protected Image _iconUI = null;
+    //[SerializeField] protected Image _iconUI = null;
+    [SerializeField] protected CanvasObject _canvas = null;
 
     public InteractionTime interactionTime = InteractionTime.BOTH;
 
@@ -25,30 +26,44 @@ public abstract class ObjectInteractable : W_Object
 
     protected virtual void Init()
     {
-        if(_iconUI == null)
+        if(_canvas == null)
         {
-            Debug.LogError("no text affected to " + name);
+            Debug.LogError("no canvas affected to " + name);
             return;
         }
 
-        _iconUI.enabled = false;
+        _canvas.SetFarPlayerMode();
+    }
+
+    public virtual void SetMediumPlayerMode()
+    {
+        _canvas.SetMediumPlayerMode();
+    }
+
+    public virtual void SetClosePlayerMode()
+    {
+        _canvas.SetClosePlayerMode();
     }
 
     public virtual void SetNearPlayerMode()
     {
-        if (!interactable) return;
+        if (!interactable)
+        {
+            _canvas.SetFarPlayerMode();
+            return;
+        }
 
-        _iconUI.enabled = true;
+        _canvas.SetClosestPlayerMode();
     }
 
     public virtual void SetFarPlayerMode()
     {
-        _iconUI.enabled = false;
+        _canvas.SetFarPlayerMode();
     }
 
     public virtual void Interact()
     {
-        _iconUI.enabled = false;
+        _canvas.SetFarPlayerMode();
         SoundManager.instance.PlaySound("Play_End_Memory");
         //SoundManager.instance.PlaySound("Play_Begin_Memory");
     }
@@ -56,6 +71,7 @@ public abstract class ObjectInteractable : W_Object
     public override void SetModePresent()
     {
         base.SetModePresent();
+        SetFarPlayerMode();
 
     }
 

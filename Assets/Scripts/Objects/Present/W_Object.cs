@@ -10,7 +10,7 @@ public class W_Object : MonoBehaviour
     [SerializeField] protected MeshFilter _memoryObjectFilter = null;
     [SerializeField] protected MeshFilter _presentObjectFilter = null;
 
-    [SerializeField] protected MeshRenderer _meshRenderer = null;
+    protected MeshRenderer _meshRenderer = null;
     protected MeshFilter _meshFilter = null;
 
     private void Start()
