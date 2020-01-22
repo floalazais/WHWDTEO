@@ -10,6 +10,7 @@ public class HandExplorationManager : MonoBehaviour
     Hand _objectNearPlayer;
     int _index = 0;
 
+    [SerializeField] float timeBeforeEndCinematic = 1.0f;
     [SerializeField] float _interactionRadius = 1.5f;
     [SerializeField] float _closeRadius = 2.0f;
     [SerializeField] float _memoryZoneRadius = 3.0f;
@@ -133,8 +134,7 @@ public class HandExplorationManager : MonoBehaviour
 
         if (_index >= _objectsArray.Count)
         {
-            DialogManager.instance.StartDialog("toDialogTL");
-            return;
+            Invoke("EndHandExploration", timeBeforeEndCinematic);
         }
 
         SetActiveHand();
@@ -146,5 +146,11 @@ public class HandExplorationManager : MonoBehaviour
 
         _objectNearPlayer = pObject;
         _objectNearPlayer.SetNearPlayerMode();
+    }
+
+    void EndHandExploration()
+    {
+        DialogManager.instance.StartDialog("toDialogTL");
+        return;
     }
 }
