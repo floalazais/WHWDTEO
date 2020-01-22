@@ -39,6 +39,7 @@ public class HandExplorationManager : MonoBehaviour
             _objectsArray[i].gameObject.SetActive(false);
         }
 
+        SoundManager.instance.PlaySound(Utils_Variables.HOPE_GLITCH_SOUND);
         SetActiveHand();
     }
 
@@ -49,11 +50,27 @@ public class HandExplorationManager : MonoBehaviour
 
     void SetActiveHand()
     {
-        if (_index - 1 >= 0) _objectsArray[_index - 1].gameObject.SetActive(false);
+        if (_index - 1 >= 0)
+        {
+            SoundManager.instance.PlaySound(Utils_Variables.DISPARITION_MAIN_SOUND);
+            Invoke("DisableHand", 0.5f);
+        }
 
+        if (_index != 0) Invoke("ActiveHand", 3);
+        else ActiveHand();
+    }
+
+    void ActiveHand()
+    {
         _currentHand = _objectsArray[_index];
         _currentHand.gameObject.SetActive(true);
+        SoundManager.instance.PlaySound(Utils_Variables.APPARITION_MAIN_SOUND);
+    }
 
+    //must disappear at a precise time of the sound
+    void DisableHand()
+    {
+        _objectsArray[_index - 1].gameObject.SetActive(false);
     }
 
     void Update()
@@ -64,6 +81,7 @@ public class HandExplorationManager : MonoBehaviour
 
     protected void CheckPlayerDistance()
     {
+        if (_currentHand == null) return;
         float distance = Vector3.Distance(_currentHand.transform.position, Controller.instance.transform.position);
 
         //If we're too far from the player

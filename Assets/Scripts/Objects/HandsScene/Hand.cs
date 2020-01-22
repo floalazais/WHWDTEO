@@ -15,8 +15,6 @@ public class Hand : MonoBehaviour
     public void Interact()
     {
         _canvas.SetFarPlayerMode();
-
-        SoundManager.instance.PlaySound("Play_Begin_Memory");
     }
 
     public void SetClosePlayerMode()
