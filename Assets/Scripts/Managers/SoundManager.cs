@@ -25,5 +25,6 @@ public class SoundManager : MonoBehaviour
     public void PlaySound(string soundname)
     {
         AkSoundEngine.PostEvent(soundname, gameObject);
+        print(soundname);
     }
 }
