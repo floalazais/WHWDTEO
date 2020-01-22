@@ -34,7 +34,7 @@ public class DialogManager : MonoBehaviour
         {
             GameManager.instance.SetGameStateNarration();
             Mia.SetActive(false);
-            Mia2.SetActive(false);
+            if(Mia2 != null) Mia2.SetActive(false);
         }
     }
 
@@ -60,7 +60,7 @@ public class DialogManager : MonoBehaviour
             gameplayCamera.Priority = 10;
             if(PastManager.instance != null) PastManager.instance.Refresh();
             Mia.SetActive(true);
-            Mia2.SetActive(true);
+            if(Mia2 != null) Mia2.SetActive(true);
         }
     }
 

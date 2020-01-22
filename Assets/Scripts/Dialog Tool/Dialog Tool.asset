@@ -825,7 +825,7 @@ MonoBehaviour:
       _dynamic: 0
   previous: 
   next: 
-  waitTime: 3
+  waitTime: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,6 +872,7 @@ MonoBehaviour:
   - {fileID: -4372505688553260644}
   - {fileID: 4620613564301105902}
   - {fileID: 8872790025305481839}
+  - {fileID: -3047881991292850448}
   - {fileID: 0}
   currentTimeline: {fileID: 0}
   staticTimeline: 0
@@ -1352,6 +1353,9 @@ MonoBehaviour:
         reroutePoints: []
       - fieldName: next
         node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: next
+        node: {fileID: -3047881991292850448}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
