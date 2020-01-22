@@ -10,6 +10,9 @@ public class PastExplorationManager : MonoBehaviour
     List<Plush> _objectsArray = new List<Plush>();
     Plush _objectNearPlayer;
 
+    bool _success = false;
+
+    [SerializeField] float timeBeforeEndCinematic = 1.0f;
     [SerializeField] float _interactionRadius = 1.5f;
     [SerializeField] float _closeRadius = 2.0f;
     [SerializeField] float _memoryZoneRadius = 3.0f;
@@ -49,6 +52,8 @@ public class PastExplorationManager : MonoBehaviour
 
     void CheckEndExploration()
     {
+        if (_success) return;
+
         _timer -= Time.deltaTime;
 
         if (_timer <= 0) print("end explo lose");
@@ -68,10 +73,15 @@ public class PastExplorationManager : MonoBehaviour
 
             if (lSuccess)
             {
-                print("explo win");
-                DialogManager.instance.StartDialog("toHandTL");
+                _success = true;
+                Invoke("EndPlushExploration", timeBeforeEndCinematic);
             }
         }
+    }
+
+    void EndPlushExploration()
+    {
+        DialogManager.instance.StartDialog("toHandTL");
     }
 
     protected void CheckPlayerDistance()
@@ -170,9 +180,8 @@ public class PastExplorationManager : MonoBehaviour
 
     public void SetNearObject(Plush pObject)
     {
-        print(("pute"));
         if (pObject == _objectNearPlayer) return;
-        print(("salope"));
+        
         _objectNearPlayer = pObject;
         _objectNearPlayer.SetNearPlayerMode();
     }

@@ -78,7 +78,12 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
+        if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION)
+        {
+            _blendValue = Mathf.Lerp(_blendValue, 0.0f, Time.deltaTime * _CharacterAnimationSpeed);
+            GetComponent<Animator>().SetFloat("Blend", _blendValue);
+            return;
+        }
 
         /* --- Input --- */
 
