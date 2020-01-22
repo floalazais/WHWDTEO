@@ -5,8 +5,43 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Take 001
-  externalObjects: {}
+    second: Mia_Pushdoor
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_14_Eye_inside
+    second: {fileID: 2100000, guid: 8a5969f3a428d3c46aec88723cae8c6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_14_Hair
+    second: {fileID: 2100000, guid: 535c353d6c2bcfa40a7d6dcb2d9b3670, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_14_Mia_corps
+    second: {fileID: 2100000, guid: 29e3a7cce9cb54741a4764cedcc99abc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_14_Mouth_cavity
+    second: {fileID: 2100000, guid: a2c6c78236cc20c4e873fab9ce682503, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_14_Wool
+    second: {fileID: 2100000, guid: 3a681a8d9ec1d274f8176a1f98794902, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_14_eye_outside
+    second: {fileID: 2100000, guid: 8653b1d5e6fe8e049b62ac86545792e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_14_short_shoes_earphone
+    second: {fileID: 2100000, guid: 86e5b296a1eb4b14d8ca3a7df7573d57, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,7 +68,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Mia_Pushdoor
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 37
+      lastFrame: 220
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
