@@ -122,6 +122,7 @@ public class Controller : MonoBehaviour
             } else {
                 _blendValue = Mathf.Lerp(_blendValue, 1.0f, Time.deltaTime * _CharacterAnimationSpeed);
                 transform.position += _moveVector;
+                //SoundManager.instance.PlaySound(Utils_Variables.MOVEMENT_PLAYER_SOUND);
             }
         } else {
             _blendValue = Mathf.Lerp(_blendValue, 0.0f, Time.deltaTime * _CharacterAnimationSpeed);
