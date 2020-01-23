@@ -16,7 +16,8 @@ public static class Enums
         PRESENT,
         MEMORY_MODE,
         INTERACT,
-        DESCRIPTION
+        DESCRIPTION,
+        PAST
     }
 
     public enum E_MOVE_DIRECTION

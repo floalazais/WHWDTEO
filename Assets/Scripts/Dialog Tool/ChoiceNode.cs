@@ -63,25 +63,28 @@ public class ChoiceNode : DialogNode {
 
     public override bool Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log(choicesArray[0].label);
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.TRIANGLE_BUTTON)) {
             selectedChoice = 0;
             UIManager.instance.OnEndDialog();
             return true;
-        } else if (Input.GetKeyDown(KeyCode.Q)) {
-            Debug.Log(choicesArray[1].label);
+        } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.SQUARE_BUTTON)) {
             selectedChoice = 1;
             UIManager.instance.OnEndDialog();
             return true;
-        } else if(Input.GetKeyDown(KeyCode.S)) {
-            Debug.Log(choicesArray[2].label);
+        } else if(InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) {
             selectedChoice = 2;
             UIManager.instance.OnEndDialog();
             return true;
-        } else if (Input.GetKeyDown(KeyCode.D)) {
-            Debug.Log(choicesArray[3].label);
+        } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) {
             selectedChoice = 3;
+            UIManager.instance.OnEndDialog();
+            return true;
+        } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.D_PAD_UP_BUTTON)) {
+            selectedChoice = 4;
+            UIManager.instance.OnEndDialog();
+            return true;
+        } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.D_PAD_LEFT_BUTTON)) {
+            selectedChoice = 5;
             UIManager.instance.OnEndDialog();
             return true;
         } else {

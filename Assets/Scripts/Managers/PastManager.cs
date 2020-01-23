@@ -7,10 +7,10 @@ public class PastManager : MonoBehaviour
 {
     [SerializeField] PastZone _pastZone = null;
     [SerializeField] float _interactionRadius = 1.5f;
+    [SerializeField] float _closeRadius = 2.0f;
     [SerializeField] float _memoryZoneRadius = 3.0f;
 
-    public static PastManager instance { get { return _instance; } }
-    static PastManager _instance;
+    public static PastManager instance { get; private set; }
 
     public Enums.E_LEVEL_STATE state { get { return _state; } }
     Enums.E_LEVEL_STATE _state = Enums.E_LEVEL_STATE.PRESENT;
@@ -20,13 +20,13 @@ public class PastManager : MonoBehaviour
 
     void Awake()
     {
-        if (_instance != null)
+        if (instance != null)
         {
             Debug.LogError("ALREADY INSTANCE CREATED " + name);
-            Destroy(_instance);
+            Destroy(instance);
         }
 
-        _instance = this;
+        instance = this;
     }
 
     private void Start()
@@ -61,33 +61,75 @@ public class PastManager : MonoBehaviour
 
             float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
 
+            //If we're too far from the player
             if (distance > _memoryZoneRadius)
             {
                 lObject.SetModePresent();
             }
 
+            //If we're not
             else
             {
                 if (state == Enums.E_LEVEL_STATE.MEMORY_MODE) lObject.SetModeMemory();
 
-                if (lObject as ObjectInteractable == null) continue;
+                ObjectInteractable lObjectInteractable = lObject as ObjectInteractable;
 
+                if (lObjectInteractable == null) continue;
+                if (!lObjectInteractable.interactable) continue;
+
+                //Conditions to avoid being interactable when we're not in the good time period
+                if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PAST && _state == Enums.E_LEVEL_STATE.PRESENT)
+                {
+                    lObjectInteractable.SetFarPlayerMode();
+                    continue;
+                }
+
+                else if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE)
+                {
+                    lObjectInteractable.SetFarPlayerMode();
+                    continue;
+                }
+
+                //If the object is too far from being interactable with player
                 if (distance > _interactionRadius)
                 {
+                    //If the closest object is now too far
                     if (_objectNearPlayer == lObject)
                     {
                         _objectNearPlayer.SetFarPlayerMode();
                         _objectNearPlayer = null;
                     }
+
+                    //If we are close but can't interact
+                    if (distance <= _closeRadius)
+                    {
+                        lObjectInteractable.SetClosePlayerMode();
+                        continue;
+                    }
+
+                    //If we are a bit close but can't interact
+                    if (distance <= _memoryZoneRadius)
+                    {
+                        lObjectInteractable.SetMediumPlayerMode();
+                        continue;
+                    }
+
+                    //lObjectInteractable.SetFarPlayerMode();
                 }
 
+                //If we can interact with the object
                 else
                 {
+
+                    //Searching for the closest object
                     if (distance <= lShortestDistance)
                     {
                         lShortestDistance = distance;
+                        if(lNearestObject != null) (lNearestObject as ObjectInteractable).SetClosePlayerMode();
                         lNearestObject = lObject;
                     } 
+
+                    else lObjectInteractable.SetClosePlayerMode();
                 }
             }
         }
@@ -132,6 +174,7 @@ public class PastManager : MonoBehaviour
 
         _state = Enums.E_LEVEL_STATE.INTERACT;
         GameManager.instance.SetGameStateManipulation();
+        UIManager.instance.OnInspectionScreen();
 
         _objectNearPlayer.Interact();
     }
@@ -140,8 +183,10 @@ public class PastManager : MonoBehaviour
     {
         if(_state == Enums.E_LEVEL_STATE.INTERACT)
         {
+            if ((_objectNearPlayer as ImportantPastObject) != null) return;
             PutNearObject();
             GameManager.instance.SetGameStateExploration();
+            UIManager.instance.OnInspectionScreen();
             _state = Enums.E_LEVEL_STATE.PRESENT;
         }
     }
@@ -151,12 +196,16 @@ public class PastManager : MonoBehaviour
     {
         SetPresentMode();
         _pastZone.Remove();
+
+        SoundManager.instance.PlaySound(Utils_Variables.END_MEMORY_SOUND);
     }
 
     void DisplayPastZone()
     {
         SetMemoryMode();
         _pastZone.Display();
+
+        //SoundManager.instance.PlaySound("Play_Begin_Memory");
     }
 
     void PutNearObject()

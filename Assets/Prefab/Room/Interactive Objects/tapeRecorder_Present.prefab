@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7574534894108291429}
   - component: {fileID: 1460610925088148307}
   - component: {fileID: 5150332979333363626}
+  - component: {fileID: 5566501926808691073}
   m_Layer: 0
   m_Name: tapeRecorder_Present
   m_TagString: Untagged
@@ -78,3 +79,46 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5566501926808691073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865032304506880886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2a6cad08b8e954388d9af6c7c78ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _memoryObjectMaterial: {fileID: 0}
+  _presentObjectMaterial: {fileID: 2100000, guid: 98fb00e052ef9a748bc264d598d200c9,
+    type: 2}
+  _memoryObjectFilter: {fileID: 0}
+  _presentObjectFilter: {fileID: 1460610925088148307}
+  _canvas: {fileID: 0}
+  interactionTime: 1
+  interactable: 0
+  _wantedInteractionArray:
+  - interactionType: 0
+    gamepadButton: 1
+    moveDirection: 0
+    rollDirection: 0
+    swipeDirection: 0
+    spamCount: 0
+    delayBeforeNewInteraction: 0.5
+  - interactionType: 3
+    gamepadButton: 4
+    moveDirection: 0
+    rollDirection: 0
+    swipeDirection: 0
+    spamCount: 0
+    delayBeforeNewInteraction: 0.5
+  - interactionType: 1
+    gamepadButton: 1
+    moveDirection: 0
+    rollDirection: 0
+    swipeDirection: 0
+    spamCount: 0
+    delayBeforeNewInteraction: 0.5
+  _dialogName: toPastTL
