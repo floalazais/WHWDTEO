@@ -64,7 +64,6 @@ public abstract class ObjectInteractable : W_Object
     public virtual void Interact()
     {
         _canvas.SetFarPlayerMode();
-        SoundManager.instance.PlaySound(Utils_Variables.END_MEMORY_SOUND);
     }
 
     public override void SetModePresent()
