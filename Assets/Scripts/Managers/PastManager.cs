@@ -138,6 +138,7 @@ public class PastManager : MonoBehaviour
 
         if(lNearestObject != null)
         {
+            print(lNearestObject.name);
             SetNearObject(lNearestObject);
         }
     }
@@ -255,9 +256,14 @@ public class PastManager : MonoBehaviour
 
     public void Refresh()
     {
-        if (InputManager.instance.IsButtonDown(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) && !_pastZoneDisplayed)
+        if (InputManager.instance.IsButtonDown(Enums.E_GAMEPAD_BUTTON.R2_BUTTON))
         {
-            DisplayPastZone();
-        } else if (_pastZoneDisplayed) RemovePastZone();
+            if (!_pastZoneDisplayed) DisplayPastZone();
+        }
+        else
+        {
+            if (_pastZoneDisplayed) RemovePastZone();
+            else SetPresentMode();
+        }
     }
 }

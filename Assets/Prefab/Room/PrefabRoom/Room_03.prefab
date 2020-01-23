@@ -139,6 +139,21 @@ MonoBehaviour:
   interactionTime: 1
   interactable: 0
   dialogName: alarmClockTL
+--- !u!114 &556767245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845094755139178343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f21a9ad5172fb4e832cdb700a3e03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensX: 500
+  sensY: 500
+  _camera: {fileID: 0}
 --- !u!114 &7484269060136067214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,21 +174,6 @@ MonoBehaviour:
   _canvas: {fileID: 7904715606585847706}
   interactionTime: 0
   interactable: 1
---- !u!114 &556767245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3845094755139178343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f21a9ad5172fb4e832cdb700a3e03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensX: 500
-  sensY: 500
-  _camera: {fileID: 0}
 --- !u!95 &5477509570360129902
 Animator:
   serializedVersion: 3
@@ -1095,6 +1095,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5477509570080208794}
     m_Modifications:
+    - target: {fileID: 710450965443225645, guid: 1a4cc80ba01f8804b9486425e1be16ff,
+        type: 3}
+      propertyPath: m_Name
+      value: carsGroupPast
+      objectReference: {fileID: 0}
     - target: {fileID: 4577731705611573822, guid: 1a4cc80ba01f8804b9486425e1be16ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1149,11 +1154,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 710450965443225645, guid: 1a4cc80ba01f8804b9486425e1be16ff,
-        type: 3}
-      propertyPath: m_Name
-      value: carsGroupPast
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2640979932376899728, guid: 1a4cc80ba01f8804b9486425e1be16ff, type: 3}
@@ -2547,6 +2547,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5477509570080208794}
     m_Modifications:
+    - target: {fileID: 8743880103109342679, guid: 6babd368c368e02489bb5dc6e7bfd44e,
+        type: 3}
+      propertyPath: m_Name
+      value: alarmClock_Present
+      objectReference: {fileID: 0}
     - target: {fileID: 5693633466028443588, guid: 6babd368c368e02489bb5dc6e7bfd44e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2601,11 +2606,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743880103109342679, guid: 6babd368c368e02489bb5dc6e7bfd44e,
-        type: 3}
-      propertyPath: m_Name
-      value: alarmClock_Present
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6babd368c368e02489bb5dc6e7bfd44e, type: 3}
@@ -2875,6 +2875,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5477509570080208794}
     m_Modifications:
+    - target: {fileID: 8743880103109342679, guid: 63c7ac8de8895d242839a9cd70a644b8,
+        type: 3}
+      propertyPath: m_Name
+      value: alarmClock_Past
+      objectReference: {fileID: 0}
     - target: {fileID: 5693633466028443588, guid: 63c7ac8de8895d242839a9cd70a644b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2929,11 +2934,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743880103109342679, guid: 63c7ac8de8895d242839a9cd70a644b8,
-        type: 3}
-      propertyPath: m_Name
-      value: alarmClock_Past
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c7ac8de8895d242839a9cd70a644b8, type: 3}
@@ -3842,6 +3842,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5477509569150697274}
     m_Modifications:
+    - target: {fileID: 7761459279336254970, guid: 2809328f193c55449b6d545690836451,
+        type: 3}
+      propertyPath: m_Name
+      value: terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 6768179955322445801, guid: 2809328f193c55449b6d545690836451,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3907,11 +3912,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25000036
       objectReference: {fileID: 0}
-    - target: {fileID: 7761459279336254970, guid: 2809328f193c55449b6d545690836451,
-        type: 3}
-      propertyPath: m_Name
-      value: terrain
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2809328f193c55449b6d545690836451, type: 3}
 --- !u!4 &684178944420253760 stripped
@@ -3933,6 +3933,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5477509569162614021}
     m_Modifications:
+    - target: {fileID: 1367841884381193044, guid: c076b51be7608ed4686595868b38b687,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWallsDoorsWindows
+      objectReference: {fileID: 0}
     - target: {fileID: 2639343761039544647, guid: c076b51be7608ed4686595868b38b687,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3987,11 +3992,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1367841884381193044, guid: c076b51be7608ed4686595868b38b687,
-        type: 3}
-      propertyPath: m_Name
-      value: roomWallsDoorsWindows
       objectReference: {fileID: 0}
     - target: {fileID: 4581102339722791555, guid: c076b51be7608ed4686595868b38b687,
         type: 3}
