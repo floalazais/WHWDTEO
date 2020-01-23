@@ -21,6 +21,7 @@ public class TimelineManager : MonoBehaviour
 
     public void PlayTimeline(PlayableAsset playableAsset)
     {
+        UIManager.instance.RemoveScreen();
         playableDirector.playableAsset = playableAsset;
         playableDirector.Play();
     }
