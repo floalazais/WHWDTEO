@@ -37,7 +37,6 @@ public class Plush : MonoBehaviour
         _canvas.SetFarPlayerMode();
 
         _collider.isTrigger = true;
-        SoundManager.instance.PlaySound("Play_Begin_Memory");
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;

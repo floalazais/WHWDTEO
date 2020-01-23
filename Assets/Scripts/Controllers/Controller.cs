@@ -2,13 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Diagnostics;
 using UnityEngine.Experimental.Rendering.HDPipeline;
+using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
     private Camera _camera;
 
     private Rigidbody _rigidbody;
+
+    bool _onCarpet = false;
 
     [SerializeField] private float _joystickDeadZone = 0.1f;
     [SerializeField] private float _CharacterSpeed = 2.0f;
@@ -26,6 +30,7 @@ public class Controller : MonoBehaviour
 
     [SerializeField] private Transform _lookAt = null;
     [SerializeField] private Transform _follow = null;
+    [SerializeField] private Transform _floorRaycast = null;
 
     Vector3 wallHitPosition;
 
@@ -78,10 +83,21 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_blendValue < 0.025f)
+        {
+            _blendValue = 0.0f;
+        }
+        else if (_blendValue > 0.975f)
+        {
+            _blendValue = 1.0f;
+        }
+
         if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION)
         {
             _blendValue = Mathf.Lerp(_blendValue, 0.0f, Time.deltaTime * _CharacterAnimationSpeed);
             GetComponent<Animator>().SetFloat("Blend", _blendValue);
+            AkSoundEngine.SetRTPCValue("Volume_Presence", _blendValue * 100);
+            AkSoundEngine.SetRTPCValue("Blend_Idle_Walk", _blendValue);
             return;
         }
 
@@ -110,7 +126,12 @@ public class Controller : MonoBehaviour
         /* --- Movement --- */
 
         RaycastHit wallHit = new RaycastHit ();
-        
+
+        if (Physics.Linecast(_floorRaycast.position, _floorRaycast.position + Vector3.down, out wallHit))
+        {
+            _onCarpet = wallHit.collider.tag == "Carpet";
+        }
+
         _moveVector = Vector3.zero;
         Quaternion lCameraRotationY = GetAxisRotation (_camera.transform.rotation, false, true, false);
 
@@ -121,7 +142,7 @@ public class Controller : MonoBehaviour
             _moveVector.y = 0.0f;
             _moveVector = _moveVector.normalized * _CharacterSpeed * Time.deltaTime;
             
-            if (Physics.SphereCast(transform.position, 0.3f, _moveVector, out wallHit, _CharacterSpeed * Time.deltaTime))
+            if (Physics.SphereCast(transform.position, 0.3f, _moveVector, out wallHit, _CharacterSpeed * Time.deltaTime, ~_cameraLayerMask))
             {
                 _blendValue = Mathf.Lerp(_blendValue, 0.0f, Time.deltaTime * _CharacterAnimationSpeed);
             } else {
@@ -133,11 +154,13 @@ public class Controller : MonoBehaviour
             _blendValue = Mathf.Lerp(_blendValue, 0.0f, Time.deltaTime * _CharacterAnimationSpeed);
         }
         GetComponent<Animator>().SetFloat("Blend", _blendValue);
+        AkSoundEngine.SetRTPCValue("Volume_Presence", _blendValue * 100);
+        AkSoundEngine.SetRTPCValue("Blend_Idle_Walk", _blendValue);
 
         /* --- Camera --- */
 
         /* Camera control */
-        
+
         Vector3 lCameraLookAt = transform.position + lCameraRotationY * Vector3.right * _cameraRightDistanceToPlayer + Vector3.up * _cameraUpDistanceToPlayer;
 
         if (rightJoystick.y >= _joystickDeadZone && _camera.transform.position.y > _cameraMinHeight + _lookAt.position.y - _cameraUpDistanceToPlayer)
@@ -195,5 +218,60 @@ public class Controller : MonoBehaviour
         Gizmos.DrawLine(_follow.position, _lookAt.position);
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(wallHitPosition, 0.01f);
+    }
+
+    public void FootStepEvent()
+    {
+        if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
+
+        if (_blendValue < 0.1f) return;
+
+        if (SceneManager.GetActiveScene().name == "TestHandsScene")
+        {
+            SoundManager.instance.PlaySound(Utils_Variables.STEP_VOID_SOUND);
+            return;
+        }
+
+        if (_onCarpet)
+        {
+            SoundManager.instance.PlaySound(Utils_Variables.STEP_TAPIS_SOUND);
+        }
+        else
+        {
+            SoundManager.instance.PlaySound(Utils_Variables.STEP_PARQUET_SOUND);
+        }
+    }
+
+    public void ClothPresenceEvent()
+    {
+        if (SceneManager.GetActiveScene().name == "TestHandsScene") return;
+
+        if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
+
+        if (_blendValue < 0.1f) return;
+
+        SoundManager.instance.PlaySound(Utils_Variables.MOVEMENT_PLAYER_SOUND);
+    }
+
+    public void IdleClothPresenceEvent()
+    {
+        if (SceneManager.GetActiveScene().name == "TestHandsScene") return;
+
+        if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
+
+        if (_blendValue > 0.0f) return;
+
+        SoundManager.instance.PlaySound(Utils_Variables.MOVEMENT_IDLE_SOUND);
+    }
+
+    public void BreathPresenceEvent()
+    {
+        if (SceneManager.GetActiveScene().name == "TestHandsScene") return;
+
+        if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
+
+        if (_blendValue > 0.0f) return;
+
+        SoundManager.instance.PlaySound(Utils_Variables.BREATH_IDLE_SOUND);
     }
 }

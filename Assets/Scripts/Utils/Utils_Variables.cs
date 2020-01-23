@@ -48,5 +48,8 @@ public static class Utils_Variables
     public static string BEGIN_MEMORY_SOUND = "Play_Begin_Memory";
     public static string END_MEMORY_SOUND = "Stop_Memory";
     public static string BREATH_IDLE_SOUND = "Play_Breath_Idle";
-    public static string HOPE_GLITCH_SOUND = "Play_Glitch_Rd_Hope";
+    public static string START_HOPE_GLITCH_SOUND = "Play_Glitch_Rd_Hope";
+    public static string STOP_HOPE_GLITCH_SOUND = "Stop_Glitch_Rd_Hope";
+    public static string START_ROOM_TONE_SOUND = "Play_RoomTone";
+    public static string STOP_ROOM_TONE_SOUND = "Stop_RoomTone";
 }

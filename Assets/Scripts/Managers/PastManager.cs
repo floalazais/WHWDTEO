@@ -18,6 +18,8 @@ public class PastManager : MonoBehaviour
     List<W_Object> _objectsArray = new List<W_Object>();
     ObjectInteractable _objectNearPlayer;
 
+    bool _pastZoneDisplayed = false;
+
     void Awake()
     {
         if (instance != null)
@@ -198,6 +200,8 @@ public class PastManager : MonoBehaviour
         _pastZone.Remove();
 
         SoundManager.instance.PlaySound(Utils_Variables.END_MEMORY_SOUND);
+
+        _pastZoneDisplayed = false;
     }
 
     void DisplayPastZone()
@@ -205,7 +209,9 @@ public class PastManager : MonoBehaviour
         SetMemoryMode();
         _pastZone.Display();
 
-        //SoundManager.instance.PlaySound("Play_Begin_Memory");
+        SoundManager.instance.PlaySound(Utils_Variables.BEGIN_MEMORY_SOUND);
+
+        _pastZoneDisplayed = true;
     }
 
     void PutNearObject()
@@ -249,14 +255,9 @@ public class PastManager : MonoBehaviour
 
     public void Refresh()
     {
-        if (InputManager.instance.IsButtonDown(Enums.E_GAMEPAD_BUTTON.R2_BUTTON))
+        if (InputManager.instance.IsButtonDown(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) && !_pastZoneDisplayed)
         {
-            if (_objectNearPlayer != null)
-            {
-                _objectNearPlayer.SetModeMemory();
-            }
-        } else {
-            RemovePastZone();
-        }
+            DisplayPastZone();
+        } else if (_pastZoneDisplayed) RemovePastZone();
     }
 }

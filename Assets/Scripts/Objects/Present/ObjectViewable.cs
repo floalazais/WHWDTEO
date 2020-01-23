@@ -7,6 +7,16 @@ public class ObjectViewable : ObjectInteractable
     protected Vector3 _originalPosition;
     protected Quaternion _originalRotation;
 
+    private void Start()
+    {
+        _meshRenderer = GetComponent<MeshRenderer>();
+        _meshFilter = GetComponent<MeshFilter>();
+
+        Init();
+
+        SetModePresent();
+    }
+
     protected override void Init()
     {
         base.Init();
