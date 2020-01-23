@@ -32,11 +32,11 @@ public class ObjectViewable : ObjectInteractable
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
+
         foreach (Transform child in transform)
         {
             child.gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
         }
-        GameManager.instance.SetGameStateManipulation();
     }
 
     public override void SetModePresent()

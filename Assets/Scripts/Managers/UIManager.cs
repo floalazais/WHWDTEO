@@ -6,12 +6,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
 
-    [SerializeField] RectTransform _descriptionObjectScreen = null;
     RectTransform _currentScreen = null;
     RectTransform _choicePanel = null;
     RectTransform _dialogPanel = null;
     RectTransform _manipulationPanel = null;
     RectTransform _letterPanel = null;
+    [SerializeField] RectTransform _inspectionPanel = null;
 
     private void Awake()
     {
@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
         _dialogPanel.gameObject.SetActive(false);
         _letterPanel.gameObject.SetActive(false);
         _manipulationPanel.gameObject.SetActive(false);
+        _inspectionPanel.gameObject.SetActive(false);
     }
 
     public void OnStartDialog()
@@ -69,10 +70,10 @@ public class UIManager : MonoBehaviour
         _currentScreen.gameObject.SetActive(true);
     }
 
-    public void OnDescriptionObject()
+    public void OnInspectionScreen()
     {
         if(_currentScreen != null) _currentScreen.gameObject.SetActive(false);
-        _currentScreen = _descriptionObjectScreen;
+        _currentScreen = _inspectionPanel;
         _currentScreen.gameObject.SetActive(true);
     }
 

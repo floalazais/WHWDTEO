@@ -27,8 +27,13 @@ public class LetterPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.instance.SetGameStateNarration();
+        if(GameManager.instance != null) GameManager.instance.SetGameStateNarration();
         _letterText.text = _letters[0];    
+    }
+
+    private void OnDisable()
+    {
+        GameManager.instance.SetGameStateExploration();
     }
 
     private void Update()

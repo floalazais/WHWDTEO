@@ -23,7 +23,6 @@ public class CanvasObject : MonoBehaviour
         {
             if (child.name == Utils_Variables.OBJECT_CANVAS_TEXT)
             {
-                print(child.name);
                 _objectText = child.GetComponent<Text>();
             }
 
