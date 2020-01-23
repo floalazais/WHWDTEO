@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9222759436884569994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Time: 5.75
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 8d5cc751decaeee4385e276dcaecd26e, type: 2}
 --- !u!74 &-7895049422044211602
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -247,6 +263,22 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects: []
+--- !u!114 &-5752682344548470189
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Time: 0.21666666666666667
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 391fc847d4d7927479fb91e2bcba2e7a, type: 2}
 --- !u!114 &-5119879692278238773
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -765,6 +797,7 @@ MonoBehaviour:
   - {fileID: -4581887214870763846}
   - {fileID: 3005953762310330010}
   - {fileID: 6080280231390369927}
+  - {fileID: 7941795681898424725}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -2382,6 +2415,31 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: be373dc89f20ee7488a8f5bb6b673f19
     defaultValue: {fileID: 0}
+--- !u!114 &7941795681898424725
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -5752682344548470189}
+    - {fileID: -9222759436884569994}
 --- !u!114 &8977872024762267079
 MonoBehaviour:
   m_ObjectHideFlags: 1
