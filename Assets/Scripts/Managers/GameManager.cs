@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
         //DialogManager.instance.StartDialog("introTL");
     }
 

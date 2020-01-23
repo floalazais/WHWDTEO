@@ -32,6 +32,8 @@ public class HandExplorationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.instance.PlaySound(Utils_Variables.STOP_ROOM_TONE_SOUND);
+
         _objectsArray = GameObject.FindObjectsOfType<Hand>().ToList();
         SortHandsByName();
 
@@ -40,7 +42,7 @@ public class HandExplorationManager : MonoBehaviour
             _objectsArray[i].gameObject.SetActive(false);
         }
 
-        SoundManager.instance.PlaySound(Utils_Variables.HOPE_GLITCH_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.START_HOPE_GLITCH_SOUND);
         SetActiveHand();
     }
 
@@ -150,6 +152,7 @@ public class HandExplorationManager : MonoBehaviour
 
     void EndHandExploration()
     {
+        SoundManager.instance.PlaySound(Utils_Variables.STOP_HOPE_GLITCH_SOUND);
         DialogManager.instance.StartDialog("toDialogTL");
         return;
     }
