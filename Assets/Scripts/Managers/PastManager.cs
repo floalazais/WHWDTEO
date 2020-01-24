@@ -189,7 +189,7 @@ public class PastManager : MonoBehaviour
             if ((_objectNearPlayer as ImportantPastObject) != null) return;
             PutNearObject();
             GameManager.instance.SetGameStateExploration();
-            UIManager.instance.OnInspectionScreen();
+            UIManager.instance.RemoveScreen();
             _state = Enums.E_LEVEL_STATE.PRESENT;
         }
     }
