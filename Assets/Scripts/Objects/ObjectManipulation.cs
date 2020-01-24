@@ -7,7 +7,12 @@ public class ObjectManipulation : MonoBehaviour
     [SerializeField] float sensX = 500.0f;
     [SerializeField] float sensY = 500.0f;
 
-    [SerializeField] Camera _camera;
+    Camera _camera;
+
+    void Start()
+    {
+        _camera = Camera.main;
+    }
 
     // Update is called once per frame
     void Update()
