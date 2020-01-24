@@ -6,6 +6,16 @@ public class ObjectCinematicTrigger : ObjectInteractable
 {
     public string dialogName;
 
+    private void Start()
+    {
+        _meshRenderer = GetComponent<MeshRenderer>();
+        _meshFilter = GetComponent<MeshFilter>();
+
+        Init();
+
+        SetModePresent();
+    }
+
     public override void Interact()
     {
         base.Interact();

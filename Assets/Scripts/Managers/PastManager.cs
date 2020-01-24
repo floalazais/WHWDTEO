@@ -61,6 +61,8 @@ public class PastManager : MonoBehaviour
         {
             W_Object lObject = _objectsArray[i];
 
+            if (lObject.enabled == false) continue;
+
             float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
 
             //If we're too far from the player
@@ -160,6 +162,7 @@ public class PastManager : MonoBehaviour
         int length = _objectsArray.Count;
         for (int i = 0; i < length; i++)
         {
+            if (_objectsArray[i].enabled == false) continue;
             _objectsArray[i].SetModePresent();
         }
     }
@@ -260,6 +263,7 @@ public class PastManager : MonoBehaviour
         if (InputManager.instance.IsButtonDown(Enums.E_GAMEPAD_BUTTON.R2_BUTTON))
         {
             if (!_pastZoneDisplayed) DisplayPastZone();
+            else SetMemoryMode();
         }
         else
         {

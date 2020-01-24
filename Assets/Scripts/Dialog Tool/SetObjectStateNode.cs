@@ -29,7 +29,11 @@ public class SetObjectStateNode : DialogNode {
         {
             if (obj.name == _objectName)
             {
-                obj.SetInteractable(_activeState);
+                ObjectInteractable objectInteractable = obj.GetComponent<ObjectInteractable>();
+                objectInteractable.enabled = true;
+                objectInteractable.SetInteractable(_activeState);
+                ObjectViewable objectViewable = obj.GetComponent<ObjectViewable>();
+                if (objectViewable != null) objectViewable.enabled = false;
                 return;
             }
         }
