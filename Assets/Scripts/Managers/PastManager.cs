@@ -34,7 +34,7 @@ public class PastManager : MonoBehaviour
     private void Start()
     {
         if (_pastZone == null) Debug.LogError("NO PAST ZONE AFFECTED IN " + _pastZone);
-        _pastZone.transform.localScale = new Vector3(_memoryZoneRadius * 2, _pastZone.transform.localScale.y, _memoryZoneRadius * 2);
+        _pastZone.GetComponent<PastZone>().scale = new Vector3(_memoryZoneRadius * 2, _memoryZoneRadius * 2, _memoryZoneRadius * 2);
 
         _objectsArray = GameObject.FindObjectsOfType<W_Object>().ToList();
     }
@@ -138,7 +138,6 @@ public class PastManager : MonoBehaviour
 
         if(lNearestObject != null)
         {
-            print(lNearestObject.name);
             SetNearObject(lNearestObject);
         }
     }
@@ -190,7 +189,7 @@ public class PastManager : MonoBehaviour
             PutNearObject();
             GameManager.instance.SetGameStateExploration();
             UIManager.instance.RemoveScreen();
-            _state = Enums.E_LEVEL_STATE.PRESENT;
+            Refresh();
         }
     }
     #endregion
@@ -201,6 +200,8 @@ public class PastManager : MonoBehaviour
         _pastZone.Remove();
 
         SoundManager.instance.PlaySound(Utils_Variables.END_MEMORY_SOUND);
+
+        UIManager.instance.RemoveScreen();
 
         _pastZoneDisplayed = false;
     }

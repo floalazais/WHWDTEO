@@ -64,6 +64,7 @@ public class LetterPanel : MonoBehaviour
     {
         GameManager.instance.SetGameStateExploration();
         UIManager.instance.RemoveScreen();
+        PastManager.instance.Refresh();
     }
 
     void OnToggle()
