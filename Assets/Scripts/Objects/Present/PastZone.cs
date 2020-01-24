@@ -6,7 +6,10 @@ public class PastZone : MonoBehaviour
 {
     MeshRenderer _meshRenderer;
     Quaternion _rotation;
-    Vector3 _scale;
+    public Vector3 scale;
+
+    bool _isDisplaying = true;
+    bool _isRemoving = true;
 
     void Start()
     {
@@ -14,7 +17,6 @@ public class PastZone : MonoBehaviour
 
         _meshRenderer.enabled = false;
         _rotation = transform.rotation;
-        _scale = transform.localScale;
     }
 
     private void Update()
@@ -22,39 +24,43 @@ public class PastZone : MonoBehaviour
         if(transform.rotation != _rotation)
         {
             transform.rotation = _rotation;
-        }    
+        }
+
+        if (_isDisplaying) {
+            if (transform.localScale.x <= scale.x)
+            {
+                transform.localScale += new Vector3(.1f, .1f, .1f) * Time.deltaTime * 50f;
+                return;
+            }
+
+            _isDisplaying = false;
+            return;
+        }
+
+        if (_isRemoving)
+        {
+            if (transform.localScale.x >= 0)
+            {
+                transform.localScale -= new Vector3(.1f, .1f, .1f) * Time.deltaTime * 50f;
+                return;
+            }
+
+            _meshRenderer.enabled = false;
+            _isRemoving = false;
+        }
     }
 
     public void Display()
     {
         _meshRenderer.enabled = true;
-
-        transform.localScale = Vector3.zero;
-        StartCoroutine(AnimationDisplay());
+        _isDisplaying = true;
+        _isRemoving = false;
     }
 
     public void Remove()
     {
-        StartCoroutine(AnimationRemove());
+        _isRemoving = true;
+        _isDisplaying = false;
     }
 
-    IEnumerator AnimationDisplay()
-    {
-        while(transform.localScale != _scale)
-        {
-            transform.localScale += new Vector3(.1f, .1f, .1f);
-            yield return new WaitForSeconds(.015f);
-        }
-    }
-
-    IEnumerator AnimationRemove()
-    {
-        while (transform.localScale != Vector3.zero)
-        {
-            transform.localScale -= new Vector3(.1f, .1f, .1f);
-            yield return new WaitForSeconds(.01f);
-        }
-
-        _meshRenderer.enabled = false;
-    }
 }

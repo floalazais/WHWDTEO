@@ -34,7 +34,7 @@ public class PastManager : MonoBehaviour
     private void Start()
     {
         if (_pastZone == null) Debug.LogError("NO PAST ZONE AFFECTED IN " + _pastZone);
-        _pastZone.transform.localScale = new Vector3(_memoryZoneRadius * 2, _pastZone.transform.localScale.y, _memoryZoneRadius * 2);
+        _pastZone.GetComponent<PastZone>().scale = new Vector3(_memoryZoneRadius * 2, _memoryZoneRadius * 2, _memoryZoneRadius * 2);
 
         _objectsArray = GameObject.FindObjectsOfType<W_Object>().ToList();
     }
