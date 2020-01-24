@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
-        DialogManager.instance.StartDialog("introTL");
+        //DialogManager.instance.StartDialog("introTL");
     }
 
     public void SetGameStateExploration()
