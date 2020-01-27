@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d3c16c6180e9214b811cce79000f0705
     GuidInternal: 
-    m_lastTime: -8586220803681478739
+    m_lastTime: -8586214861804617626
     List:
     - name: Verb_Room
       guid: a3e841f621df5b49a5c3b91a9a4201f5
@@ -219,6 +219,17 @@ MonoBehaviour:
       - ElementName: Verb_Voices
         ObjectType: 1
       Path: Default Work Unit\Master Audio Bus\Verb_Voices
+    - name: Verb_Void
+      guid: d009c374c7cd1e4a83255799794efb9c
+      id: 2516427327
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Verb_Void
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Verb_Void
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -240,8 +251,22 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 607f7b4e00248847877af15e8f82926c
     GuidInternal: 
-    m_lastTime: -8586220803694897801
+    m_lastTime: -8586214861804737303
     List:
+    - name: Play_APP_MAIN
+      guid: 8ad9f86c84b02c4fb3516e2c07ed6835
+      id: 3183169333
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_APP_MAIN
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_APP_MAIN
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Begin_Memory
       guid: a9c687dc0f9f2d49a41d1eb4eb6789c8
       id: 209410981
@@ -253,6 +278,74 @@ MonoBehaviour:
       - ElementName: Play_Begin_Memory
         ObjectType: 3
       Path: Default Work Unit\Events_SD\Play_Begin_Memory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_boite_musique_pose
+      guid: 87edd664339f534db6c08adaa89be909
+      id: 3876386679
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_boite_musique_pose
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_boite_musique_pose
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_boite_musique_prise
+      guid: 14374cc8c9240546b8f7ddf8b2987825
+      id: 2596626359
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_boite_musique_prise
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_boite_musique_prise
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Bouton_Tel
+      guid: 0472c42728041e4f8f3f51bc6bfd3010
+      id: 3454515561
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Bouton_Tel
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Bouton_Tel
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Breath_Idle
+      guid: 575a4e4e6f8146489ba98e2a7a2a17d6
+      id: 2446688129
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Breath_Idle
+        ObjectType: 3
+      Path: Default Work Unit\Play_Breath_Idle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CARRELAGE
+      guid: 2343e873bb12db41bfcbdac5af80b3cc
+      id: 748170922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_CARRELAGE
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_CARRELAGE
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -396,17 +489,43 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_End_Memory
-      guid: c0debc97486a424bb8a2b30b11677ea4
-      id: 2852254653
+    - name: Play_DISP_MAIN
+      guid: 178372e94536b147b3ff427e9b34621b
+      id: 597989206
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Events_SD
         ObjectType: 4
-      - ElementName: Play_End_Memory
+      - ElementName: Play_DISP_MAIN
         ObjectType: 3
-      Path: Default Work Unit\Events_SD\Play_End_Memory
+      Path: Default Work Unit\Events_SD\Play_DISP_MAIN
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Fermeture_Armoire
+      guid: 49b11aa512e8634ca550d47c3f8f49d9
+      id: 4281628385
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Fermeture_Armoire
+        ObjectType: 3
+      Path: Default Work Unit\Play_Fermeture_Armoire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Glitch_Rd_Hope
+      guid: b533c7bc2e383449a220207fb7d0e328
+      id: 941401263
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Glitch_Rd_Hope
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Glitch_Rd_Hope
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -746,17 +865,15 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Loop_Pluie
-      guid: b107ce36364be349865a96e028519bfb
-      id: 2411175118
+    - name: Play_Mains_Armoire
+      guid: 1ecaa6d9ee3aa04c8d084c912a221a8a
+      id: 4277384980
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Events_SD
-        ObjectType: 4
-      - ElementName: Play_Loop_Pluie
+      - ElementName: Play_Mains_Armoire
         ObjectType: 3
-      Path: Default Work Unit\Events_SD\Play_Loop_Pluie
+      Path: Default Work Unit\Play_Mains_Armoire
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1152,6 +1269,56 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Mia_Presence_Baisse_Armoire
+      guid: 24c0a013ba1faa4494de4e331819c100
+      id: 3768271001
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Mia_Presence_Baisse_Armoire
+        ObjectType: 3
+      Path: Default Work Unit\Play_Mia_Presence_Baisse_Armoire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Moving_Objects
+      guid: 4f5e82dfd1d561408a06ae4b9b7321d2
+      id: 2384534605
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Moving_Objects
+        ObjectType: 3
+      Path: Default Work Unit\Play_Moving_Objects
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Ouverture_Armoire
+      guid: f275bd894600104abb465dc043e16732
+      id: 2684492123
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Ouverture_Armoire
+        ObjectType: 3
+      Path: Default Work Unit\Play_Ouverture_Armoire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_PARQUET
+      guid: 7540ad8cf2382b4b8f2b179f9c643b77
+      id: 3203194330
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_PARQUET
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_PARQUET
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Past_Mia_01
       guid: 785b479c80910042bafa02c4d9578d4e
       id: 3466067214
@@ -1432,6 +1599,194 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_PORTE_INTRO
+      guid: 79e63c63b7ade74c8e314f00614c9322
+      id: 642838391
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PORTE_INTRO
+        ObjectType: 3
+      Path: Default Work Unit\Play_PORTE_INTRO
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Boite
+      guid: 752a0475616d6340926d6754c5726ca1
+      id: 3226930151
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Boite
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Boite
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Lampe
+      guid: 99ee946f0c8cbd46a4ae64d655ff98f3
+      id: 709408955
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Lampe
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Lampe
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Lego
+      guid: ad7f439f8d9be8418ff679fb72060e97
+      id: 2390064263
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Lego
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Lego
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Peluche
+      guid: 2dfc1f83e84d254db9318c26b26f6c5e
+      id: 2957552462
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Peluche
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Peluche
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Voiture
+      guid: 0f3acd07ae83044992b4470ddbdbf23e
+      id: 1701696044
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Voiture
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Voiture
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Ex
+      guid: 2a9ff20de3659a4193da1d0d3809a83d
+      id: 2296494659
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Ex
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Ex
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Idle_Mia
+      guid: bdc199cbc0e3454394cd642ccad73735
+      id: 1269431952
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Idle_Mia
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Idle_Mia
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Porte_Mia
+      guid: fbf04a2112d9d6449909fb4182b4297d
+      id: 3648087584
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Porte_Mia
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Porte_Mia
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Boite
+      guid: b46b9e0cb0eaa442866c936bd3979bec
+      id: 2601207083
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Boite
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Boite
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Lampe
+      guid: 16a6c07c0b76a0409e2ec8d48fd3542d
+      id: 905399727
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Lampe
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Lampe
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Lego
+      guid: 84bb9339b2c0cd4999fb7391bc295d23
+      id: 3161785051
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Lego
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Lego
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Peluche
+      guid: 84c4238c2b4eb148a503e138c9965633
+      id: 910571882
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Peluche
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Peluche
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Voiture
+      guid: 71cc0f8099ab0d42bc033f93aee7367c
+      id: 2197458016
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Voiture
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Voiture
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_QTE_Failed_01
       guid: 5e372afb43ba1e4f950bc9f8973cf5dc
       id: 1436273380
@@ -1488,31 +1843,83 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Reverse_Container
-      guid: 178372e94536b147b3ff427e9b34621b
-      id: 3896761624
+    - name: Play_Random_Lettres
+      guid: fb3655747e424246a7943fae6df29a2c
+      id: 2615986883
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Events_SD
+      - ElementName: Objects
         ObjectType: 4
-      - ElementName: Play_Reverse_Container
+      - ElementName: Play_Random_Lettres
         ObjectType: 3
-      Path: Default Work Unit\Events_SD\Play_Reverse_Container
+      Path: Default Work Unit\Objects\Play_Random_Lettres
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Steps_Placeholder_echoTEST
-      guid: 53b386921e76944aa698e35edba49a7e
-      id: 1029657439
+    - name: Play_Rd_Pose_Feuille
+      guid: 4001b862a6ae654f980586ea0db58ee3
+      id: 3034598759
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Events_SD
+      - ElementName: Objects
         ObjectType: 4
-      - ElementName: Play_Steps_Placeholder_echoTEST
+      - ElementName: Play_Rd_Pose_Feuille
         ObjectType: 3
-      Path: Default Work Unit\Events_SD\Play_Steps_Placeholder_echoTEST
+      Path: Default Work Unit\Objects\Play_Rd_Pose_Feuille
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Rd_Prise_Feuille
+      guid: d48a4a3bfb55194d97084675b9961c7d
+      id: 1686996049
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Rd_Prise_Feuille
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Rd_Prise_Feuille
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_RoomTone
+      guid: 1e97c81f85f6e34b96ed1be1c24e6631
+      id: 2748311587
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_RoomTone
+        ObjectType: 3
+      Path: Default Work Unit\Play_RoomTone
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TAPIS
+      guid: 445ebaadafd1b44a81a7e5974a6d5968
+      id: 2174069889
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_TAPIS
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_TAPIS
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Glitch_Rd_Hope
+      guid: b8d0bf17b768584d877bcb027a0738a8
+      id: 2980578653
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Glitch_Rd_Hope
+        ObjectType: 3
+      Path: Default Work Unit\Stop_Glitch_Rd_Hope
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1530,13 +1937,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_RoomTone
+      guid: 4e1c346281e38340bec6c0e97d2bae37
+      id: 1330556493
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_RoomTone
+        ObjectType: 3
+      Path: Default Work Unit\Stop_RoomTone
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 43ef5a6d7c266c4d9c6114aca9858d4b
     GuidInternal: 
-    m_lastTime: -8586220803694897801
+    m_lastTime: -8586214861804807115
     List:
+    - name: Blend_Idle_Walk
+      guid: c763dd63d4c16d4d84f8348ee408163e
+      id: 3308552321
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Blend_Idle_Walk
+        ObjectType: 13
+      Path: Default Work Unit\Blend_Idle_Walk
     - name: Bypass_Delay
       guid: 5c96ceb76eed1a46b863891c57cf8d57
       id: 2222622681
@@ -1573,6 +2001,51 @@ MonoBehaviour:
       - ElementName: Test_GP_Stretch
         ObjectType: 13
       Path: Default Work Unit\Test_GP_Stretch
+    - name: Void_Voice_Blending
+      guid: 594e60f940f125458c93689ea7d4340c
+      id: 108787772
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Void_Voice_Blending
+        ObjectType: 13
+      Path: Default Work Unit\Void_Voice_Blending
+    - name: Volume_Intro_Glitch
+      guid: e37f73644592794a9ff2370eb71c7f1d
+      id: 1774161628
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Intro_Glitch
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Intro_Glitch
+    - name: Volume_Moving_Object
+      guid: bfd6372d3a16c4478fc8c044e466e295
+      id: 2678370142
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Moving_Object
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Moving_Object
+    - name: Volume_Presence
+      guid: 4f965badc1402c48ac68f0f7b970abed
+      id: 2589316061
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Presence
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Presence
+    - name: Wet_Delay_Void
+      guid: 53af59ea6721654f939132b1ed4fdd08
+      id: 419718256
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Wet_Delay_Void
+        ObjectType: 13
+      Path: Default Work Unit\Wet_Delay_Void
   - PhysicalPath: Game Parameters\Factory Motion.wwu
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776
@@ -1809,7 +2282,6 @@ MonoBehaviour:
   - /Wwise_EachOther
   - /Wwise_EachOther/Events
   - /Wwise_EachOther/Events/Default Work Unit
-  - /Wwise_EachOther/Events/Default Work Unit/Events_Actors
   - /Wwise_EachOther/SoundBanks
   - /Wwise_EachOther/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
