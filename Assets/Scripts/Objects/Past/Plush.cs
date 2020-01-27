@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Plush : MonoBehaviour
 {
+    [SerializeField] AK.Wwise.Event soundEventInteract;
+    [SerializeField] AK.Wwise.Event soundEventInspect;
     [SerializeField] GameObject _partToFind = null;
     [SerializeField] Transform _cameraFollow;
     [SerializeField] Transform _cameraLookAt;
@@ -37,6 +39,8 @@ public class Plush : MonoBehaviour
         _canvas.SetFarPlayerMode();
 
         _collider.isTrigger = true;
+
+        SoundManager.instance.PlaySound(soundEventInteract.Id);
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
@@ -96,7 +100,7 @@ public class Plush : MonoBehaviour
             print(hitInfo.collider.name);
             if (hitInfo.collider.gameObject == _partToFind)
             {
-                print("trouvé !");
+                SoundManager.instance.PlaySound(soundEventInspect.Id);
                 inspected = true;
             }
         }

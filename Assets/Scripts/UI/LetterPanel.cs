@@ -7,9 +7,12 @@ public class LetterPanel : MonoBehaviour
 {
     public static LetterPanel instance { get; private set; }
     [SerializeField] string[] _letters;
+    [SerializeField] AK.Wwise.Event[] soundEvents;
     [SerializeField] Text _letterText;
     int _index = 0;
     bool _isHandWriting = true;
+
+    bool[] displayedLetters;
 
     [SerializeField] Font _handWriterFont;
     [SerializeField] Font _typoWriterFont;
@@ -25,10 +28,21 @@ public class LetterPanel : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        displayedLetters = new bool[_letters.Length];
+
+        for (int i = 0; i < displayedLetters.Length; i++)
+        {
+            displayedLetters[i] = false;
+        }
+    }
+
     private void OnEnable()
     {
         if(GameManager.instance != null) GameManager.instance.SetGameStateNarration();
-        _letterText.text = _letters[0];    
+        _letterText.text = _letters[0];
+        SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     private void OnDisable()
@@ -49,13 +63,24 @@ public class LetterPanel : MonoBehaviour
         if (_index == 0) _index = _letters.Length - 1;
         else _index--;
 
-        _letterText.text = _letters[_index];
+        DisplayCurrentLetter();
     }
 
     void DisplayNextLetter()
     {
         if (_index == _letters.Length - 1) _index = 0;
         else _index++;
+
+        DisplayCurrentLetter();
+    }
+
+    void DisplayCurrentLetter()
+    {
+        if (!displayedLetters[_index])
+        {
+            displayedLetters[_index] = true;
+            SoundManager.instance.PlaySound(soundEvents[_index].Id);
+        }
 
         _letterText.text = _letters[_index];
     }

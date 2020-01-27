@@ -7,6 +7,8 @@ public class ObjectViewable : ObjectInteractable
     protected Vector3 _originalPosition;
     protected Quaternion _originalRotation;
 
+    [SerializeField] AK.Wwise.Event soundEvent;
+
     private void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
@@ -39,6 +41,8 @@ public class ObjectViewable : ObjectInteractable
     public override void Interact()
     {
         base.Interact();
+
+        SoundManager.instance.PlaySound(soundEvent.Id);
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;

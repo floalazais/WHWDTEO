@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Hand : MonoBehaviour
 {
     [SerializeField] protected CanvasObject _canvas = null;
+    [SerializeField] AK.Wwise.Event soundEvent;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class Hand : MonoBehaviour
     public void Interact()
     {
         _canvas.SetFarPlayerMode();
+        SoundManager.instance.PlaySound(soundEvent.Id);
     }
 
     public void SetClosePlayerMode()
