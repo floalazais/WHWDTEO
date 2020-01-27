@@ -55,7 +55,7 @@ public class DialogManager : MonoBehaviour
         {
             dialogRunning = false;
 
-            UIManager.instance.OnEndDialog();
+            if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION) UIManager.instance.OnEndDialog();
             GameManager.instance.SetGameStateExploration();
             gameplayCamera.Priority = 10;
             if(PastManager.instance != null) PastManager.instance.Refresh();

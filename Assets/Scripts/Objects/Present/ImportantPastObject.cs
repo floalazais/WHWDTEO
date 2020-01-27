@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Playables;
 using UnityEngine.UIElements;
 
 [System.Serializable]
@@ -34,11 +35,13 @@ public class ImportantPastObject : ObjectViewable
     bool _isStepValidated = false;
     List<HoldConstraint> _holdConstraintList = new List<HoldConstraint>();
 
+
     bool _isManipulated = false;
 
     float _timerBetweenTwoSteps = 0.0f;
 
-    [SerializeField] string _dialogName;
+    [SerializeField] PlayableAsset loopTimeline = null;
+    [SerializeField] string _endDialogName;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,8 @@ public class ImportantPastObject : ObjectViewable
     void Update()
     {
         //if (PastManager.instance.state == Enums.E_PAST_STATE.SEARCH_MODE) CheckPlayerDistance();
+        if (!interactable) return;
+
         if (_isManipulated) CheckInputOrder();
     }
 
@@ -62,6 +67,7 @@ public class ImportantPastObject : ObjectViewable
     {
         base.Interact();
         _isManipulated = true;
+        TimelineManager.instance.PlayTimeline(loopTimeline);
         UIManager.instance.OnManipulationScreen();
         ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
     }
@@ -110,7 +116,7 @@ public class ImportantPastObject : ObjectViewable
 
         bool lIsValidated = false;
 
-        print("button : " + _currentInteraction.gamepadButton + " interaction wanted : " + _currentInteraction.interactionType);
+        //print("button : " + _currentInteraction.gamepadButton + " interaction wanted : " + _currentInteraction.interactionType);
 
         switch (_currentInteraction.interactionType)
         {
@@ -182,7 +188,7 @@ public class ImportantPastObject : ObjectViewable
 
             UIManager.instance.RemoveScreen();
 
-            DialogManager.instance.StartDialog(_dialogName);
+            DialogManager.instance.StartDialog(_endDialogName);
         }
 
         else ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType);

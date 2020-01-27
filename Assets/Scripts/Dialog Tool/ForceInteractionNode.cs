@@ -8,13 +8,11 @@ using XNode;
 
 [NodeTint("#e056fd")]
 [NodeWidth(300)]
-public class SetObjectStateNode : DialogNode {
+public class ForceInteractionNode : DialogNode {
 
     [Input(ShowBackingValue.Never)] public string previous;
-    [Output(ShowBackingValue.Never)] public string next;
 
     public string _objectName;
-    public bool _activeState;
 
     protected override void Init()
     {
@@ -29,11 +27,10 @@ public class SetObjectStateNode : DialogNode {
         {
             if (obj.name == _objectName)
             {
-                ObjectCinematicTrigger objectCinematicTrigger = obj.GetComponent<ObjectCinematicTrigger>();
-                objectCinematicTrigger.enabled = true;
-                objectCinematicTrigger.SetInteractable(_activeState);
-                ObjectViewable objectViewable = obj.GetComponent<ObjectViewable>();
-                if (objectViewable != null) objectViewable.enabled = false;
+                ObjectInteractable objectInteractable = obj.GetComponent<ObjectInteractable>();
+                GameManager.instance.SetGameStateManipulation();
+                objectInteractable.SetInteractable(true);
+                objectInteractable.Interact();
                 return;
             }
         }
@@ -46,6 +43,6 @@ public class SetObjectStateNode : DialogNode {
 
     public override DialogNode GetNextNode()
     {
-        return GetOutputPort("next").Connection.node as DialogNode;
+        return null;
     }
 }

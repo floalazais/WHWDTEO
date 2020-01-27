@@ -733,53 +733,6 @@ MonoBehaviour:
   next: 
   _objectName: 
   _activeState: 0
---- !u!114 &-710996845084419951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3371f99b62a8ab49bf8f4ed84811bbf, type: 3}
-  m_Name: Set Object State
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -1912, y: 376}
-  ports:
-    keys:
-    - previous
-    - next
-    values:
-    - _fieldName: previous
-      _node: {fileID: -710996845084419951}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: next
-        node: {fileID: 7316076953766264542}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: next
-      _node: {fileID: -710996845084419951}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: End
-        node: {fileID: 3898948022888727630}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  previous: 
-  next: 
-  _objectName: tapeRecorder_Present
-  _activeState: 1
 --- !u!114 &-286446309862100687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,8 +814,6 @@ MonoBehaviour:
   - {fileID: -7690976165051494664}
   - {fileID: -5276183721903163305}
   - {fileID: 7316076953766264542}
-  - {fileID: -710996845084419951}
-  - {fileID: 3898948022888727630}
   - {fileID: 7277188577598913342}
   - {fileID: 9079219158142803914}
   - {fileID: -4719493021995741044}
@@ -874,6 +825,7 @@ MonoBehaviour:
   - {fileID: 8872790025305481839}
   - {fileID: -3047881991292850448}
   - {fileID: 0}
+  - {fileID: 523635640312141912}
   currentTimeline: {fileID: 0}
   staticTimeline: 0
 --- !u!114 &31322504284941342
@@ -940,6 +892,38 @@ MonoBehaviour:
       _dynamic: 0
   Start: 
   dialogName: recorderTL
+--- !u!114 &523635640312141912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5e4d73f4a4c1841a40ef811b97eadf, type: 3}
+  m_Name: Force Interaction
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1912, y: 376}
+  ports:
+    keys:
+    - previous
+    values:
+    - _fieldName: previous
+      _node: {fileID: 523635640312141912}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: next
+        node: {fileID: 7316076953766264542}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  _objectName: tapeRecorder_Present
 --- !u!114 &636811761898765958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,37 +1178,6 @@ MonoBehaviour:
       _dynamic: 0
   Start: 
   dialogName: wardrobeTL
---- !u!114 &3898948022888727630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263de3211da909640b75b635a594c2ba, type: 3}
-  m_Name: End
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -1464, y: 392}
-  ports:
-    keys:
-    - End
-    values:
-    - _fieldName: End
-      _node: {fileID: 3898948022888727630}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: next
-        node: {fileID: -710996845084419951}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  End: 0
 --- !u!114 &3912966449017715303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,6 +1291,9 @@ MonoBehaviour:
         reroutePoints: []
       - fieldName: next
         node: {fileID: 6926406272562351909}
+        reroutePoints: []
+      - fieldName: next
+        node: {fileID: 0}
         reroutePoints: []
       - fieldName: next
         node: {fileID: 0}
@@ -1607,7 +1563,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: previous
-        node: {fileID: -710996845084419951}
+        node: {fileID: 523635640312141912}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
