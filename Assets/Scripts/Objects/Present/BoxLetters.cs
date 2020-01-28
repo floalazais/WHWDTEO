@@ -21,5 +21,6 @@ public class BoxLetters : ObjectInteractable
         SoundManager.instance.PlaySound(Utils_Variables.PRISE_BOITE_SOUND);
         print("box letters");
         UIManager.instance.OnLetterPanel();
+        LetterPanel.instance.StartLetters();
     }
 }
