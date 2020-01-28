@@ -19,9 +19,9 @@ public abstract class ObjectInteractable : W_Object
         _meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
 
-        SetModePresent();
-
         Init();
+
+        SetModePresent();
     }
 
     protected virtual void Init()

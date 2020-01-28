@@ -27,7 +27,7 @@ public struct HoldConstraint
     public Enums.E_GAMEPAD_BUTTON gamepadButton;
 }
 
-public class ImportantPastObject : ObjectViewable
+public class ImportantPastObject : ObjectInteractable
 {
     public WantedInteraction[] _wantedInteractionArray;
     int _index = 0;
@@ -46,10 +46,10 @@ public class ImportantPastObject : ObjectViewable
     // Start is called before the first frame update
     void Start()
     {
-        Init();
-
         _meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
+
+        Init();
 
         SetModePresent();
     }
