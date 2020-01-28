@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba180cda07017b41844c64996600e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _memoryObjectMaterial: {fileID: 2100000, guid: 879ae157b9cd02c4f86c84adceb02eee,
+  _memoryObjectMaterial: {fileID: 2100000, guid: 39b045637408a06469d326a030be9c94,
     type: 2}
   _presentObjectMaterial: {fileID: 0}
   _memoryObjectFilter: {fileID: -5178661895559278292, guid: 8c80e4fb2453bcc4692f7f405510bf8b,
@@ -109,11 +109,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7574534894108291429}
     m_Modifications:
-    - target: {fileID: 881576957318827477, guid: e8439fe626d5df140b221a940111301a,
-        type: 3}
-      propertyPath: m_Name
-      value: ObjectInteractionSceneUI
-      objectReference: {fileID: 0}
     - target: {fileID: 881576957318827478, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -219,15 +214,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
+    - target: {fileID: 881576957318827477, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
-      propertyPath: _objectInteraction
-      value: USE
-      objectReference: {fileID: 0}
-    - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
-        type: 3}
-      propertyPath: _objectName
-      value: Recorder
+      propertyPath: m_Name
+      value: ObjectInteractionSceneUI
       objectReference: {fileID: 0}
     - target: {fileID: 881576957687364123, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
@@ -243,6 +233,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.386
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
+        type: 3}
+      propertyPath: _objectInteraction
+      value: USE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
+        type: 3}
+      propertyPath: _objectName
+      value: Recorder
       objectReference: {fileID: 0}
     - target: {fileID: 881576957687364124, guid: e8439fe626d5df140b221a940111301a,
         type: 3}

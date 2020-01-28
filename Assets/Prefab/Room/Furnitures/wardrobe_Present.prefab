@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba180cda07017b41844c64996600e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _memoryObjectMaterial: {fileID: 2100000, guid: c52a37c9ecc9683419739b26f9ba79e8,
+  _memoryObjectMaterial: {fileID: 2100000, guid: a59710ea0c95b194da5eb54af08f9b99,
     type: 2}
   _presentObjectMaterial: {fileID: 2100000, guid: 310b044ed7f34fa479d4951da676871e,
     type: 2}
@@ -111,11 +111,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4398099002953989119}
     m_Modifications:
-    - target: {fileID: 881576957318827477, guid: e8439fe626d5df140b221a940111301a,
-        type: 3}
-      propertyPath: m_Name
-      value: ObjectInteractionSceneUI
-      objectReference: {fileID: 0}
     - target: {fileID: 881576957318827478, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,6 +215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 881576957318827477, guid: e8439fe626d5df140b221a940111301a,
+        type: 3}
+      propertyPath: m_Name
+      value: ObjectInteractionSceneUI
       objectReference: {fileID: 0}
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
