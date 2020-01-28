@@ -9,6 +9,7 @@ public class TimelineManager : MonoBehaviour
     public static TimelineManager instance { get; private set; }
     [SerializeField] PlayableDirector playableDirector = null;
     List<CanvasObject> canvasses = null;
+    bool loop = false;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class TimelineManager : MonoBehaviour
         }
 
         if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION) UIManager.instance.RemoveScreen();
+        if (loop) playableDirector.extrapolationMode = DirectorWrapMode.Loop;
         playableDirector.playableAsset = playableAsset;
         playableDirector.Play();
     }
@@ -44,6 +46,16 @@ public class TimelineManager : MonoBehaviour
         foreach (CanvasObject canvas in canvasses)
         {
             canvas.gameObject.SetActive(true);
+        }
+    }
+
+    public void SetLoopMode(bool value)
+    {
+        if (value)
+        {
+            playableDirector.extrapolationMode = DirectorWrapMode.Loop;
+        } else {
+            playableDirector.extrapolationMode = DirectorWrapMode.None;
         }
     }
 }
