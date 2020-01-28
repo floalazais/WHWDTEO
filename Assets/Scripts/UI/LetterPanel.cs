@@ -38,16 +38,11 @@ public class LetterPanel : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void StartLetters()
     {
-        if(GameManager.instance != null) GameManager.instance.SetGameStateNarration();
+        GameManager.instance.SetGameStateNarration();
         _letterText.text = _letters[0];
-        SoundManager.instance.PlaySound(soundEvents[0].Id);
-    }
-
-    private void OnDisable()
-    {
-        GameManager.instance.SetGameStateExploration();
+        if (!displayedLetters[0]) SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     private void Update()
