@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PastObjectMaterial 1
+  m_Name: Past_LightSwitch
   m_Shader: {fileID: -6465566751694194690, guid: 3859b9c0fb14e4c4bb51d1b769301dcd,
     type: 3}
   m_ShaderKeywords: 
@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_86674BAD:
-        m_Texture: {fileID: 2800000, guid: 1263515c42865ca4cb0966c05fe99332, type: 3}
+        m_Texture: {fileID: 2800000, guid: 99d21e5591d52674186eaf758cff3f63, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D849B479:
@@ -115,9 +115,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_124982F2: 3
-    - Vector1_538A4407: 2
-    - Vector1_7037ACD1: 0.5
+    - Vector1_124982F2: 4
+    - Vector1_538A4407: 80
+    - Vector1_7037ACD1: 2
     - Vector1_BCA72BE0: 0.05
     - _AORemapMax: 1
     - _AORemapMin: 0
@@ -241,7 +241,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_E4E52A1B: {r: 0.8468735, g: 0.5457247, b: 0, a: 1}
-    - Vector3_5D6A9DEC: {r: 0, g: 0, b: 0, a: 0}
+    - Vector3_5D6A9DEC: {r: 0.1, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
