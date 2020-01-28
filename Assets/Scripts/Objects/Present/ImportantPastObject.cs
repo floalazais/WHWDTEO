@@ -67,6 +67,7 @@ public class ImportantPastObject : ObjectViewable
     {
         base.Interact();
         _isManipulated = true;
+        TimelineManager.instance.SetLoopMode(true);
         TimelineManager.instance.PlayTimeline(loopTimeline);
         UIManager.instance.OnManipulationScreen();
         ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
@@ -188,6 +189,7 @@ public class ImportantPastObject : ObjectViewable
 
             UIManager.instance.RemoveScreen();
 
+            TimelineManager.instance.SetLoopMode(false);
             DialogManager.instance.StartDialog(_endDialogName);
         }
 
