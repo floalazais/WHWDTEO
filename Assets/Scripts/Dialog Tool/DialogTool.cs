@@ -8,7 +8,7 @@ using XNode;
 [CreateAssetMenu]
 public class DialogTool : NodeGraph {
 
-    DialogNode currentNode = null;
+    public DialogNode currentNode = null;
 
     public Dictionary<string, bool> variablesDictionary = new Dictionary<string, bool>();
     public TimelineAsset currentTimeline = null;

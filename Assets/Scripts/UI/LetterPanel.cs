@@ -11,6 +11,7 @@ public class LetterPanel : MonoBehaviour
     [SerializeField] Text _letterText;
     int _index = 0;
     bool _isHandWriting = true;
+    bool _firstCrossRelease = true;
 
     bool[] displayedLetters;
 
@@ -82,6 +83,10 @@ public class LetterPanel : MonoBehaviour
 
     void OnBack()
     {
+        _isHandWriting = true;
+        _firstCrossRelease = true;
+        _letterText.GetComponent<Text>().font = _handWriterFont;
+
         GameManager.instance.SetGameStateExploration();
         UIManager.instance.RemoveScreen();
         PastManager.instance.Refresh();
@@ -89,6 +94,12 @@ public class LetterPanel : MonoBehaviour
 
     void OnToggle()
     {
+        if (_firstCrossRelease)
+        {
+            _firstCrossRelease = false;
+            return;
+        }
+
         if (_isHandWriting) _letterText.GetComponent<Text>().font = _typoWriterFont;
         else _letterText.GetComponent<Text>().font = _handWriterFont;
 

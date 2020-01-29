@@ -51,6 +51,12 @@ public class DialogManager : MonoBehaviour
             _dialogGraph.staticTimeline = false;
         }
 
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) && (_dialogGraph.currentNode as PlayTimelineNode) != null)
+        {
+            (_dialogGraph.currentNode as PlayTimelineNode).timer = 0.0f;
+            TimelineManager.instance.StopTimeline();
+        }
+
         if (_dialogGraph.UpdateNodes())
         {
             dialogRunning = false;
