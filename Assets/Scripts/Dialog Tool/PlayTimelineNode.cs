@@ -12,7 +12,7 @@ public class PlayTimelineNode : DialogNode {
     [Output(ShowBackingValue.Never)] public string next;
 
     public TimelineAsset timelineAsset;
-    float timer = 0.0f;
+    [HideInInspector] public float timer = 0.0f;
 
     protected override void Init()
     {
@@ -22,13 +22,13 @@ public class PlayTimelineNode : DialogNode {
     public override void Activate()
     {
         (graph as DialogTool).currentTimeline = timelineAsset;
-        timer = 0.0f;
+        timer = (float)timelineAsset.duration;
     }
 
     public override bool Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= timelineAsset.duration)
+        timer -= Time.deltaTime;
+        if (timer < 0.0f)
         {
             return true;
         }

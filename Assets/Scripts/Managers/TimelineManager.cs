@@ -41,6 +41,11 @@ public class TimelineManager : MonoBehaviour
         playableDirector.Play();
     }
 
+    public void StopTimeline()
+    {
+        playableDirector.Stop();
+    }
+
     void DisplayCanvasses(PlayableDirector pDirector)
     {
         foreach (CanvasObject canvas in canvasses)
