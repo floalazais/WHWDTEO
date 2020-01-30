@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class Plush : MonoBehaviour
 {
@@ -92,16 +93,22 @@ public class Plush : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.layer != Utils_Variables.LAYER_OBJECT_INTERACT || inspected) return;
-
-        RaycastHit hitInfo = new RaycastHit();
-        if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
+        if (gameObject.layer != Utils_Variables.LAYER_OBJECT_INTERACT)
         {
-            print(hitInfo.collider.name);
-            if (hitInfo.collider.gameObject == _partToFind)
+            transform.position = _originalPosition + new Vector3(0, Mathf.Cos(Time.time), 0) * 0.1f;
+            transform.Rotate(Vector3.up, Time.deltaTime * 10);
+        }
+        else if (!inspected)
+        {
+            RaycastHit hitInfo = new RaycastHit();
+            if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
             {
-                SoundManager.instance.PlaySound(soundEventInspect.Id);
-                inspected = true;
+                print(hitInfo.collider.name);
+                if (hitInfo.collider.gameObject == _partToFind)
+                {
+                    SoundManager.instance.PlaySound(soundEventInspect.Id);
+                    inspected = true;
+                }
             }
         }
     }

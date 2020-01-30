@@ -43,7 +43,11 @@ public class LetterPanel : MonoBehaviour
     {
         GameManager.instance.SetGameStateNarration();
         _letterText.text = _letters[0];
-        if (!displayedLetters[0]) SoundManager.instance.PlaySound(soundEvents[0].Id);
+        if (!displayedLetters[0])
+        {
+            SoundManager.instance.PlaySound(soundEvents[0].Id);
+            displayedLetters[0] = true;
+        }
     }
 
     private void Update()
