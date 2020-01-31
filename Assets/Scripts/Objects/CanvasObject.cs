@@ -10,7 +10,7 @@ public class CanvasObject : MonoBehaviour
     [SerializeField] string _objectInteraction = "DO SOMETHING";
     TextMeshProUGUI _objectText = null;
     Image _interactionImg = null;
-    SpriteRenderer _arrowImg = null;
+    Image _arrowImg = null;
 
     private void OnEnable()
     {
@@ -34,14 +34,13 @@ public class CanvasObject : MonoBehaviour
 
             else if (child.name == Utils_Variables.OBJECT_CANVAS_ARROW)
             {
-                _arrowImg = child.GetComponent<SpriteRenderer>();
+                _arrowImg = child.GetComponent<Image>();
             }
         }
     }
 
     public void SetFarPlayerMode()
     {
-        print("far mode");
         _objectText.text = "";
         _arrowImg.enabled = false;
         _interactionImg.enabled = false;
