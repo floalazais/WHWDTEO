@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +8,8 @@ public class CanvasObject : MonoBehaviour
 {
     [SerializeField] string _objectName = "OBJECT";
     [SerializeField] string _objectInteraction = "DO SOMETHING";
-    Text _objectText = null;
-    SpriteRenderer _interactionImg = null;
+    TextMeshProUGUI _objectText = null;
+    Image _interactionImg = null;
     SpriteRenderer _arrowImg = null;
 
     private void OnEnable()
@@ -23,12 +24,12 @@ public class CanvasObject : MonoBehaviour
         {
             if (child.name == Utils_Variables.OBJECT_CANVAS_TEXT)
             {
-                _objectText = child.GetComponent<Text>();
+                _objectText = child.GetComponent<TextMeshProUGUI>();
             }
 
             else if (child.name == Utils_Variables.OBJECT_CANVAS_INTERACTION)
             {
-                _interactionImg = child.GetComponent<SpriteRenderer>();
+                _interactionImg = child.GetComponent<Image>();
             }
 
             else if (child.name == Utils_Variables.OBJECT_CANVAS_ARROW)
@@ -40,6 +41,7 @@ public class CanvasObject : MonoBehaviour
 
     public void SetFarPlayerMode()
     {
+        print("far mode");
         _objectText.text = "";
         _arrowImg.enabled = false;
         _interactionImg.enabled = false;

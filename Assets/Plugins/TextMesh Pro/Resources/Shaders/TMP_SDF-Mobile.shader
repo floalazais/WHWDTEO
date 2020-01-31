@@ -63,9 +63,12 @@ SubShader {
 
 	Stencil
 	{
-		Ref [_Stencil]
-		Comp [_StencilComp]
-		Pass [_StencilOp] 
+		//Ref [_Stencil]
+		//Comp [_StencilComp]
+		//Pass [_StencilOp] 
+		Ref 1
+		Comp NotEqual
+		Pass keep
 		ReadMask [_StencilReadMask]
 		WriteMask [_StencilWriteMask]
 	}
