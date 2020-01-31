@@ -67,7 +67,10 @@ public class Plush : MonoBehaviour
     public void SetNearPlayerMode()
     {
         _canvas.SetClosestPlayerMode();
+    }
 
+    public void Put()
+    {
         _collider.isTrigger = false;
 
         transform.position = _originalPosition;
@@ -84,11 +87,12 @@ public class Plush : MonoBehaviour
     public void SetFarPlayerMode()
     {
         _canvas.SetFarPlayerMode();
+    }
 
-        _collider.isTrigger = false;
-
-        transform.position = _originalPosition;
-        transform.rotation = _originalRotation;
+    public void SetNewPosition(Vector3 newPosition)
+    {
+        _originalPosition = newPosition;
+        transform.position = newPosition;
     }
 
     void Update()
@@ -108,6 +112,7 @@ public class Plush : MonoBehaviour
                 {
                     SoundManager.instance.PlaySound(soundEventInspect.Id);
                     inspected = true;
+                    gameObject.GetComponent<ObjectManipulation>().stop = true;
                 }
             }
         }

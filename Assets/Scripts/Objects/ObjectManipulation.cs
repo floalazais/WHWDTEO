@@ -7,7 +7,10 @@ public class ObjectManipulation : MonoBehaviour
     [SerializeField] float sensX = 500.0f;
     [SerializeField] float sensY = 500.0f;
 
+    public bool stop = false;
+
     Camera _camera;
+    [SerializeField] Camera _objectCamera;
 
     void Start()
     {
@@ -17,7 +20,9 @@ public class ObjectManipulation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.layer == Utils_Variables.LAYER_OBJECT_INTERACT) Manipulation();
+        if (gameObject.layer != Utils_Variables.LAYER_OBJECT_INTERACT) return;
+        if (!stop) Manipulation();
+        else _objectCamera.fieldOfView = Mathf.Lerp(_objectCamera.fieldOfView, 30.0f, Time.deltaTime);
     }
 
     void Manipulation()
