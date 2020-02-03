@@ -7,13 +7,13 @@ public class ManipulationPanel : MonoBehaviour
 {
     public static ManipulationPanel instance { get; private set; }
 
-    [SerializeField] Image holdUI;
-    [SerializeField] Image releaseHoldUI;
-    [SerializeField] Image clickUI;
-    [SerializeField] Image spamUI;
-    [SerializeField] Image rollUI;
-    [SerializeField] Image swipeUI;
-    [SerializeField] Image moveUI;
+    [SerializeField] Image swipeRightImg;
+    [SerializeField] Image holdL2Img;
+    [SerializeField] Image holdR2Img;
+    [SerializeField] Image holdSquareImg;
+    [SerializeField] Image rollRightImg;
+    [SerializeField] Image rollLeftImg;
+    [SerializeField] Image clickR1;
 
     Image previousImage;
 
@@ -30,47 +30,41 @@ public class ManipulationPanel : MonoBehaviour
 
     private void Start()
     {
-        holdUI.gameObject.SetActive(false);
-        releaseHoldUI.gameObject.SetActive(false);
-        clickUI.gameObject.SetActive(false);
-        spamUI.gameObject.SetActive(false);
-        rollUI.gameObject.SetActive(false);
-        swipeUI.gameObject.SetActive(false);
-        moveUI.gameObject.SetActive(false);
+        swipeRightImg.gameObject.SetActive(false);
+        holdL2Img.gameObject.SetActive(false);
+        holdR2Img.gameObject.SetActive(false);
+        rollRightImg.gameObject.SetActive(false);
+        rollLeftImg.gameObject.SetActive(false);
+        clickR1.gameObject.SetActive(false);
     }
 
-    public void ActivateUI(Enums.E_GAMEPAD_BUTTON pButton, Enums.E_INTERACT_TYPE pType)
+    public void ActivateUI(Enums.E_GAMEPAD_BUTTON pButton, Enums.E_INTERACT_TYPE pType, Enums.E_ROLL_DIRECTION pRollDirection = Enums.E_ROLL_DIRECTION.NONE)
     {
         if(previousImage != null) previousImage.gameObject.SetActive(false);
 
         switch (pType)
         {
             case Enums.E_INTERACT_TYPE.CLICK:
-                previousImage = clickUI;
+                previousImage = clickR1;
                 break;
 
             case Enums.E_INTERACT_TYPE.HOLD:
-                previousImage = holdUI;
-                break;
-
-            case Enums.E_INTERACT_TYPE.MOVE:
-                previousImage = moveUI;
+                if (pButton == Enums.E_GAMEPAD_BUTTON.L2_BUTTON) previousImage = holdL2Img;
+                else if (pButton == Enums.E_GAMEPAD_BUTTON.R2_BUTTON) previousImage = holdR2Img;
+                else if (pButton == Enums.E_GAMEPAD_BUTTON.SQUARE_BUTTON) previousImage = holdSquareImg;
                 break;
 
             case Enums.E_INTERACT_TYPE.RELEASE_HOLD:
-                previousImage = releaseHoldUI;
+                previousImage = null;
                 break;
 
             case Enums.E_INTERACT_TYPE.ROLL:
-                previousImage = rollUI;
-                break;
-
-            case Enums.E_INTERACT_TYPE.SPAM:
-                previousImage = spamUI;
+                if(pRollDirection == Enums.E_ROLL_DIRECTION.LEFT) previousImage = rollLeftImg;
+                else if(pRollDirection == Enums.E_ROLL_DIRECTION.RIGHT) previousImage = rollRightImg;
                 break;
 
             case Enums.E_INTERACT_TYPE.SWIPE:
-                previousImage = swipeUI;
+                previousImage = swipeRightImg;
                 break;
         }
 

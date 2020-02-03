@@ -6,7 +6,8 @@
     }
     SubShader
     {
-        Tags { "RenderType"="Transparent" }
+        Tags {"Queue" = "Transparent" "RenderType"="Transparent" }
+		Blend SrcAlpha OneMinusSrcAlpha
         LOD 100
 
 		Stencil {
@@ -54,6 +55,7 @@
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
+				//col.a = i.uv.a;
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
