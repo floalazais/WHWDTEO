@@ -7,7 +7,7 @@ public class DialogSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
+        SoundManager.instance.LaunchEvent(Utils_Variables.START_ROOM_TONE_SOUND);
     }
 
     // Update is called once per frame

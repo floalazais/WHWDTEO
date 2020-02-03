@@ -8,6 +8,7 @@ public class LetterPanel : MonoBehaviour
     public static LetterPanel instance { get; private set; }
     [SerializeField] string[] _letters;
     [SerializeField] AK.Wwise.Event[] soundEvents;
+    [SerializeField] AK.Wwise.Event[] stopSoundEvents;
     [SerializeField] Text _letterText;
     int _index = 0;
     bool _isHandWriting = true;
@@ -45,7 +46,7 @@ public class LetterPanel : MonoBehaviour
         _letterText.text = _letters[0];
         if (!displayedLetters[0])
         {
-            SoundManager.instance.PlaySound(soundEvents[0].Id);
+            SoundManager.instance.LaunchEvent(soundEvents[0].Id);
             displayedLetters[0] = true;
         }
     }
@@ -60,6 +61,8 @@ public class LetterPanel : MonoBehaviour
 
     void DisplayPreviousLetter()
     {
+        SoundManager.instance.LaunchEvent(stopSoundEvents[_index].Id);
+
         if (_index == 0) _index = _letters.Length - 1;
         else _index--;
 
@@ -79,7 +82,7 @@ public class LetterPanel : MonoBehaviour
         if (!displayedLetters[_index])
         {
             displayedLetters[_index] = true;
-            SoundManager.instance.PlaySound(soundEvents[_index].Id);
+            SoundManager.instance.LaunchEvent(soundEvents[_index].Id);
         }
 
         _letterText.text = _letters[_index];

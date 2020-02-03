@@ -46,7 +46,7 @@ public class ObjectViewable : ObjectInteractable
         if (!soundPlayed)
         {
             soundPlayed = true;
-            SoundManager.instance.PlaySound(soundEvent.Id);
+            SoundManager.instance.LaunchEvent(soundEvent.Id);
         }
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
