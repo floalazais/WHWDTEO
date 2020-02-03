@@ -28,5 +28,6 @@ public class ObjectManipulation : MonoBehaviour
     void Manipulation()
     {
         transform.Rotate(_camera.transform.rotation * new Vector3(InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime, -InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime, 0), Space.World);
+        transform.Rotate(_camera.transform.rotation * new Vector3(Input.GetAxis("Mouse Y") * sensY * Time.deltaTime, -Input.GetAxis("Mouse X") * sensX * Time.deltaTime, 0), Space.World);
     }
 }

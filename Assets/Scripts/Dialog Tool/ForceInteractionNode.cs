@@ -28,7 +28,7 @@ public class ForceInteractionNode : DialogNode {
             if (obj.name == _objectName)
             {
                 ObjectInteractable objectInteractable = obj.GetComponent<ObjectInteractable>();
-                GameManager.instance.SetGameStateManipulation();
+                GameManager.instance.SetGameStateImportantManipulation();
                 objectInteractable.SetInteractable(true);
                 objectInteractable.Interact();
                 return;

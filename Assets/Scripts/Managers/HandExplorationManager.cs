@@ -17,6 +17,12 @@ public class HandExplorationManager : MonoBehaviour
 
     Hand _currentHand = null;
 
+    float _glitchRtpc = 0.0f;
+    bool _glitchUp = false;
+    [SerializeField] float _glitchFadeUpTime = 2.0f;
+    [SerializeField] float _glitchFadeDownTime = 0.1f;
+    float _fadeRefTime;
+
     void Awake()
     {
         if (instance != null)
@@ -26,7 +32,6 @@ public class HandExplorationManager : MonoBehaviour
         }
 
         instance = this;
-
     }
 
     // Start is called before the first frame update
@@ -44,6 +49,9 @@ public class HandExplorationManager : MonoBehaviour
 
         SoundManager.instance.LaunchEvent(Utils_Variables.START_HOPE_GLITCH_SOUND);
         SetActiveHand();
+
+        _glitchUp = true;
+        _fadeRefTime = Time.time;
     }
 
     void SortHandsByName()
@@ -79,7 +87,19 @@ public class HandExplorationManager : MonoBehaviour
     void Update()
     {
         if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) SetInteractMode();
-        if (GameManager.instance.state == Enums.E_GAMESTATE.EXPLORATION) CheckPlayerDistance();
+        if (GameManager.instance.state == Enums.E_GAMESTATE.EXPLORATION)
+        {
+            CheckPlayerDistance();
+        }
+        if (_glitchUp)
+        {
+            _glitchRtpc = Mathf.Lerp(0.0f, 1.0f, (Time.time - _fadeRefTime) / _glitchFadeUpTime);
+        }
+        else
+        {
+            _glitchRtpc = Mathf.Lerp(1.0f, 0.0f, (Time.time - _fadeRefTime) / _glitchFadeDownTime);
+        }
+        AkSoundEngine.SetRTPCValue("Volume_Glitch_Hope", _glitchRtpc);
     }
 
     protected void CheckPlayerDistance()
@@ -137,6 +157,8 @@ public class HandExplorationManager : MonoBehaviour
         if (_index >= _objectsArray.Count)
         {
             Invoke("EndHandExploration", timeBeforeEndCinematic);
+            _glitchUp = false;
+            _fadeRefTime = Time.time;
         }
 
         SetActiveHand();

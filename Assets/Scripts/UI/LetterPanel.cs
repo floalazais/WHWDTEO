@@ -53,10 +53,10 @@ public class LetterPanel : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayNextLetter();
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.L2_BUTTON)) DisplayPreviousLetter();
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) OnBack();
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) OnToggle();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) || Input.GetKeyDown(KeyCode.Space)) DisplayNextLetter();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.L2_BUTTON) || Input.GetKeyDown(KeyCode.LeftShift)) DisplayPreviousLetter();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) || Input.GetKeyDown(KeyCode.Mouse1)) OnBack();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON) || Input.GetKeyDown(KeyCode.Mouse0)) OnToggle();
     }
 
     void DisplayPreviousLetter()
@@ -71,6 +71,8 @@ public class LetterPanel : MonoBehaviour
 
     void DisplayNextLetter()
     {
+        SoundManager.instance.LaunchEvent(stopSoundEvents[_index].Id);
+
         if (_index == _letters.Length - 1) _index = 0;
         else _index++;
 
@@ -79,6 +81,8 @@ public class LetterPanel : MonoBehaviour
 
     void DisplayCurrentLetter()
     {
+        SoundManager.instance.LaunchEvent(Utils_Variables.LETTRES_SOUND);
+
         if (!displayedLetters[_index])
         {
             displayedLetters[_index] = true;

@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
         _state = Enums.E_GAMESTATE.MANIPULATION;
     }
 
+    public void SetGameStateImportantManipulation()
+    {
+        _state = Enums.E_GAMESTATE.IMPORTANT_MANIPULATION;
+    }
+
     public void SetGameStateNarration()
     {
         _state = Enums.E_GAMESTATE.NARRATION;

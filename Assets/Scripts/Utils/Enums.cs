@@ -8,6 +8,7 @@ public static class Enums
     {
         EXPLORATION,
         MANIPULATION,
+        IMPORTANT_MANIPULATION,
         NARRATION
     }
 

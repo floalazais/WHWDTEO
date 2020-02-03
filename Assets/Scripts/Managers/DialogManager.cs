@@ -51,7 +51,7 @@ public class DialogManager : MonoBehaviour
             _dialogGraph.staticTimeline = false;
         }
 
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) && (_dialogGraph.currentNode as PlayTimelineNode) != null)
+        if ((InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) || Input.GetKeyUp(KeyCode.Space)) && (_dialogGraph.currentNode as PlayTimelineNode) != null)
         {
             (_dialogGraph.currentNode as PlayTimelineNode).timer = 0.0f;
             TimelineManager.instance.StopTimeline();
@@ -61,12 +61,15 @@ public class DialogManager : MonoBehaviour
         {
             dialogRunning = false;
 
-            if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION) UIManager.instance.OnEndDialog();
-            GameManager.instance.SetGameStateExploration();
-            gameplayCamera.Priority = 10;
-            if(PastManager.instance != null) PastManager.instance.Refresh();
-            Mia.SetActive(true);
-            if(Mia2 != null) Mia2.SetActive(true);
+            if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION)
+            {
+                UIManager.instance.OnEndDialog();
+                GameManager.instance.SetGameStateExploration();
+                if(PastManager.instance != null) PastManager.instance.Refresh();
+                gameplayCamera.Priority = 10;
+                Mia.SetActive(true);
+                if(Mia2 != null) Mia2.SetActive(true);
+            }
         }
     }
 

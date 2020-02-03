@@ -41,13 +41,13 @@ public class PastManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION) return;
+        if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION || GameManager.instance.state == Enums.E_GAMESTATE.IMPORTANT_MANIPULATION) return;
 
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) GoToPreviousState();
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) SetInteractMode();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) || Input.GetKeyDown(KeyCode.Mouse1)) GoToPreviousState();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON) || Input.GetKeyDown(KeyCode.Mouse0)) SetInteractMode();
 
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayPastZone();
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) RemovePastZone();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) || Input.GetKeyDown(KeyCode.LeftShift)) DisplayPastZone();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) || Input.GetKeyUp(KeyCode.LeftShift)) RemovePastZone();
 
         if (GameManager.instance.state == Enums.E_GAMESTATE.EXPLORATION) CheckPlayerDistance();
     }
@@ -260,7 +260,7 @@ public class PastManager : MonoBehaviour
 
     public void Refresh()
     {
-        if (InputManager.instance.IsButtonDown(Enums.E_GAMEPAD_BUTTON.R2_BUTTON))
+        if (InputManager.instance.IsButtonDown(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) || Input.GetKey(KeyCode.LeftShift))
         {
             if (!_pastZoneDisplayed) DisplayPastZone();
             else SetMemoryMode();
