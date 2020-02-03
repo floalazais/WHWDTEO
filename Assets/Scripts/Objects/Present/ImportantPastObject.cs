@@ -193,6 +193,6 @@ public class ImportantPastObject : ObjectInteractable
             DialogManager.instance.StartDialog(_endDialogName);
         }
 
-        else ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType);
+        else ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType, _wantedInteractionArray[_index].rollDirection);
     }
 }
