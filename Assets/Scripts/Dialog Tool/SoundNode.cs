@@ -20,7 +20,7 @@ public class SoundNode : DialogNode {
 
     public override void Activate()
     {
-        SoundManager.instance.LaunchEvent(sound.Id);
+        SoundManager.instance.PlaySound(sound.Id);
     }
 
     public override bool Update()

@@ -46,7 +46,7 @@ public class LetterPanel : MonoBehaviour
         _letterText.text = _letters[0];
         if (!displayedLetters[0])
         {
-            SoundManager.instance.LaunchEvent(soundEvents[0].Id);
+            SoundManager.instance.PlaySound(soundEvents[0].Id);
             displayedLetters[0] = true;
         }
     }
@@ -61,7 +61,7 @@ public class LetterPanel : MonoBehaviour
 
     void DisplayPreviousLetter()
     {
-        SoundManager.instance.LaunchEvent(stopSoundEvents[_index].Id);
+        SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
 
         if (_index == 0) _index = _letters.Length - 1;
         else _index--;
@@ -82,7 +82,7 @@ public class LetterPanel : MonoBehaviour
         if (!displayedLetters[_index])
         {
             displayedLetters[_index] = true;
-            SoundManager.instance.LaunchEvent(soundEvents[_index].Id);
+            SoundManager.instance.PlaySound(soundEvents[_index].Id);
         }
 
         _letterText.text = _letters[_index];

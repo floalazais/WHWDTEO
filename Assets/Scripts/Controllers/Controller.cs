@@ -228,17 +228,17 @@ public class Controller : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "TestHandsScene")
         {
-            SoundManager.instance.LaunchEvent(Utils_Variables.STEP_VOID_SOUND);
+            SoundManager.instance.PlaySound(Utils_Variables.STEP_VOID_SOUND);
             return;
         }
 
         if (_onCarpet)
         {
-            SoundManager.instance.LaunchEvent(Utils_Variables.STEP_TAPIS_SOUND);
+            SoundManager.instance.PlaySound(Utils_Variables.STEP_TAPIS_SOUND);
         }
         else
         {
-            SoundManager.instance.LaunchEvent(Utils_Variables.STEP_PARQUET_SOUND);
+            SoundManager.instance.PlaySound(Utils_Variables.STEP_PARQUET_SOUND);
         }
     }
 
@@ -250,7 +250,7 @@ public class Controller : MonoBehaviour
 
         if (_blendValue < 0.1f) return;
 
-        SoundManager.instance.LaunchEvent(Utils_Variables.MOVEMENT_PLAYER_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.MOVEMENT_PLAYER_SOUND);
     }
 
     public void IdleClothPresenceEvent()
@@ -261,7 +261,7 @@ public class Controller : MonoBehaviour
 
         if (_blendValue > 0.0f) return;
 
-        SoundManager.instance.LaunchEvent(Utils_Variables.MOVEMENT_IDLE_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.MOVEMENT_IDLE_SOUND);
     }
 
     public void BreathPresenceEvent()
@@ -272,6 +272,6 @@ public class Controller : MonoBehaviour
 
         if (_blendValue > 0.0f) return;
 
-        SoundManager.instance.LaunchEvent(Utils_Variables.BREATH_IDLE_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.BREATH_IDLE_SOUND);
     }
 }

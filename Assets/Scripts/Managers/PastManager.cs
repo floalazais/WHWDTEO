@@ -202,7 +202,7 @@ public class PastManager : MonoBehaviour
         SetPresentMode();
         _pastZone.Remove();
 
-        SoundManager.instance.LaunchEvent(Utils_Variables.END_MEMORY_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.END_MEMORY_SOUND);
 
         UIManager.instance.RemoveScreen();
 
@@ -214,7 +214,7 @@ public class PastManager : MonoBehaviour
         SetMemoryMode();
         _pastZone.Display();
 
-        SoundManager.instance.LaunchEvent(Utils_Variables.BEGIN_MEMORY_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.BEGIN_MEMORY_SOUND);
 
         _pastZoneDisplayed = true;
     }
