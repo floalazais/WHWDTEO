@@ -8,6 +8,7 @@ public class ObjectViewable : ObjectInteractable
     protected Quaternion _originalRotation;
 
     [SerializeField] AK.Wwise.Event soundEvent;
+    [SerializeField] public AK.Wwise.Event putSoundEvent;
     bool soundPlayed = false;
 
     private void Start()
@@ -48,8 +49,8 @@ public class ObjectViewable : ObjectInteractable
         if (!soundPlayed)
         {
             soundPlayed = true;
-            SoundManager.instance.PlaySound(soundEvent.Id);
         }
+        SoundManager.instance.PlaySound(soundEvent.Id);
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;

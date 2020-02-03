@@ -35,6 +35,7 @@ public class ImportantPastObject : ObjectInteractable
     bool _isStepValidated = false;
     List<HoldConstraint> _holdConstraintList = new List<HoldConstraint>();
 
+    [SerializeField] AK.Wwise.Event[] soundEvents;
 
     bool _isManipulated = false;
 
@@ -71,6 +72,7 @@ public class ImportantPastObject : ObjectInteractable
         TimelineManager.instance.PlayTimeline(loopTimeline);
         UIManager.instance.OnManipulationScreen();
         ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
+        SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     void CheckInputOrder()
@@ -193,6 +195,10 @@ public class ImportantPastObject : ObjectInteractable
             DialogManager.instance.StartDialog(_endDialogName);
         }
 
-        else ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType, _wantedInteractionArray[_index].rollDirection);
+        else
+        {
+            ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType, _wantedInteractionArray[_index].rollDirection);
+            SoundManager.instance.PlaySound(soundEvents[_index].Id);
+        }
     }
 }
