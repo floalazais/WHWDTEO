@@ -10,6 +10,6 @@ public class DisplayLog: MonoBehaviour
     }
 
     public void LaunchSound(AK.Wwise.Event e){
-        SoundManager.instance.PlaySound(e.Id);
+        SoundManager.instance.LaunchEvent(e.Id);
     }
 }

@@ -18,7 +18,7 @@ public class BoxLetters : ObjectInteractable
     public override void Interact()
     {
         base.Interact();
-        SoundManager.instance.PlaySound(Utils_Variables.PRISE_BOITE_SOUND);
+        SoundManager.instance.LaunchEvent(Utils_Variables.PRISE_BOITE_SOUND);
         print("box letters");
         UIManager.instance.OnLetterPanel();
         LetterPanel.instance.StartLetters();

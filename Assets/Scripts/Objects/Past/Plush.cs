@@ -41,7 +41,7 @@ public class Plush : MonoBehaviour
 
         _collider.isTrigger = true;
 
-        SoundManager.instance.PlaySound(soundEventInteract.Id);
+        SoundManager.instance.LaunchEvent(soundEventInteract.Id);
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
@@ -110,7 +110,7 @@ public class Plush : MonoBehaviour
                 print(hitInfo.collider.name);
                 if (hitInfo.collider.gameObject == _partToFind)
                 {
-                    SoundManager.instance.PlaySound(soundEventInspect.Id);
+                    SoundManager.instance.LaunchEvent(soundEventInspect.Id);
                     inspected = true;
                     gameObject.GetComponent<ObjectManipulation>().stop = true;
                 }

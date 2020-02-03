@@ -199,17 +199,17 @@ public class GhostController : MonoBehaviour
 
         //if (SceneManager.GetActiveScene().name == "TestHandsScene")
         //{
-        //    SoundManager.instance.PlaySound(Utils_Variables.STEP_VOID_SOUND);
+        //    SoundManager.instance.LaunchEvent(Utils_Variables.STEP_VOID_SOUND);
         //    return;
         //}
 
         //if (_onCarpet)
         //{
-        //    SoundManager.instance.PlaySound(Utils_Variables.STEP_TAPIS_SOUND);
+        //    SoundManager.instance.LaunchEvent(Utils_Variables.STEP_TAPIS_SOUND);
         //}
         //else
         //{
-        //    SoundManager.instance.PlaySound(Utils_Variables.STEP_PARQUET_SOUND);
+        //    SoundManager.instance.LaunchEvent(Utils_Variables.STEP_PARQUET_SOUND);
         //}
     }
 
@@ -221,7 +221,7 @@ public class GhostController : MonoBehaviour
 
         //if (_blendValue < 0.1f) return;
 
-        //SoundManager.instance.PlaySound(Utils_Variables.MOVEMENT_PLAYER_SOUND);
+        //SoundManager.instance.LaunchEvent(Utils_Variables.MOVEMENT_PLAYER_SOUND);
     }
 
     public void IdleClothPresenceEvent()
@@ -232,7 +232,7 @@ public class GhostController : MonoBehaviour
 
         //if (_blendValue > 0.0f) return;
 
-        //SoundManager.instance.PlaySound(Utils_Variables.MOVEMENT_IDLE_SOUND);
+        //SoundManager.instance.LaunchEvent(Utils_Variables.MOVEMENT_IDLE_SOUND);
     }
 
     public void BreathPresenceEvent()
@@ -243,6 +243,6 @@ public class GhostController : MonoBehaviour
 
         //if (_blendValue > 0.0f) return;
 
-        //SoundManager.instance.PlaySound(Utils_Variables.BREATH_IDLE_SOUND);
+        //SoundManager.instance.LaunchEvent(Utils_Variables.BREATH_IDLE_SOUND);
     }
 }
