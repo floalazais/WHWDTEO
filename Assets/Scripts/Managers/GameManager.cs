@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.instance.LaunchEvent(Utils_Variables.START_ROOM_TONE_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
         DialogManager.instance.StartDialog("introTL");
     }
 
@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
     public void SetGameStateManipulation()
     {
         _state = Enums.E_GAMESTATE.MANIPULATION;
+    }
+
+    public void SetGameStateImportantManipulation()
+    {
+        _state = Enums.E_GAMESTATE.IMPORTANT_MANIPULATION;
     }
 
     public void SetGameStateNarration()

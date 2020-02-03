@@ -46,22 +46,22 @@ public class LetterPanel : MonoBehaviour
         _letterText.text = _letters[0];
         if (!displayedLetters[0])
         {
-            SoundManager.instance.LaunchEvent(soundEvents[0].Id);
+            SoundManager.instance.PlaySound(soundEvents[0].Id);
             displayedLetters[0] = true;
         }
     }
 
     private void Update()
     {
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON)) DisplayNextLetter();
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.L2_BUTTON)) DisplayPreviousLetter();
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) OnBack();
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) OnToggle();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) || Input.GetKeyDown(KeyCode.Space)) DisplayNextLetter();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.L2_BUTTON) || Input.GetKeyDown(KeyCode.LeftShift)) DisplayPreviousLetter();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) || Input.GetKeyDown(KeyCode.Mouse1)) OnBack();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON) || Input.GetKeyDown(KeyCode.Mouse0)) OnToggle();
     }
 
     void DisplayPreviousLetter()
     {
-        SoundManager.instance.LaunchEvent(stopSoundEvents[_index].Id);
+        SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
 
         if (_index == 0) _index = _letters.Length - 1;
         else _index--;
@@ -71,6 +71,8 @@ public class LetterPanel : MonoBehaviour
 
     void DisplayNextLetter()
     {
+        SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
+
         if (_index == _letters.Length - 1) _index = 0;
         else _index++;
 
@@ -79,10 +81,12 @@ public class LetterPanel : MonoBehaviour
 
     void DisplayCurrentLetter()
     {
+        SoundManager.instance.PlaySound(Utils_Variables.LETTRES_SOUND);
+
         if (!displayedLetters[_index])
         {
             displayedLetters[_index] = true;
-            SoundManager.instance.LaunchEvent(soundEvents[_index].Id);
+            SoundManager.instance.PlaySound(soundEvents[_index].Id);
         }
 
         _letterText.text = _letters[_index];

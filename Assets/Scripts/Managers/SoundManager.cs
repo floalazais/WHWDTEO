@@ -17,12 +17,12 @@ public class SoundManager : MonoBehaviour
         instance = this;
     }
 
-    public void LaunchEvent(uint eventId)
+    public void PlaySound(uint eventId)
     {
         AkSoundEngine.PostEvent(eventId, gameObject);
     }
 
-    public void LaunchEvent(string eventName)
+    public void PlaySound(string eventName)
     {
         AkSoundEngine.PostEvent(eventName, gameObject);
     }
