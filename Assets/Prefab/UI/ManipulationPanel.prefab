@@ -101,6 +101,9 @@ MonoBehaviour:
   clickImage: {fileID: 4101297599317577259}
   holdImage: {fileID: 5549245367926298184}
   rollImage: {fileID: 2636924013771059068}
+  R2Animator: {fileID: 22100000, guid: ea08410e83fb86445932372f3be04629, type: 2}
+  L2Animator: {fileID: 22100000, guid: 6290db0d00df5184eada001a6c95da0f, type: 2}
+  SquareAnimator: {fileID: 9100000, guid: 25dedaa15629094478b13743e850c189, type: 2}
 --- !u!1 &289593537033567357
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +115,7 @@ GameObject:
   - component: {fileID: 6233277560614038911}
   - component: {fileID: 2362164889234590083}
   - component: {fileID: 5549245367926298184}
+  - component: {fileID: 7812232221005945178}
   m_Layer: 5
   m_Name: holdImage
   m_TagString: Untagged
@@ -175,6 +179,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7812232221005945178
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289593537033567357}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25dedaa15629094478b13743e850c189, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1856841308352952141
 GameObject:
   m_ObjectHideFlags: 0
