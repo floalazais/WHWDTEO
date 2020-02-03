@@ -47,6 +47,7 @@ public class ManipulationPanel : MonoBehaviour
         switch (pType)
         {
             case Enums.E_INTERACT_TYPE.CLICK:
+                clickImage.gameObject.SetActive(true);
                 clickImage.sprite = clickR1Img;
                 break;
 
