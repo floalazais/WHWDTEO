@@ -119,7 +119,7 @@ public class ImportantPastObject : ObjectInteractable
 
         bool lIsValidated = false;
 
-        //print("button : " + _currentInteraction.gamepadButton + " interaction wanted : " + _currentInteraction.interactionType);
+        print("button : " + _currentInteraction.gamepadButton + " interaction wanted : " + _currentInteraction.interactionType);
 
         switch (_currentInteraction.interactionType)
         {
