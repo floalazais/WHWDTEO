@@ -22,6 +22,10 @@ public class ManipulationPanel : MonoBehaviour
     [SerializeField] Image holdImage;
     [SerializeField] Image rollImage;
 
+    [Header("Animator UI")]
+    [SerializeField] RuntimeAnimatorController R2Animator;
+    [SerializeField] RuntimeAnimatorController L2Animator;
+    [SerializeField] RuntimeAnimatorController SquareAnimator;
     private void Awake()
     {
         if (instance != null)
@@ -53,9 +57,22 @@ public class ManipulationPanel : MonoBehaviour
 
             case Enums.E_INTERACT_TYPE.HOLD:
                 holdImage.gameObject.SetActive(true);
-                if (pButton == Enums.E_GAMEPAD_BUTTON.L2_BUTTON) holdImage.sprite = holdL2Img;
-                else if (pButton == Enums.E_GAMEPAD_BUTTON.R2_BUTTON) holdImage.sprite = holdR2Img;
-                else if (pButton == Enums.E_GAMEPAD_BUTTON.SQUARE_BUTTON) holdImage.sprite = holdSquareImg;
+                if (pButton == Enums.E_GAMEPAD_BUTTON.L2_BUTTON)
+                {
+                    holdImage.sprite = holdL2Img;
+                    holdImage.gameObject.GetComponent<Animator>().runtimeAnimatorController = L2Animator;
+                }
+                else if (pButton == Enums.E_GAMEPAD_BUTTON.R2_BUTTON)
+                {
+                    holdImage.sprite = holdR2Img;
+                    holdImage.gameObject.GetComponent<Animator>().runtimeAnimatorController = R2Animator;
+                }
+
+                else if (pButton == Enums.E_GAMEPAD_BUTTON.SQUARE_BUTTON)
+                {
+                    holdImage.sprite = holdSquareImg;
+                    holdImage.gameObject.GetComponent<Animator>().runtimeAnimatorController = SquareAnimator;
+                }
                 break;
 
             case Enums.E_INTERACT_TYPE.RELEASE_HOLD:
