@@ -37,7 +37,7 @@ public class HandExplorationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.instance.LaunchEvent(Utils_Variables.STOP_ROOM_TONE_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.STOP_ROOM_TONE_SOUND);
 
         _objectsArray = GameObject.FindObjectsOfType<Hand>().ToList();
         SortHandsByName();
@@ -47,7 +47,7 @@ public class HandExplorationManager : MonoBehaviour
             _objectsArray[i].gameObject.SetActive(false);
         }
 
-        SoundManager.instance.LaunchEvent(Utils_Variables.START_HOPE_GLITCH_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.START_HOPE_GLITCH_SOUND);
         SetActiveHand();
 
         _glitchUp = true;
@@ -63,7 +63,7 @@ public class HandExplorationManager : MonoBehaviour
     {
         if (_index - 1 >= 0)
         {
-            SoundManager.instance.LaunchEvent(Utils_Variables.DISPARITION_MAIN_SOUND);
+            SoundManager.instance.PlaySound(Utils_Variables.DISPARITION_MAIN_SOUND);
             Invoke("DisableHand", 0.5f);
         }
 
@@ -75,7 +75,7 @@ public class HandExplorationManager : MonoBehaviour
     {
         _currentHand = _objectsArray[_index];
         _currentHand.gameObject.SetActive(true);
-        SoundManager.instance.LaunchEvent(Utils_Variables.APPARITION_MAIN_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.APPARITION_MAIN_SOUND);
     }
 
     //must disappear at a precise time of the sound
@@ -174,7 +174,7 @@ public class HandExplorationManager : MonoBehaviour
 
     void EndHandExploration()
     {
-        SoundManager.instance.LaunchEvent(Utils_Variables.STOP_HOPE_GLITCH_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.STOP_HOPE_GLITCH_SOUND);
         DialogManager.instance.StartDialog("toDialogTL");
         return;
     }

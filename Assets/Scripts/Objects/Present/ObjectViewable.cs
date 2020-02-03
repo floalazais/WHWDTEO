@@ -35,6 +35,8 @@ public class ObjectViewable : ObjectInteractable
         gameObject.layer = Utils_Variables.LAYER_CAMERA_COLLISION;
         foreach (Transform child in transform)
         {
+            if (child.gameObject.GetComponent<CanvasObject>()) continue;
+
             child.gameObject.layer = Utils_Variables.LAYER_CAMERA_COLLISION;
         }
     }
@@ -46,7 +48,7 @@ public class ObjectViewable : ObjectInteractable
         if (!soundPlayed)
         {
             soundPlayed = true;
-            SoundManager.instance.LaunchEvent(soundEvent.Id);
+            SoundManager.instance.PlaySound(soundEvent.Id);
         }
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
