@@ -71,8 +71,9 @@ public class ImportantPastObject : ObjectInteractable
         TimelineManager.instance.SetLoopMode(true);
         TimelineManager.instance.PlayTimeline(loopTimeline);
         UIManager.instance.OnManipulationScreen();
+        ManipulationPanel.instance.DesactivateUI();
         ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
-        SoundManager.instance.PlaySound(soundEvents[0].Id);
+        //SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     void CheckInputOrder()

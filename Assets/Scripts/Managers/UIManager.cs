@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     RectTransform _manipulationPanel = null;
     RectTransform _letterPanel = null;
     [SerializeField] RectTransform _inspectionPanel = null;
+    [SerializeField] Canvas _canvas = null;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(_canvas != null) _canvas.gameObject.SetActive(true);
         _choicePanel = ChoicePanel.instance.GetComponent<RectTransform>();
         _dialogPanel = DialogPanel.instance.GetComponent<RectTransform>();
         _letterPanel = LetterPanel.instance.GetComponent<RectTransform>();

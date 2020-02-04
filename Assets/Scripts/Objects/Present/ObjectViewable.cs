@@ -57,6 +57,8 @@ public class ObjectViewable : ObjectInteractable
 
         foreach (Transform child in transform)
         {
+            if (child.gameObject.GetComponent<CanvasObject>()) continue;
+
             child.gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
         }
     }
