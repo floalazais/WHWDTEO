@@ -46,9 +46,9 @@ public class LetterPanel : MonoBehaviour
         _letterText.text = _letters[0];
         if (!displayedLetters[0])
         {
-            SoundManager.instance.PlaySound(soundEvents[0].Id);
             displayedLetters[0] = true;
         }
+        SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     private void Update()
@@ -86,8 +86,8 @@ public class LetterPanel : MonoBehaviour
         if (!displayedLetters[_index])
         {
             displayedLetters[_index] = true;
-            SoundManager.instance.PlaySound(soundEvents[_index].Id);
         }
+        SoundManager.instance.PlaySound(soundEvents[_index].Id);
 
         _letterText.text = _letters[_index];
     }

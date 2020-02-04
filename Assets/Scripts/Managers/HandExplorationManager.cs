@@ -38,6 +38,7 @@ public class HandExplorationManager : MonoBehaviour
     void Start()
     {
         SoundManager.instance.PlaySound(Utils_Variables.STOP_ROOM_TONE_SOUND);
+        SoundManager.instance.PlaySound("Play_RoomTone_Void");
 
         _objectsArray = GameObject.FindObjectsOfType<Hand>().ToList();
         SortHandsByName();
@@ -175,6 +176,7 @@ public class HandExplorationManager : MonoBehaviour
     void EndHandExploration()
     {
         SoundManager.instance.PlaySound(Utils_Variables.STOP_HOPE_GLITCH_SOUND);
+        SoundManager.instance.PlaySound("Stop_RoomTone_Void");
         DialogManager.instance.StartDialog("toDialogTL");
         return;
     }
