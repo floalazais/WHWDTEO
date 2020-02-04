@@ -234,13 +234,27 @@ public class Controller : MonoBehaviour
             return;
         }
 
-        if (_onCarpet)
+        if (SceneManager.GetActiveScene().name == "PastScene")
         {
-            SoundManager.instance.PlaySound(Utils_Variables.STEP_TAPIS_SOUND);
+            if (_onCarpet)
+            {
+                SoundManager.instance.PlaySound("Play_TAPIS_PAST");
+            }
+            else
+            {
+                SoundManager.instance.PlaySound("Play_PARQUET_PAST");
+            }
         }
         else
         {
-            SoundManager.instance.PlaySound(Utils_Variables.STEP_PARQUET_SOUND);
+            if (_onCarpet)
+            {
+                SoundManager.instance.PlaySound(Utils_Variables.STEP_TAPIS_SOUND);
+            }
+            else
+            {
+                SoundManager.instance.PlaySound(Utils_Variables.STEP_PARQUET_SOUND);
+            }
         }
     }
 
