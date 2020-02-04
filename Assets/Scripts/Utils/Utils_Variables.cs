@@ -22,6 +22,8 @@ public static class Utils_Variables
     public static string OBJECT_CANVAS_INTERACTION = "artInteractionButton";
     public static string OBJECT_CANVAS_ARROW = "artInteractionIndicator";
 
+    //Animator Controller
+    public static string IS_HOLDING = "isHolding";
     //Sounds
     public static string MOVEMENT_PLAYER_SOUND = "Play_Presence_Ex";
     public static string MOVEMENT_IDLE_SOUND = "Play_Presence_Idle_Mia";

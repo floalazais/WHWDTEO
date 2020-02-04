@@ -96,6 +96,9 @@ public class ImportantPastObject : ObjectInteractable
                         _holdConstraintList.Remove(_holdConstraintList.Find(h => h.gamepadButton == _wantedInteractionArray[j].gamepadButton));
                     }
                 }
+
+                ManipulationPanel.instance.DesactivateUI();
+                ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType, _wantedInteractionArray[_index].rollDirection);
                 _isStepValidated = false;
                 return;
             }
@@ -129,6 +132,8 @@ public class ImportantPastObject : ObjectInteractable
                     newHoldConstraint.gamepadButton = _currentInteraction.gamepadButton;
                     newHoldConstraint.index = _index;
                     _holdConstraintList.Add(newHoldConstraint);
+
+                    ManipulationPanel.instance.StartHoldingAnimation();
                 }
                 break;
 
