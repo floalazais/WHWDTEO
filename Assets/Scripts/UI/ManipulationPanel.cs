@@ -92,11 +92,23 @@ public class ManipulationPanel : MonoBehaviour
         }
     }
 
+    public void StartHoldingAnimation()
+    {
+        holdImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_HOLDING, true);
+    }
+
+    public void StopHoldingAnimation()
+    {
+        holdImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_HOLDING, false);
+    }
+
     public void DesactivateUI()
     {
         swipeImage.gameObject.SetActive(false);
         clickImage.gameObject.SetActive(false);
         holdImage.gameObject.SetActive(false);
         rollImage.gameObject.SetActive(false);
+
+        StopHoldingAnimation();
     }
 }
