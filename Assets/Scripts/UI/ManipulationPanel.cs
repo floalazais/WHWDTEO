@@ -37,10 +37,10 @@ public class ManipulationPanel : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        DesactivateUI();
-    }
+    //private void Start()
+    //{
+    //    DesactivateUI();
+    //}
 
     public void ActivateUI(Enums.E_GAMEPAD_BUTTON pButton, Enums.E_INTERACT_TYPE pType, Enums.E_ROLL_DIRECTION pRollDirection = Enums.E_ROLL_DIRECTION.NONE)
     {

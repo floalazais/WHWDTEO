@@ -72,7 +72,7 @@ public class PastExplorationManager : MonoBehaviour
 
         if (_timer <= 0.0f && GameManager.instance.state == Enums.E_GAMESTATE.EXPLORATION)
         {
-            print("past explo lost");
+            DialogManager.instance.StartDialog("toHandTL");
         }
     }
 
