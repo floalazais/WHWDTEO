@@ -20,7 +20,7 @@ public class HandExplorationManager : MonoBehaviour
     float _glitchRtpc = 0.0f;
     bool _glitchUp = false;
     [SerializeField] float _glitchFadeUpTime = 2.0f;
-    [SerializeField] float _glitchFadeDownTime = 0.1f;
+    [SerializeField] float _glitchFadeDownTime = 0.6f;
     float _fadeRefTime;
 
     void Awake()
@@ -160,6 +160,7 @@ public class HandExplorationManager : MonoBehaviour
             Invoke("EndHandExploration", timeBeforeEndCinematic);
             _glitchUp = false;
             _fadeRefTime = Time.time;
+            SoundManager.instance.PlaySound("Play_DISP_MAIN_Music_Box");
         }
 
         SetActiveHand();

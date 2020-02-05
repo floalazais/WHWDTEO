@@ -24,6 +24,8 @@ public class Plush : MonoBehaviour
 
     Collider _collider;
 
+    bool _touchedGround = false;
+
     void Start()
     {
         _originalPosition = transform.position;
@@ -115,6 +117,15 @@ public class Plush : MonoBehaviour
                     gameObject.GetComponent<ObjectManipulation>().stop = true;
                 }
             }
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!_touchedGround)
+        {
+            _touchedGround = true;
+            SoundManager.instance.PlaySound("Play_Tombe_Peluche");
         }
     }
 }

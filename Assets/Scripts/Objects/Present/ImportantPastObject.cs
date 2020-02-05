@@ -36,6 +36,7 @@ public class ImportantPastObject : ObjectInteractable
     List<HoldConstraint> _holdConstraintList = new List<HoldConstraint>();
 
     [SerializeField] AK.Wwise.Event[] soundEvents;
+    [SerializeField] AK.Wwise.Event[] stopSoundEvents;
 
     bool _isManipulated = false;
 
@@ -73,7 +74,7 @@ public class ImportantPastObject : ObjectInteractable
         UIManager.instance.OnManipulationScreen();
         ManipulationPanel.instance.DesactivateUI();
         ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
-        //SoundManager.instance.PlaySound(soundEvents[0].Id);
+        SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     void CheckInputOrder()
@@ -85,6 +86,10 @@ public class ImportantPastObject : ObjectInteractable
             if (_currentInteraction.interactionType == Enums.E_INTERACT_TYPE.RELEASE_HOLD && _currentInteraction.gamepadButton == _holdConstraintList[i].gamepadButton) continue;
             if (!InputManager.instance.IsButtonDown(_holdConstraintList[i].gamepadButton))
             {
+                for (int j = _holdConstraintList[i].index; j < _index; i++)
+                {
+                    SoundManager.instance.PlaySound(stopSoundEvents[j].Id);
+                }
                 _index = _holdConstraintList[i].index;
                 _holdConstraintList.RemoveAll(h2 => h2.index >= _holdConstraintList.Find(h => h.gamepadButton == _holdConstraintList[i].gamepadButton).index);
                 for (int j = 0; j < _index; j++)

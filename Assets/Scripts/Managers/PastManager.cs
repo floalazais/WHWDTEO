@@ -222,7 +222,21 @@ public class PastManager : MonoBehaviour
     void PutNearObject()
     {
         _objectNearPlayer.SetNearPlayerMode();
-        if (_objectNearPlayer as ObjectViewable != null) SoundManager.instance.PlaySound((_objectNearPlayer as ObjectViewable).putSoundEvent.Id);
+        ObjectViewable objectViewable = _objectNearPlayer as ObjectViewable;
+        if (objectViewable != null)
+        {
+            if (objectViewable.putSoundPlayed)
+            {
+                for (int i = 0; i < objectViewable.putSoundEventsOnce.Length; i++)
+                {
+                    SoundManager.instance.PlaySound(objectViewable.putSoundEventsOnce[i].Id);
+                }
+            }
+            for (int i = 0; i < objectViewable.putSoundEvents.Length; i++)
+            {
+                SoundManager.instance.PlaySound(objectViewable.putSoundEvents[i].Id);
+            }
+        }
     }
 
     public void SetNearPastObjectInMemoryMode(W_Object pObject)
