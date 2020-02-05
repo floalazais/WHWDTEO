@@ -68,7 +68,7 @@ public class DialogManager : MonoBehaviour
                 UIManager.instance.OnEndDialog();
                 GameManager.instance.SetGameStateExploration();
                 if(PastManager.instance != null) PastManager.instance.Refresh();
-                gameplayCamera.Priority = 10;
+                gameplayCamera.Priority = 15;
                 Mia.SetActive(true);
                 GhostMia.SetActive(true);
                 if(Mia2 != null) Mia2.SetActive(true);
