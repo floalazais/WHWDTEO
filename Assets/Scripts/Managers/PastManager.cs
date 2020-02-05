@@ -225,8 +225,9 @@ public class PastManager : MonoBehaviour
         ObjectViewable objectViewable = _objectNearPlayer as ObjectViewable;
         if (objectViewable != null)
         {
-            if (objectViewable.putSoundPlayed)
+            if (!objectViewable.putSoundPlayed)
             {
+                objectViewable.putSoundPlayed = true;
                 for (int i = 0; i < objectViewable.putSoundEventsOnce.Length; i++)
                 {
                     SoundManager.instance.PlaySound(objectViewable.putSoundEventsOnce[i].Id);
