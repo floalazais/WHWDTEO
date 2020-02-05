@@ -51,11 +51,11 @@ public class ObjectViewable : ObjectInteractable
 
         if (!takeSoundPlayed)
         {
+            takeSoundPlayed = true;
             for (int i = 0; i < takeSoundEventsOnce.Length; i++)
             {
                 SoundManager.instance.PlaySound(takeSoundEventsOnce[i].Id);
             }
-            takeSoundPlayed = true;
         }
 
         for (int i = 0; i < takeSoundEvents.Length; i++)
