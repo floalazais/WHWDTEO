@@ -7,9 +7,12 @@ public class ObjectViewable : ObjectInteractable
     protected Vector3 _originalPosition;
     protected Quaternion _originalRotation;
 
-    [SerializeField] AK.Wwise.Event soundEvent;
-    [SerializeField] public AK.Wwise.Event putSoundEvent;
-    bool soundPlayed = false;
+    [SerializeField] AK.Wwise.Event[] takeSoundEvents;
+    [SerializeField] AK.Wwise.Event[] takeSoundEventsOnce;
+    [SerializeField] public AK.Wwise.Event[] putSoundEvents;
+    [SerializeField] public AK.Wwise.Event[] putSoundEventsOnce;
+    bool takeSoundPlayed = false;
+    public bool putSoundPlayed = false;
 
     private void Start()
     {
@@ -46,11 +49,19 @@ public class ObjectViewable : ObjectInteractable
     {
         base.Interact();
 
-        if (!soundPlayed)
+        if (!takeSoundPlayed)
         {
-            soundPlayed = true;
+            for (int i = 0; i < takeSoundEventsOnce.Length; i++)
+            {
+                SoundManager.instance.PlaySound(takeSoundEventsOnce[i].Id);
+            }
+            takeSoundPlayed = true;
         }
-        SoundManager.instance.PlaySound(soundEvent.Id);
+
+        for (int i = 0; i < takeSoundEvents.Length; i++)
+        {
+            SoundManager.instance.PlaySound(takeSoundEvents[i].Id);
+        }
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;

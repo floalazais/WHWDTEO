@@ -223,7 +223,7 @@ public class PastExplorationManager : MonoBehaviour
         {
             _objectNearPlayer.enabled = false;
             _objectNearPlayer.gameObject.AddComponent<Rigidbody>();
-            _objectCamera.fieldOfView = 46.39718f;
+            _objectCamera.fieldOfView = 57.5f;
         }
         PutNearObject();
         GameManager.instance.SetGameStateExploration();
