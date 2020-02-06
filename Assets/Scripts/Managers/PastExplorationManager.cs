@@ -49,6 +49,8 @@ public class PastExplorationManager : MonoBehaviour
 
         _swapTimer = _swapPeriod;
         ChangePlushesPositions();
+
+        DialogManager.instance._dialogGraph.variablesDictionary.Add("foundAllPlushes", false);
     }
 
     // Update is called once per frame
@@ -131,6 +133,7 @@ public class PastExplorationManager : MonoBehaviour
 
     void EndPlushExploration()
     {
+        DialogManager.instance._dialogGraph.variablesDictionary["foundAllPlushes"] = true;
         DialogManager.instance.StartDialog("toHandTL");
     }
 
