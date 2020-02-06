@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d3c16c6180e9214b811cce79000f0705
     GuidInternal: 
-    m_lastTime: -8586206999463951069
+    m_lastTime: -8586206152192381216
     List:
     - name: Verb_Room
       guid: a3e841f621df5b49a5c3b91a9a4201f5
@@ -251,7 +251,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 607f7b4e00248847877af15e8f82926c
     GuidInternal: 
-    m_lastTime: -8586206230430519659
+    m_lastTime: -8586206152192470974
     List:
     - name: Play_APP_MAIN
       guid: 8ad9f86c84b02c4fb3516e2c07ed6835
@@ -402,6 +402,20 @@ MonoBehaviour:
       - ElementName: Play_Dialogue_02
         ObjectType: 3
       Path: Default Work Unit\Events_Actors\Play_Dialogue_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_02_Bis
+      guid: ea75344dfa34ce49b8865085b130912b
+      id: 450872754
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_02_Bis
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_02_Bis
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -3644,6 +3658,8 @@ MonoBehaviour:
   - /Wwise_EachOther
   - /Wwise_EachOther/Events
   - /Wwise_EachOther/Events/Default Work Unit
-  - /Wwise_EachOther/Events/Default Work Unit/Objects
+  - /Wwise_EachOther/Events/Default Work Unit/Events_Actors
+  - /Wwise_EachOther/Events/Default Work Unit/Events_SD
+  - /Wwise_EachOther/Events/Default Work Unit/Steps
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
