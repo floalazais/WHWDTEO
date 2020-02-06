@@ -74,7 +74,6 @@ public class ImportantPastObject : ObjectInteractable
         UIManager.instance.OnManipulationScreen();
         ManipulationPanel.instance.DesactivateUI();
         ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
-        SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     void CheckInputOrder()
@@ -142,6 +141,8 @@ public class ImportantPastObject : ObjectInteractable
                     _holdConstraintList.Add(newHoldConstraint);
 
                     ManipulationPanel.instance.StartHoldingAnimation();
+                    print("hold");
+                    SoundManager.instance.PlaySound(soundEvents[_index].Id);
                 }
                 break;
 
@@ -161,6 +162,13 @@ public class ImportantPastObject : ObjectInteractable
             case Enums.E_INTERACT_TYPE.ROLL:
                 Enums.E_ROLL_DIRECTION lRollDirection = _currentInteraction.rollDirection;
                 lIsValidated = InputManager.instance.IsStickRolling(lRollDirection);
+
+                if (lIsValidated)
+                {
+                    print("roll");
+                    SoundManager.instance.PlaySound(soundEvents[_index].Id);
+                }
+
                 break;
 
             case Enums.E_INTERACT_TYPE.SWIPE:
@@ -187,6 +195,7 @@ public class ImportantPastObject : ObjectInteractable
 
     void NextStep()
     {
+        SoundManager.instance.PlaySound(soundEvents[_index].Id);
         _index++;
         _isStepValidated = false;
 

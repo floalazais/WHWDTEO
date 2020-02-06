@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16390099, g: 0.085996896, b: 0.11767856, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 15a7e547be190f54e9fcd28241154a30, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 336022031}
+  m_SkySettings: {fileID: 812495669}
   m_SkySettingsFromProfile: {fileID: -4772814257748482079, guid: 15a7e547be190f54e9fcd28241154a30,
     type: 2}
 --- !u!114 &122747612
@@ -1791,82 +1791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &336022031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.43
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 1
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.059
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5.17
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1 &351851749
 GameObject:
   m_ObjectHideFlags: 3
@@ -2835,22 +2759,32 @@ PrefabInstance:
     - target: {fileID: 6873076605128248660, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.44374043
       objectReference: {fileID: 0}
     - target: {fileID: 6873076605128248660, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.89615536
       objectReference: {fileID: 0}
     - target: {fileID: 1171858305252527653, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.570607
       objectReference: {fileID: 0}
     - target: {fileID: 1171858305252527653, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8212233
+      objectReference: {fileID: 0}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.size
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
@@ -2887,6 +2821,102 @@ PrefabInstance:
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 1697475902}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e6252f08596c0e44f905329257543836,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[1].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4cbb18d48a7cb6949a44d0c5fa93f184,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[2].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: ef1c22717ffe28942a605c96e77fe68b,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[3].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d200ebfec665ef40aceea987f2d7200,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[5].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: deb23510ca587d945bdc2df9d467bbf0,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[6].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e28e09c824cd8884db9bb01590df17aa,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[7].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 78d19cac432105049a501105f8b385a5,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[9].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f48d3dacdc8ba543b90b0a87d64ffb0,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: soundEvents.Array.data[11].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: c1a7be562262de44b921528ef7fe9e70,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.data[4].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 334e8dce03d8c344083674944d94289f,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.data[8].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bcdb2e174bfd7e4bb23b8e9fcab2100,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.data[10].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 098560c27d089ff4a870fe5bdec08a6b,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.data[2].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c5ab109f051f8647ab10a66b2af378f,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.data[3].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 800caee631f9a7f4fb18081de8f36399,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.data[6].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: bd04cd7b565215e47ac65c686f4b2d75,
+        type: 2}
+    - target: {fileID: 91257181683472323, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: stopSoundEvents.Array.data[7].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: ada7c9aeec963dc4dbb2eea9432fb556,
+        type: 2}
     - target: {fileID: 393794506666157652, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
       propertyPath: soundEvent.WwiseObjectReference
@@ -4294,6 +4324,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6429742627326215805, guid: 29109c19d83eb4144b8b9cba25b615e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5827005176468518786, guid: 29109c19d83eb4144b8b9cba25b615e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7820883762784089950, guid: 29109c19d83eb4144b8b9cba25b615e3,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
@@ -4318,16 +4358,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[5]
       value: 0.00000004251793
-      objectReference: {fileID: 0}
-    - target: {fileID: -6429742627326215805, guid: 29109c19d83eb4144b8b9cba25b615e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5827005176468518786, guid: 29109c19d83eb4144b8b9cba25b615e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5201685142654534508, guid: 29109c19d83eb4144b8b9cba25b615e3,
         type: 3}
@@ -4500,6 +4530,7 @@ MonoBehaviour:
   interactable: 1
   _wantedInteractionArray: []
   soundEvents: []
+  stopSoundEvents: []
   loopTimeline: {fileID: 0}
   _endDialogName: 
 --- !u!65 &808763510
@@ -4561,6 +4592,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808763507}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &812495669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.43
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 1
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.059
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5.17
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1 &835140657
 GameObject:
   m_ObjectHideFlags: 0
@@ -7166,7 +7273,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1478546386}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: f0b3997ce1cdd5346a6073d37a052239, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 7b59e8b6403ab8041a4f95262e866521, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -7318,6 +7425,8 @@ PlayableDirector:
     value: {fileID: 1754442722}
   - key: {fileID: -7793060466425499589, guid: f0b3997ce1cdd5346a6073d37a052239, type: 2}
     value: {fileID: 296603546}
+  - key: {fileID: -7124162244091516869, guid: 7b59e8b6403ab8041a4f95262e866521, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 2cea112b34ca2f64780b03908f6248f2: {fileID: 174966423}
@@ -8295,7 +8404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1626172537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11836,6 +11945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inspectionPanel: {fileID: 836065448}
+  _canvas: {fileID: 0}
 --- !u!1 &3641122447167135066
 GameObject:
   m_ObjectHideFlags: 0
