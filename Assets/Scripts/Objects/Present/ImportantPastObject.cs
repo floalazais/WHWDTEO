@@ -85,10 +85,10 @@ public class ImportantPastObject : ObjectInteractable
             if (_currentInteraction.interactionType == Enums.E_INTERACT_TYPE.RELEASE_HOLD && _currentInteraction.gamepadButton == _holdConstraintList[i].gamepadButton) continue;
             if (!InputManager.instance.IsButtonDown(_holdConstraintList[i].gamepadButton))
             {
-                for (int j = _holdConstraintList[i].index; j < _index; i++)
+                /*for (int j = _holdConstraintList[i].index; j < _index; i++)
                 {
                     SoundManager.instance.PlaySound(stopSoundEvents[j].Id);
-                }
+                }*/
                 _index = _holdConstraintList[i].index;
                 _holdConstraintList.RemoveAll(h2 => h2.index >= _holdConstraintList.Find(h => h.gamepadButton == _holdConstraintList[i].gamepadButton).index);
                 for (int j = 0; j < _index; j++)
@@ -141,8 +141,6 @@ public class ImportantPastObject : ObjectInteractable
                     _holdConstraintList.Add(newHoldConstraint);
 
                     ManipulationPanel.instance.StartHoldingAnimation();
-                    print("hold");
-                    SoundManager.instance.PlaySound(soundEvents[_index].Id);
                 }
                 break;
 
@@ -162,13 +160,6 @@ public class ImportantPastObject : ObjectInteractable
             case Enums.E_INTERACT_TYPE.ROLL:
                 Enums.E_ROLL_DIRECTION lRollDirection = _currentInteraction.rollDirection;
                 lIsValidated = InputManager.instance.IsStickRolling(lRollDirection);
-
-                if (lIsValidated)
-                {
-                    print("roll");
-                    SoundManager.instance.PlaySound(soundEvents[_index].Id);
-                }
-
                 break;
 
             case Enums.E_INTERACT_TYPE.SWIPE:
@@ -190,12 +181,21 @@ public class ImportantPastObject : ObjectInteractable
             _isStepValidated = true;
             _timerBetweenTwoSteps = _currentInteraction.delayBeforeNewInteraction;
             //Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
+
+            if (_wantedInteractionArray[_index].interactionType == Enums.E_INTERACT_TYPE.RELEASE_HOLD)
+            {
+                SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
+            }
+
+            else
+            {
+                SoundManager.instance.PlaySound(soundEvents[_index].Id);
+            }
         }
     }
 
     void NextStep()
     {
-        SoundManager.instance.PlaySound(soundEvents[_index].Id);
         _index++;
         _isStepValidated = false;
 
@@ -218,7 +218,6 @@ public class ImportantPastObject : ObjectInteractable
         else
         {
             ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[_index].gamepadButton, _wantedInteractionArray[_index].interactionType, _wantedInteractionArray[_index].rollDirection);
-            SoundManager.instance.PlaySound(soundEvents[_index].Id);
         }
     }
 }

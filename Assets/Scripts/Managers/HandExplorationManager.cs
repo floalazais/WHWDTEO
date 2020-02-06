@@ -160,7 +160,6 @@ public class HandExplorationManager : MonoBehaviour
             Invoke("EndHandExploration", timeBeforeEndCinematic);
             _glitchUp = false;
             _fadeRefTime = Time.time;
-            SoundManager.instance.PlaySound("Play_DISP_MAIN_Music_Box");
         }
 
         SetActiveHand();
