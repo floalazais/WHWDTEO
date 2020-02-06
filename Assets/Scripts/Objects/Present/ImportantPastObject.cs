@@ -74,7 +74,6 @@ public class ImportantPastObject : ObjectInteractable
         UIManager.instance.OnManipulationScreen();
         ManipulationPanel.instance.DesactivateUI();
         ManipulationPanel.instance.ActivateUI(_wantedInteractionArray[0].gamepadButton, _wantedInteractionArray[0].interactionType);
-        SoundManager.instance.PlaySound(soundEvents[0].Id);
     }
 
     void CheckInputOrder()
@@ -187,6 +186,7 @@ public class ImportantPastObject : ObjectInteractable
 
     void NextStep()
     {
+        SoundManager.instance.PlaySound(soundEvents[_index].Id);
         _index++;
         _isStepValidated = false;
 
