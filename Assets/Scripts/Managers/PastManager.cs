@@ -209,6 +209,22 @@ public class PastManager : MonoBehaviour
         _pastZoneDisplayed = false;
     }
 
+    public void RemovePastZoneCinematic()
+    {
+        int length = _objectsArray.Count;
+        for (int i = 0; i < length; i++)
+        {
+            if (_objectsArray[i].enabled == false) continue;
+            _objectsArray[i].SetModePresent();
+        }
+
+        _pastZone.Remove();
+
+        SoundManager.instance.PlaySound(Utils_Variables.END_MEMORY_SOUND);
+
+        _pastZoneDisplayed = false;
+    }
+
     void DisplayPastZone()
     {
         SetMemoryMode();
@@ -225,8 +241,9 @@ public class PastManager : MonoBehaviour
         ObjectViewable objectViewable = _objectNearPlayer as ObjectViewable;
         if (objectViewable != null)
         {
-            if (objectViewable.putSoundPlayed)
+            if (!objectViewable.putSoundPlayed)
             {
+                objectViewable.putSoundPlayed = true;
                 for (int i = 0; i < objectViewable.putSoundEventsOnce.Length; i++)
                 {
                     SoundManager.instance.PlaySound(objectViewable.putSoundEventsOnce[i].Id);
