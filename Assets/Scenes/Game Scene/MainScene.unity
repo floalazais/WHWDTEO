@@ -401,82 +401,6 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 80316672}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &82746807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.43
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 1
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.059
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5.17
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1 &87718853
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 15a7e547be190f54e9fcd28241154a30, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 82746807}
+  m_SkySettings: {fileID: 263790612}
   m_SkySettingsFromProfile: {fileID: -4772814257748482079, guid: 15a7e547be190f54e9fcd28241154a30,
     type: 2}
 --- !u!114 &122747612
@@ -1168,6 +1092,82 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &263790612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.43
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 1
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.059
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5.17
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!224 &266381236 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5478680883852232840, guid: 2952991701916084186c5878793525d6,
@@ -2656,56 +2656,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 274254398}
     m_Modifications:
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.6924262
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.14333886
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.14333883
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6924262
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.9136
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.0665
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930945577667293811, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -23.391
-      objectReference: {fileID: 0}
-    - target: {fileID: 1343020670308841890, guid: 772e977425a081a40a16154b29a87ec9,
-        type: 3}
-      propertyPath: m_Name
-      value: tapeRecorder_Present
-      objectReference: {fileID: 0}
     - target: {fileID: 5477509569162614020, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
       propertyPath: m_Name
