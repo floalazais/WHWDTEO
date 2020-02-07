@@ -48,7 +48,7 @@ public class ImportantPastObject : ObjectInteractable
     // Start is called before the first frame update
     void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        //_meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
 
         Init();
@@ -208,7 +208,7 @@ public class ImportantPastObject : ObjectInteractable
             interactable = false;
 
             //Disable the object at the end of manipulation
-            _meshRenderer.enabled = false;
+            //_meshRenderer.enabled = false;
 
             UIManager.instance.RemoveScreen();
 
