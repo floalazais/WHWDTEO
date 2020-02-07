@@ -23,6 +23,8 @@ public class HandExplorationManager : MonoBehaviour
     [SerializeField] float _glitchFadeDownTime = 0.6f;
     float _fadeRefTime;
 
+    [SerializeField] AK.Wwise.Event[] _voicesApparition;
+
     void Awake()
     {
         if (instance != null)
@@ -77,6 +79,8 @@ public class HandExplorationManager : MonoBehaviour
         _currentHand = _objectsArray[_index];
         _currentHand.gameObject.SetActive(true);
         SoundManager.instance.PlaySound(Utils_Variables.APPARITION_MAIN_SOUND);
+        SoundManager.instance.PlaySound(_voicesApparition[_index].Id);
+
     }
 
     //must disappear at a precise time of the sound
