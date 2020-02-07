@@ -401,6 +401,82 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 80316672}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &82746807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.43
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 1
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.059
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5.17
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1 &87718853
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 15a7e547be190f54e9fcd28241154a30, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 1317728400}
+  m_SkySettings: {fileID: 82746807}
   m_SkySettingsFromProfile: {fileID: -4772814257748482079, guid: 15a7e547be190f54e9fcd28241154a30,
     type: 2}
 --- !u!114 &122747612
@@ -3043,255 +3119,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 476845154}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &476845161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1343020670308841890, guid: 772e977425a081a40a16154b29a87ec9,
-    type: 3}
-  m_PrefabInstance: {fileID: 476845154}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &476845162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476845161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2a6cad08b8e954388d9af6c7c78ffb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _memoryObjectMaterial: {fileID: 0}
-  _presentObjectMaterial: {fileID: 2100000, guid: 98fb00e052ef9a748bc264d598d200c9,
-    type: 2}
-  _memoryObjectFilter: {fileID: 0}
-  _presentObjectFilter: {fileID: 0}
-  _canvas: {fileID: 0}
-  interactionTime: 1
-  interactable: 0
-  _wantedInteractionArray:
-  - interactionType: 5
-    gamepadButton: 21
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 2
-    spamCount: 0
-    delayBeforeNewInteraction: 0.5
-  - interactionType: 0
-    gamepadButton: 1
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 3
-  - interactionType: 6
-    gamepadButton: 10
-    moveDirection: 0
-    rollDirection: 1
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 1
-  - interactionType: 6
-    gamepadButton: 10
-    moveDirection: 0
-    rollDirection: 1
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 0.5
-  - interactionType: 1
-    gamepadButton: 1
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 0.5
-  - interactionType: 0
-    gamepadButton: 3
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 4
-  - interactionType: 6
-    gamepadButton: 10
-    moveDirection: 0
-    rollDirection: 2
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 1
-  - interactionType: 6
-    gamepadButton: 10
-    moveDirection: 0
-    rollDirection: 2
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 0.5
-  - interactionType: 1
-    gamepadButton: 3
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 0.5
-  - interactionType: 0
-    gamepadButton: 7
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 3
-  - interactionType: 1
-    gamepadButton: 7
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 0.5
-  - interactionType: 3
-    gamepadButton: 2
-    moveDirection: 0
-    rollDirection: 0
-    swipeDirection: 0
-    spamCount: 0
-    delayBeforeNewInteraction: 0.5
-  soundEvents:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7e0a63b3f6eae9e4f904a78f7820fc02,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b0668747032dfe84aae9f7e2b5d53836,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 8824161b12edec4458d49670cc9eedeb,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 91fe71b79cd0aea4381da4bbb709595b,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 07e2eb0559b9e6848aec4c101a75b168,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 129a95d8a501d3d49aa21097545f2538,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 31157f92717bdf547b4018f192ed4dda,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d76f41493ca12de42ae504b6f3d97f08,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0495c8d44c157c148a33003e00ff7b58,
-      type: 2}
-  stopSoundEvents:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2c3370c6601ac2742bfa6b62463c640e,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4ca981fb77de64d41bb07cf169594025,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e232c03807d099d4baca213e5447bfde,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d113f114ed1fe8c42bdd75f8c9569261,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3df0e219afaf02d41960b00832f5650a,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7ec5f1fb5f3c67246a8aad6220394145,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 63d1d745ac4f90f4b8a197b1f2eacea1,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  loopTimeline: {fileID: 11400000, guid: 175194e31ce54fe47b1fe1ae483e506d, type: 2}
-  _endDialogName: toPastTL
---- !u!23 &476845163
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476845161}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 98fb00e052ef9a748bc264d598d200c9, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &476845164
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476845161}
-  m_Mesh: {fileID: 6621208367545315538, guid: 8c80e4fb2453bcc4692f7f405510bf8b, type: 3}
 --- !u!1 &484872535
 GameObject:
   m_ObjectHideFlags: 3
@@ -6861,82 +6688,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5006733209062755407}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1317728400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.43
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 1
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.059
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5.17
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!4 &1344622830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 453832492308302007, guid: a49f8551a32bcc84f84af902839e04b8,
