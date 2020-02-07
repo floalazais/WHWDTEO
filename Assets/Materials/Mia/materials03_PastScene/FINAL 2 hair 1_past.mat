@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FINAL 2 hair 1
+  m_Name: FINAL 2 hair 1_past
   m_Shader: {fileID: 4800000, guid: 6510c57cccce5674092bdc0dd1ae98c1, type: 3}
   m_ShaderKeywords: _ALBEDOCONTRIBUTION _AXF_BRDF_TYPE_SVBRDF _DISABLE_DECALS _DOUBLESIDED_ON
     _MASKMAP _NORMALMAP_TANGENT_SPACE
@@ -19,16 +19,16 @@ Material:
   disabledShaderPasses:
   - DistortionVectors
   - MOTIONVECTORS
-  - TransparentDepthPrepass
-  - TransparentDepthPostpass
-  - TransparentBackface
+  - DBufferMesh_MAOS
+  - DBufferMesh_MS
+  - DBufferMesh_AOS
   - DBufferMesh_M
   - DBufferMesh_AO
   - DBufferMesh_MAO
   - Mesh_Emissive
-  - DBufferMesh_MS
-  - DBufferMesh_AOS
-  - DBufferMesh_MAOS
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -125,7 +125,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SVBRDF_DiffuseColorMap:
-        m_Texture: {fileID: 2800000, guid: 98f3ca26be484bd47b13d1cc06929be5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1e95415136ed71b44a5c5aed16870006, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SVBRDF_FresnelMap:
@@ -141,7 +141,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SVBRDF_SpecularColorMap:
-        m_Texture: {fileID: 2800000, guid: 98f3ca26be484bd47b13d1cc06929be5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1e95415136ed71b44a5c5aed16870006, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SVBRDF_SpecularLobeMap:
@@ -173,7 +173,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AORemapMax: 0.13868618
+    - _AORemapMax: 0
     - _AORemapMin: 0
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
@@ -286,7 +286,7 @@ Material:
     - _SVBRDF_HeightMapMaxMM: 0
     - _SVBRDF_SpecularLobeMapScale: 1
     - _Smoothness: 0.092
-    - _SmoothnessRemapMax: 0.06569338
+    - _SmoothnessRemapMax: 0
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
@@ -334,7 +334,7 @@ Material:
     - _CarPaint2_CTSpreads: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.17924526, g: 0.07203234, b: 0.060030244, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorHDR: {r: 0, g: 0, b: 0, a: 1}
