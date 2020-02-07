@@ -8,11 +8,6 @@ public class DialogSceneManager : MonoBehaviour
     void Start()
     {
         SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DialogManager.instance.StartDialog("endDialog");
     }
 }
