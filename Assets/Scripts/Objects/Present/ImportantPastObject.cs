@@ -126,8 +126,6 @@ public class ImportantPastObject : ObjectInteractable
 
         bool lIsValidated = false;
 
-        print("button : " + _currentInteraction.gamepadButton + " interaction wanted : " + _currentInteraction.interactionType);
-
         switch (_currentInteraction.interactionType)
         {
             case Enums.E_INTERACT_TYPE.HOLD:
@@ -177,8 +175,6 @@ public class ImportantPastObject : ObjectInteractable
 
         if (lIsValidated)
         {
-            print("ok !");
-
             _isStepValidated = true;
             _timerBetweenTwoSteps = _currentInteraction.delayBeforeNewInteraction;
             //Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
@@ -203,7 +199,6 @@ public class ImportantPastObject : ObjectInteractable
         if (_index >= _wantedInteractionArray.Length)
         {
             _isEnd = true;
-            print("end sequence");
             _isManipulated = false;
             interactable = false;
 
