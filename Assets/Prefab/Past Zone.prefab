@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2344552456171542256}
-  m_Mesh: {fileID: 1839110117919337741, guid: 0343871d4d147cb49bcfa0211df9a2fc, type: 3}
+  m_Mesh: {fileID: -2643887070634013950, guid: 0a8688783482a29419a0de297256e3db, type: 3}
 --- !u!23 &2344552456171542261
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1180299e5cf9b154283092d9e0530d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scale: {x: 0, y: 0, z: 0}
 --- !u!95 &15974833338533240
 Animator:
   serializedVersion: 3
@@ -102,7 +103,7 @@ Animator:
   m_GameObject: {fileID: 2344552456171542256}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca76b8c3baf1f5c4ab41be3661e33abb, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
