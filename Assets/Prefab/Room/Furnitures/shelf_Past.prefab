@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3007670798126657728}
   - component: {fileID: 8827598207726668857}
   - component: {fileID: 6855919370924490908}
+  - component: {fileID: 3973244132740749927}
   m_Layer: 0
   m_Name: shelf_Past
   m_TagString: Untagged
@@ -92,3 +93,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8791223, y: 1.2481297, z: 0.41986066}
   m_Center: {x: 0, y: 0.6240856, z: 0.008327045}
+--- !u!114 &3973244132740749927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7114908682856331493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0692d5c884701c54da067fa30a9154c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _memoryObjectMaterial: {fileID: 2100000, guid: 944a3c85e310c414cba69447cebea5e2,
+    type: 2}
+  _presentObjectMaterial: {fileID: 0}
+  _memoryObjectFilter: {fileID: 3007670798126657728}
+  _presentObjectFilter: {fileID: 0}
