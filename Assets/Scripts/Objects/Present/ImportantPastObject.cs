@@ -120,9 +120,8 @@ public class ImportantPastObject : ObjectInteractable
             {
                 _timerBetweenTwoSteps = 0.0f;
                 NextStep();
-            } else {
-                return;
             }
+            return;
         }
 
         bool lIsValidated = false;
@@ -178,6 +177,8 @@ public class ImportantPastObject : ObjectInteractable
 
         if (lIsValidated)
         {
+            print("ok !");
+
             _isStepValidated = true;
             _timerBetweenTwoSteps = _currentInteraction.delayBeforeNewInteraction;
             //Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
