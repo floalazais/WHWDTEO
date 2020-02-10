@@ -50,6 +50,8 @@ public class PastExplorationManager : MonoBehaviour
         _swapTimer = _swapPeriod;
         ChangePlushesPositions();
 
+        DialogManager.instance.StartDialog("beginPast");
+
         DialogManager.instance._dialogGraph.variablesDictionary.Add("foundAllPlushes", false);
     }
 
@@ -222,14 +224,16 @@ public class PastExplorationManager : MonoBehaviour
 
     void GoToPreviousState()
     {
+        PutNearObject();
+        GameManager.instance.SetGameStateExploration();
         if (_objectNearPlayer.inspected)
         {
             _objectNearPlayer.enabled = false;
             _objectNearPlayer.gameObject.AddComponent<Rigidbody>();
+            SoundManager.instance.PlaySound(_objectNearPlayer.soundEventMusicBoxNotePut.Id);
             _objectCamera.fieldOfView = 57.5f;
+            _objectNearPlayer = null;
         }
-        PutNearObject();
-        GameManager.instance.SetGameStateExploration();
     }
 
     void PutNearObject()

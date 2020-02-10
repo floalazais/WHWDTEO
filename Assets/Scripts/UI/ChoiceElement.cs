@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ChoiceElement : MonoBehaviour
 {
-    Text _choiceText;
+    Text _choiceText = null;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,7 @@ public class ChoiceElement : MonoBehaviour
 
     public void EnableChoiceElement(string pText)
     {
+        if(_choiceText == null) _choiceText = GetComponentInChildren<Text>();
         _choiceText.text = pText;
     }
 }

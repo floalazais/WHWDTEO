@@ -9,6 +9,7 @@ public class Plush : MonoBehaviour
 {
     [SerializeField] AK.Wwise.Event soundEventInteract;
     [SerializeField] AK.Wwise.Event soundEventInspect;
+    [SerializeField] public AK.Wwise.Event soundEventMusicBoxNotePut;
     [SerializeField] GameObject _partToFind = null;
     [SerializeField] Transform _cameraFollow;
     [SerializeField] Transform _cameraLookAt;
@@ -109,7 +110,6 @@ public class Plush : MonoBehaviour
             RaycastHit hitInfo = new RaycastHit();
             if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
             {
-                print(hitInfo.collider.name);
                 if (hitInfo.collider.gameObject == _partToFind)
                 {
                     SoundManager.instance.PlaySound(soundEventInspect.Id);
@@ -122,7 +122,7 @@ public class Plush : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (!_touchedGround)
+        if (!_touchedGround && collision.collider.name == "terrain")
         {
             _touchedGround = true;
             SoundManager.instance.PlaySound("Play_Tombe_Peluche");
