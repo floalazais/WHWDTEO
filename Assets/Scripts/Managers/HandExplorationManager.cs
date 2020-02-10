@@ -41,6 +41,7 @@ public class HandExplorationManager : MonoBehaviour
     {
         SoundManager.instance.PlaySound(Utils_Variables.STOP_ROOM_TONE_SOUND);
         SoundManager.instance.PlaySound("Play_RoomTone_Void");
+        DialogManager.instance.StartDialog("voidTLs");
 
         _objectsArray = GameObject.FindObjectsOfType<Hand>().ToList();
         SortHandsByName();
@@ -79,7 +80,7 @@ public class HandExplorationManager : MonoBehaviour
         _currentHand = _objectsArray[_index];
         _currentHand.gameObject.SetActive(true);
         SoundManager.instance.PlaySound(Utils_Variables.APPARITION_MAIN_SOUND);
-        SoundManager.instance.PlaySound(_voicesApparition[_index].Id);
+        if (_voicesApparition.Length > _index) SoundManager.instance.PlaySound(_voicesApparition[_index].Id);
 
     }
 

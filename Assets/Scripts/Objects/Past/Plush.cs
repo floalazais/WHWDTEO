@@ -109,7 +109,6 @@ public class Plush : MonoBehaviour
             RaycastHit hitInfo = new RaycastHit();
             if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
             {
-                print(hitInfo.collider.name);
                 if (hitInfo.collider.gameObject == _partToFind)
                 {
                     SoundManager.instance.PlaySound(soundEventInspect.Id);

@@ -10,14 +10,15 @@ public class Controller : MonoBehaviour
 {
     private Camera _camera;
 
-    private Rigidbody _rigidbody;
+    private bool _onCarpet = false;
 
-    bool _onCarpet = false;
-
+    [Header("Character")]
     [SerializeField] private float _joystickDeadZone = 0.1f;
     [SerializeField] private float _CharacterSpeed = 2.0f;
     [SerializeField] private float _CharacterRotationSpeed = 5.0f;
     [SerializeField] private float _CharacterAnimationSpeed = 1.0f;
+
+    [Header("Camera")]
     [SerializeField] private float _cameraMovementSpeed = 100.0f;
     [SerializeField] private float _cameraVerticalRotationSpeed = 5.0f;
     [SerializeField] private float _cameraHorizontalRotationSpeed = 250.0f;
@@ -70,8 +71,6 @@ public class Controller : MonoBehaviour
         {
             Debug.LogError("could not get main camera.");
         }
-
-        _rigidbody = GetComponent<Rigidbody>();
     }
 
     Vector3 _cameraOffset = Vector3.zero;
@@ -228,7 +227,7 @@ public class Controller : MonoBehaviour
 
         if (_blendValue < 0.1f) return;
 
-        if (SceneManager.GetActiveScene().name == "TestHandsScene")
+        if (SceneManager.GetActiveScene().name == "HandsScene")
         {
             SoundManager.instance.PlaySound(Utils_Variables.STEP_VOID_SOUND);
             return;
@@ -260,7 +259,7 @@ public class Controller : MonoBehaviour
 
     public void ClothPresenceEvent()
     {
-        if (SceneManager.GetActiveScene().name == "TestHandsScene") return;
+        if (SceneManager.GetActiveScene().name == "HandsScene") return;
 
         if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
 
@@ -271,7 +270,7 @@ public class Controller : MonoBehaviour
 
     public void IdleClothPresenceEvent()
     {
-        if (SceneManager.GetActiveScene().name == "TestHandsScene") return;
+        if (SceneManager.GetActiveScene().name == "HandsScene") return;
 
         if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
 
@@ -282,7 +281,7 @@ public class Controller : MonoBehaviour
 
     public void BreathPresenceEvent()
     {
-        if (SceneManager.GetActiveScene().name == "TestHandsScene") return;
+        if (SceneManager.GetActiveScene().name == "HandsScene") return;
 
         if (GameManager.instance.state != Enums.E_GAMESTATE.EXPLORATION) return;
 
