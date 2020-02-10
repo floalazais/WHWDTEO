@@ -53,10 +53,10 @@ public class LetterPanel : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R2_BUTTON) || Input.GetKeyDown(KeyCode.Space)) DisplayNextLetter();
-        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.L2_BUTTON) || Input.GetKeyDown(KeyCode.LeftShift)) DisplayPreviousLetter();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.R1_BUTTON) || Input.GetKeyDown(KeyCode.Space)) DisplayNextLetter();
+        if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.L1_BUTTON) || Input.GetKeyDown(KeyCode.LeftShift)) DisplayPreviousLetter();
         if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) || Input.GetKeyDown(KeyCode.Mouse1)) OnBack();
-        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON) || Input.GetKeyDown(KeyCode.Mouse0)) OnToggle();
+        if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.SQUARE_BUTTON) || Input.GetKeyDown(KeyCode.Mouse0)) OnToggle();
     }
 
     void DisplayPreviousLetter()
