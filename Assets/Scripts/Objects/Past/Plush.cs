@@ -121,7 +121,8 @@ public class Plush : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (!_touchedGround)
+        print(collision.collider.name);
+        if (!_touchedGround && collision.collider.name == "terrain")
         {
             _touchedGround = true;
             SoundManager.instance.PlaySound("Play_Tombe_Peluche");
