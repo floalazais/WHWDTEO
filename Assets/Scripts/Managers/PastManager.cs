@@ -65,6 +65,14 @@ public class PastManager : MonoBehaviour
 
             float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
 
+            Renderer [] renderers = lObject.transform.GetComponentsInChildren<Renderer>();
+            foreach(Renderer r in renderers)
+            {
+                r.material.SetVector("_PositionMemoryZone", _pastZone.transform.position);
+                r.material.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
+               // Debug.Log("Radius : " + _pastZone.transform.localScale.x);
+            }
+
             //If we're too far from the player
             if (distance > _memoryZoneRadius)
             {

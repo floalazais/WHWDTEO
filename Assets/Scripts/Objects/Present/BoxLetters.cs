@@ -7,7 +7,7 @@ public class BoxLetters : ObjectInteractable
     // Start is called before the first frame update
     void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        //_meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
 
         SetModePresent();
