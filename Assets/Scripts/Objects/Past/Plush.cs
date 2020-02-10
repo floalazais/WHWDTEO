@@ -9,6 +9,7 @@ public class Plush : MonoBehaviour
 {
     [SerializeField] AK.Wwise.Event soundEventInteract;
     [SerializeField] AK.Wwise.Event soundEventInspect;
+    [SerializeField] public AK.Wwise.Event soundEventMusicBoxNotePut;
     [SerializeField] GameObject _partToFind = null;
     [SerializeField] Transform _cameraFollow;
     [SerializeField] Transform _cameraLookAt;
