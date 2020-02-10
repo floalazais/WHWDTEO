@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 7894245383743882934}
   - component: {fileID: 7220238785074839423}
   - component: {fileID: 3143340109352494879}
+  - component: {fileID: 1863385712637086889}
   m_Layer: 5
   m_Name: swipeImage
   m_TagString: Untagged
@@ -273,6 +274,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1863385712637086889
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856841308352952141}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bde6c2ba784888d43b60a390ad596720, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1975889197456894841
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +686,7 @@ GameObject:
   - component: {fileID: 6832852204090386974}
   - component: {fileID: 2500443157961608906}
   - component: {fileID: 2636924013771059068}
+  - component: {fileID: 7002606552946262443}
   m_Layer: 5
   m_Name: rollImage
   m_TagString: Untagged
@@ -729,3 +750,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7002606552946262443
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749961026057580713}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eff7c472aec3ff7479cfa76fec3b504b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
