@@ -121,7 +121,6 @@ public class Plush : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        print(collision.collider.name);
         if (!_touchedGround && collision.collider.name == "terrain")
         {
             _touchedGround = true;
