@@ -1149,7 +1149,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SkySettings
       value: 
-      objectReference: {fileID: 1278697078}
+      objectReference: {fileID: 0}
     - target: {fileID: 1725834587459032937, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -1218,12 +1218,17 @@ PrefabInstance:
     - target: {fileID: 1725834587861924794, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725834587861924794, guid: 95ac8a784b6852647a1ddf2294baa840,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725834586737550611, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: m_Intensity
-      value: 63.661976
+      value: 79.57747
       objectReference: {fileID: 0}
     - target: {fileID: 1725834586737550611, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
@@ -1250,15 +1255,30 @@ PrefabInstance:
       propertyPath: m_UseColorTemperature
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1725834586737550611, guid: 95ac8a784b6852647a1ddf2294baa840,
+        type: 3}
+      propertyPath: m_Range
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1725834586737550608, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: displayLightIntensity
-      value: 800
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725834586737550608, guid: 95ac8a784b6852647a1ddf2294baa840,
+        type: 3}
+      propertyPath: shadowNearPlane
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 1725834586737550609, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: contactShadows
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725834586737550609, guid: 95ac8a784b6852647a1ddf2294baa840,
+        type: 3}
+      propertyPath: viewBiasScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587027798869, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
@@ -1274,7 +1294,7 @@ PrefabInstance:
     - target: {fileID: 1725834587459032938, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: m_Intensity
-      value: 1.5
+      value: 15.2
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587459032938, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
@@ -1306,15 +1326,25 @@ PrefabInstance:
       propertyPath: m_BounceIntensity
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1725834587459032938, guid: 95ac8a784b6852647a1ddf2294baa840,
+        type: 3}
+      propertyPath: m_ShadowAngle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1725834587459032939, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: displayLightIntensity
-      value: 1.5
+      value: 15.2
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587459032939, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: m_VolumetricDimmer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725834587459032939, guid: 95ac8a784b6852647a1ddf2294baa840,
+        type: 3}
+      propertyPath: shadowNearPlane
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587459032936, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
@@ -1324,7 +1354,7 @@ PrefabInstance:
     - target: {fileID: 1725834587459032936, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: contactShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587459032936, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
@@ -1334,22 +1364,22 @@ PrefabInstance:
     - target: {fileID: 1725834587861924796, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: parameters.albedo.r
-      value: 0.9245283
+      value: 0.022709217
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587861924796, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: parameters.albedo.g
-      value: 0.9245283
+      value: 0.02149342
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587861924796, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: parameters.albedo.b
-      value: 0.9245283
+      value: 0.028301895
       objectReference: {fileID: 0}
     - target: {fileID: 1725834587861924796, guid: 95ac8a784b6852647a1ddf2294baa840,
         type: 3}
       propertyPath: parameters.meanFreePath
-      value: 10
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ac8a784b6852647a1ddf2294baa840, type: 3}
@@ -1841,6 +1871,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 787a4510046f3ee479db8250b70957eb,
         type: 2}
+    - target: {fileID: 1105439398, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1105439399, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: dofEnabled
       value: 1
@@ -1921,7 +1955,7 @@ Transform:
   m_Father: {fileID: 2120457715}
   m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: -1.9470001, y: -39.251003, z: -2.381}
---- !u!114 &1278697078
+--- !u!114 &1327421707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3888,7 +3922,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2131237597}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 56cde829d438c5341adc927fb184e727, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 91765700c5c4bf2448fcbb6a7565a077, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
