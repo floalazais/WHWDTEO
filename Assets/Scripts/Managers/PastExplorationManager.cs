@@ -230,6 +230,7 @@ public class PastExplorationManager : MonoBehaviour
         {
             _objectNearPlayer.enabled = false;
             _objectNearPlayer.gameObject.AddComponent<Rigidbody>();
+            SoundManager.instance.PlaySound(_objectNearPlayer.soundEventMusicBoxNotePut.Id);
             _objectCamera.fieldOfView = 57.5f;
             _objectNearPlayer = null;
         }

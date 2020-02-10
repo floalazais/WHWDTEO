@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 110}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -217, y: 114}
+  m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2354274620232217171
 CanvasRenderer:
@@ -64,13 +64,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: 79ee3dd220b465746b6a940c2f8ab959, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 40
-    m_Alignment: 4
+    m_MinSize: 3
+    m_MaxSize: 50
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -140,8 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6508009857238314984, guid: 02a0c5fcc0d7c5042bcdacf8b35d0c2a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: eaa71241ebb1c7b42b9649d12dd60bb2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -339,6 +338,8 @@ MonoBehaviour:
     watching ugly cartoons on TV. He is a bummer.    Saturday, 9:06am: Ava running.
     Think she is late for work. I supported her. Mistake! She noticed my hideout.
     I must find a new one.   Waiting for your report, agent M."
+  soundEvents: []
+  stopSoundEvents: []
   _letterText: {fileID: 5478680883945169680}
   _handWriterFont: {fileID: 12800000, guid: 698233fcc01b9ce4fafa118c773ca229, type: 3}
   _typoWriterFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -458,8 +459,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 235}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -217, y: 244}
+  m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &151131761283431885
 CanvasRenderer:
@@ -488,21 +489,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: 79ee3dd220b465746b6a940c2f8ab959, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 40
-    m_Alignment: 4
+    m_MinSize: 3
+    m_MaxSize: 50
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Toggle
-
-'
+  m_Text: Toggle
 --- !u!1 &6248138865320139786
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +537,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7846117385468451819
 CanvasRenderer:
@@ -566,8 +565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2334122057455258935, guid: 02a0c5fcc0d7c5042bcdacf8b35d0c2a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8c0bc5ee06eb984397d74905d241661, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -612,7 +610,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -150, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4245798042490362447
 CanvasRenderer:
@@ -640,8 +638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5211669936999133496, guid: 02a0c5fcc0d7c5042bcdacf8b35d0c2a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8149df76620b4b4db14b789e7ff04ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -663,7 +660,7 @@ GameObject:
   - component: {fileID: 6148429991932073829}
   - component: {fileID: 7418411668878772547}
   m_Layer: 5
-  m_Name: X
+  m_Name: square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,8 +711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3998491653756793006, guid: 02a0c5fcc0d7c5042bcdacf8b35d0c2a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 268672009a58803409bcae2375b34ee0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
