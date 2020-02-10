@@ -502,7 +502,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: ad6952814794f2e48b46e2d0e08dbcf7, type: 2}
-  timer: 0
+  timer: -0.016666805
 --- !u!114 &-7176141548708303675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: f0b3997ce1cdd5346a6073d37a052239, type: 2}
-  timer: 12.32623
+  timer: 25.552103
 --- !u!114 &-6066256088017380928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,53 +1259,6 @@ MonoBehaviour:
   previous: 
   next: 
   waitTime: 16.256
---- !u!114 &-3047881991292850448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Set Object State
-  m_EditorClassIdentifier: Assembly-CSharp::SetObjectStateNode
-  graph: {fileID: 11400000}
-  position: {x: -1944, y: 104}
-  ports:
-    keys:
-    - previous
-    - next
-    values:
-    - _fieldName: previous
-      _node: {fileID: -3047881991292850448}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: next
-        node: {fileID: 2253444040215263090}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: next
-      _node: {fileID: -3047881991292850448}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: End
-        node: {fileID: 4779508902865677274}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  previous: 
-  next: 
-  _objectName: wardrobe_Present
-  _activeState: 1
 --- !u!114 &-2896886755844956030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1646,7 +1599,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 55710ee51ac784647b2b8f894f425e34, type: 2}
-  timer: 0
+  timer: -0.01666705
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1890,7 +1843,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
-  timer: 0
+  timer: -0.018860357
 --- !u!114 &523635640312141912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,7 +1922,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 7b59e8b6403ab8041a4f95262e866521, type: 2}
-  timer: -0.018811803
+  timer: -0.022562603
 --- !u!114 &1060878549897342625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2376,7 +2329,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 621d45c7b0f21d1438ae227e2cb657a7, type: 2}
-  timer: -0.022029666
+  timer: -0.021575661
 --- !u!114 &2567996982560267917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2504,7 +2457,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 33020c71d91e179448125c5b3e7db7ca, type: 2}
-  timer: 0
+  timer: -0.01666705
 --- !u!114 &3912966449017715303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3075,7 +3028,7 @@ MonoBehaviour:
       _dynamic: 0
   previous: 
   next: 
-  _objectName: wardrobe_Present
+  _objectName: wardrobe
   _activeState: 1
 --- !u!114 &7054848892712347561
 MonoBehaviour:
@@ -3187,7 +3140,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 8ed2b6c170a8bcc48a7e07e36b7d2339, type: 2}
-  timer: -0.017289285
+  timer: -0.021551767
 --- !u!114 &7781472178324555007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3459,4 +3412,4 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: e7adbea5d7fcb6d4bb789b917f8192dd, type: 2}
-  timer: -0.014735039
+  timer: -0.023275988
