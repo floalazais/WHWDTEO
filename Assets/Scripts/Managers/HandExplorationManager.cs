@@ -80,7 +80,7 @@ public class HandExplorationManager : MonoBehaviour
         _currentHand = _objectsArray[_index];
         _currentHand.gameObject.SetActive(true);
         SoundManager.instance.PlaySound(Utils_Variables.APPARITION_MAIN_SOUND);
-        SoundManager.instance.PlaySound(_voicesApparition[_index].Id);
+        if (_voicesApparition.Length > _index) SoundManager.instance.PlaySound(_voicesApparition[_index].Id);
 
     }
 
