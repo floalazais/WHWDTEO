@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d3c16c6180e9214b811cce79000f0705
     GuidInternal: 
-    m_lastTime: -8586206152192381216
+    m_lastTime: -8586202421420063262
     List:
     - name: Verb_Room
       guid: a3e841f621df5b49a5c3b91a9a4201f5
@@ -251,8 +251,20 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 607f7b4e00248847877af15e8f82926c
     GuidInternal: 
-    m_lastTime: -8586206152192470974
+    m_lastTime: -8586201938254103250
     List:
+    - name: Play_1000_Hz
+      guid: 65a38d4ac3fe7e43ba85fdd664665480
+      id: 1561902362
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_1000_Hz
+        ObjectType: 3
+      Path: Default Work Unit\Play_1000_Hz
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_APP_MAIN
       guid: 8ad9f86c84b02c4fb3516e2c07ed6835
       id: 3183169333
@@ -1609,6 +1621,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Music_Plush
+      guid: 68c46799356d5448a3252c31889d2ba4
+      id: 4282761058
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Music_Plush
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Music_Plush
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Open_Clock_V2
       guid: c6f1a524b471194db529cf438ee1e61d
       id: 860256672
@@ -2499,6 +2525,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Pose_Clock
+      guid: 25d4b0ac7017b440a6980779c67bc789
+      id: 1935781326
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Pose_Clock
+        ObjectType: 3
+      Path: Default Work Unit\Play_Pose_Clock
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Pose_Lampe
       guid: 99ee946f0c8cbd46a4ae64d655ff98f3
       id: 709408955
@@ -2566,6 +2604,18 @@ MonoBehaviour:
       - ElementName: Play_Pose_Voiture
         ObjectType: 3
       Path: Default Work Unit\Objects\Play_Pose_Voiture
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Assise
+      guid: 7ee0658b2795864c8aa0526bb95c5a1f
+      id: 896473784
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Assise
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Assise
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2917,6 +2967,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_RoomTone_Void
+      guid: 86b441bf58890f47af6e42843bb566fb
+      id: 3077280372
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_RoomTone_Void
+        ObjectType: 3
+      Path: Default Work Unit\Play_RoomTone_Void
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Secoue_Rec
       guid: b8806b58da484344895798136eeffc55
       id: 572484265
@@ -2968,6 +3030,18 @@ MonoBehaviour:
       - ElementName: Play_TAPIS_PAST
         ObjectType: 3
       Path: Default Work Unit\Steps\Play_TAPIS_PAST
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Tel_Mia
+      guid: a94619702acbe04d93985ea35cb51995
+      id: 4042723243
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Tel_Mia
+        ObjectType: 3
+      Path: Default Work Unit\Play_Tel_Mia
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -3289,12 +3363,24 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_RoomTone_Void
+      guid: b8a0c428cf330648aedc670a60555d9e
+      id: 1450249478
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_RoomTone_Void
+        ObjectType: 3
+      Path: Default Work Unit\Stop_RoomTone_Void
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 43ef5a6d7c266c4d9c6114aca9858d4b
     GuidInternal: 
-    m_lastTime: -8586207822048909783
+    m_lastTime: -8586202421420153020
     List:
     - name: Blend_Idle_Walk
       guid: c763dd63d4c16d4d84f8348ee408163e
@@ -3323,6 +3409,15 @@ MonoBehaviour:
       - ElementName: Filtre_Environnement
         ObjectType: 13
       Path: Default Work Unit\Filtre_Environnement
+    - name: Hope_Cinematique_Lfo_Test
+      guid: d9846ff130b6674fae4cc3d911706782
+      id: 1606664044
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Hope_Cinematique_Lfo_Test
+        ObjectType: 13
+      Path: Default Work Unit\Hope_Cinematique_Lfo_Test
     - name: lfo_Satu_2
       guid: 83b6678057b1204085a59ba36b6a1d2e
       id: 70665991
@@ -3656,10 +3751,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Wwise_EachOther
-  - /Wwise_EachOther/Events
-  - /Wwise_EachOther/Events/Default Work Unit
-  - /Wwise_EachOther/Events/Default Work Unit/Events_Actors
-  - /Wwise_EachOther/Events/Default Work Unit/Events_SD
-  - /Wwise_EachOther/Events/Default Work Unit/Steps
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
