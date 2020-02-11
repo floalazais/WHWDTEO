@@ -41,6 +41,30 @@ public class PastManager : MonoBehaviour
 
     private void Update()
     {
+        for (int i = 0; i < _objectsArray.Count; i++)
+        {
+            W_Object lObject = _objectsArray[i];
+
+            if (lObject.enabled == false) continue;
+
+            float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
+
+            Renderer[] renderers = lObject.transform.GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in renderers)
+            {
+                /*Material[] materials = r.materials;
+                foreach(Material m in materials)
+                {
+                    m.SetVector("_PositionMemoryZone", _pastZone.transform.position);
+                    m.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
+                }*/
+
+                r.material.SetVector("_PositionMemoryZone", _pastZone.transform.position);
+                r.material.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
+                // Debug.Log("Radius : " + _pastZone.transform.localScale.x);
+            }
+        }
+
         if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION || GameManager.instance.state == Enums.E_GAMESTATE.IMPORTANT_MANIPULATION) return;
 
         if (InputManager.instance.IsButtonReleased(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON) || Input.GetKeyDown(KeyCode.Mouse1)) GoToPreviousState();
@@ -64,21 +88,6 @@ public class PastManager : MonoBehaviour
             if (lObject.enabled == false) continue;
 
             float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
-
-            Renderer [] renderers = lObject.transform.GetComponentsInChildren<Renderer>();
-            foreach(Renderer r in renderers)
-            {
-                /*Material[] materials = r.materials;
-                foreach(Material m in materials)
-                {
-                    m.SetVector("_PositionMemoryZone", _pastZone.transform.position);
-                    m.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
-                }*/
-
-                r.material.SetVector("_PositionMemoryZone", _pastZone.transform.position);
-                r.material.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
-               // Debug.Log("Radius : " + _pastZone.transform.localScale.x);
-            }
 
             //If we're too far from the player
             if (distance > _memoryZoneRadius)
@@ -243,6 +252,22 @@ public class PastManager : MonoBehaviour
     void DisplayPastZone()
     {
         SetMemoryMode();
+        _pastZone.Display();
+
+        SoundManager.instance.PlaySound(Utils_Variables.BEGIN_MEMORY_SOUND);
+
+        _pastZoneDisplayed = true;
+    }
+
+    public void DisplayPastZoneCinematic()
+    {
+        int length = _objectsArray.Count;
+        for (int i = 0; i < length; i++)
+        {
+            if (_objectsArray[i].enabled == false) continue;
+            _objectsArray[i].SetModeMemory();
+        }
+
         _pastZone.Display();
 
         SoundManager.instance.PlaySound(Utils_Variables.BEGIN_MEMORY_SOUND);
