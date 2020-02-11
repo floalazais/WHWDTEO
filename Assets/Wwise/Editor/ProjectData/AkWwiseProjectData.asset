@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d3c16c6180e9214b811cce79000f0705
     GuidInternal: 
-    m_lastTime: -8586202421420063262
+    m_lastTime: -8586201703747280929
     List:
     - name: Verb_Room
       guid: a3e841f621df5b49a5c3b91a9a4201f5
@@ -251,7 +251,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 607f7b4e00248847877af15e8f82926c
     GuidInternal: 
-    m_lastTime: -8586201985514511360
+    m_lastTime: -8586201783769017216
     List:
     - name: Play_1000_Hz
       guid: 65a38d4ac3fe7e43ba85fdd664665480
@@ -276,6 +276,20 @@ MonoBehaviour:
       - ElementName: Play_APP_MAIN
         ObjectType: 3
       Path: Default Work Unit\Events_SD\Play_APP_MAIN
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Apparition_Peluche
+      guid: ca4ad17e547f1441b1c0cc5779e757f2
+      id: 954874942
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Apparition_Peluche
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Apparition_Peluche
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2525,6 +2539,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Pose_Clock
+      guid: 25d4b0ac7017b440a6980779c67bc789
+      id: 1935781326
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Pose_Clock
+        ObjectType: 3
+      Path: Default Work Unit\Play_Pose_Clock
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Pose_Lampe
       guid: 99ee946f0c8cbd46a4ae64d655ff98f3
       id: 709408955
@@ -2592,6 +2618,18 @@ MonoBehaviour:
       - ElementName: Play_Pose_Voiture
         ObjectType: 3
       Path: Default Work Unit\Objects\Play_Pose_Voiture
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Assise
+      guid: 7ee0658b2795864c8aa0526bb95c5a1f
+      id: 896473784
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Assise
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Assise
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -3021,6 +3059,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Tombe_Mia_Void
+      guid: 29f697f86284cc44956bb487b6a6fa81
+      id: 4061506236
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Tombe_Mia_Void
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Tombe_Mia_Void
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Tombe_Peluche
       guid: f2f01bd317951547b229ef0a8a143618
       id: 3613865634
@@ -3356,7 +3408,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 43ef5a6d7c266c4d9c6114aca9858d4b
     GuidInternal: 
-    m_lastTime: -8586202421420153020
+    m_lastTime: -8586201767181760410
     List:
     - name: Blend_Idle_Walk
       guid: c763dd63d4c16d4d84f8348ee408163e
@@ -3430,6 +3482,15 @@ MonoBehaviour:
       - ElementName: Side_Chain_Steps
         ObjectType: 13
       Path: Default Work Unit\Side_Chain_Steps
+    - name: SideChain_Present
+      guid: 5ffc263b20494843abde98531cbe2e59
+      id: 3664907955
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SideChain_Present
+        ObjectType: 13
+      Path: Default Work Unit\SideChain_Present
     - name: Test_GP_Stretch
       guid: eef09575ee8dbe46be75a69da263fc91
       id: 3572213451
@@ -3727,9 +3788,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Wwise_EachOther
-  - /Wwise_EachOther/Events
-  - /Wwise_EachOther/Events/Default Work Unit
-  - /Wwise_EachOther/Events/Default Work Unit/Events_SD
-  - /Wwise_EachOther/Events/Default Work Unit/Objects
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
