@@ -1,0 +1,1248 @@
+fileFormatVersion: 2
+guid: 58057815f930fff4b88fba76f4a7d762
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Walk Past V3 Humanoid
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'Mia_rig_15_4_L_Instep'
+      : rotation error = 15.684459 deg\n"
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Mia_rig_15_4_R_Instep' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'Mia_rig_15_4_L_Instep'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk Past V3 Humanoid
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Mia_rig_15_4_Hip
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Leg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Leg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Knee
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Knee
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Ankle
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Ankle
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_Spine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_Spine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Arm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Arm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Elbow
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Elbow
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Wrist
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Wrist
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Tip_toe
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Tip_toe
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_cheek
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_eye_new
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_Jaw
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Thumb_01
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Thumb_02
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Thumb_03
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Index_01
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Index_02
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Index_03
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Middle_01
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Middle_02
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Middle_03
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Ring_01
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Ring_02
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Ring_03
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Pinkie_01
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Pinkie_02
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_L_Pinkie_03
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Thumb_01
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Thumb_02
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Thumb_03
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Index_01
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Index_02
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Index_03
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Middle_01
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Middle_02
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Middle_03
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Ring_01
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Ring_02
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Ring_03
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Pinkie_01
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Pinkie_02
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_R_Pinkie_03
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mia_rig_15_4_Chest
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: walk_past_v03(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia
+      parentName: walk_past_v03(Clone)
+      position: {x: -0, y: 1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_lashes
+      parentName: Mia_rig_15_4_Mia
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_snood_top
+      parentName: Mia_rig_15_4_Mia
+      position: {x: -0, y: -1.9895197e-13, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_top_LP
+      parentName: Mia_rig_15_4_snood_top
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_echarpe_UVs_LP
+      parentName: Mia_rig_15_4_snood_top
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_short_converse_earphone
+      parentName: Mia_rig_15_4_Mia
+      position: {x: -0, y: -1.9895197e-13, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_shoes_retopo_LP
+      parentName: Mia_rig_15_4_short_converse_earphone
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_earphone_LP
+      parentName: Mia_rig_15_4_short_converse_earphone
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_LP
+      parentName: Mia_rig_15_4_Mia
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_ctrl_base1
+      parentName: walk_past_v03(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_ctrl_root
+      parentName: Mia_rig_15_4_ctrl_base1
+      position: {x: -0.02056476, y: 0.9266232, z: -0.06271784}
+      rotation: {x: 0.016177153, y: 0.069963984, z: 0.011860737, w: 0.99734783}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_ctrl_spine1
+      parentName: Mia_rig_15_4_ctrl_root
+      position: {x: -0, y: 0.108775705, z: 0.031565227}
+      rotation: {x: 0.15014297, y: -0.059259955, z: -0.041080456, w: 0.9860313}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_ctrl_spine2
+      parentName: Mia_rig_15_4_ctrl_spine1
+      position: {x: -1.4901161e-10, y: 0.12039932, z: -0.0024945831}
+      rotation: {x: -0.019755954, y: -0.023336114, z: 0.034417957, w: 0.9989397}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_ctrl_chest
+      parentName: Mia_rig_15_4_ctrl_spine2
+      position: {x: 1.4901161e-10, y: 0.11807563, z: -0.031625528}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_ctrl_neck
+      parentName: Mia_rig_15_4_ctrl_chest
+      position: {x: -0, y: 0.08998169, z: -0.0045215036}
+      rotation: {x: 0.000032140768, y: 0.007507314, z: -0.004281101, w: 0.9999627}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_ctrl_head
+      parentName: Mia_rig_15_4_ctrl_neck
+      position: {x: -0, y: 0.07174103, z: 0.02685606}
+      rotation: {x: -0.091420524, y: 0.009645939, z: -0.013574399, w: 0.9956732}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_L_eye_up_ctrl
+      parentName: Mia_rig_15_4_ctrl_head
+      position: {x: -0.03278773, y: 0.09396222, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_L_eye_down_ctrl
+      parentName: Mia_rig_15_4_ctrl_head
+      position: {x: -0.032890018, y: 0.058934778, z: 0.107642174}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_R_eye_down_ctrl
+      parentName: Mia_rig_15_4_ctrl_head
+      position: {x: 0.03381861, y: 0.058771923, z: 0.107660085}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_R_eye_up_ctrl
+      parentName: Mia_rig_15_4_ctrl_head
+      position: {x: 0.03391725, y: 0.09396222, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Eyes_up_ctrl
+      parentName: Mia_rig_15_4_ctrl_head
+      position: {x: 0.00078413583, y: 0.09168994, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Eyes_down_ctrl
+      parentName: Mia_rig_15_4_ctrl_head
+      position: {x: 0.00078413583, y: 0.056969363, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Hip
+      parentName: Mia_rig_15_4_ctrl_root
+      position: {x: 0.019798592, y: -0.00042789913, z: 0.0027988069}
+      rotation: {x: -0.41291404, y: 0.5094426, z: -0.48793718, w: 0.5760969}
+      scale: {x: 1.0000024, y: 1.0000021, z: 1.0000035}
+    - name: Mia_rig_15_4_Spine1
+      parentName: Mia_rig_15_4_Hip
+      position: {x: -0.113027, y: -0.0073084407, z: 5.2906127e-11}
+      rotation: {x: 0.9881555, y: -0.15345585, z: 0.00000004470348, w: -0.000000029802319}
+      scale: {x: 0.99999887, y: 0.9999996, z: 0.9999982}
+    - name: Mia_rig_15_4_Spine2
+      parentName: Mia_rig_15_4_Spine1
+      position: {x: -0.120133996, y: 0.008369417, z: -7.443573e-10}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000012, y: 1.0000014, z: 1.0000021}
+    - name: Mia_rig_15_4_Chest
+      parentName: Mia_rig_15_4_Spine2
+      position: {x: -0.1204459, y: -0.020852398, z: -1.314826e-10}
+      rotation: {x: -0.000000007203165, y: -0.000000009577038, z: 0.13219911, w: 0.9912232}
+      scale: {x: 1.0000021, y: 1.0000012, z: 1.0000038}
+    - name: Mia_rig_15_4_Neck
+      parentName: Mia_rig_15_4_Chest
+      position: {x: -0.08593064, y: 0.02707553, z: -4.857226e-19}
+      rotation: {x: -0.00000000491995, y: -0.000000007445424, z: -0.34929833, w: 0.9370116}
+      scale: {x: 1.0000026, y: 1.0000013, z: 1.0000001}
+    - name: Mia_rig_15_4_Head
+      parentName: Mia_rig_15_4_Neck
+      position: {x: -0.076602936, y: -4.973799e-16, z: 5.620504e-18}
+      rotation: {x: -0.0016856388, y: 0.0051626023, z: -0.04259387, w: -0.99907774}
+      scale: {x: 1.0000015, y: 1.0000012, z: 1.0000011}
+    - name: Mia_rig_15_4_eye_new
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.099987336, y: 0.06843677, z: 0.00028064847}
+      rotation: {x: -0.5610549, y: 0.43036893, z: 0.56569624, w: 0.42424968}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_eye_inside_L
+      parentName: Mia_rig_15_4_eye_new
+      position: {x: -0.030743167, y: -0.0026617125, z: -0.02648834}
+      rotation: {x: -0.04745483, y: -0.0055297893, z: 0.026224945, w: 0.99851376}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_eye_outside_L
+      parentName: Mia_rig_15_4_eye_new
+      position: {x: -0.030743165, y: -0.0026617146, z: -0.026002469}
+      rotation: {x: -0.047460932, y: -0.0055305045, z: 0.026224883, w: 0.99851346}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_eye_inside_R
+      parentName: Mia_rig_15_4_eye_new
+      position: {x: 0.030685226, y: -0.0026617125, z: -0.02648834}
+      rotation: {x: -0.04785672, y: -0.0054656137, z: 0.02621926, w: 0.9984951}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_eye_outside_R
+      parentName: Mia_rig_15_4_eye_new
+      position: {x: 0.030685224, y: -0.0026617146, z: -0.026002469}
+      rotation: {x: -0.047862515, y: -0.0054662703, z: 0.026219267, w: 0.9984948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_hair_LP
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.095850065, y: 0.06959507, z: 0.0002339816}
+      rotation: {x: -0.5610549, y: 0.43036893, z: 0.56569624, w: 0.42424968}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_mouth_cavity_up_LP
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.042105865, y: 0.07128773, z: -0.00033313394}
+      rotation: {x: -0.5610549, y: 0.43036893, z: 0.56569624, w: 0.42424968}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Top_Head
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.18723328, y: 6.3948854e-16, z: -2.442491e-17}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_R_forehead
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.1331442, y: 0.04628306, z: -0.04021771}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Mia_rig_15_4_R_eyebrow_up
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.1325839, y: 0.05965633, z: -0.009989454}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Mia_rig_15_4_R_eyebrow_end
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.108393, y: 0.0514505, z: -0.048718087}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000006, y: 1.0000023, z: 1.0000026}
+    - name: Mia_rig_15_4_R_eyebrow_middle
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.106272295, y: 0.06242348, z: -0.03646589}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000006, y: 1.0000023, z: 1.0000026}
+    - name: Mia_rig_15_4_R_eyebrow_beginning
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.1277611, y: 0.063777275, z: -0.01017754}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000006, y: 1.0000023, z: 1.0000026}
+    - name: Mia_rig_15_4_R_cheek
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.07383247, y: 0.06280558, z: -0.04976882}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000006, y: 1.0000023, z: 1.0000026}
+    - name: Mia_rig_15_4_R_nose
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.06800204, y: 0.07889312, z: -0.009934227}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000006, y: 1.0000023, z: 1.0000026}
+    - name: Mia_rig_15_4_R_nose_down
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.05252665, y: 0.07454947, z: -0.01725669}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Mia_rig_15_4_R_lip_up
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.04300292, y: 0.08617726, z: -0.01328952}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Mia_rig_15_4_L_eyebrow_up
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.13770059, y: 0.058316078, z: 0.013374129}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_L_nose_down
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.05217501, y: 0.07464792, z: 0.01678537}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_L_forehead
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.1306515, y: 0.047991972, z: 0.03881224}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_L_eyebrow_end
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.10355429, y: 0.05383922, z: 0.05231478}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000007}
+    - name: Mia_rig_15_4_L_eyebrow_middle
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.1032962, y: 0.06452314, z: 0.03401877}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000007}
+    - name: Mia_rig_15_4_L_eyebrow_beginning
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.12195929, y: 0.06511589, z: 0.009877194}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000007}
+    - name: Mia_rig_15_4_L_cheek
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.07273452, y: 0.063156, z: 0.05202295}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000007}
+    - name: Mia_rig_15_4_L_nose
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.06779615, y: 0.07895077, z: 0.00976283}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000007}
+    - name: Mia_rig_15_4_L_lip_up
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.041835688, y: 0.08661441, z: 0.012453659}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_Forehead_middle
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.1520302, y: 0.049688365, z: 0.002499882}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_Lip_up_middle
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.046932638, y: 0.09257909, z: -0.0003291663}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_L_cheek_down
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.0448785, y: 0.069771916, z: 0.03696368}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000007}
+    - name: Mia_rig_15_4_Jaw
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.01204004, y: 0.03420135, z: -0.0005391562}
+      rotation: {x: 0.7091912, y: -0.70499563, z: -0.0026545231, w: 0.0046864124}
+      scale: {x: 1.0000015, y: 1.0000001, z: 1.0000027}
+    - name: Mia_rig_15_4_Mia_tongue_LP
+      parentName: Mia_rig_15_4_Jaw
+      position: {x: -0.038021166, y: 0.08658682, z: -0.000006733249}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Mia_mouth_cavity_down_LP
+      parentName: Mia_rig_15_4_Jaw
+      position: {x: -0.0405891, y: 0.012758323, z: -0.000000285582}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Lip_down_middle
+      parentName: Mia_rig_15_4_Jaw
+      position: {x: -0.05873384, y: 0.02125076, z: -0.0000005908155}
+      rotation: {x: -0.09416768, y: -0.70080847, z: -0.094104856, w: 0.70081687}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: Mia_rig_15_4_Chin
+      parentName: Mia_rig_15_4_Jaw
+      position: {x: -0.060241297, y: 8.5265126e-16, z: -1.9810539e-17}
+      rotation: {x: -0.009592165, y: 0.016847067, z: -0.70479935, w: 0.7091418}
+      scale: {x: 1.0000014, y: 1.0000007, z: 1.0000005}
+    - name: Mia_rig_15_4_L_lip_down
+      parentName: Mia_rig_15_4_Jaw
+      position: {x: -0.0514008, y: 0.01969396, z: -0.012666499}
+      rotation: {x: -0.09416768, y: -0.70080847, z: -0.094104856, w: 0.70081687}
+      scale: {x: 0.9999996, y: 0.99999994, z: 1}
+    - name: Mia_rig_15_4_R_lip_down
+      parentName: Mia_rig_15_4_Jaw
+      position: {x: -0.051740307, y: 0.01936725, z: 0.012613899}
+      rotation: {x: 0.7008168, y: -0.0941048, z: 0.70080847, w: 0.09416774}
+      scale: {x: 0.9999987, y: 0.99999994, z: 0.99999976}
+    - name: Mia_rig_15_4_R_lower_jaw
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.023296649, y: 0.05144373, z: -0.041480176}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000007}
+    - name: Mia_rig_15_4_R_cheek_down
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.04565566, y: 0.06955433, z: -0.03755433}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000007}
+    - name: Mia_rig_15_4_R_lip_corner
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.03237297, y: 0.077603236, z: -0.021629049}
+      rotation: {x: -0.42424944, y: -0.5656964, z: 0.43036878, w: -0.561055}
+      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000007}
+    - name: Mia_rig_15_4_L_lower_jaw
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.022441119, y: 0.0516833, z: 0.040527046}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000011, y: 1.000001, z: 1.0000011}
+    - name: Mia_rig_15_4_L_lip_corner
+      parentName: Mia_rig_15_4_Head
+      position: {x: -0.03207788, y: 0.077785835, z: 0.022956569}
+      rotation: {x: 0.56105506, y: -0.4303688, z: -0.56569636, w: -0.4242495}
+      scale: {x: 1.0000011, y: 1.000001, z: 1.0000011}
+    - name: Mia_rig_15_4_L_Clavicle
+      parentName: Mia_rig_15_4_Chest
+      position: {x: -0.02192632, y: 0.046058387, z: 0.053704936}
+      rotation: {x: -0.49643794, y: 0.62442315, z: 0.30116522, w: 0.522441}
+      scale: {x: 0.9999986, y: 0.99999917, z: 0.99999917}
+    - name: Mia_rig_15_4_L_Arm
+      parentName: Mia_rig_15_4_L_Clavicle
+      position: {x: -0.07032462, y: -0.02378025, z: -0.045474272}
+      rotation: {x: -0.6443671, y: -0.18834263, z: -0.0077252677, w: 0.7411198}
+      scale: {x: 1.0000013, y: 1.0000011, z: 1.0000019}
+    - name: Mia_rig_15_4_L_Elbow
+      parentName: Mia_rig_15_4_L_Arm
+      position: {x: -0.24949989, y: -0.00295139, z: 0.01214844}
+      rotation: {x: 0.99702203, y: 0.06571818, z: -0.03966617, w: 0.0074087465}
+      scale: {x: 1.0000019, y: 1.0000011, z: 1.0000017}
+    - name: Mia_rig_15_4_L_Wrist
+      parentName: Mia_rig_15_4_L_Elbow
+      position: {x: -0.20465429, y: -0.01240085, z: 2.842171e-16}
+      rotation: {x: -0.3840972, y: -0.5006331, z: -0.4689741, w: 0.61797994}
+      scale: {x: 0.99999917, y: 1.000001, z: 1.0000007}
+    - name: Mia_rig_15_4_L_Index_01
+      parentName: Mia_rig_15_4_L_Wrist
+      position: {x: -0.0032812299, y: -0.08935545, z: 0.031245228}
+      rotation: {x: -0.24691041, y: -0.26203054, z: 0.6873369, w: 0.6308274}
+      scale: {x: 1, y: 1.0000002, z: 1.0000005}
+    - name: Mia_rig_15_4_L_Index_02
+      parentName: Mia_rig_15_4_L_Index_01
+      position: {x: -0.03391164, y: -0.002260747, z: -0.0005548884}
+      rotation: {x: 0.0063099684, y: -0.028907062, z: 0.07349923, w: 0.99685633}
+      scale: {x: 1.0000015, y: 1.0000008, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Index_03
+      parentName: Mia_rig_15_4_L_Index_02
+      position: {x: -0.020667719, y: 0.00009233852, z: 0.00064176734}
+      rotation: {x: 0.070169166, y: -0.018129934, z: -0.06768573, w: 0.99507105}
+      scale: {x: 1.0000006, y: 1.0000012, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Index_04
+      parentName: Mia_rig_15_4_L_Index_03
+      position: {x: -0.01705299, y: -0.003464779, z: 0.001432941}
+      rotation: {x: 0.000000007450578, y: -0, z: -1.1641528e-10, w: 1}
+      scale: {x: 1.000001, y: 1.0000007, z: 1.0000002}
+    - name: Mia_rig_15_4_L_Middle_01
+      parentName: Mia_rig_15_4_L_Wrist
+      position: {x: 0.0074151126, y: -0.08433502, z: 0.01616766}
+      rotation: {x: -0.062022537, y: -0.016748216, z: -0.058917075, w: 0.9961935}
+      scale: {x: 1.000001, y: 1.0000001, z: 1.0000005}
+    - name: Mia_rig_15_4_L_Middle_02
+      parentName: Mia_rig_15_4_L_Middle_01
+      position: {x: 0.0110153, y: -0.03385582, z: -0.00197182}
+      rotation: {x: 0.5211424, y: 0.75016356, z: 0.33610117, w: 0.22956757}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000007}
+    - name: Mia_rig_15_4_L_Middle_03
+      parentName: Mia_rig_15_4_L_Middle_02
+      position: {x: -0.02209377, y: 5.355525e-18, z: 5.84698e-18}
+      rotation: {x: 0.061405964, y: 0.0023426693, z: -0.037998464, w: 0.9973866}
+      scale: {x: 0.9999996, y: 0.99999976, z: 0.9999991}
+    - name: Mia_rig_15_4_L_Middle_04
+      parentName: Mia_rig_15_4_L_Middle_03
+      position: {x: -0.0207501, y: 5.8887376e-19, z: -4.8555047e-19}
+      rotation: {x: -0.30632544, y: -0.8837656, z: -0.21039465, w: 0.28435394}
+      scale: {x: 1.000001, y: 1.0000007, z: 1.0000005}
+    - name: Mia_rig_15_4_L_Ring_01
+      parentName: Mia_rig_15_4_L_Wrist
+      position: {x: 0.017866729, y: -0.077179, z: -0.000025377529}
+      rotation: {x: -0.033251137, y: -0.018603733, z: -0.08179086, w: 0.995921}
+      scale: {x: 1.0000008, y: 1.0000001, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Ring_02
+      parentName: Mia_rig_15_4_L_Ring_01
+      position: {x: 0.01318367, y: -0.0312343, z: 0.0017446791}
+      rotation: {x: 0.46406892, y: 0.7790174, z: 0.32850587, w: 0.26430264}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Mia_rig_15_4_L_Ring_03
+      parentName: Mia_rig_15_4_L_Ring_02
+      position: {x: -0.022933781, y: 0, z: 3.552714e-17}
+      rotation: {x: 0.009313047, y: 0.004728001, z: -0.037631303, w: 0.9992372}
+      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000006}
+    - name: Mia_rig_15_4_L_Ring_04
+      parentName: Mia_rig_15_4_L_Ring_03
+      position: {x: -0.019371599, y: -3.63598e-17, z: -3.552714e-17}
+      rotation: {x: -0.30042207, y: -0.87331986, z: -0.23025903, w: 0.30665925}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Thumb_01
+      parentName: Mia_rig_15_4_L_Wrist
+      position: {x: 0.001207263, y: -0.03383347, z: 0.034982007}
+      rotation: {x: -0.01649698, y: -0.060698636, z: -0.04841427, w: 0.9968449}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1}
+    - name: Mia_rig_15_4_L_Thumb_02
+      parentName: Mia_rig_15_4_L_Thumb_01
+      position: {x: 0.0045404336, y: -0.020925751, z: 0.02468816}
+      rotation: {x: -0.09482124, y: -0.1305827, z: -0.09324367, w: 0.9824779}
+      scale: {x: 1.0000002, y: 0.99999976, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Thumb_03
+      parentName: Mia_rig_15_4_L_Thumb_02
+      position: {x: 0.014498389, y: -0.021215988, z: 0.014968379}
+      rotation: {x: 0.4864571, y: 0.7253915, z: -0.48666546, w: -0.017982677}
+      scale: {x: 1.0000026, y: 1.0000014, z: 1.0000013}
+    - name: Mia_rig_15_4_L_Thumb_04
+      parentName: Mia_rig_15_4_L_Thumb_03
+      position: {x: -0.02023586, y: 0, z: 5.3290707e-17}
+      rotation: {x: -0.3766699, y: -0.72361594, z: 0.55493194, w: -0.162943}
+      scale: {x: 0.9999997, y: 1, z: 0.99999976}
+    - name: Mia_rig_15_4_L_Pinkie_01
+      parentName: Mia_rig_15_4_L_Wrist
+      position: {x: 0.02817842, y: -0.0668725, z: -0.01027375}
+      rotation: {x: -0.02713606, y: -0.020706018, z: -0.095562324, w: 0.99483806}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.000001}
+    - name: Mia_rig_15_4_L_Pinkie_02
+      parentName: Mia_rig_15_4_L_Pinkie_01
+      position: {x: 0.0115709305, y: -0.02502599, z: 0.0021367269}
+      rotation: {x: 0.13286616, y: -0.41621178, z: 0.14072013, w: 0.8884324}
+      scale: {x: 0.99999976, y: 0.99999994, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Pinkie_03
+      parentName: Mia_rig_15_4_L_Pinkie_02
+      position: {x: 0.004124245, y: -0.015529931, z: 0.001607749}
+      rotation: {x: 0.6811659, y: 0.73041815, z: -0.017655512, w: 0.04680545}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Pinkie_04
+      parentName: Mia_rig_15_4_L_Pinkie_03
+      position: {x: -0.01264227, y: 0.0034199369, z: 0.0001507154}
+      rotation: {x: 0.06685503, y: -0.2668769, z: 0.01833382, w: 0.9612341}
+      scale: {x: 1, y: 0.9999997, z: 1.0000008}
+    - name: Mia_rig_15_4_R_Clavicle
+      parentName: Mia_rig_15_4_Chest
+      position: {x: -0.02192789, y: 0.04605894, z: -0.05370496}
+      rotation: {x: 0.6244233, y: 0.49643722, z: -0.5224412, w: 0.3011657}
+      scale: {x: 0.9999985, y: 1.0000024, z: 1.0000013}
+    - name: Mia_rig_15_4_R_Arm
+      parentName: Mia_rig_15_4_R_Clavicle
+      position: {x: 0.07032479, y: 0.02378, z: 0.0454745}
+      rotation: {x: -0.64141136, y: -0.18842582, z: -0.007063089, w: 0.74366474}
+      scale: {x: 1.0000018, y: 1.0000025, z: 1.0000029}
+    - name: Mia_rig_15_4_R_Elbow
+      parentName: Mia_rig_15_4_R_Arm
+      position: {x: 0.2495034, y: 0.0029529477, z: -0.012146309}
+      rotation: {x: -0.99706256, y: -0.06628677, z: 0.037574522, w: -0.007785802}
+      scale: {x: 1, y: 1.0000011, z: 1.0000006}
+    - name: Mia_rig_15_4_R_Wrist
+      parentName: Mia_rig_15_4_R_Elbow
+      position: {x: 0.20515159, y: 0.012667679, z: 0.0009779898}
+      rotation: {x: 0.38723943, y: 0.5029196, z: 0.46763793, w: -0.6151686}
+      scale: {x: 1.000002, y: 1.000004, z: 1.0000032}
+    - name: Mia_rig_15_4_R_Index_01
+      parentName: Mia_rig_15_4_R_Wrist
+      position: {x: 0.003281851, y: 0.08935591, z: -0.0312455}
+      rotation: {x: -0.24691342, y: -0.26202852, z: 0.6873354, w: 0.63082874}
+      scale: {x: 1.0000002, y: 1.0000005, z: 0.9999998}
+    - name: Mia_rig_15_4_R_Index_02
+      parentName: Mia_rig_15_4_R_Index_01
+      position: {x: 0.03391101, y: 0.0022606568, z: 0.00055487745}
+      rotation: {x: 0.006310237, y: -0.028903652, z: 0.07349415, w: 0.99685675}
+      scale: {x: 1.0000017, y: 1.0000002, z: 1.0000007}
+    - name: Mia_rig_15_4_R_Index_03
+      parentName: Mia_rig_15_4_R_Index_02
+      position: {x: 0.02066816, y: -0.00009190303, z: -0.0006414446}
+      rotation: {x: -0.012928762, y: 0.009145519, z: -0.026944146, w: 0.9995115}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000007}
+    - name: Mia_rig_15_4_R_Index_04
+      parentName: Mia_rig_15_4_R_Index_03
+      position: {x: 0.017182799, y: 0.002164827, z: 0.0002775125}
+      rotation: {x: -0, y: -0, z: 1.13686794e-11, w: 1}
+      scale: {x: 1.0000008, y: 1.0000005, z: 1.0000007}
+    - name: Mia_rig_15_4_R_Middle_01
+      parentName: Mia_rig_15_4_R_Wrist
+      position: {x: -0.0074147307, y: 0.08433495, z: -0.01616806}
+      rotation: {x: -0.06202314, y: -0.016749345, z: -0.058923118, w: 0.99619305}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_15_4_R_Middle_02
+      parentName: Mia_rig_15_4_R_Middle_01
+      position: {x: -0.01101572, y: 0.033855777, z: 0.001971549}
+      rotation: {x: 0.18955041, y: -0.31234342, z: -0.0943218, w: 0.9260754}
+      scale: {x: 0.99999964, y: 1.0000002, z: 0.99999964}
+    - name: Mia_rig_15_4_R_Middle_03
+      parentName: Mia_rig_15_4_R_Middle_02
+      position: {x: -0.01210312, y: 0.01844575, z: -0.001178451}
+      rotation: {x: -0.89678526, y: 0.4413963, z: -0.015200827, w: -0.026729086}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: Mia_rig_15_4_R_Middle_04
+      parentName: Mia_rig_15_4_R_Middle_03
+      position: {x: -0.02075037, y: 8.8817837e-17, z: 3.552714e-17}
+      rotation: {x: 0.8837658, y: -0.3063069, z: 0.28436464, w: 0.21040653}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000011}
+    - name: Mia_rig_15_4_R_Ring_01
+      parentName: Mia_rig_15_4_R_Wrist
+      position: {x: -0.017866079, y: 0.07717886, z: 0.0000246731}
+      rotation: {x: -0.03326064, y: -0.018607158, z: -0.08180418, w: 0.99591947}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000007}
+    - name: Mia_rig_15_4_R_Ring_02
+      parentName: Mia_rig_15_4_R_Ring_01
+      position: {x: -0.013184269, y: 0.03123423, z: -0.0017438959}
+      rotation: {x: 0.083071545, y: -0.350731, z: 0.10140802, w: 0.92725587}
+      scale: {x: 1.0000002, y: 0.99999994, z: 0.9999997}
+    - name: Mia_rig_15_4_R_Ring_03
+      parentName: Mia_rig_15_4_R_Ring_02
+      position: {x: -0.006191754, y: 0.02208148, z: -0.00020337448}
+      rotation: {x: -0.8192346, y: 0.5730264, z: -0.017260248, w: 0.014053217}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000011}
+    - name: Mia_rig_15_4_R_Ring_04
+      parentName: Mia_rig_15_4_R_Ring_03
+      position: {x: -0.01937149, y: -4.440892e-18, z: -1.065814e-16}
+      rotation: {x: 0.87335086, y: -0.30046806, z: 0.30660895, w: 0.23014814}
+      scale: {x: 1.0000004, y: 1.0000012, z: 1.0000006}
+    - name: Mia_rig_15_4_R_Thumb_01
+      parentName: Mia_rig_15_4_R_Wrist
+      position: {x: -0.0012067, y: 0.033833858, z: -0.034982298}
+      rotation: {x: -0.016531862, y: -0.060157187, z: -0.047947325, w: 0.9968997}
+      scale: {x: 0.9999999, y: 1.0000008, z: 1.0000012}
+    - name: Mia_rig_15_4_R_Thumb_02
+      parentName: Mia_rig_15_4_R_Thumb_01
+      position: {x: -0.0045404336, y: 0.02092498, z: -0.024688179}
+      rotation: {x: -0.09483877, y: -0.13058636, z: -0.09323908, w: 0.9824761}
+      scale: {x: 1.0000004, y: 0.9999998, z: 0.99999976}
+    - name: Mia_rig_15_4_R_Thumb_03
+      parentName: Mia_rig_15_4_R_Thumb_02
+      position: {x: -0.014498389, y: 0.021216929, z: -0.01496834}
+      rotation: {x: -0.38833097, y: 0.23796923, z: 0.065132074, w: 0.8878781}
+      scale: {x: 0.9999997, y: 0.9999995, z: 0.9999999}
+    - name: Mia_rig_15_4_R_Thumb_04
+      parentName: Mia_rig_15_4_R_Thumb_03
+      position: {x: -0.0060780756, y: 0.019258259, z: 0.001288901}
+      rotation: {x: 0.30248666, y: -0.29991627, z: -0.17092738, w: 0.8884458}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000006}
+    - name: Mia_rig_15_4_R_Pinkie_01
+      parentName: Mia_rig_15_4_R_Wrist
+      position: {x: -0.02817804, y: 0.06687256, z: 0.01027367}
+      rotation: {x: -0.027134804, y: -0.02070825, z: -0.09557317, w: 0.994837}
+      scale: {x: 0.9999999, y: 1.0000012, z: 1.0000017}
+    - name: Mia_rig_15_4_R_Pinkie_02
+      parentName: Mia_rig_15_4_R_Pinkie_01
+      position: {x: -0.01157122, y: 0.025025439, z: -0.002137028}
+      rotation: {x: 0.07303428, y: -0.41118935, z: 0.116566874, w: 0.9011113}
+      scale: {x: 0.9999999, y: 1.0000004, z: 1.0000001}
+    - name: Mia_rig_15_4_R_Pinkie_03
+      parentName: Mia_rig_15_4_R_Pinkie_02
+      position: {x: -0.004073678, y: 0.01562417, z: 0.0002735373}
+      rotation: {x: 0.024402695, y: -0.018620238, z: -0.09014115, w: 0.9954559}
+      scale: {x: 0.99999964, y: 0.9999993, z: 0.9999996}
+    - name: Mia_rig_15_4_R_Pinkie_04
+      parentName: Mia_rig_15_4_R_Pinkie_03
+      position: {x: -0.0063865045, y: 0.011434489, z: -0.00007139761}
+      rotation: {x: 0.029746298, y: -0.00000007264315, z: -0.0000000616419, w: 0.9995575}
+      scale: {x: 1.0000005, y: 1.0000012, z: 1.000001}
+    - name: Mia_rig_15_4_R_Leg
+      parentName: Mia_rig_15_4_Hip
+      position: {x: 0.0148967095, y: 0.001542309, z: 0.08799455}
+      rotation: {x: 0.002027556, y: 0.04804758, z: 0.18530822, w: -0.981503}
+      scale: {x: 0.99999994, y: 1, z: 0.9999995}
+    - name: Mia_rig_15_4_R_Knee
+      parentName: Mia_rig_15_4_R_Leg
+      position: {x: 0.4056473, y: -0.00000026610638, z: 0.0000004921854}
+      rotation: {x: -0.0012155167, y: 0.007423154, z: -0.98682904, w: 0.16159163}
+      scale: {x: 1, y: 1.0000007, z: 1.0000001}
+    - name: Mia_rig_15_4_R_Ankle
+      parentName: Mia_rig_15_4_R_Knee
+      position: {x: -0.423322, y: 8.569678e-13, z: -4.0323298e-14}
+      rotation: {x: -0.0029122808, y: 0.020962354, z: -0.623171, w: 0.78179926}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000006}
+    - name: Mia_rig_15_4_R_Instep
+      parentName: Mia_rig_15_4_R_Ankle
+      position: {x: -0.1253464, y: 1.275091e-15, z: -1.158185e-14}
+      rotation: {x: -0.2623464, y: 0.060236484, z: -0.19049783, w: 0.94406384}
+      scale: {x: 1.0000008, y: 1, z: 1.0000011}
+    - name: Mia_rig_15_4_R_Tip_toe
+      parentName: Mia_rig_15_4_R_Instep
+      position: {x: -0.07163678, y: 1.776357e-16, z: 1.829648e-15}
+      rotation: {x: 0.3324367, y: -0.6205732, z: 0.33894715, w: -0.624091}
+      scale: {x: 1.0000012, y: 1.0000011, z: 1.0000015}
+    - name: Mia_rig_15_4_L_Leg
+      parentName: Mia_rig_15_4_Hip
+      position: {x: 0.014896359, y: 0.001542111, z: -0.08686506}
+      rotation: {x: 0.04817021, y: -0.0019744635, z: 0.9818091, w: 0.18364854}
+      scale: {x: 1.0000014, y: 1.0000017, z: 0.99999964}
+    - name: Mia_rig_15_4_L_Knee
+      parentName: Mia_rig_15_4_L_Leg
+      position: {x: -0.4056475, y: -1.221245e-16, z: 0}
+      rotation: {x: 0.007427517, y: 0.0011908179, z: 0.15830357, w: 0.9873618}
+      scale: {x: 1.0000012, y: 1, z: 1.0000004}
+    - name: Mia_rig_15_4_L_Ankle
+      parentName: Mia_rig_15_4_L_Knee
+      position: {x: -0.423322, y: 1.776357e-17, z: 1.776357e-16}
+      rotation: {x: 0.5551229, y: -0.45499778, z: -0.42625564, w: 0.55056494}
+      scale: {x: 1.0000007, y: 1.0000011, z: 1.0000006}
+    - name: Mia_rig_15_4_L_Instep
+      parentName: Mia_rig_15_4_L_Ankle
+      position: {x: -0.1253462, y: 7.0721205e-16, z: 1.698197e-14}
+      rotation: {x: 0.26913074, y: -0.18885484, z: 0.061988145, w: 0.94236934}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000001}
+    - name: Mia_rig_15_4_L_Tip_toe
+      parentName: Mia_rig_15_4_L_Instep
+      position: {x: -0.07163679, y: 1.008971e-14, z: -6.8389737e-15}
+      rotation: {x: -0.62053937, y: -0.33250195, z: 0.6240533, w: 0.33901465}
+      scale: {x: 1.0000012, y: 1.0000005, z: 1.0000007}
+    - name: Mia_rig_15_4_BS
+      parentName: walk_past_v03(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Blend2
+      parentName: Mia_rig_15_4_BS
+      position: {x: 1, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Blend3
+      parentName: Mia_rig_15_4_BS
+      position: {x: 2, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Blend4
+      parentName: Mia_rig_15_4_BS
+      position: {x: 3, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Blend5
+      parentName: Mia_rig_15_4_BS
+      position: {x: 4, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Blend6
+      parentName: Mia_rig_15_4_BS
+      position: {x: 5, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_15_4_Blend7
+      parentName: Mia_rig_15_4_BS
+      position: {x: 6, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
