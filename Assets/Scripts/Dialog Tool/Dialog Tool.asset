@@ -308,6 +308,53 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   End: 0
+--- !u!114 &-8334377732816592871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3371f99b62a8ab49bf8f4ed84811bbf, type: 3}
+  m_Name: Set Object State
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1944, y: 104}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: -8334377732816592871}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: next
+        node: {fileID: 2253444040215263090}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: -8334377732816592871}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: End
+        node: {fileID: 4779508902865677274}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  _objectName: wardrobe
+  _activeState: 1
 --- !u!114 &-8084922982687748693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1682,6 +1729,7 @@ MonoBehaviour:
   - {fileID: 7227681146679662909}
   - {fileID: 0}
   - {fileID: 2253018578963573577}
+  - {fileID: -8334377732816592871}
   currentNode: {fileID: 0}
   currentTimeline: {fileID: 0}
   currentTimelineLoop: 0
@@ -2368,7 +2416,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: previous
-        node: {fileID: 7592903375669239993}
+        node: {fileID: -8334377732816592871}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -2694,7 +2742,10 @@ MonoBehaviour:
         node: {fileID: 0}
         reroutePoints: []
       - fieldName: next
-        node: {fileID: 7592903375669239993}
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: next
+        node: {fileID: -8334377732816592871}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
