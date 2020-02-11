@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
-        DialogManager.instance.StartDialog("introTL");
+        if (SceneManager.GetActiveScene().name == "MainScene") DialogManager.instance.StartDialog("introTL");
     }
 
     public void SetGameStateExploration()

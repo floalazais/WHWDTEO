@@ -48,7 +48,7 @@ public class ImportantPastObject : ObjectInteractable
     // Start is called before the first frame update
     void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        //_meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
 
         Init();
@@ -120,14 +120,11 @@ public class ImportantPastObject : ObjectInteractable
             {
                 _timerBetweenTwoSteps = 0.0f;
                 NextStep();
-            } else {
-                return;
             }
+            return;
         }
 
         bool lIsValidated = false;
-
-        print("button : " + _currentInteraction.gamepadButton + " interaction wanted : " + _currentInteraction.interactionType);
 
         switch (_currentInteraction.interactionType)
         {
@@ -202,12 +199,11 @@ public class ImportantPastObject : ObjectInteractable
         if (_index >= _wantedInteractionArray.Length)
         {
             _isEnd = true;
-            print("end sequence");
             _isManipulated = false;
             interactable = false;
 
             //Disable the object at the end of manipulation
-            _meshRenderer.enabled = false;
+            //_meshRenderer.enabled = false;
 
             UIManager.instance.RemoveScreen();
 

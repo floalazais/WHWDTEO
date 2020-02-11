@@ -8,7 +8,7 @@ public class ObjectCinematicTrigger : ObjectInteractable
 
     private void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        //_meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
 
         Init();

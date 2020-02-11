@@ -17,11 +17,18 @@ public class PastZone : MonoBehaviour
 
         _meshRenderer.enabled = false;
         _rotation = transform.rotation;
+
+        
     }
 
     private void Update()
     {
-        if(transform.rotation != _rotation)
+       // Shader.SetGlobalVector("_Position", transform.position);
+       // Shader.SetGlobalVector("_Radius", transform.localScale);
+
+
+
+        if (transform.rotation != _rotation)
         {
             transform.rotation = _rotation;
         }

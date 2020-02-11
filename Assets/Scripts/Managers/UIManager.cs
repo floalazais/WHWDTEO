@@ -29,16 +29,16 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         if(_canvas != null) _canvas.gameObject.SetActive(true);
-        _choicePanel = ChoicePanel.instance.GetComponent<RectTransform>();
-        _dialogPanel = DialogPanel.instance.GetComponent<RectTransform>();
-        _letterPanel = LetterPanel.instance.GetComponent<RectTransform>();
-        _manipulationPanel = ManipulationPanel.instance.GetComponent<RectTransform>();
+        if (ChoicePanel.instance != null) _choicePanel = ChoicePanel.instance.GetComponent<RectTransform>();
+        if (DialogPanel.instance != null) _dialogPanel = DialogPanel.instance.GetComponent<RectTransform>();
+        if (LetterPanel.instance != null) _letterPanel = LetterPanel.instance.GetComponent<RectTransform>();
+        if (ManipulationPanel.instance != null) _manipulationPanel = ManipulationPanel.instance.GetComponent<RectTransform>();
 
-        _choicePanel.gameObject.SetActive(false);
-        _dialogPanel.gameObject.SetActive(false);
-        _letterPanel.gameObject.SetActive(false);
-        _manipulationPanel.gameObject.SetActive(false);
-        _inspectionPanel.gameObject.SetActive(false);
+        if (_choicePanel != null) _choicePanel.gameObject.SetActive(false);
+        if (_dialogPanel != null) _dialogPanel.gameObject.SetActive(false);
+        if (_letterPanel != null) _letterPanel.gameObject.SetActive(false);
+        if (_manipulationPanel != null) _manipulationPanel.gameObject.SetActive(false);
+        if (_inspectionPanel != null) _inspectionPanel.gameObject.SetActive(false);
     }
 
     public void OnStartDialog()

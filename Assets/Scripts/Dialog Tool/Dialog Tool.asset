@@ -457,6 +457,84 @@ MonoBehaviour:
   next: 
   _objectName: alarmClock_Present
   _activeState: 1
+--- !u!114 &-7216069778235068123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fd129f7a06c334fb12b7d561a2bc91, type: 3}
+  m_Name: Play Timeline
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -2136, y: 1368}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: -7216069778235068123}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Start
+        node: {fileID: 31322504284941342}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: -7216069778235068123}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previous
+        node: {fileID: -4372505688553260644}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  timelineAsset: {fileID: 11400000, guid: ad6952814794f2e48b46e2d0e08dbcf7, type: 2}
+  timer: -0.0069354456
+--- !u!114 &-7176141548708303675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263de3211da909640b75b635a594c2ba, type: 3}
+  m_Name: End
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1832, y: 872}
+  ports:
+    keys:
+    - End
+    values:
+    - _fieldName: End
+      _node: {fileID: -7176141548708303675}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: next
+        node: {fileID: 498168559157364076}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  End: 0
 --- !u!114 &-6839775266803312558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +656,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   previous: 
-  sceneName: TestHandsScene
+  sceneName: HandsScene
 --- !u!114 &-6188556347979328103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,7 +703,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: f0b3997ce1cdd5346a6073d37a052239, type: 2}
-  timer: -0.018898748
+  timer: -0.0015293509
 --- !u!114 &-6066256088017380928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,6 +819,38 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 287418032670d5e40a47c76af7489948,
       type: 2}
+--- !u!114 &-5476941931165186304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ffcfc2ad640ad40842e9a3b25d8a2e, type: 3}
+  m_Name: Begin
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -2325.8064, y: 917.1527}
+  ports:
+    keys:
+    - Start
+    values:
+    - _fieldName: Start
+      _node: {fileID: -5476941931165186304}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previous
+        node: {fileID: 498168559157364076}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Start: 
+  dialogName: beginPast
 --- !u!114 &-5276183721903163305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,7 +1033,7 @@ MonoBehaviour:
   m_Name: Switch Scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1944, y: 536}
+  position: {x: -1912, y: 536}
   ports:
     keys:
     - previous
@@ -955,7 +1065,7 @@ MonoBehaviour:
   m_Name: Switch Scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2152, y: 888}
+  position: {x: -1848, y: 1368}
   ports:
     keys:
     - previous
@@ -965,8 +1075,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: Start
-        node: {fileID: 31322504284941342}
+      - fieldName: next
+        node: {fileID: -7216069778235068123}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1086,7 +1196,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1544, y: 1112}
+  position: {x: -1304, y: 1112}
   ports:
     keys:
     - End
@@ -1153,53 +1263,6 @@ MonoBehaviour:
   previous: 
   next: 
   waitTime: 16.256
---- !u!114 &-3047881991292850448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Set Object State
-  m_EditorClassIdentifier: Assembly-CSharp::SetObjectStateNode
-  graph: {fileID: 11400000}
-  position: {x: -1944, y: 104}
-  ports:
-    keys:
-    - previous
-    - next
-    values:
-    - _fieldName: previous
-      _node: {fileID: -3047881991292850448}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: next
-        node: {fileID: 2253444040215263090}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: next
-      _node: {fileID: -3047881991292850448}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: End
-        node: {fileID: 4779508902865677274}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  previous: 
-  next: 
-  _objectName: wardrobe_Present
-  _activeState: 1
 --- !u!114 &-2896886755844956030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1342,53 @@ MonoBehaviour:
   next: 
   subtitle: Is aeda quid.
   displayTime: 1
+--- !u!114 &-2033285982593093197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138e85e85b02bac49bb385d3ed349e8d, type: 3}
+  m_Name: Launch Timeline
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1192, y: 584}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: -2033285982593093197}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Start
+        node: {fileID: 2011254952727140584}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: -2033285982593093197}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previous
+        node: {fileID: 7227681146679662909}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  timelineAsset: {fileID: 11400000, guid: 56cde829d438c5341adc927fb184e727, type: 2}
+  loop: 0
 --- !u!114 &-1925813642066124139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,8 +1533,8 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: Start
-        node: {fileID: 2011254952727140584}
+      - fieldName: next
+        node: {fileID: 7227681146679662909}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1508,7 +1618,7 @@ MonoBehaviour:
   m_Name: Play Timeline
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1864, y: 1032}
+  position: {x: -1784, y: 1032}
   ports:
     keys:
     - previous
@@ -1541,7 +1651,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 55710ee51ac784647b2b8f894f425e34, type: 2}
-  timer: 0
+  timer: -0.013997341
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,15 +1723,21 @@ MonoBehaviour:
   - {fileID: 4324856700859111428}
   - {fileID: 1448654638445636999}
   - {fileID: -5076746092659773573}
-  - {fileID: 0}
   - {fileID: -4828933629023595202}
   - {fileID: 1929609440016812417}
   - {fileID: -5936778498172288}
   - {fileID: 3045364453626581068}
   - {fileID: -3846705929056180373}
-  currentNode: {fileID: 0}
+  - {fileID: -7216069778235068123}
+  - {fileID: -5476941931165186304}
+  - {fileID: 498168559157364076}
+  - {fileID: -7176141548708303675}
+  - {fileID: 7227681146679662909}
+  - {fileID: -2033285982593093197}
+  - {fileID: 0}
+  currentNode: {fileID: 8308074384595047050}
   currentTimeline: {fileID: 0}
-  staticTimeline: 0
+  currentTimelineLoop: 0
 --- !u!114 &31322504284941342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,7 +1751,7 @@ MonoBehaviour:
   m_Name: Begin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2408, y: 888}
+  position: {x: -2424, y: 1384}
   ports:
     keys:
     - Start
@@ -1646,7 +1762,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: previous
-        node: {fileID: -4372505688553260644}
+        node: {fileID: -7216069778235068123}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1736,6 +1852,53 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f07af525ca4e5e543a098e4af14f8d77,
       type: 2}
+--- !u!114 &498168559157364076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fd129f7a06c334fb12b7d561a2bc91, type: 3}
+  m_Name: Play Timeline
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -2088, y: 840}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: 498168559157364076}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Start
+        node: {fileID: -5476941931165186304}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: 498168559157364076}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: End
+        node: {fileID: -7176141548708303675}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  timelineAsset: {fileID: 11400000, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+  timer: -0.014337562
 --- !u!114 &523635640312141912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,7 +1977,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 7b59e8b6403ab8041a4f95262e866521, type: 2}
-  timer: -0.019883653
+  timer: -0.010897879
 --- !u!114 &1060878549897342625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2110,7 +2273,7 @@ MonoBehaviour:
   m_Name: Begin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -968, y: 680}
+  position: {x: -1432, y: 584}
   ports:
     keys:
     - Start
@@ -2121,7 +2284,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: previous
-        node: {fileID: -356628690078097242}
+        node: {fileID: -2033285982593093197}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -2221,7 +2384,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 621d45c7b0f21d1438ae227e2cb657a7, type: 2}
-  timer: -0.0047364812
+  timer: -0.019214153
 --- !u!114 &2567996982560267917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,7 +2480,7 @@ MonoBehaviour:
   m_Name: Play Timeline
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1864, y: 1160}
+  position: {x: -1784, y: 1160}
   ports:
     keys:
     - previous
@@ -2350,7 +2513,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 33020c71d91e179448125c5b3e7db7ca, type: 2}
-  timer: 0
+  timer: -0.01666705
 --- !u!114 &3912966449017715303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2924,7 +3087,7 @@ MonoBehaviour:
       _dynamic: 0
   previous: 
   next: 
-  _objectName: wardrobe_Present
+  _objectName: wardrobe
   _activeState: 1
 --- !u!114 &7054848892712347561
 MonoBehaviour:
@@ -2958,6 +3121,56 @@ MonoBehaviour:
       _dynamic: 0
   Start: 
   dialogName: introTL
+--- !u!114 &7227681146679662909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138e85e85b02bac49bb385d3ed349e8d, type: 3}
+  m_Name: Launch Timeline
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -968, y: 600}
+  ports:
+    keys:
+    - previous
+    - next
+    values:
+    - _fieldName: previous
+      _node: {fileID: 7227681146679662909}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: next
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: next
+        node: {fileID: -2033285982593093197}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: next
+      _node: {fileID: 7227681146679662909}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: previous
+        node: {fileID: -356628690078097242}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  previous: 
+  next: 
+  timelineAsset: {fileID: 11400000, guid: 91765700c5c4bf2448fcbb6a7565a077, type: 2}
+  loop: 1
 --- !u!114 &7277188577598913342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3036,7 +3249,7 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: 8ed2b6c170a8bcc48a7e07e36b7d2339, type: 2}
-  timer: -0.0064865034
+  timer: -0.0038479045
 --- !u!114 &7781472178324555007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3309,4 +3522,4 @@ MonoBehaviour:
   previous: 
   next: 
   timelineAsset: {fileID: 11400000, guid: e7adbea5d7fcb6d4bb789b917f8192dd, type: 2}
-  timer: -0.014735039
+  timer: -0.0044137686

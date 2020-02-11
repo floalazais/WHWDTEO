@@ -10,7 +10,6 @@ public class PlushFadeIn : MonoBehaviour
 
     public void StartFade(float seconds)
     {
-        Debug.Log("Start Fade");
         _childrenRenderers = GetComponentsInChildren<Renderer>();
         _childrenMaterials = new Material[_childrenRenderers.Length];
         for (int i = 0; i < _childrenRenderers.Length; i++)
@@ -35,7 +34,6 @@ public class PlushFadeIn : MonoBehaviour
                 _childrenRenderers[i].material.Lerp(transparentMaterial, _childrenMaterials[i], elapsedTime);
             }
             yield return new WaitForSeconds(Time.deltaTime);
-            Debug.Log("Time: " + elapsedTime);
         }
     }
 }

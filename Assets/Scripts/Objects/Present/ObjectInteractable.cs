@@ -16,7 +16,7 @@ public abstract class ObjectInteractable : W_Object
 
     private void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        //_meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
 
         Init();

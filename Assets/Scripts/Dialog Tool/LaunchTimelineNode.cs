@@ -11,7 +11,8 @@ public class LaunchTimelineNode : DialogNode {
     [Input(ShowBackingValue.Never)] public string previous;
     [Output(ShowBackingValue.Never)] public string next;
 
-    public TimelineAsset timelineAsset;
+    [SerializeField] TimelineAsset timelineAsset;
+    [SerializeField] bool loop;
 
     protected override void Init()
     {
@@ -21,7 +22,7 @@ public class LaunchTimelineNode : DialogNode {
     public override void Activate()
     {
         (graph as DialogTool).currentTimeline = timelineAsset;
-        (graph as DialogTool).staticTimeline = true;
+        (graph as DialogTool).currentTimelineLoop = loop;
     }
 
     public override bool Update()

@@ -7,7 +7,7 @@ public class BoxLetters : ObjectInteractable
     // Start is called before the first frame update
     void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        //_meshRenderer = GetComponent<MeshRenderer>();
         _meshFilter = GetComponent<MeshFilter>();
 
         SetModePresent();
@@ -19,7 +19,6 @@ public class BoxLetters : ObjectInteractable
     {
         base.Interact();
         SoundManager.instance.PlaySound(Utils_Variables.PRISE_BOITE_SOUND);
-        print("box letters");
         UIManager.instance.OnLetterPanel();
         LetterPanel.instance.StartLetters();
     }
