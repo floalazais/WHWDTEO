@@ -72,7 +72,7 @@ public class HandExplorationManager : MonoBehaviour
         }
 
         if (_index != 0) Invoke("ActiveHand", 3);
-        else ActiveHand();
+        else Invoke("ActiveHand", 3);
     }
 
     void ActiveHand()
