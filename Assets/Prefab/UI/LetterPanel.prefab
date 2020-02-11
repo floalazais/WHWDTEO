@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5478680883852232840}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -107,7 +107,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5478680883852232840}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -213,6 +213,79 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 96e8721335bee82488339aaed573f343, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4196860195668112924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3163618866373914568}
+  - component: {fileID: 2735341751980803744}
+  - component: {fileID: 3035264337095182577}
+  m_Layer: 5
+  m_Name: BackgroundImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3163618866373914568
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196860195668112924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5478680883852232840}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2735341751980803744
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196860195668112924}
+  m_CullTransparentMesh: 0
+--- !u!114 &3035264337095182577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196860195668112924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9372549}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -254,6 +327,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1883915222304485543}
+  - {fileID: 3163618866373914568}
   - {fileID: 5478680883945169683}
   - {fileID: 6522868462356727323}
   - {fileID: 3680102204911857101}
@@ -324,25 +398,84 @@ MonoBehaviour:
     here. I don\u2019t like it when he says that. If he is wants to be a meanie forever
     then I don\u2019t want to be his sister! I rather be your sister. Come and play
     tonight, let's do a secret sleepover!"
-  - "You saw it? You saw it, right? He talked to me at school today. I\u2019m sure
-    you did not see. You lame Mia! Nooo it was a joke you\u2019re the best! I want
-    to invite him to play with us one day. But I want to be sure you are okay first.
-    Answer by letter. I\u2019ll wait."
+  - 'I think mom is sad today. '
   - Today I was sad but then grandad told me a story about puppies who were going
     on an adventure. It was AWESOME. Puppies are brave like knights. Or like firemen.
     But I rather be a knight with lots of puppies beside me. We will save the world
     and make sad people smile!
-  - I think mom is sad today.    We need a puppy.
+  - Your dad brings lollipops and gives me not 1 but 2!!! He is so cool!! I am sure
+    my dad is cool too. I wish I know him. He will give us 3 lollipops each I sure!
+    Or do you think he can come back if I say that I will give him 3 lollipops?  We
+    must put lollipops at the front door! He should come back at the house this way!
   - "Saturday, 8:54am: Aunt Maggie going to work. She frowns eyebrows. She wears blue
     shirt (a new one). Don\u2019t think she saw me.   Saturday, 9:02am: Daniel is
     watching ugly cartoons on TV. He is a bummer.    Saturday, 9:06am: Ava running.
     Think she is late for work. I supported her. Mistake! She noticed my hideout.
     I must find a new one.   Waiting for your report, agent M."
-  soundEvents: []
-  stopSoundEvents: []
+  - "You saw it? You saw it, right? He talked to me at school today. I\u2019m sure
+    you did not see. You lame Mia! Nooo it was a joke you\u2019re the best! I want
+    to invite him to play with us one day. But I want to be sure you are okay first.
+    Answer by letter. I\u2019ll wait."
+  _lettersImage:
+  - {fileID: 21300000, guid: 96e8721335bee82488339aaed573f343, type: 3}
+  - {fileID: 21300000, guid: 44fe01f614150804094a1154b51247f4, type: 3}
+  - {fileID: 21300000, guid: 7ad4723206ee0c444b2f92e1c4869ff7, type: 3}
+  - {fileID: 21300000, guid: c80d8825b8f17a64ab40966dc6e59d6d, type: 3}
+  - {fileID: 21300000, guid: 200218eb312331345b221d99c445b271, type: 3}
+  - {fileID: 21300000, guid: a11cb218d927bfd4a8f2262e4d76bc3c, type: 3}
+  soundEvents:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f424aec6a301f734b8f5e13262b29268,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43a0e883c1369ec41a51d64c869e4fa1,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4addfe83bfdfd1c4f8e67eeb0f8bcaeb,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 281947d8cc138434c8e5c3bc113696fe,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e4daeeb82375f0841a759746467b399c,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f6b757bea732ae9439184c3ce28b0d48,
+      type: 2}
+  stopSoundEvents:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f36fc3d2f95a6e34e9198acf03ee1674,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4b3d8513ca5d1b34ca85024c2cb37204,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a3b01214f5353f343a51a3a05a240297,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cbf8f0873eaf8de4da4de704326e0501,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fa85e5d0f8e92d640b53f87172bae83f,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c0fc22678f7633f47845fecc1c55fc2e,
+      type: 2}
   _letterText: {fileID: 5478680883945169680}
-  _handWriterFont: {fileID: 12800000, guid: 698233fcc01b9ce4fafa118c773ca229, type: 3}
-  _typoWriterFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  _letterImage: {fileID: 1742592406257715429}
+  _backgroundImage: {fileID: 3035264337095182577}
 --- !u!1 &5478680883945169682
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,11 +506,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5478680883852232840}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000022888, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 776.6, y: 697.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5478680883945169681
@@ -401,13 +534,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 698233fcc01b9ce4fafa118c773ca229, type: 3}
+    m_Font: {fileID: 12800000, guid: 79ee3dd220b465746b6a940c2f8ab959, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -455,7 +588,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5478680883852232840}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -532,7 +665,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5478680883852232840}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -605,7 +738,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5478680883852232840}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -678,7 +811,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5478680883852232840}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}

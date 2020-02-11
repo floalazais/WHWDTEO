@@ -81,8 +81,19 @@ public class ManipulationPanel : MonoBehaviour
 
             case Enums.E_INTERACT_TYPE.ROLL:
                 rollImage.gameObject.SetActive(true);
-                if (pRollDirection == Enums.E_ROLL_DIRECTION.LEFT) rollImage.sprite = rollLeftImg;
-                else if(pRollDirection == Enums.E_ROLL_DIRECTION.RIGHT) rollImage.sprite = rollRightImg;
+                Animator lRollAnimator = rollImage.gameObject.GetComponent<Animator>();
+
+                if (pRollDirection == Enums.E_ROLL_DIRECTION.LEFT)
+                {
+                    rollImage.sprite = rollLeftImg;
+                    lRollAnimator.SetBool(Utils_Variables.IS_ROLLING_RIGHT, false);
+                }
+                else if (pRollDirection == Enums.E_ROLL_DIRECTION.RIGHT)
+                {
+                    rollImage.sprite = rollRightImg;
+                    lRollAnimator.SetBool(Utils_Variables.IS_ROLLING_RIGHT, true);
+                }
+
                 break;
 
             case Enums.E_INTERACT_TYPE.SWIPE:
@@ -110,5 +121,10 @@ public class ManipulationPanel : MonoBehaviour
         rollImage.gameObject.SetActive(false);
 
         StopHoldingAnimation();
+    }
+
+    public void RemoveRollUI()
+    {
+        rollImage.gameObject.SetActive(false);
     }
 }

@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
         if (SceneManager.GetActiveScene().name == "MainScene") DialogManager.instance.StartDialog("introTL");
+
+        Cursor.visible = false;
     }
 
     public void SetGameStateExploration()
