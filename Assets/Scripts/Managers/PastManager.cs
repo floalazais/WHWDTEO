@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +9,7 @@ public class PastManager : MonoBehaviour
     [SerializeField] float _interactionRadius = 1.5f;
     [SerializeField] float _closeRadius = 2.0f;
     [SerializeField] float _memoryZoneRadius = 3.0f;
+    [SerializeField] float _mediumRadius = 3.0f;
 
     public static PastManager instance { get; private set; }
 
@@ -94,6 +95,41 @@ public class PastManager : MonoBehaviour
             if (distance > _memoryZoneRadius)
             {
                 lObject.SetModePresent();
+
+                ObjectInteractable lObjectInteractable = lObject as ObjectInteractable;
+
+                if (lObjectInteractable == null) continue;
+                if (!lObjectInteractable.interactable) continue;
+
+                //Conditions to avoid being interactable when we're not in the good time period
+                if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PAST)
+                {
+                    lObjectInteractable.SetFarPlayerMode();
+                    continue;
+                }
+
+                else if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE)
+                {
+                    //If we are a bit close but can't interact
+                    if (distance <= _mediumRadius)
+                    {
+                        lObjectInteractable.SetMediumPlayerMode();
+                    }
+                    else
+                    {
+                        lObjectInteractable.SetFarPlayerMode();
+                    }
+                    continue;
+                }
+
+                if (distance <= _mediumRadius)
+                {
+                    lObjectInteractable.SetMediumPlayerMode();
+                }
+                else
+                {
+                    lObjectInteractable.SetFarPlayerMode();
+                }
             }
 
             //If we're not
@@ -113,7 +149,7 @@ public class PastManager : MonoBehaviour
                     continue;
                 }
 
-                else if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE)
+                if (lObjectInteractable.interactionTime == ObjectInteractable.InteractionTime.PRESENT && _state == Enums.E_LEVEL_STATE.MEMORY_MODE)
                 {
                     lObjectInteractable.SetFarPlayerMode();
                     continue;
@@ -133,13 +169,6 @@ public class PastManager : MonoBehaviour
                     if (distance <= _closeRadius)
                     {
                         lObjectInteractable.SetClosePlayerMode();
-                        continue;
-                    }
-
-                    //If we are a bit close but can't interact
-                    if (distance <= _memoryZoneRadius)
-                    {
-                        lObjectInteractable.SetMediumPlayerMode();
                         continue;
                     }
 
@@ -202,9 +231,12 @@ public class PastManager : MonoBehaviour
     {
         if (_objectNearPlayer == null) return;
 
-        _state = Enums.E_LEVEL_STATE.INTERACT;
-        GameManager.instance.SetGameStateManipulation();
-        if (_objectNearPlayer as ObjectViewable != null) UIManager.instance.OnInspectionScreen();
+        if (_objectNearPlayer as ObjectViewable != null)
+        {
+            _state = Enums.E_LEVEL_STATE.INTERACT;
+            GameManager.instance.SetGameStateManipulation();
+            UIManager.instance.OnInspectionScreen();
+        }
 
         _objectNearPlayer.Interact();
     }

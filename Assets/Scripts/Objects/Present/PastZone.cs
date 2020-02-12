@@ -40,6 +40,7 @@ public class PastZone : MonoBehaviour
                 return;
             }
 
+            transform.localScale = scale;
             _isDisplaying = false;
             return;
         }
@@ -52,6 +53,7 @@ public class PastZone : MonoBehaviour
                 return;
             }
 
+            transform.localScale = Vector3.zero;
             _meshRenderer.enabled = false;
             _isRemoving = false;
         }

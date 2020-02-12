@@ -16,7 +16,6 @@ public class LetterPanel : MonoBehaviour
     [SerializeField] Image _backgroundImage;
     int _index = 0;
     bool _isHandWriting = true;
-    bool _firstSquareRelease = true;
 
     bool[] displayedLetters;
 
@@ -108,7 +107,6 @@ public class LetterPanel : MonoBehaviour
     void OnBack()
     {
         _isHandWriting = true;
-        _firstSquareRelease = true;
         RemoveTypeWriting();
 
         GameManager.instance.SetGameStateExploration();
@@ -118,12 +116,6 @@ public class LetterPanel : MonoBehaviour
 
     void OnToggle()
     {
-        if (_firstSquareRelease)
-        {
-            _firstSquareRelease = false;
-            return;
-        }
-
         if (_isHandWriting) RemoveTypeWriting();
         else EnableTypeWriting();
 
