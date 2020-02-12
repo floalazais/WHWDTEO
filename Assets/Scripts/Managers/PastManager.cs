@@ -204,7 +204,7 @@ public class PastManager : MonoBehaviour
 
         _state = Enums.E_LEVEL_STATE.INTERACT;
         GameManager.instance.SetGameStateManipulation();
-        UIManager.instance.OnInspectionScreen();
+        if (_objectNearPlayer as ObjectViewable != null) UIManager.instance.OnInspectionScreen();
 
         _objectNearPlayer.Interact();
     }
