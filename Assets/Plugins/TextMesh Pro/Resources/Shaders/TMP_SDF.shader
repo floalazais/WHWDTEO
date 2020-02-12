@@ -92,14 +92,20 @@ SubShader {
 		"RenderType"="Transparent"
 	}
 
-	Stencil
+	/*Stencil
 	{
 		Ref [_Stencil]
 		Comp [_StencilComp]
 		Pass [_StencilOp] 
 		ReadMask [_StencilReadMask]
 		WriteMask [_StencilWriteMask]
-	}
+	}*/
+
+	Stencil {
+			Ref 1
+			Comp NotEqual
+			Pass keep
+		}
 
 	Cull [_CullMode]
 	ZWrite Off

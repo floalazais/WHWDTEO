@@ -218,6 +218,7 @@ public class PastExplorationManager : MonoBehaviour
         if (_objectNearPlayer == null) return;
 
         GameManager.instance.SetGameStateManipulation();
+        UIManager.instance.OnInspectionScreen();
 
         _objectNearPlayer.Interact();
     }
