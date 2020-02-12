@@ -226,6 +226,7 @@ public class PastExplorationManager : MonoBehaviour
 
     void GoToPreviousState()
     {
+        UIManager.instance.RemoveScreen();
         PutNearObject();
         GameManager.instance.SetGameStateExploration();
         if (_objectNearPlayer.inspected)
