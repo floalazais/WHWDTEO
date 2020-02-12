@@ -34,7 +34,7 @@ public class SubtitleNode : DialogNode {
         timer += Time.deltaTime;
         if (timer >= displayTime)
         {
-            UIManager.instance.OnEndDialog();
+            if (GetOutputPort("next").Connection.node as ChoiceNode != null) UIManager.instance.OnEndDialog();
             return true;
         } else {
             return false;
