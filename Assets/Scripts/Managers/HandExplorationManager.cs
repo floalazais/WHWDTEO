@@ -17,12 +17,6 @@ public class HandExplorationManager : MonoBehaviour
 
     Hand _currentHand = null;
 
-    float _glitchRtpc = 0.0f;
-    bool _glitchUp = false;
-    [SerializeField] float _glitchFadeUpTime = 2.0f;
-    [SerializeField] float _glitchFadeDownTime = 0.6f;
-    float _fadeRefTime;
-
     [SerializeField] AK.Wwise.Event[] _voicesApparition;
 
     void Awake()
@@ -53,9 +47,6 @@ public class HandExplorationManager : MonoBehaviour
 
         SoundManager.instance.PlaySound(Utils_Variables.START_HOPE_GLITCH_SOUND);
         SetActiveHand();
-
-        _glitchUp = true;
-        _fadeRefTime = Time.time;
     }
 
     void SortHandsByName()
@@ -97,15 +88,6 @@ public class HandExplorationManager : MonoBehaviour
         {
             CheckPlayerDistance();
         }
-        if (_glitchUp)
-        {
-            _glitchRtpc = Mathf.Lerp(0.0f, 1.0f, (Time.time - _fadeRefTime) / _glitchFadeUpTime);
-        }
-        else
-        {
-            _glitchRtpc = Mathf.Lerp(1.0f, 0.0f, (Time.time - _fadeRefTime) / _glitchFadeDownTime);
-        }
-        AkSoundEngine.SetRTPCValue("Volume_Glitch_Hope", _glitchRtpc);
     }
 
     protected void CheckPlayerDistance()
@@ -163,8 +145,6 @@ public class HandExplorationManager : MonoBehaviour
         if (_index >= _objectsArray.Count)
         {
             Invoke("EndHandExploration", timeBeforeEndCinematic);
-            _glitchUp = false;
-            _fadeRefTime = Time.time;
         }
 
         SetActiveHand();
