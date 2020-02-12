@@ -52,15 +52,15 @@ public class PastManager : MonoBehaviour
             Renderer[] renderers = lObject.transform.GetComponentsInChildren<Renderer>();
             foreach (Renderer r in renderers)
             {
-                /*Material[] materials = r.materials;
+                Material[] materials = r.materials;
                 foreach(Material m in materials)
                 {
                     m.SetVector("_PositionMemoryZone", _pastZone.transform.position);
                     m.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
-                }*/
+                }
 
-                r.material.SetVector("_PositionMemoryZone", _pastZone.transform.position);
-                r.material.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
+                //r.material.SetVector("_PositionMemoryZone", _pastZone.transform.position);
+                //r.material.SetFloat("_RadiusMemoryZone", _pastZone.transform.localScale.x / 2);
                 // Debug.Log("Radius : " + _pastZone.transform.localScale.x);
             }
         }
