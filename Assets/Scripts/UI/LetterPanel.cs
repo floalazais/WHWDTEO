@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LetterPanel : MonoBehaviour
 {
     public static LetterPanel instance { get; private set; }
-    [SerializeField] string[] _letters;
+    [SerializeField] [TextArea] string[] _letters;
     [SerializeField] Sprite[] _lettersImage;
 
     [SerializeField] AK.Wwise.Event[] soundEvents;
