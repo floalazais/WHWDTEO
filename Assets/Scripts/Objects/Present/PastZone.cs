@@ -61,7 +61,7 @@ public class PastZone : MonoBehaviour
 
     public void Display()
     {
-        _meshRenderer.enabled = true;
+        //_meshRenderer.enabled = true;
         _isDisplaying = true;
         _isRemoving = false;
     }
