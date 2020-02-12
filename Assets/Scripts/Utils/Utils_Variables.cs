@@ -24,6 +24,7 @@ public static class Utils_Variables
 
     //Animator Controller
     public static string IS_HOLDING = "isHolding";
+    public static string IS_FADING = "isFading";
     public static string IS_ROLLING_RIGHT = "isRollingRight";
     //Sounds
     public static string MOVEMENT_PLAYER_SOUND = "Play_Presence_Ex";
@@ -55,4 +56,8 @@ public static class Utils_Variables
     public static string STOP_HOPE_GLITCH_SOUND = "Stop_Glitch_Rd_Hope";
     public static string START_ROOM_TONE_SOUND = "Play_RoomTone";
     public static string STOP_ROOM_TONE_SOUND = "Stop_RoomTone";
+    public static string PLAY_MUSIC_PRESENT_SOUND = "Play_Musique_Present";
+    public static string STOP_MUSIC_PRESENT_SOUND = "Stop_Musique_Present";
+    public static string PLAY_MUSIC_PAST_SOUND = "Play_Music_Past";
+    public static string STOP_MUSIC_PAST_SOUND = "Stop_Music_Past";
 }

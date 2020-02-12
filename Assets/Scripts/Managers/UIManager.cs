@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void OnEndDialog()
     {
-        _dialogPanel.gameObject.SetActive(false);
+        if (_dialogPanel != null) _dialogPanel.gameObject.SetActive(false);
         if (_currentScreen != null) _currentScreen.gameObject.SetActive(false);
     }
 

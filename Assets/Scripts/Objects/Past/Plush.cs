@@ -108,15 +108,16 @@ public class Plush : MonoBehaviour
         else if (!inspected)
         {
             RaycastHit hitInfo = new RaycastHit();
-            if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
-            {
+           //if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
+           if (Physics.SphereCast(_cameraFollow.position, 0.05f, _cameraLookAt.position - _cameraFollow.position, out hitInfo))
+           {
                 if (hitInfo.collider.gameObject == _partToFind)
                 {
                     SoundManager.instance.PlaySound(soundEventInspect.Id);
                     inspected = true;
                     gameObject.GetComponent<ObjectManipulation>().stop = true;
                 }
-            }
+           }
         }
     }
 
