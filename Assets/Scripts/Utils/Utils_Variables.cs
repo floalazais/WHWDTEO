@@ -24,6 +24,7 @@ public static class Utils_Variables
 
     //Animator Controller
     public static string IS_HOLDING = "isHolding";
+    public static string IS_FADING = "isFading";
     public static string IS_ROLLING_RIGHT = "isRollingRight";
     //Sounds
     public static string MOVEMENT_PLAYER_SOUND = "Play_Presence_Ex";
