@@ -8,8 +8,8 @@ public class PastZone : MonoBehaviour
     Quaternion _rotation;
     public Vector3 scale;
 
-    bool _isDisplaying = true;
-    bool _isRemoving = true;
+    bool _isDisplaying = false;
+    bool _isRemoving = false;
 
     void Start()
     {
