@@ -17,11 +17,11 @@ public class FadeOut : MonoBehaviour
             _childrenMaterials[i] = _childrenRenderers[i].material;
         }
 
-        StartCoroutine(FadeIn(seconds));
+        StartCoroutine(FadeOutPlush(seconds));
     }
 
 
-    IEnumerator FadeIn(float fadeTime)
+    IEnumerator FadeOutPlush(float fadeTime)
     {
         float elapsedTime = 0;
         while (elapsedTime < fadeTime)
