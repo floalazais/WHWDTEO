@@ -49,8 +49,6 @@ public class PastManager : MonoBehaviour
 
             if (lObject.enabled == false) continue;
 
-            float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
-
             Renderer[] renderers = lObject.transform.GetComponentsInChildren<Renderer>();
             foreach (Renderer r in renderers)
             {
@@ -89,7 +87,7 @@ public class PastManager : MonoBehaviour
 
             if (lObject.enabled == false) continue;
 
-            float distance = Vector3.Distance(lObject.transform.position, Controller.instance.transform.position);
+            float distance = Vector3.Distance(lObject.transform.position, _pastZone.transform.position);
 
             //If we're too far from the player
             if (distance > _memoryZoneRadius)
