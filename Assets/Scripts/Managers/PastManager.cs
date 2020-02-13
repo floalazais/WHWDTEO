@@ -11,6 +11,8 @@ public class PastManager : MonoBehaviour
     [SerializeField] float _memoryZoneRadius = 3.0f;
     [SerializeField] float _mediumRadius = 3.0f;
 
+    [SerializeField] Transform _memoryZoneCinematic;
+
     public static PastManager instance { get; private set; }
 
     public Enums.E_LEVEL_STATE state { get { return _state; } }
@@ -304,6 +306,12 @@ public class PastManager : MonoBehaviour
         SoundManager.instance.PlaySound(Utils_Variables.BEGIN_MEMORY_SOUND);
 
         _pastZoneDisplayed = true;
+    }
+
+    public void SetupMemoryZoneCinematic()
+    {
+        _pastZone.scale = Vector3.one * 20;
+        _pastZone.transform.position = _memoryZoneCinematic.position;
     }
 
     void PutNearObject()
