@@ -2043,6 +2043,7 @@ MonoBehaviour:
   m_Version: 0
   m_Tracks:
   - {fileID: -6106182401200149658}
+  - {fileID: 1484700782563517965}
   - {fileID: 4625191470036614731}
   - {fileID: -5660273161168701959}
   - {fileID: -2193515934774203872}
@@ -2411,6 +2412,31 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: c170bf1a497775443b165b59f706aced
     defaultValue: {fileID: 0}
+--- !u!114 &1484700782563517965
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track (2)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: 7704294471594958443}
+    - {fileID: 3172708669451706724}
 --- !u!114 &1496379998394655277
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2763,6 +2789,22 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
+--- !u!114 &3172708669451706724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 47.25
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: a8c199c02fe99d8499c96ff15d0f593a, type: 2}
 --- !u!114 &3255610035282091234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3601,6 +3643,22 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &7704294471594958443
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 48.333333333333336
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 3cf8fe24cb2a8374bb3f846f0b41d22b, type: 2}
 --- !u!74 &8097739564636848535
 AnimationClip:
   m_ObjectHideFlags: 0

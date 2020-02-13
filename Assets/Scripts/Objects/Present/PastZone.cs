@@ -34,28 +34,27 @@ public class PastZone : MonoBehaviour
         }
 
         if (_isDisplaying) {
-            if (transform.localScale.x <= scale.x)
+            transform.localScale += new Vector3(.1f, .1f, .1f) * Time.deltaTime * 50f;
+
+            if (transform.localScale.x > scale.x)
             {
-                transform.localScale += new Vector3(.1f, .1f, .1f) * Time.deltaTime * 50f;
+                transform.localScale = scale;
+                _isDisplaying = false;
                 return;
             }
-
-            transform.localScale = scale;
-            _isDisplaying = false;
-            return;
         }
 
         if (_isRemoving)
         {
-            if (transform.localScale.x >= 0)
+            transform.localScale -= new Vector3(.1f, .1f, .1f) * Time.deltaTime * 50f;
+            if (transform.localScale.x <= 0)
             {
-                transform.localScale -= new Vector3(.1f, .1f, .1f) * Time.deltaTime * 50f;
+                transform.localScale = Vector3.zero;
+                //_meshRenderer.enabled = false;
+                _isRemoving = false;
                 return;
             }
 
-            transform.localScale = Vector3.zero;
-            _meshRenderer.enabled = false;
-            _isRemoving = false;
         }
     }
 
