@@ -306,6 +306,12 @@ public class PastManager : MonoBehaviour
         _pastZoneDisplayed = true;
     }
 
+    public void SetupMemoryZoneCinematic()
+    {
+        _pastZone.scale = Vector3.one * 20;
+        _pastZone.transform.position = new Vector3(0.8f, 0.3f, 5.2f);
+    }
+
     void PutNearObject()
     {
         _objectNearPlayer.SetNearPlayerMode();
