@@ -17,6 +17,8 @@ public class PlushFadeIn : MonoBehaviour
             _childrenMaterials[i] = _childrenRenderers[i].material;
         }
         foreach (Renderer rend in _childrenRenderers) rend.material = transparentMaterial;
+        Debug.Log(_childrenRenderers[0].material);
+        Debug.Log(_childrenRenderers[0].gameObject.name);
 
         StartCoroutine(FadeIn(seconds));
     }

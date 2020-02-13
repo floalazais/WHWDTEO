@@ -51,6 +51,7 @@ public class PastExplorationManager : MonoBehaviour
         ChangePlushesPositions();
 
         DialogManager.instance.StartDialog("beginPast");
+        SoundManager.instance.PlaySound(Utils_Variables.PLAY_MUSIC_PAST_SOUND);
 
         DialogManager.instance._dialogGraph.variablesDictionary.Add("foundAllPlushes", false);
     }
@@ -218,12 +219,14 @@ public class PastExplorationManager : MonoBehaviour
         if (_objectNearPlayer == null) return;
 
         GameManager.instance.SetGameStateManipulation();
+        UIManager.instance.OnInspectionScreen();
 
         _objectNearPlayer.Interact();
     }
 
     void GoToPreviousState()
     {
+        UIManager.instance.RemoveScreen();
         PutNearObject();
         GameManager.instance.SetGameStateExploration();
         if (_objectNearPlayer.inspected)

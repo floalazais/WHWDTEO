@@ -116,6 +116,7 @@ public class ImportantPastObject : ObjectInteractable
         if (_isStepValidated)
         {
             _timerBetweenTwoSteps -= Time.deltaTime;
+            ManipulationPanel.instance.RemoveRollUI();
             if (_timerBetweenTwoSteps < 0.0f)
             {
                 _timerBetweenTwoSteps = 0.0f;
@@ -177,16 +178,15 @@ public class ImportantPastObject : ObjectInteractable
         {
             _isStepValidated = true;
             _timerBetweenTwoSteps = _currentInteraction.delayBeforeNewInteraction;
-            //Invoke("NextStep", _currentInteraction.delayBeforeNewInteraction);
 
             if (_wantedInteractionArray[_index].interactionType == Enums.E_INTERACT_TYPE.RELEASE_HOLD)
             {
-                SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
+                //SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
             }
 
             else
             {
-                SoundManager.instance.PlaySound(soundEvents[_index].Id);
+                //SoundManager.instance.PlaySound(soundEvents[_index].Id);
             }
         }
     }
@@ -201,11 +201,6 @@ public class ImportantPastObject : ObjectInteractable
             _isEnd = true;
             _isManipulated = false;
             interactable = false;
-
-            //Disable the object at the end of manipulation
-            //_meshRenderer.enabled = false;
-
-            UIManager.instance.RemoveScreen();
 
             TimelineManager.instance.SetLoopMode(false);
             DialogManager.instance.StartDialog(_endDialogName);

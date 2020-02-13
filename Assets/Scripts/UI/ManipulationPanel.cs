@@ -57,6 +57,8 @@ public class ManipulationPanel : MonoBehaviour
 
             case Enums.E_INTERACT_TYPE.HOLD:
                 holdImage.gameObject.SetActive(true);
+                holdImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_FADING, false);
+
                 if (pButton == Enums.E_GAMEPAD_BUTTON.L2_BUTTON)
                 {
                     holdImage.sprite = holdL2Img;
@@ -81,12 +83,25 @@ public class ManipulationPanel : MonoBehaviour
 
             case Enums.E_INTERACT_TYPE.ROLL:
                 rollImage.gameObject.SetActive(true);
-                if (pRollDirection == Enums.E_ROLL_DIRECTION.LEFT) rollImage.sprite = rollLeftImg;
-                else if(pRollDirection == Enums.E_ROLL_DIRECTION.RIGHT) rollImage.sprite = rollRightImg;
+                rollImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_FADING, false);
+                Animator lRollAnimator = rollImage.gameObject.GetComponent<Animator>();
+
+                if (pRollDirection == Enums.E_ROLL_DIRECTION.LEFT)
+                {
+                    rollImage.sprite = rollLeftImg;
+                    lRollAnimator.SetBool(Utils_Variables.IS_ROLLING_RIGHT, false);
+                }
+                else if (pRollDirection == Enums.E_ROLL_DIRECTION.RIGHT)
+                {
+                    rollImage.sprite = rollRightImg;
+                    lRollAnimator.SetBool(Utils_Variables.IS_ROLLING_RIGHT, true);
+                }
+
                 break;
 
             case Enums.E_INTERACT_TYPE.SWIPE:
                 swipeImage.gameObject.SetActive(true);
+                swipeImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_FADING, false);
                 swipeImage.sprite = swipeRightImg;
                 break;
         }
@@ -100,6 +115,7 @@ public class ManipulationPanel : MonoBehaviour
     public void StopHoldingAnimation()
     {
         holdImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_HOLDING, false);
+        holdImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_FADING, true);
     }
 
     public void DesactivateUI()
@@ -107,8 +123,14 @@ public class ManipulationPanel : MonoBehaviour
         swipeImage.gameObject.SetActive(false);
         clickImage.gameObject.SetActive(false);
         holdImage.gameObject.SetActive(false);
-        rollImage.gameObject.SetActive(false);
 
+        RemoveRollUI();
         StopHoldingAnimation();
+    }
+
+    public void RemoveRollUI()
+    {
+        //rollImage.gameObject.SetActive(false);
+        rollImage.gameObject.GetComponent<Animator>().SetBool(Utils_Variables.IS_FADING, true);
     }
 }

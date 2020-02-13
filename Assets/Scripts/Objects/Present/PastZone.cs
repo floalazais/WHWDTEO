@@ -8,8 +8,8 @@ public class PastZone : MonoBehaviour
     Quaternion _rotation;
     public Vector3 scale;
 
-    bool _isDisplaying = true;
-    bool _isRemoving = true;
+    bool _isDisplaying = false;
+    bool _isRemoving = false;
 
     void Start()
     {
@@ -40,6 +40,7 @@ public class PastZone : MonoBehaviour
                 return;
             }
 
+            transform.localScale = scale;
             _isDisplaying = false;
             return;
         }
@@ -52,6 +53,7 @@ public class PastZone : MonoBehaviour
                 return;
             }
 
+            transform.localScale = Vector3.zero;
             _meshRenderer.enabled = false;
             _isRemoving = false;
         }
@@ -59,7 +61,7 @@ public class PastZone : MonoBehaviour
 
     public void Display()
     {
-        _meshRenderer.enabled = true;
+        //_meshRenderer.enabled = true;
         _isDisplaying = true;
         _isRemoving = false;
     }

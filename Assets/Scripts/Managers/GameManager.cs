@@ -25,8 +25,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
-        if (SceneManager.GetActiveScene().name == "MainScene") DialogManager.instance.StartDialog("introTL");
+        if (SceneManager.GetActiveScene().name == "MainScene")
+        {
+            DialogManager.instance.StartDialog("introTL");
+            SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
+            SoundManager.instance.PlaySound(Utils_Variables.PLAY_MUSIC_PRESENT_SOUND);
+        }
+
+        Cursor.visible = false;
     }
 
     public void SetGameStateExploration()
