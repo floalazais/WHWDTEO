@@ -34,7 +34,7 @@ public class HandExplorationManager : MonoBehaviour
     void Start()
     {
         SoundManager.instance.PlaySound(Utils_Variables.STOP_ROOM_TONE_SOUND);
-        SoundManager.instance.PlaySound(Utils_Variables.STOP_MUSIC_PAST_SOUND);
+
         SoundManager.instance.PlaySound("Play_RoomTone_Void");
         DialogManager.instance.StartDialog("voidTLs");
 
