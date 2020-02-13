@@ -51,7 +51,7 @@ public class PastExplorationManager : MonoBehaviour
         ChangePlushesPositions();
 
         DialogManager.instance.StartDialog("beginPast");
-        W_SceneManager.instance.PlaySound(Utils_Variables.STOP_MUSIC_PRESENT_SOUND);
+        SoundManager.instance.PlaySound(Utils_Variables.STOP_MUSIC_PRESENT_SOUND);
         SoundManager.instance.PlaySound(Utils_Variables.PLAY_MUSIC_PAST_SOUND);
 
         DialogManager.instance._dialogGraph.variablesDictionary.Add("foundAllPlushes", false);

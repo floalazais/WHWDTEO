@@ -24,14 +24,4 @@ public class W_SceneManager : MonoBehaviour
         sceneToLoad = pSceneName;
         SceneManager.LoadScene(Utils_Variables.LOAD_SCENE_NAME);
     }
-
-    public void PlaySound(uint eventId)
-    {
-        AkSoundEngine.PostEvent(eventId, gameObject);
-    }
-
-    public void PlaySound(string eventName)
-    {
-        AkSoundEngine.PostEvent(eventName, gameObject);
-    }
 }
