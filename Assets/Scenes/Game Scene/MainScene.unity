@@ -613,7 +613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 15a7e547be190f54e9fcd28241154a30, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 427262096}
+  m_SkySettings: {fileID: 1925996029}
   m_SkySettingsFromProfile: {fileID: -4772814257748482079, guid: 15a7e547be190f54e9fcd28241154a30,
     type: 2}
 --- !u!114 &122747612
@@ -2832,82 +2832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &427262096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.43
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 1
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.059
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5.17
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1 &429986205
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,6 +3741,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.397
       objectReference: {fileID: 0}
+    - target: {fileID: 1918547671937385074, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: takeSoundEvents.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f9d6586d53ccdf9488af0da36606763a,
+        type: 2}
+    - target: {fileID: 1918547671937385074, guid: 772e977425a081a40a16154b29a87ec9,
+        type: 3}
+      propertyPath: putSoundEvents.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 39bef1a0eb6c7f64c814016575035d8a,
+        type: 2}
     - target: {fileID: 8728574807466126034, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3886,12 +3822,31 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 476845178, guid: 772e977425a081a40a16154b29a87ec9, type: 3}
+      propertyPath: takeSoundEventsOnce.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476845178, guid: 772e977425a081a40a16154b29a87ec9, type: 3}
       propertyPath: takeSoundEvents.Array.data[0].WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 68249cae0d1020d4488f144a11c43e2d,
+        type: 2}
     - target: {fileID: 476845178, guid: 772e977425a081a40a16154b29a87ec9, type: 3}
       propertyPath: putSoundEvents.Array.data[0].WwiseObjectReference
       value: 
+      objectReference: {fileID: 11400000, guid: 1ada2e3d963bd3f418c2584b54708c48,
+        type: 2}
+    - target: {fileID: 476845178, guid: 772e977425a081a40a16154b29a87ec9, type: 3}
+      propertyPath: putSoundPlayed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476845178, guid: 772e977425a081a40a16154b29a87ec9, type: 3}
+      propertyPath: takeSoundEventsOnce.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4933e4b5b3374b9468fb27d1811e367f,
+        type: 2}
+    - target: {fileID: 476845178, guid: 772e977425a081a40a16154b29a87ec9, type: 3}
+      propertyPath: interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2422174988060455662, guid: 772e977425a081a40a16154b29a87ec9,
         type: 3}
@@ -12664,6 +12619,82 @@ Transform:
   m_Father: {fileID: 87718854}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1925996029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.43
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 1
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.059
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5.17
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1 &1941275116
 GameObject:
   m_ObjectHideFlags: 0
