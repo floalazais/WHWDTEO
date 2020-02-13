@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d3c16c6180e9214b811cce79000f0705
     GuidInternal: 
-    m_lastTime: -8586201703747280929
+    m_lastTime: -8586201565422009485
     List:
     - name: Verb_Room
       guid: a3e841f621df5b49a5c3b91a9a4201f5
@@ -251,7 +251,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 607f7b4e00248847877af15e8f82926c
     GuidInternal: 
-    m_lastTime: -8586201669207025352
+    m_lastTime: -8586200854982486265
     List:
     - name: Play_1000_Hz
       guid: 65a38d4ac3fe7e43ba85fdd664665480
@@ -1635,6 +1635,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Music_Past
+      guid: 6e1ee3c9ba15ee42b51a405f11ea1b40
+      id: 2348222202
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Music_Past
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Music_Past
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Music_Plush
       guid: 68c46799356d5448a3252c31889d2ba4
       id: 4282761058
@@ -1646,6 +1660,20 @@ MonoBehaviour:
       - ElementName: Play_Music_Plush
         ObjectType: 3
       Path: Default Work Unit\Events_SD\Play_Music_Plush
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Musique_Present
+      guid: 0f614492d0d3d344a0c727cd4692eaa0
+      id: 2797209151
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Musique_Present
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Musique_Present
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -3281,6 +3309,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_Music_Past
+      guid: c3e6145468345d408fc630ba33a70f37
+      id: 2678990432
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Stop_Music_Past
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Stop_Music_Past
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Musique_Present
+      guid: 5ad4027f0a0bb34f809b592d92d2cfe1
+      id: 3480463013
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Stop_Musique_Present
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Stop_Musique_Present
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_Open_Clock_V2
       guid: cec67f4522089640b9010f10065d3d41
       id: 329860938
@@ -3408,7 +3464,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 43ef5a6d7c266c4d9c6114aca9858d4b
     GuidInternal: 
-    m_lastTime: -8586201767181760410
+    m_lastTime: -8586201565422238866
     List:
     - name: Blend_Idle_Walk
       guid: c763dd63d4c16d4d84f8348ee408163e
