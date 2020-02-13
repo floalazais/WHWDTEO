@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Final_Floor_Shader
+  m_Name: Final_Bedside_Lamp_Shader
   m_Shader: {fileID: -6465566751694194690, guid: 98ae683fbe772e84494e6f416122f5ed,
     type: 3}
   m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2450
   stringTagMap:
     MotionVector: User
     RenderType: TransparentCutout
@@ -25,19 +25,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_2F5488DC:
-        m_Texture: {fileID: 2800000, guid: 37145190d168e2c4dba431d8941c4598, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5D623801:
-        m_Texture: {fileID: 2800000, guid: 35aee081e56b67b4a8eeb64173270f65, type: 3}
+        m_Texture: {fileID: 2800000, guid: b79a6e9646fab474fa7ffdeec7ed5673, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_A909E598:
-        m_Texture: {fileID: 2800000, guid: 0cb97d1705c8a484b924b9f512024175, type: 3}
+        m_Texture: {fileID: 2800000, guid: 45083edf76f453040b3e878cbab9cbda, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_BDCA46AB:
-        m_Texture: {fileID: 2800000, guid: 37145190d168e2c4dba431d8941c4598, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -83,7 +83,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_FA9161DF: {r: 0.4235294, g: 0.6745098, b: 3.592157, a: 0}
+    - Color_FA9161DF: {r: 0.4320315, g: 0.69500726, b: 3.58774, a: 0}
     - Vector3_1765E270: {r: 2, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
