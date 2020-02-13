@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07249729, g: 0.042070627, b: 0.05907991, a: 1}
+  m_IndirectSpecularColor: {r: 0.16390099, g: 0.085996896, b: 0.11767856, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 15a7e547be190f54e9fcd28241154a30, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 658449960}
+  m_SkySettings: {fileID: 1373939626}
   m_SkySettingsFromProfile: {fileID: -4772814257748482079, guid: 15a7e547be190f54e9fcd28241154a30,
     type: 2}
 --- !u!114 &122747612
@@ -9731,82 +9731,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 840094610}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &658449960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.43
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 1
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.059
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5.17
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1001 &662587232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17158,7 +17082,7 @@ PrefabInstance:
     - target: {fileID: 3001975145134306012, guid: 30142dbbd2b4b774f8e2f23808485da6,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 57.5
       objectReference: {fileID: 0}
     - target: {fileID: 3001975145134306012, guid: 30142dbbd2b4b774f8e2f23808485da6,
         type: 3}
@@ -20302,6 +20226,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373761331}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1373939626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.43
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 1
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.059
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5.17
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1001 &1376947509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25767,7 +25767,7 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 23.873241
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -27610,7 +27610,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 3.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30214,17 +30214,17 @@ PrefabInstance:
     - target: {fileID: 5891712668371744653, guid: 9ffd2ba1472c22b46a397e595c7c0a16,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.020855602
+      value: -0.0208556
       objectReference: {fileID: 0}
     - target: {fileID: 5891712668371744653, guid: 9ffd2ba1472c22b46a397e595c7c0a16,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.25101915
+      value: 0.25101912
       objectReference: {fileID: 0}
     - target: {fileID: 5891712668371744653, guid: 9ffd2ba1472c22b46a397e595c7c0a16,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0054096594
+      value: 0.0054096575
       objectReference: {fileID: 0}
     - target: {fileID: 5891712668371744653, guid: 9ffd2ba1472c22b46a397e595c7c0a16,
         type: 3}
@@ -30341,19 +30341,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1031132466, guid: 9ffd2ba1472c22b46a397e595c7c0a16, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1e-45
+      value: -0.022922946
       objectReference: {fileID: 0}
     - target: {fileID: 1031132466, guid: 9ffd2ba1472c22b46a397e595c7c0a16, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.907036
+      value: 0.8874069
       objectReference: {fileID: 0}
     - target: {fileID: 1031132466, guid: 9ffd2ba1472c22b46a397e595c7c0a16, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1e-45
+      value: 0.044388447
       objectReference: {fileID: 0}
     - target: {fileID: 1031132466, guid: 9ffd2ba1472c22b46a397e595c7c0a16, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.42105308
+      value: 0.45827198
       objectReference: {fileID: 0}
     - target: {fileID: 1031132466, guid: 9ffd2ba1472c22b46a397e595c7c0a16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30732,7 +30732,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2131237597}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 3ac3b93dab507be49b1c502c86ee4e38, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -30842,6 +30842,26 @@ PlayableDirector:
     value: {fileID: 323863650}
   - key: {fileID: 7612067906971917474, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
     value: {fileID: 1265074918}
+  - key: {fileID: -7029371772584027259, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 149444916}
+  - key: {fileID: 8441677144175083595, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 1048571548}
+  - key: {fileID: -3599311989707609739, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 1419539019}
+  - key: {fileID: -3225546074196519632, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 1411097475}
+  - key: {fileID: 8637270677395823260, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 1145078099}
+  - key: {fileID: -2109414732224379235, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 1094726575}
+  - key: {fileID: 2227764824125861677, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 89837795}
+  - key: {fileID: 768962779701601426, guid: 280afb6a9e0125a49b8f7b1ea4cd5dc6, type: 2}
+    value: {fileID: 834945355}
+  - key: {fileID: -9024438007926995412, guid: 3ac3b93dab507be49b1c502c86ee4e38, type: 2}
+    value: {fileID: 1590642123}
+  - key: {fileID: -664897905465296756, guid: 3ac3b93dab507be49b1c502c86ee4e38, type: 2}
+    value: {fileID: 1590642121}
   m_ExposedReferences:
     m_References:
     - 665fa22116b871c459642302c51238b4: {fileID: 2132781172}
