@@ -9,6 +9,7 @@ public class SwitchSceneNode : DialogNode
     [Input(ShowBackingValue.Never)] public string previous;
 
     public string sceneName;
+    public bool white;
 
     // Use this for initialization
     protected override void Init()
@@ -19,7 +20,7 @@ public class SwitchSceneNode : DialogNode
     public override void Activate()
     {
         GameManager.instance.SetGameStateExploration();
-        W_SceneManager.instance.SwitchScene(sceneName);
+        W_SceneManager.instance.SwitchScene(sceneName, white);
     }
 
     public override bool Update()

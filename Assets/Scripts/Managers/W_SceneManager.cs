@@ -19,9 +19,16 @@ public class W_SceneManager : MonoBehaviour
         instance = this;
     }
 
-    public void SwitchScene(string pSceneName)
+    public void SwitchScene(string pSceneName, bool white)
     {
         sceneToLoad = pSceneName;
-        SceneManager.LoadScene(Utils_Variables.LOAD_SCENE_NAME);
+        if (!white)
+        {
+            SceneManager.LoadScene(Utils_Variables.LOAD_SCENE_NAME);
+        }
+        else
+        {
+            SceneManager.LoadScene("LoadSceneWhite");
+        }
     }
 }
