@@ -25,6 +25,7 @@ public class TimelineManager : MonoBehaviour
     void Start()
     {
         playableDirector.stopped += DisplayCanvasses;
+        playableDirector.stopped += KillDialog;
         canvasses = GameObject.FindObjectsOfType<CanvasObject>().ToList();
     }
 
@@ -52,6 +53,11 @@ public class TimelineManager : MonoBehaviour
         {
             canvas.gameObject.SetActive(true);
         }
+    }
+
+    void KillDialog(PlayableDirector pDirector)
+    {
+        DialogManager.instance.KillDialog();
     }
 
     public void SetLoopMode(bool value)

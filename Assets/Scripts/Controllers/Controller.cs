@@ -116,12 +116,18 @@ public class Controller : MonoBehaviour
         if (Mathf.Abs (rightJoystick.x) < _joystickDeadZone)
         {
             rightJoystick.x = 0.0f;
-            rightJoystick.x = Input.GetAxis("Mouse X");
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                rightJoystick.x = Input.GetAxis("Mouse X");
+            }
         }
         if (Mathf.Abs (rightJoystick.y) < _joystickDeadZone)
         {
             rightJoystick.y = 0.0f;
-            rightJoystick.y = Input.GetAxis("Mouse Y");
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                rightJoystick.y = Input.GetAxis("Mouse Y");
+            }
         }
 
         /* --- Movement --- */

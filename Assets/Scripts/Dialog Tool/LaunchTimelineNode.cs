@@ -13,6 +13,7 @@ public class LaunchTimelineNode : DialogNode {
 
     [SerializeField] TimelineAsset timelineAsset;
     [SerializeField] bool loop;
+    [SerializeField] bool killable;
 
     protected override void Init()
     {
@@ -23,6 +24,7 @@ public class LaunchTimelineNode : DialogNode {
     {
         (graph as DialogTool).currentTimeline = timelineAsset;
         (graph as DialogTool).currentTimelineLoop = loop;
+        (graph as DialogTool).killable = killable;
     }
 
     public override bool Update()
