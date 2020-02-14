@@ -181,12 +181,12 @@ public class ImportantPastObject : ObjectInteractable
 
             if (_wantedInteractionArray[_index].interactionType == Enums.E_INTERACT_TYPE.RELEASE_HOLD)
             {
-                //SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
+                SoundManager.instance.PlaySound(stopSoundEvents[_index].Id);
             }
 
             else
             {
-                //SoundManager.instance.PlaySound(soundEvents[_index].Id);
+                SoundManager.instance.PlaySound(soundEvents[_index].Id);
             }
         }
     }

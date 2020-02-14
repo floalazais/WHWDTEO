@@ -8,6 +8,7 @@ public class ChoicePanel : MonoBehaviour
     public static ChoicePanel instance { get; private set; }
 
     ChoiceElement[] _choicesElements;
+    public bool isFadeDone = false;
 
     private void Awake()
     {
@@ -45,5 +46,15 @@ public class ChoicePanel : MonoBehaviour
     void DisableChoiceElement(int index)
     {
         _choicesElements[index].gameObject.SetActive(false);
+    }
+
+    public void OnEndChoice(int selectedChoice)
+    {
+        for(int i = 0; i < _choicesElements.Length; i++)
+        {
+            if (i == selectedChoice) continue;
+
+            _choicesElements[i].FadeOut();
+        }
     }
 }
