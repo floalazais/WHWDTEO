@@ -107,17 +107,23 @@ public class Plush : MonoBehaviour
         }
         else if (!inspected)
         {
+            Vector3 vectorTarget = _partToFind.transform.position - transform.position;
+            Vector3 vectorCamera = transform.position - _cameraFollow.position;
             RaycastHit hitInfo = new RaycastHit();
-           //if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_cameraLookAt.position - _cameraFollow.position) * 5, out hitInfo))
-           if (Physics.SphereCast(_cameraFollow.position, 0.05f, _cameraLookAt.position - _cameraFollow.position, out hitInfo))
-           {
-                if (hitInfo.collider.gameObject == _partToFind)
+            print(Vector3.Angle(vectorCamera, vectorTarget));
+            if (Vector3.Angle(vectorCamera, vectorTarget) > 150)
+            {
+                SoundManager.instance.PlaySound(soundEventInspect.Id);
+                inspected = true;
+                gameObject.GetComponent<ObjectManipulation>().stop = true;
+                /*if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_partToFind.transform.position - _cameraFollow.position) * 5, out hitInfo))
                 {
-                    SoundManager.instance.PlaySound(soundEventInspect.Id);
-                    inspected = true;
-                    gameObject.GetComponent<ObjectManipulation>().stop = true;
-                }
-           }
+                    print(hitInfo.collider.name);
+                    if (hitInfo.collider.gameObject == _partToFind)
+                    {
+                    }
+                }*/
+            }
         }
     }
 
