@@ -9,7 +9,7 @@ public class PastExplorationManager : MonoBehaviour
 
     List<Plush> _objectsArray = new List<Plush>();
     [SerializeField] Transform[] _plushSpawnPoints;
-    bool[] _spawnPointsOccupied;
+    Dictionary<Transform, Plush> _spawnPointsAndPlushes;
     Plush _objectNearPlayer;
 
     [SerializeField] Camera _objectCamera;
@@ -41,10 +41,11 @@ public class PastExplorationManager : MonoBehaviour
     void Start()
     {
         _objectsArray = GameObject.FindObjectsOfType<Plush>().ToList();
-        _spawnPointsOccupied = new bool[_plushSpawnPoints.Length];
-        for (int i = 0; i < _spawnPointsOccupied.Length; i++)
+
+        _spawnPointsAndPlushes = new Dictionary<Transform, Plush>();
+        for (int i = 0; i < _plushSpawnPoints.Length; i++)
         {
-            _spawnPointsOccupied[i] = false;
+            _spawnPointsAndPlushes.Add(_plushSpawnPoints[i], null);
         }
 
         _swapTimer = _swapPeriod;
@@ -83,28 +84,38 @@ public class PastExplorationManager : MonoBehaviour
 
     void ChangePlushesPositions()
     {
-        List<int> _unoccupiedSpawnPoints = new List<int>();
-        for (int i = 0; i < _spawnPointsOccupied.Length; i++)
+        for (int i = 0; i < _plushSpawnPoints.Length; i++)
         {
-            if (!_spawnPointsOccupied[i])
+            Plush currentLocationPlush = _spawnPointsAndPlushes[_plushSpawnPoints[i]];
+            if (currentLocationPlush != null)
             {
-                _unoccupiedSpawnPoints.Add(i);
+                if (currentLocationPlush != _objectNearPlayer || GameManager.instance.state == Enums.E_GAMESTATE.MANIPULATION)
+                {
+                    _spawnPointsAndPlushes[_plushSpawnPoints[i]] = null;
+                }
             }
-        }
-
-        for (int i = 0; i < _spawnPointsOccupied.Length; i++)
-        {
-            _spawnPointsOccupied[i] = false;
         }
 
         for (int i = 0; i < _objectsArray.Count; i++)
         {
             if (_objectsArray[i].inspected) continue;
             if (_objectsArray[i] == _objectNearPlayer && GameManager.instance.state == Enums.E_GAMESTATE.MANIPULATION) continue;
-            int newPositionIndex = Random.Range(0, _unoccupiedSpawnPoints.Count);
-            _objectsArray[i].SetNewPosition(_plushSpawnPoints[_unoccupiedSpawnPoints[newPositionIndex]].position);
-            _unoccupiedSpawnPoints.RemoveAt(newPositionIndex);
-            _spawnPointsOccupied[newPositionIndex] = true;
+
+            int newPositionIndex = Random.Range(0, _plushSpawnPoints.Length);
+            while (true)
+            {
+                if (_spawnPointsAndPlushes[_plushSpawnPoints[newPositionIndex]] == null)
+                {
+                    _objectsArray[i].SetNewPosition(_plushSpawnPoints[newPositionIndex].position);
+                    _spawnPointsAndPlushes[_plushSpawnPoints[newPositionIndex]] = _objectsArray[i];
+                    break;
+                }
+                else
+                {
+                    newPositionIndex++;
+                    newPositionIndex = newPositionIndex % _plushSpawnPoints.Length;
+                }
+            }
         }
     }
 
