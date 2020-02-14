@@ -13,6 +13,7 @@ public class DialogTool : NodeGraph {
     public Dictionary<string, bool> variablesDictionary = new Dictionary<string, bool>();
     public TimelineAsset currentTimeline = null;
     public bool currentTimelineLoop = false;
+    public bool killable = false;
 
     public bool StartDialog(string pDialogName)
     {
@@ -43,5 +44,18 @@ public class DialogTool : NodeGraph {
         }
 
         return false;
+    }
+
+    public void FastForward()
+    {
+        while (currentNode != null)
+        {
+            currentNode = currentNode.GetNextNode();
+
+            if (currentNode as SwitchSceneNode != null || currentNode as ForceInteractionNode != null)
+            {
+                currentNode.Activate();
+            }
+        }
     }
 }

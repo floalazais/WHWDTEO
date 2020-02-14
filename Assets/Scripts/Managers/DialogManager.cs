@@ -89,4 +89,26 @@ public class DialogManager : MonoBehaviour
             _dialogGraph.variablesDictionary[variableName] = value;
         }
     }
+
+    public void KillDialog()
+    {
+        if (_dialogGraph.killable)
+        {
+            _dialogGraph.killable = false;
+            dialogRunning = false;
+
+            _dialogGraph.FastForward();
+
+            if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION)
+            {
+                UIManager.instance.OnEndDialog();
+                GameManager.instance.SetGameStateExploration();
+                if (PastManager.instance != null) PastManager.instance.Refresh();
+                gameplayCamera.Priority = 15;
+                if (Mia != null) Mia.SetActive(true);
+                if (GhostMia != null) GhostMia.SetActive(true);
+                if (Mia2 != null) Mia2.SetActive(true);
+            }
+        }
+    }
 }
