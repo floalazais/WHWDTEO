@@ -6,7 +6,42 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_15_4_Eye_inside
+    second: {fileID: 2100000, guid: 968358e4e76f4364da580d167daed1bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_15_4_Hair
+    second: {fileID: 2100000, guid: d45f80b1a7edd234caae445ba9e93380, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_15_4_Mia_corps
+    second: {fileID: 2100000, guid: 97c01df06522ac04f8c134059296bafb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_15_4_Mouth_cavity
+    second: {fileID: 2100000, guid: d4894f41ce552084fa5b821261cd3945, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_15_4_Wool
+    second: {fileID: 2100000, guid: edc9e1aaa4b853943996cac8c302d6ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_15_4_eye_outside
+    second: {fileID: 2100000, guid: b0499dc6f56373e48be17e6b5427dba7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mia_rig_15_4_short_shoes_earphone
+    second: {fileID: 2100000, guid: 79a14916012427b4d8dd6af8f5ebeb7d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -64,7 +99,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
