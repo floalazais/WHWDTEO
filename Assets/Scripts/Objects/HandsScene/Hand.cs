@@ -13,6 +13,11 @@ public class Hand : MonoBehaviour
         SetFarPlayerMode();
     }
 
+    void Update()
+    {
+        transform.rotation = Quaternion.LookRotation(Controller.instance.transform.position - transform.position) * Quaternion.Euler(0, 285, 0);
+    }
+
     public void Interact()
     {
         _canvas.gameObject.SetActive(false);
