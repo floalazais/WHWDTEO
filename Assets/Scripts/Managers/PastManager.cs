@@ -239,6 +239,11 @@ public class PastManager : MonoBehaviour
         }
 
         _objectNearPlayer.Interact();
+
+        if (_objectNearPlayer as ObjectViewable == null)
+        {
+            PutNearObject();
+        }
     }
 
     void GoToPreviousState()
@@ -333,6 +338,8 @@ public class PastManager : MonoBehaviour
                 SoundManager.instance.PlaySound(objectViewable.putSoundEvents[i].Id);
             }
         }
+
+        _objectNearPlayer = null;
     }
 
     public void SetNearPastObjectInMemoryMode(W_Object pObject)

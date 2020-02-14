@@ -22,7 +22,6 @@ public class W_SceneManager : MonoBehaviour
     public void SwitchScene(string pSceneName)
     {
         sceneToLoad = pSceneName;
-        if(SceneManager.GetActiveScene().name == Utils_Variables.PAST_SCENE_NAME) SoundManager.instance.PlaySound(Utils_Variables.STOP_MUSIC_PAST_SOUND);
         SceneManager.LoadScene(Utils_Variables.LOAD_SCENE_NAME);
     }
 }

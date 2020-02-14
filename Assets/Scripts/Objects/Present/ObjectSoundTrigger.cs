@@ -20,7 +20,7 @@ public class ObjectSoundTrigger : ObjectInteractable
     {
         base.Interact();
 
-        _canvas.SetClosestPlayerMode();
+        interactable = false;
 
         SoundManager.instance.PlaySound(soundEvent.Id);
 
