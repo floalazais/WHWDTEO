@@ -9,6 +9,7 @@ public class HandExplorationManager : MonoBehaviour
     List<Hand> _objectsArray = new List<Hand>();
     Hand _objectNearPlayer;
     int _index = 0;
+    bool _isTaken = false;
 
     [SerializeField] float timeBeforeEndCinematic = 1.0f;
     [SerializeField] float _interactionRadius = 1.5f;
@@ -64,11 +65,12 @@ public class HandExplorationManager : MonoBehaviour
         }
 
         if (_index != 0) Invoke("ActiveHand", 3);
-        else Invoke("ActiveHand", 14.05f);
+        //else Invoke("ActiveHand", 66f);
     }
 
-    void ActiveHand()
+    public void ActiveHand()
     {
+        _isTaken = false;
         _currentHand = _objectsArray[_index];
         _currentHand.gameObject.SetActive(true);
         SoundManager.instance.PlaySound(Utils_Variables.APPARITION_MAIN_SOUND);
@@ -138,6 +140,8 @@ public class HandExplorationManager : MonoBehaviour
     void SetInteractMode()
     {
         if (_objectNearPlayer == null) return;
+        if (_isTaken) return;
+        else _isTaken = true;
 
         _objectNearPlayer.Interact();
 
