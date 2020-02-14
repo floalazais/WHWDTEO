@@ -20,6 +20,10 @@ public class ChoiceNode : DialogNode {
 
     int selectedChoice = 0;
 
+    float _timerFade = 1f;
+    float _timer = 0;
+    bool _chosen = false;
+
     // Use this for initialization
     protected override void Init() {
 		base.Init();
@@ -57,39 +61,56 @@ public class ChoiceNode : DialogNode {
 
     public override void Activate()
     {
+        _chosen = false;
+
         UIManager.instance.OnChoiceScreen();
         ChoicePanel.instance.FillChoicesTextZone(GetChoicesText());
     }
 
     public override bool Update()
     {
+        if(_chosen)
+        {
+            _timer += Time.deltaTime;
+            if(_timer >= _timerFade)
+            {
+                _chosen = false;
+                _timer = 0.0f;
+                UIManager.instance.OnEndDialog();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.TRIANGLE_BUTTON)) {
             selectedChoice = 0;
-            UIManager.instance.OnEndDialog();
-            return true;
+            ChoicePanel.instance.OnEndChoice(selectedChoice);
+            _chosen = true;
         } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.SQUARE_BUTTON)) {
             selectedChoice = 1;
-            UIManager.instance.OnEndDialog();
-            return true;
+            ChoicePanel.instance.OnEndChoice(selectedChoice);
+            _chosen = true;
         } else if(InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.ROUND_BUTTON)) {
             selectedChoice = 2;
-            UIManager.instance.OnEndDialog();
-            return true;
+            ChoicePanel.instance.OnEndChoice(selectedChoice);
+            _chosen = true;
         } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.CROSS_BUTTON)) {
             selectedChoice = 3;
-            UIManager.instance.OnEndDialog();
-            return true;
+            ChoicePanel.instance.OnEndChoice(selectedChoice);
+            _chosen = true;
         } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.D_PAD_UP_BUTTON)) {
             selectedChoice = 4;
-            UIManager.instance.OnEndDialog();
-            return true;
+            ChoicePanel.instance.OnEndChoice(selectedChoice);
+            _chosen = true;
         } else if (InputManager.instance.IsButtonPressed(Enums.E_GAMEPAD_BUTTON.D_PAD_LEFT_BUTTON)) {
             selectedChoice = 5;
-            UIManager.instance.OnEndDialog();
-            return true;
-        } else {
-            return false;
+            ChoicePanel.instance.OnEndChoice(selectedChoice);
+            _chosen = true;
         }
+        return false;
     }
 
     public override DialogNode GetNextNode()
