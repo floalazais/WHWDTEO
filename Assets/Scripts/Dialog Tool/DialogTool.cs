@@ -13,6 +13,7 @@ public class DialogTool : NodeGraph {
     public Dictionary<string, bool> variablesDictionary = new Dictionary<string, bool>();
     public TimelineAsset currentTimeline = null;
     public bool currentTimelineLoop = false;
+    public bool killable = false;
 
     public bool StartDialog(string pDialogName)
     {
