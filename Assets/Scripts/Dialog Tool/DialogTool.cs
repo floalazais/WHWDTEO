@@ -45,4 +45,17 @@ public class DialogTool : NodeGraph {
 
         return false;
     }
+
+    public void FastForward()
+    {
+        while (currentNode != null)
+        {
+            currentNode = currentNode.GetNextNode();
+
+            if (currentNode as SwitchSceneNode != null || currentNode as ForceInteractionNode != null)
+            {
+                currentNode.Activate();
+            }
+        }
+    }
 }

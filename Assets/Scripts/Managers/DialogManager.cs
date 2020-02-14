@@ -97,6 +97,8 @@ public class DialogManager : MonoBehaviour
             _dialogGraph.killable = false;
             dialogRunning = false;
 
+            _dialogGraph.FastForward();
+
             if (GameManager.instance.state == Enums.E_GAMESTATE.NARRATION)
             {
                 UIManager.instance.OnEndDialog();
