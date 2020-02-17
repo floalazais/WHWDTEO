@@ -15,7 +15,7 @@ public class Hand : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = Quaternion.LookRotation(Controller.instance.transform.position - transform.position) * Quaternion.Euler(0, 285, 0);
+        transform.rotation = Quaternion.LookRotation(Controller.instance.transform.position - transform.position) * Quaternion.Euler(-23, 264, 47);
     }
 
     public void Interact()
