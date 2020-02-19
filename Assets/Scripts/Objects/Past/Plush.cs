@@ -9,6 +9,8 @@ public class Plush : MonoBehaviour
 {
     [SerializeField] AK.Wwise.Event soundEventInteract;
     [SerializeField] AK.Wwise.Event soundEventInspect;
+    [SerializeField] AK.Wwise.Event soundEventVoiceInteract;
+    [SerializeField] AK.Wwise.Event soundEventVoiceInspect;
     [SerializeField] public AK.Wwise.Event soundEventMusicBoxNotePut;
     [SerializeField] GameObject _partToFind = null;
     [SerializeField] Transform _cameraFollow;
@@ -45,6 +47,7 @@ public class Plush : MonoBehaviour
         _collider.isTrigger = true;
 
         SoundManager.instance.PlaySound(soundEventInteract.Id);
+        SoundManager.instance.PlaySound(soundEventVoiceInteract.Id);
 
         transform.position = InspectionMode.instance.objectViewTransform.position;
         gameObject.layer = Utils_Variables.LAYER_OBJECT_INTERACT;
@@ -114,6 +117,7 @@ public class Plush : MonoBehaviour
             if (Vector3.Angle(vectorCamera, vectorTarget) > 150)
             {
                 SoundManager.instance.PlaySound(soundEventInspect.Id);
+                SoundManager.instance.PlaySound(soundEventVoiceInspect.Id);
                 inspected = true;
                 gameObject.GetComponent<ObjectManipulation>().stop = true;
                 /*if (Physics.Linecast(_cameraFollow.position, _cameraFollow.position + (_partToFind.transform.position - _cameraFollow.position) * 5, out hitInfo))
@@ -129,7 +133,7 @@ public class Plush : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (!_touchedGround && collision.collider.name == "terrain")
+        if (!_touchedGround && collision.collider.name == "walls")
         {
             _touchedGround = true;
             SoundManager.instance.PlaySound("Play_Tombe_Peluche");

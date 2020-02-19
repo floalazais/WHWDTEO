@@ -20,7 +20,8 @@ public class SoundNode : DialogNode {
 
     public override void Activate()
     {
-        SoundManager.instance.PlaySound(sound.Id);
+        (graph as DialogTool).currentSound = sound.Name;
+        Debug.Log("salu " + sound.Name);
     }
 
     public override bool Update()

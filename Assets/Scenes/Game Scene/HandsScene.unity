@@ -913,6 +913,11 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.size
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -7069833245307133012, guid: 10228c93ca06d4841a40174f79320ee5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 10228c93ca06d4841a40174f79320ee5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -972,11 +977,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: -7069833245307133012, guid: 10228c93ca06d4841a40174f79320ee5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10228c93ca06d4841a40174f79320ee5, type: 3}
@@ -6151,6 +6151,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4832753029033068577, guid: 3852617505f2a044b863f89c52f41714,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 535c353d6c2bcfa40a7d6dcb2d9b3670, type: 2}
+    - target: {fileID: -4465840565822413122, guid: 3852617505f2a044b863f89c52f41714,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a14916012427b4d8dd6af8f5ebeb7d, type: 2}
+    - target: {fileID: -4443484611404147057, guid: 3852617505f2a044b863f89c52f41714,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edc9e1aaa4b853943996cac8c302d6ba, type: 2}
     - target: {fileID: -4216859302048453862, guid: 3852617505f2a044b863f89c52f41714,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6206,21 +6221,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4832753029033068577, guid: 3852617505f2a044b863f89c52f41714,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 535c353d6c2bcfa40a7d6dcb2d9b3670, type: 2}
-    - target: {fileID: -4465840565822413122, guid: 3852617505f2a044b863f89c52f41714,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 79a14916012427b4d8dd6af8f5ebeb7d, type: 2}
-    - target: {fileID: -4443484611404147057, guid: 3852617505f2a044b863f89c52f41714,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: edc9e1aaa4b853943996cac8c302d6ba, type: 2}
     - target: {fileID: -2687192363479809210, guid: 3852617505f2a044b863f89c52f41714,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
@@ -12216,28 +12216,36 @@ MonoBehaviour:
   _voicesApparition:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 78f8c4ddd77189146bd2ab477135d304,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 0d4db027409b60849a9f3c93d19f759a,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: b663a3109b36a0949b4e075f571e9d7f,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: fd283db7c2b34364a8452799bb06cdca,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 52e391ec8cf3c994ea20fd7079c34504,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: fcf2a63f790cdcf4fa0ebd102346995f,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: eac7c053b131b164789e13578952e00b,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: f464aa3f75f73004bb40ad95eef5f973,
+      type: 2}
 --- !u!4 &676405217
 Transform:
   m_ObjectHideFlags: 0

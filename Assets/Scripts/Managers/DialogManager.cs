@@ -45,6 +45,12 @@ public class DialogManager : MonoBehaviour
     {
         if (!dialogRunning) return;
 
+        if (_dialogGraph.currentSound != "")
+        {
+            SoundManager.instance.PlaySound(_dialogGraph.currentSound);
+            _dialogGraph.currentSound = "";
+        }
+
         if (_dialogGraph.currentTimeline != null)
         {
             TimelineManager.instance.SetLoopMode(_dialogGraph.currentTimelineLoop);

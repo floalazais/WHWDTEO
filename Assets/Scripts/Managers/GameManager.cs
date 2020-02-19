@@ -27,12 +27,11 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainScene")
         {
+            Cursor.visible = false;
             DialogManager.instance.StartDialog("introTL");
             SoundManager.instance.PlaySound(Utils_Variables.START_ROOM_TONE_SOUND);
             SoundManager.instance.PlaySound(Utils_Variables.PLAY_MUSIC_PRESENT_SOUND);
         }
-
-        Cursor.visible = false;
     }
 
     public void SetGameStateExploration()

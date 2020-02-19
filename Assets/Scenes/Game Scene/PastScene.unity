@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.034159508, g: 0.0141601665, b: 0.017502217, a: 1}
+  m_IndirectSpecularColor: {r: 0.16390099, g: 0.085996896, b: 0.11767856, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1885,7 +1885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 15a7e547be190f54e9fcd28241154a30, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 966303863}
+  m_SkySettings: {fileID: 1285534578}
   m_SkySettingsFromProfile: {fileID: -4772814257748482079, guid: 15a7e547be190f54e9fcd28241154a30,
     type: 2}
 --- !u!114 &122747612
@@ -3011,7 +3011,7 @@ PrefabInstance:
     - target: {fileID: 4665000682120747324, guid: 3dfa8ba8cb2aba84281b8145b365c3bd,
         type: 3}
       propertyPath: m_Text
-      value: Put
+      value: Drop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dfa8ba8cb2aba84281b8145b365c3bd, type: 3}
@@ -3455,12 +3455,12 @@ PrefabInstance:
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectName
-      value: PLUSH
+      value: ' '
       objectReference: {fileID: 0}
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectInteraction
-      value: USE
+      value: Inspect
       objectReference: {fileID: 0}
     - target: {fileID: 940305037177820657, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
@@ -4015,11 +4015,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 55
       objectReference: {fileID: 0}
-    - target: {fileID: 4550299154394276431, guid: d5174f2d22749e04fb5d165c92a6a520,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4580721078350004201, guid: d5174f2d22749e04fb5d165c92a6a520,
         type: 3}
       propertyPath: m_IsTrigger
@@ -4029,6 +4024,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491049853994449331, guid: d5174f2d22749e04fb5d165c92a6a520,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2986725134138439921, guid: d5174f2d22749e04fb5d165c92a6a520,
         type: 3}
@@ -4070,6 +4070,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a5af11cad7c0d844398bf7718a99ca89, type: 2}
+    - target: {fileID: 4550299154394276431, guid: d5174f2d22749e04fb5d165c92a6a520,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5174f2d22749e04fb5d165c92a6a520, type: 3}
 --- !u!1 &273271326 stripped
@@ -4263,6 +4268,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 347.34097, y: 302.4928, z: 8.189111}
   m_Center: {x: 10.206524, y: 151.74442, z: 4.5624223}
+--- !u!65 &273271345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273271338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 538.83716, y: 12.132425, z: 668.87225}
+  m_Center: {x: -74.272606, y: -6.0075903, z: 220.06384}
 --- !u!1 &273491515
 GameObject:
   m_ObjectHideFlags: 0
@@ -8070,15 +8088,28 @@ MonoBehaviour:
   soundEventInteract:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 210d1bfce92788a4a8dfabfef407692c,
+      type: 2}
   soundEventInspect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: a8e25174cf429394e8f62d7a2e302265,
+      type: 2}
+  soundEventVoiceInteract:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 09fc48b2b55293043be9f5de4f48c949,
+      type: 2}
+  soundEventVoiceInspect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3c8204aa18adf0447ae3a81ae148a088,
+      type: 2}
   soundEventMusicBoxNotePut:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 67c1d41cb854dc142b6fde5b69e865d7,
+      type: 2}
   _partToFind: {fileID: 1884022640}
   _cameraFollow: {fileID: 1572083506}
   _cameraLookAt: {fileID: 1478818113}
@@ -10272,15 +10303,28 @@ MonoBehaviour:
   soundEventInteract:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 210d1bfce92788a4a8dfabfef407692c,
+      type: 2}
   soundEventInspect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: a8e25174cf429394e8f62d7a2e302265,
+      type: 2}
+  soundEventVoiceInteract:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cdabc0f929cc089438672ed2db3e1d65,
+      type: 2}
+  soundEventVoiceInspect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 318f29c90d484cb49a32a0bb8e77acc6,
+      type: 2}
   soundEventMusicBoxNotePut:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 67c1d41cb854dc142b6fde5b69e865d7,
+      type: 2}
   _partToFind: {fileID: 333133616}
   _cameraFollow: {fileID: 1572083506}
   _cameraLookAt: {fileID: 1478818113}
@@ -12072,12 +12116,12 @@ PrefabInstance:
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectName
-      value: PLUSH
+      value: ' '
       objectReference: {fileID: 0}
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectInteraction
-      value: USE
+      value: Inspect
       objectReference: {fileID: 0}
     - target: {fileID: 940305037177820657, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
@@ -14470,12 +14514,12 @@ PrefabInstance:
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectName
-      value: PLUSH
+      value: ' '
       objectReference: {fileID: 0}
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectInteraction
-      value: USE
+      value: Inspect
       objectReference: {fileID: 0}
     - target: {fileID: 940305037177820657, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
@@ -14739,15 +14783,28 @@ MonoBehaviour:
   soundEventInteract:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 210d1bfce92788a4a8dfabfef407692c,
+      type: 2}
   soundEventInspect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: a8e25174cf429394e8f62d7a2e302265,
+      type: 2}
+  soundEventVoiceInteract:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6b5f25cd4784c1d43b8a0b283676d68c,
+      type: 2}
+  soundEventVoiceInspect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 83fa4d3e927b29e448e8a425f73e4a3d,
+      type: 2}
   soundEventMusicBoxNotePut:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 67c1d41cb854dc142b6fde5b69e865d7,
+      type: 2}
   _partToFind: {fileID: 1016547344}
   _cameraFollow: {fileID: 1572083506}
   _cameraLookAt: {fileID: 1478818113}
@@ -14765,82 +14822,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.18320034, y: 0.31122923, z: 0.14240712}
   m_Center: {x: -0.000000007450581, y: 0.062919915, z: -0.01204351}
---- !u!114 &966303863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.43
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 1
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.059
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5.17
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1001 &976273326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14976,12 +14957,12 @@ PrefabInstance:
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectName
-      value: PLUSH
+      value: ' '
       objectReference: {fileID: 0}
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectInteraction
-      value: USE
+      value: Inspect
       objectReference: {fileID: 0}
     - target: {fileID: 940305037177820657, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
@@ -16493,6 +16474,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  soundEventVoiceInteract:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  soundEventVoiceInspect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   soundEventMusicBoxNotePut:
     idInternal: 0
     valueGuidInternal: 
@@ -16618,15 +16607,28 @@ MonoBehaviour:
   soundEventInteract:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 210d1bfce92788a4a8dfabfef407692c,
+      type: 2}
   soundEventInspect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: a8e25174cf429394e8f62d7a2e302265,
+      type: 2}
+  soundEventVoiceInteract:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0a594068de190c14aafcc27c6c971ce8,
+      type: 2}
+  soundEventVoiceInspect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 20216b2380e6f8b4b8c9fb29749c1665,
+      type: 2}
   soundEventMusicBoxNotePut:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 67c1d41cb854dc142b6fde5b69e865d7,
+      type: 2}
   _partToFind: {fileID: 823891367}
   _cameraFollow: {fileID: 1572083506}
   _cameraLookAt: {fileID: 1478818113}
@@ -17255,35 +17257,35 @@ PrefabInstance:
     - target: {fileID: 3001975145134306012, guid: 30142dbbd2b4b774f8e2f23808485da6,
         type: 3}
       propertyPath: m_FocalLength
-      value: 32.96973
+      value: 21.873112
       objectReference: {fileID: 0}
     - target: {fileID: 1901954439, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.005586055
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1901954439, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0016168132
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901954439, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.7573081
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901954439, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.06500516
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901954439, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9971415
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1901954439, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.038105834
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1901954439, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.074430056
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14171723, guid: 30142dbbd2b4b774f8e2f23808485da6, type: 3}
       propertyPath: m_FocalLength
@@ -17774,12 +17776,12 @@ PrefabInstance:
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectName
-      value: PLUSH
+      value: ' '
       objectReference: {fileID: 0}
     - target: {fileID: 1784508771304406849, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
       propertyPath: _objectInteraction
-      value: USE
+      value: Inspect
       objectReference: {fileID: 0}
     - target: {fileID: 940305037177820657, guid: e8439fe626d5df140b221a940111301a,
         type: 3}
@@ -19319,6 +19321,82 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.002, z: 3}
   m_Center: {x: -0.000000007450581, y: 0, z: 0}
+--- !u!114 &1285534578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.43
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 1
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.059
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5.17
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0.12588644, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1001 &1289525184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20864,7 +20942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 1
-  shadowResolution: 8192
+  shadowResolution: 4096
   shadowDimmer: 1
   volumetricShadowDimmer: 1
   shadowFadeDistance: 10000
@@ -24521,7 +24599,7 @@ PrefabInstance:
     - target: {fileID: 5949807993692438629, guid: 0408447926da3fa419c563383362c8d5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5949807993692438630, guid: 0408447926da3fa419c563383362c8d5,
         type: 3}
@@ -25818,7 +25896,7 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 23.873241
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -27661,7 +27739,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 3.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -28662,15 +28740,28 @@ MonoBehaviour:
   soundEventInteract:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 210d1bfce92788a4a8dfabfef407692c,
+      type: 2}
   soundEventInspect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: a8e25174cf429394e8f62d7a2e302265,
+      type: 2}
+  soundEventVoiceInteract:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0f80d88415a6f404591a986795785f09,
+      type: 2}
+  soundEventVoiceInspect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f1ca191f9c789e14daa8cf5ae842887d,
+      type: 2}
   soundEventMusicBoxNotePut:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 67c1d41cb854dc142b6fde5b69e865d7,
+      type: 2}
   _partToFind: {fileID: 1665958901}
   _cameraFollow: {fileID: 1572083506}
   _cameraLookAt: {fileID: 1478818113}
@@ -35256,12 +35347,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4529236212465485411, guid: e3fba371171de6d439fe7226d41b372d,
+    - target: {fileID: 3980534291395557278, guid: e3fba371171de6d439fe7226d41b372d,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3980534291395557278, guid: e3fba371171de6d439fe7226d41b372d,
+    - target: {fileID: 4529236212465485411, guid: e3fba371171de6d439fe7226d41b372d,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -36041,31 +36132,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.00000009685735
       objectReference: {fileID: 0}
-    - target: {fileID: 1295143319597373499, guid: e3fba371171de6d439fe7226d41b372d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295143319597373499, guid: e3fba371171de6d439fe7226d41b372d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295143319597373499, guid: e3fba371171de6d439fe7226d41b372d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.143
-      objectReference: {fileID: 0}
-    - target: {fileID: 4031688829726857157, guid: e3fba371171de6d439fe7226d41b372d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.030430928
-      objectReference: {fileID: 0}
-    - target: {fileID: 4031688829726857157, guid: e3fba371171de6d439fe7226d41b372d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.11263943
-      objectReference: {fileID: 0}
     - target: {fileID: 7842715566096055620, guid: e3fba371171de6d439fe7226d41b372d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -36096,6 +36162,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9508a29667fa5b54e95d3a8e491f4d22, type: 2}
+    - target: {fileID: 5744888356181306447, guid: e3fba371171de6d439fe7226d41b372d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9508a29667fa5b54e95d3a8e491f4d22, type: 2}
+    - target: {fileID: 1295143319597373499, guid: e3fba371171de6d439fe7226d41b372d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295143319597373499, guid: e3fba371171de6d439fe7226d41b372d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295143319597373499, guid: e3fba371171de6d439fe7226d41b372d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.143
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031688829726857157, guid: e3fba371171de6d439fe7226d41b372d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.030430928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031688829726857157, guid: e3fba371171de6d439fe7226d41b372d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11263943
+      objectReference: {fileID: 0}
     - target: {fileID: 1349338329280680395, guid: e3fba371171de6d439fe7226d41b372d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -36106,11 +36202,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dcc5d22bdc6c18844a64fff6df23301b, type: 2}
-    - target: {fileID: 5744888356181306447, guid: e3fba371171de6d439fe7226d41b372d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9508a29667fa5b54e95d3a8e491f4d22, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3fba371171de6d439fe7226d41b372d, type: 3}
 --- !u!4 &4042724173576555515 stripped

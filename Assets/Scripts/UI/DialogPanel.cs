@@ -7,7 +7,7 @@ public class DialogPanel : MonoBehaviour
 {
     public static DialogPanel instance { get; private set; }
 
-    Text _textZone;
+    [SerializeField] Text _textZone;
 
     private void Awake()
     {
@@ -18,13 +18,14 @@ public class DialogPanel : MonoBehaviour
         }
 
         instance = this;
+        //_textZone = GetComponentInChildren<Text>();
     }
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         _textZone = GetComponentInChildren<Text>();
-    }
+    }*/
 
     public void FillTextZone(string pText)
     {

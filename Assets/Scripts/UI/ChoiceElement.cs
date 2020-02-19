@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class ChoiceElement : MonoBehaviour
 {
-    Text _choiceText = null;
-    Animator _choiceAnimator = null;
+    [SerializeField] Text _choiceText = null;
+    [SerializeField] Animator _choiceAnimator = null;
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         _choiceText = GetComponentInChildren<Text>();
         _choiceAnimator = GetComponent<Animator>();
-    }
+    }*/
 
     public void EnableChoiceElement(string pText)
     {
