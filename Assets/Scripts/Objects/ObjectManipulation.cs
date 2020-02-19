@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class ObjectManipulation : MonoBehaviour
 {
-    [SerializeField] float minX = -360.0f;
-    [SerializeField] float maxX = 360.0f;
-
-    [SerializeField] float minY = -180.0f;
-    [SerializeField] float maxY = 180.0f;
-
     [SerializeField] float sensX = 500.0f;
     [SerializeField] float sensY = 500.0f;
 
-    float rotationY = 0.0f;
-    float rotationX = 0.0f;
+    public bool stop = false;
+
+    Camera _camera;
+    [SerializeField] Camera _objectCamera;
+
+    void Start()
+    {
+        _camera = Camera.main;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (PastManager.instance.state == Enums.E_PAST_STATE.INTERACT) Manipulation();
+        if (gameObject.layer != Utils_Variables.LAYER_OBJECT_INTERACT) return;
+        if (!stop) Manipulation();
+        else _objectCamera.fieldOfView = Mathf.Lerp(_objectCamera.fieldOfView, 30.0f, Time.deltaTime);
     }
 
     void Manipulation()
     {
-        rotationX += InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime;
-        rotationY += InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime;
-        //rotationX = Mathf.Clamp(rotationX, minX, maxX);
-        rotationY = Mathf.Clamp(rotationY, minY, maxY);
-        transform.localEulerAngles = new Vector3(rotationY, -rotationX, 0);
+        transform.Rotate(_camera.transform.rotation * new Vector3(InputManager.instance.rightVerticalAxis * sensY * Time.deltaTime, -InputManager.instance.rightHorizontalAxis * sensX * Time.deltaTime, 0), Space.World);
+        transform.Rotate(_camera.transform.rotation * new Vector3(Input.GetAxis("Mouse Y") * sensY * Time.deltaTime, -Input.GetAxis("Mouse X") * sensX * Time.deltaTime, 0), Space.World);
     }
 }

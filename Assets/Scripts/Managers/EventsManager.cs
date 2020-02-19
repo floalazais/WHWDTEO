@@ -3,55 +3,7 @@ using UnityEngine;
 
 public class W_Event { }
 
-#region Inputs Events
-
-public class OnCrossButton : W_Event { }
-public class OnTriangleButton : W_Event { }
-public class OnSquareButton : W_Event { }
-public class OnRoundButton : W_Event { }
-
-public class OnRightStickMove : W_Event
-{
-    public Vector3 move;
-    public OnRightStickMove(Vector3 pVec)
-    {
-        move = pVec;
-    }
-}
-
-public class OnLeftStickMove : W_Event
-{
-    public Vector3 move;
-    public OnLeftStickMove(Vector3 pVec)
-    {
-        move = pVec;
-    }
-}
-
-public class OnTouch : W_Event { }
-public class OnReleaseTouch : W_Event { }
-
-#endregion
-
 #region Gamepad Events
-
-public class ONR1Button : W_Event { }
-public class ONR2ButtonDown : W_Event { }
-public class ONR2ButtonUp : W_Event { }
-public class ONL1Button : W_Event { }
-public class ONL2Button : W_Event { }
-
-public class OnMenuButton : W_Event { }
-public class OnShareButton : W_Event { }
-public class OnOptionsButton : W_Event { }
-
-public class OnLeftStickButton : W_Event { }
-public class OnRightStickButton : W_Event { }
-
-public class OnDPadRightButton : W_Event { }
-public class OnDPadLeftButton : W_Event { }
-public class OnDPadBottomButton : W_Event { }
-public class OnDPadUpButton : W_Event { }
 
 public class OnVibrate : W_Event
 {
@@ -72,6 +24,30 @@ public class OnStopVibrate : W_Event { }
 public class OnLightSwitchColor : W_Event { }
 public class OnLightFlash : W_Event { }
 #endregion
+
+public class OnAnimatorEvent : W_Event
+{
+    public Enums.E_CHARACTER character;
+    public string animatorParameter;
+
+    public OnAnimatorEvent(Enums.E_CHARACTER pCharacter, string pAnimatorParameter)
+    {
+        character = pCharacter;
+        animatorParameter = pAnimatorParameter;
+    }
+}
+
+public class OnFacialEvent : W_Event
+{
+    public Enums.E_CHARACTER character;
+    public string facialParameter;
+
+    public OnFacialEvent(Enums.E_CHARACTER pCharacter, string pFacialParameter)
+    {
+        character = pCharacter;
+        facialParameter = pFacialParameter;
+    }
+}
 
 public class EventsManager
 {

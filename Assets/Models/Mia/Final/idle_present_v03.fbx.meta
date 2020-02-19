@@ -1,0 +1,816 @@
+fileFormatVersion: 2
+guid: 7a5bdc3046fcd794085e0c21c487bc98
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Mia Idle Present
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Mia Idle Present
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.35151538
+        functionName: BreathPresenceEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.400164
+        functionName: IdleClothPresenceEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: idle_present_v03(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia
+      parentName: idle_present_v03(Clone)
+      position: {x: -0, y: 1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_lashes
+      parentName: Mia_rig_13_Eleonore_Mia
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_snood_top
+      parentName: Mia_rig_13_Eleonore_Mia
+      position: {x: -0, y: -1.9895197e-13, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_top_LP
+      parentName: Mia_rig_13_Eleonore_snood_top
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_echarpe_UVs_LP
+      parentName: Mia_rig_13_Eleonore_snood_top
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_short_converse_earphone
+      parentName: Mia_rig_13_Eleonore_Mia
+      position: {x: -0, y: -1.9895197e-13, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_shoes_retopo_LP
+      parentName: Mia_rig_13_Eleonore_short_converse_earphone
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_earphone_LP
+      parentName: Mia_rig_13_Eleonore_short_converse_earphone
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_LP
+      parentName: Mia_rig_13_Eleonore_Mia
+      position: {x: -0, y: -1.4891322, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_ctrl_base1
+      parentName: idle_present_v03(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_ctrl_root
+      parentName: Mia_rig_13_Eleonore_ctrl_base1
+      position: {x: 0.0012197831, y: 0.91199124, z: -0.010121288}
+      rotation: {x: -0.090571105, y: -0.025403034, z: -0.009702695, w: 0.9955187}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_ctrl_spine1
+      parentName: Mia_rig_13_Eleonore_ctrl_root
+      position: {x: -0, y: 0.108775705, z: 0.031565227}
+      rotation: {x: 0.058264975, y: 0.02707265, z: 0.0145178, w: 0.9978284}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_ctrl_spine2
+      parentName: Mia_rig_13_Eleonore_ctrl_spine1
+      position: {x: -1.4901161e-10, y: 0.12039932, z: -0.0024945831}
+      rotation: {x: 0.14540194, y: 0.021735407, z: -0.002135567, w: 0.98913157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_ctrl_chest
+      parentName: Mia_rig_13_Eleonore_ctrl_spine2
+      position: {x: 1.4901161e-10, y: 0.11807563, z: -0.031625528}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_ctrl_neck
+      parentName: Mia_rig_13_Eleonore_ctrl_chest
+      position: {x: -0, y: 0.08998169, z: -0.0045215036}
+      rotation: {x: -0.008538332, y: -0.029966777, z: 0.03988945, w: 0.99871814}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_ctrl_head
+      parentName: Mia_rig_13_Eleonore_ctrl_neck
+      position: {x: -0, y: 0.07174103, z: 0.02685606}
+      rotation: {x: 0.12231515, y: 0.007750152, z: 0.020166371, w: 0.99225616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_L_eye_up_ctrl
+      parentName: Mia_rig_13_Eleonore_ctrl_head
+      position: {x: -0.03278773, y: 0.09108087, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_L_eye_down_ctrl
+      parentName: Mia_rig_13_Eleonore_ctrl_head
+      position: {x: -0.03278773, y: 0.054371767, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_R_eye_down_ctrl
+      parentName: Mia_rig_13_Eleonore_ctrl_head
+      position: {x: 0.03391725, y: 0.054371767, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_R_eye_up_ctrl
+      parentName: Mia_rig_13_Eleonore_ctrl_head
+      position: {x: 0.03391725, y: 0.09108087, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Eyes_up_ctrl
+      parentName: Mia_rig_13_Eleonore_ctrl_head
+      position: {x: 0.00078413583, y: 0.089394435, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Eyes_down_ctrl
+      parentName: Mia_rig_13_Eleonore_ctrl_head
+      position: {x: 0.00078413583, y: 0.060257576, z: 0.10814406}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Hip
+      parentName: Mia_rig_13_Eleonore_ctrl_root
+      position: {x: -3.7252902e-11, y: 0, z: -0.000000009536743}
+      rotation: {x: -0.407351, y: 0.59872836, z: -0.37416017, w: 0.5793045}
+      scale: {x: 1.000002, y: 1.0000017, z: 1.0000014}
+    - name: Mia_rig_13_Eleonore_Spine1
+      parentName: Mia_rig_13_Eleonore_Hip
+      position: {x: -0.113027, y: -0.00730844, z: -1.887833e-11}
+      rotation: {x: 0.98815554, y: -0.15345588, z: 0.000000014901161, w: -0.000000059604645}
+      scale: {x: 1.0000024, y: 1.0000039, z: 1.0000038}
+    - name: Mia_rig_13_Eleonore_Spine2
+      parentName: Mia_rig_13_Eleonore_Spine1
+      position: {x: -0.120133996, y: 0.008369411, z: 1.033195e-10}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000021, y: 1.0000029, z: 1.0000011}
+    - name: Mia_rig_13_Eleonore_Chest
+      parentName: Mia_rig_13_Eleonore_Spine2
+      position: {x: -0.1204459, y: -0.020852398, z: -1.314826e-10}
+      rotation: {x: -0.00000010427768, y: 0.00000011477895, z: 0.13219911, w: 0.9912233}
+      scale: {x: 1.0000042, y: 1.0000029, z: 1.000005}
+    - name: Mia_rig_13_Eleonore_Neck
+      parentName: Mia_rig_13_Eleonore_Chest
+      position: {x: -0.08593064, y: 0.02707553, z: -4.857226e-19}
+      rotation: {x: 0.00000014922294, y: -0.000000030966337, z: -0.3492984, w: 0.93701154}
+      scale: {x: 1.0000004, y: 0.99999976, z: 0.9999981}
+    - name: Mia_rig_13_Eleonore_Head
+      parentName: Mia_rig_13_Eleonore_Neck
+      position: {x: -0.076602936, y: -4.973799e-16, z: 5.620504e-18}
+      rotation: {x: -0.0016855664, y: 0.0051626647, z: -0.042593867, w: -0.99907774}
+      scale: {x: 1.0000015, y: 1.0000023, z: 1.000001}
+    - name: Mia_rig_13_Eleonore_eye_new
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.099987336, y: 0.06843677, z: 0.00028064847}
+      rotation: {x: -0.5610549, y: 0.43036893, z: 0.56569624, w: 0.42424968}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_eye_inside_L
+      parentName: Mia_rig_13_Eleonore_eye_new
+      position: {x: -0.030743167, y: -0.0026617125, z: -0.02648834}
+      rotation: {x: 0.13331673, y: -0.011859282, z: -0.061106227, w: 0.98911685}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_eye_outside_L
+      parentName: Mia_rig_13_Eleonore_eye_new
+      position: {x: -0.030743165, y: -0.0026617146, z: -0.026002469}
+      rotation: {x: 0.13341175, y: -0.011868039, z: -0.061103206, w: 0.9891041}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_eye_inside_R
+      parentName: Mia_rig_13_Eleonore_eye_new
+      position: {x: 0.030685226, y: -0.0026617125, z: -0.02648834}
+      rotation: {x: 0.13798054, y: -0.011773948, z: -0.061239794, w: 0.9884698}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_eye_outside_R
+      parentName: Mia_rig_13_Eleonore_eye_new
+      position: {x: 0.030685224, y: -0.0026617146, z: -0.026002469}
+      rotation: {x: 0.13807826, y: -0.011782577, z: -0.061236884, w: 0.9884562}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_hair_LP
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.095850065, y: 0.06959507, z: 0.0002339816}
+      rotation: {x: -0.5610549, y: 0.43036893, z: 0.56569624, w: 0.42424968}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_mouth_cavity_up_LP
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.042105865, y: 0.07128773, z: -0.00033313394}
+      rotation: {x: -0.5610549, y: 0.43036893, z: 0.56569624, w: 0.42424968}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Top_Head
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.18723328, y: 6.3948854e-16, z: -2.442491e-17}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_R_forehead
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.1314532, y: 0.04776752, z: -0.03748064}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Mia_rig_13_Eleonore_R_eyebrow_up
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.1255268, y: 0.063245706, z: -0.006232626}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Mia_rig_13_Eleonore_R_eyebrow_end
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.10481829, y: 0.05245131, z: -0.048758402}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000012}
+    - name: Mia_rig_13_Eleonore_R_eyebrow_middle
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.104135, y: 0.06367027, z: -0.03409646}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000012}
+    - name: Mia_rig_13_Eleonore_R_eyebrow_beginning
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.1238539, y: 0.06455718, z: -0.01063107}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000012}
+    - name: Mia_rig_13_Eleonore_R_cheek
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.06989877, y: 0.06423496, z: -0.050267026}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000012}
+    - name: Mia_rig_13_Eleonore_R_nose
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.06800204, y: 0.07889311, z: -0.009934223}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000012}
+    - name: Mia_rig_13_Eleonore_R_nose_down
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.05252665, y: 0.07454946, z: -0.01725669}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Mia_rig_13_Eleonore_R_lip_up
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.045404248, y: 0.08533679, z: -0.01322893}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Mia_rig_13_Eleonore_L_eyebrow_up
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.1253836, y: 0.06328579, z: 0.0073570027}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_L_nose_down
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.05217501, y: 0.074647896, z: 0.01678537}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_L_forehead
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.1306515, y: 0.047991958, z: 0.03881225}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_L_eyebrow_end
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.09525391, y: 0.05512912, z: 0.04940655}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: Mia_rig_13_Eleonore_L_eyebrow_middle
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.10231439, y: 0.06433947, z: 0.03201669}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: Mia_rig_13_Eleonore_L_eyebrow_beginning
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.121601, y: 0.06520892, z: 0.007108613}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: Mia_rig_13_Eleonore_L_cheek
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.06884784, y: 0.06452923, z: 0.050211657}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: Mia_rig_13_Eleonore_L_nose
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.06779614, y: 0.07895075, z: 0.009762833}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: Mia_rig_13_Eleonore_L_lip_up
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.04513845, y: 0.085411206, z: 0.0125464}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_Forehead_middle
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.1449039, y: 0.052283548, z: 0.00079778023}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_Lip_up_middle
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.04772064, y: 0.092439115, z: -0.0003363432}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_L_cheek_down
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.0448785, y: 0.06977191, z: 0.03696368}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000002}
+    - name: Mia_rig_13_Eleonore_Jaw
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.01204004, y: 0.03420133, z: -0.00053915236}
+      rotation: {x: 0.7091914, y: -0.7049955, z: -0.0026545443, w: 0.0046864212}
+      scale: {x: 1.0000014, y: 1, z: 1.0000025}
+    - name: Mia_rig_13_Eleonore_Mia_tongue_LP
+      parentName: Mia_rig_13_Eleonore_Jaw
+      position: {x: -0.038021166, y: 0.08658682, z: -0.000006733249}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Mia_mouth_cavity_down_LP
+      parentName: Mia_rig_13_Eleonore_Jaw
+      position: {x: -0.0405891, y: 0.012758323, z: -0.000000285582}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Lip_down_middle
+      parentName: Mia_rig_13_Eleonore_Jaw
+      position: {x: -0.05833148, y: 0.02114068, z: -0.0000005908155}
+      rotation: {x: -0.09416757, y: -0.70080847, z: -0.094104685, w: 0.7008168}
+      scale: {x: 0.999999, y: 1.0000001, z: 0.99999964}
+    - name: Mia_rig_13_Eleonore_Chin
+      parentName: Mia_rig_13_Eleonore_Jaw
+      position: {x: -0.060241297, y: 8.5265126e-16, z: -1.9810539e-17}
+      rotation: {x: -0.009592097, y: 0.016847108, z: -0.7047992, w: 0.7091419}
+      scale: {x: 1.000001, y: 1.0000004, z: 1}
+    - name: Mia_rig_13_Eleonore_L_lip_down
+      parentName: Mia_rig_13_Eleonore_Jaw
+      position: {x: -0.052118327, y: 0.01793241, z: -0.01262395}
+      rotation: {x: -0.09416757, y: -0.70080847, z: -0.094104685, w: 0.7008168}
+      scale: {x: 0.9999985, y: 1.0000002, z: 0.9999993}
+    - name: Mia_rig_13_Eleonore_R_lip_down
+      parentName: Mia_rig_13_Eleonore_Jaw
+      position: {x: -0.052117307, y: 0.01793609, z: 0.012623039}
+      rotation: {x: 0.70081687, y: -0.094104715, z: 0.7008085, w: 0.09416757}
+      scale: {x: 0.9999997, y: 1.0000042, z: 1.0000024}
+    - name: Mia_rig_13_Eleonore_R_lower_jaw
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.02329664, y: 0.05144372, z: -0.041480176}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000006, y: 0.99999964, z: 0.9999998}
+    - name: Mia_rig_13_Eleonore_R_cheek_down
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.04565565, y: 0.06955432, z: -0.037554316}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000006, y: 0.99999964, z: 0.9999998}
+    - name: Mia_rig_13_Eleonore_R_lip_corner
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.030966679, y: 0.074641004, z: -0.027230151}
+      rotation: {x: -0.4242494, y: -0.5656964, z: 0.43036875, w: -0.56105506}
+      scale: {x: 1.0000006, y: 0.99999964, z: 0.9999998}
+    - name: Mia_rig_13_Eleonore_L_lower_jaw
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.022441119, y: 0.051683288, z: 0.040527046}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.0000002}
+    - name: Mia_rig_13_Eleonore_L_lip_corner
+      parentName: Mia_rig_13_Eleonore_Head
+      position: {x: -0.03175137, y: 0.07767449, z: 0.02631052}
+      rotation: {x: 0.56105506, y: -0.43036878, z: -0.5656964, w: -0.42424947}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.0000002}
+    - name: Mia_rig_13_Eleonore_L_Clavicle
+      parentName: Mia_rig_13_Eleonore_Chest
+      position: {x: -0.02192632, y: 0.046058387, z: 0.053704936}
+      rotation: {x: -0.4964383, y: 0.62442327, z: 0.30116475, w: 0.5224408}
+      scale: {x: 0.99999857, y: 0.9999993, z: 0.99999934}
+    - name: Mia_rig_13_Eleonore_L_Arm
+      parentName: Mia_rig_13_Eleonore_L_Clavicle
+      position: {x: -0.07032462, y: -0.02378025, z: -0.045474272}
+      rotation: {x: -0.6443669, y: -0.18834294, z: -0.0077258907, w: 0.74111986}
+      scale: {x: 1.0000004, y: 1.0000007, z: 0.99999946}
+    - name: Mia_rig_13_Eleonore_L_Elbow
+      parentName: Mia_rig_13_Eleonore_L_Arm
+      position: {x: -0.24949989, y: -0.00295139, z: 0.01214844}
+      rotation: {x: 0.9970221, y: 0.06571709, z: -0.03966605, w: 0.0074085505}
+      scale: {x: 1.0000011, y: 0.99999845, z: 0.99999976}
+    - name: Mia_rig_13_Eleonore_L_Wrist
+      parentName: Mia_rig_13_Eleonore_L_Elbow
+      position: {x: -0.20465429, y: -0.01240085, z: 2.842171e-16}
+      rotation: {x: -0.38409734, y: -0.500633, z: -0.4689742, w: 0.61797976}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1}
+    - name: Mia_rig_13_Eleonore_L_Index_01
+      parentName: Mia_rig_13_Eleonore_L_Wrist
+      position: {x: -0.0032812299, y: -0.08935545, z: 0.031245228}
+      rotation: {x: -0.24691056, y: -0.26203123, z: 0.6873355, w: 0.63082874}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1}
+    - name: Mia_rig_13_Eleonore_L_Index_02
+      parentName: Mia_rig_13_Eleonore_L_Index_01
+      position: {x: -0.03391164, y: -0.002260747, z: -0.0005548884}
+      rotation: {x: 0.0063102804, y: -0.028910348, z: 0.073507145, w: 0.99685556}
+      scale: {x: 1.000001, y: 1.0000011, z: 1.0000001}
+    - name: Mia_rig_13_Eleonore_L_Index_03
+      parentName: Mia_rig_13_Eleonore_L_Index_02
+      position: {x: -0.020667719, y: 0.00009233852, z: 0.00064176734}
+      rotation: {x: 0.07016898, y: -0.018130284, z: -0.06769052, w: 0.99507064}
+      scale: {x: 0.99999994, y: 1, z: 0.9999998}
+    - name: Mia_rig_13_Eleonore_L_Index_04
+      parentName: Mia_rig_13_Eleonore_L_Index_03
+      position: {x: -0.01705299, y: -0.003464779, z: 0.001432941}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.99999976}
+    - name: Mia_rig_13_Eleonore_L_Middle_01
+      parentName: Mia_rig_13_Eleonore_L_Wrist
+      position: {x: 0.0074151126, y: -0.08433502, z: 0.01616766}
+      rotation: {x: -0.062023357, y: -0.016748331, z: -0.058917075, w: 0.9961935}
+      scale: {x: 1.0000004, y: 1, z: 1.0000005}
+    - name: Mia_rig_13_Eleonore_L_Middle_02
+      parentName: Mia_rig_13_Eleonore_L_Middle_01
+      position: {x: 0.0110153, y: -0.03385582, z: -0.00197182}
+      rotation: {x: 0.52114564, y: 0.7501613, z: 0.33610275, w: 0.22956508}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000002}
+    - name: Mia_rig_13_Eleonore_L_Middle_03
+      parentName: Mia_rig_13_Eleonore_L_Middle_02
+      position: {x: -0.02209377, y: 5.355525e-18, z: 5.84698e-18}
+      rotation: {x: 0.061405867, y: 0.0023379014, z: -0.037998386, w: 0.99738663}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000011}
+    - name: Mia_rig_13_Eleonore_L_Middle_04
+      parentName: Mia_rig_13_Eleonore_L_Middle_03
+      position: {x: -0.0207501, y: 5.8887376e-19, z: -4.8555047e-19}
+      rotation: {x: -0.30632535, y: -0.88376564, z: -0.21039465, w: 0.28435394}
+      scale: {x: 1, y: 1.0000005, z: 1.0000001}
+    - name: Mia_rig_13_Eleonore_L_Ring_01
+      parentName: Mia_rig_13_Eleonore_L_Wrist
+      position: {x: 0.017866729, y: -0.077179, z: -0.000025377529}
+      rotation: {x: -0.03324981, y: -0.018603047, z: -0.08178856, w: 0.99592125}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000007}
+    - name: Mia_rig_13_Eleonore_L_Ring_02
+      parentName: Mia_rig_13_Eleonore_L_Ring_01
+      position: {x: 0.01318367, y: -0.0312343, z: 0.0017446791}
+      rotation: {x: 0.46407577, y: 0.77901316, z: 0.32850596, w: 0.26430297}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000007}
+    - name: Mia_rig_13_Eleonore_L_Ring_03
+      parentName: Mia_rig_13_Eleonore_L_Ring_02
+      position: {x: -0.022933781, y: 0, z: 3.552714e-17}
+      rotation: {x: 0.009313146, y: 0.004733649, z: -0.037635215, w: 0.99923694}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999996}
+    - name: Mia_rig_13_Eleonore_L_Ring_04
+      parentName: Mia_rig_13_Eleonore_L_Ring_03
+      position: {x: -0.019371599, y: -3.63598e-17, z: -3.552714e-17}
+      rotation: {x: -0.30042198, y: -0.8733198, z: -0.23025903, w: 0.30665934}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
+    - name: Mia_rig_13_Eleonore_L_Thumb_01
+      parentName: Mia_rig_13_Eleonore_L_Wrist
+      position: {x: 0.001207263, y: -0.03383347, z: 0.034982007}
+      rotation: {x: -0.016497277, y: -0.06069708, z: -0.04841321, w: 0.996845}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000006}
+    - name: Mia_rig_13_Eleonore_L_Thumb_02
+      parentName: Mia_rig_13_Eleonore_L_Thumb_01
+      position: {x: 0.0045404336, y: -0.020925751, z: 0.02468816}
+      rotation: {x: -0.09482058, y: -0.13058357, z: -0.09324471, w: 0.9824777}
+      scale: {x: 1.0000004, y: 1, z: 0.9999998}
+    - name: Mia_rig_13_Eleonore_L_Thumb_03
+      parentName: Mia_rig_13_Eleonore_L_Thumb_02
+      position: {x: 0.014498389, y: -0.021215988, z: 0.014968379}
+      rotation: {x: 0.48645574, y: 0.7253923, z: -0.48666564, w: -0.017983617}
+      scale: {x: 1.0000021, y: 1.0000014, z: 1.0000035}
+    - name: Mia_rig_13_Eleonore_L_Thumb_04
+      parentName: Mia_rig_13_Eleonore_L_Thumb_03
+      position: {x: -0.02023586, y: 0, z: 5.3290707e-17}
+      rotation: {x: -0.37667003, y: -0.72361577, z: 0.55493206, w: -0.1629431}
+      scale: {x: 0.99999964, y: 1.0000002, z: 1.0000001}
+    - name: Mia_rig_13_Eleonore_L_Pinkie_01
+      parentName: Mia_rig_13_Eleonore_L_Wrist
+      position: {x: 0.02817842, y: -0.0668725, z: -0.01027375}
+      rotation: {x: -0.027135642, y: -0.02070581, z: -0.09556185, w: 0.9948382}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000008}
+    - name: Mia_rig_13_Eleonore_L_Pinkie_02
+      parentName: Mia_rig_13_Eleonore_L_Pinkie_01
+      position: {x: 0.0115709305, y: -0.02502599, z: 0.0021367269}
+      rotation: {x: 0.1328693, y: -0.41621056, z: 0.14071956, w: 0.8884326}
+      scale: {x: 1.0000002, y: 0.99999976, z: 0.99999976}
+    - name: Mia_rig_13_Eleonore_L_Pinkie_03
+      parentName: Mia_rig_13_Eleonore_L_Pinkie_02
+      position: {x: 0.004124245, y: -0.015529931, z: 0.001607749}
+      rotation: {x: 0.6811611, y: 0.7304224, z: -0.017657755, w: 0.046809055}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000004}
+    - name: Mia_rig_13_Eleonore_L_Pinkie_04
+      parentName: Mia_rig_13_Eleonore_L_Pinkie_03
+      position: {x: -0.01264227, y: 0.0034199369, z: 0.0001507154}
+      rotation: {x: 0.06685482, y: -0.26687688, z: 0.01833397, w: 0.9612342}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000008}
+    - name: Mia_rig_13_Eleonore_R_Clavicle
+      parentName: Mia_rig_13_Eleonore_Chest
+      position: {x: -0.02192789, y: 0.04605894, z: -0.05370496}
+      rotation: {x: 0.62442356, y: 0.49643773, z: -0.5224408, w: 0.30116528}
+      scale: {x: 0.9999973, y: 0.9999998, z: 0.99999934}
+    - name: Mia_rig_13_Eleonore_R_Arm
+      parentName: Mia_rig_13_Eleonore_R_Clavicle
+      position: {x: 0.07032479, y: 0.02378, z: 0.0454745}
+      rotation: {x: -0.64141124, y: -0.18842606, z: -0.007063326, w: 0.7436648}
+      scale: {x: 1.0000017, y: 1.0000018, z: 1.0000013}
+    - name: Mia_rig_13_Eleonore_R_Elbow
+      parentName: Mia_rig_13_Eleonore_R_Arm
+      position: {x: 0.2495034, y: 0.0029529477, z: -0.012146309}
+      rotation: {x: -0.99706256, y: -0.06628622, z: 0.03757403, w: -0.007785973}
+      scale: {x: 1.0000012, y: 1.0000012, z: 1.000001}
+    - name: Mia_rig_13_Eleonore_R_Wrist
+      parentName: Mia_rig_13_Eleonore_R_Elbow
+      position: {x: 0.20515159, y: 0.012667679, z: 0.0009779898}
+      rotation: {x: 0.38723928, y: 0.50291955, z: 0.46763796, w: -0.6151686}
+      scale: {x: 1.0000004, y: 1.0000027, z: 1.0000002}
+    - name: Mia_rig_13_Eleonore_R_Index_01
+      parentName: Mia_rig_13_Eleonore_R_Wrist
+      position: {x: 0.003281851, y: 0.08935591, z: -0.0312455}
+      rotation: {x: -0.24691263, y: -0.26202917, z: 0.68733525, w: 0.6308289}
+      scale: {x: 1.0000005, y: 1.000001, z: 0.99999994}
+    - name: Mia_rig_13_Eleonore_R_Index_02
+      parentName: Mia_rig_13_Eleonore_R_Index_01
+      position: {x: 0.03391101, y: 0.0022606568, z: 0.00055487745}
+      rotation: {x: 0.0063102073, y: -0.028900836, z: 0.073492594, w: 0.9968569}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000011}
+    - name: Mia_rig_13_Eleonore_R_Index_03
+      parentName: Mia_rig_13_Eleonore_R_Index_02
+      position: {x: 0.02066816, y: -0.00009190303, z: -0.0006414446}
+      rotation: {x: -0.012928857, y: 0.009143427, z: -0.026941614, w: 0.9995116}
+      scale: {x: 1.000001, y: 1.0000011, z: 1.0000015}
+    - name: Mia_rig_13_Eleonore_R_Index_04
+      parentName: Mia_rig_13_Eleonore_R_Index_03
+      position: {x: 0.017182799, y: 0.002164827, z: 0.0002775125}
+      rotation: {x: -9.3132235e-10, y: -0, z: -6.8212085e-12, w: 1}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.0000008}
+    - name: Mia_rig_13_Eleonore_R_Middle_01
+      parentName: Mia_rig_13_Eleonore_R_Wrist
+      position: {x: -0.0074147307, y: 0.08433495, z: -0.01616806}
+      rotation: {x: -0.062022865, y: -0.016749136, z: -0.058923185, w: 0.9961932}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1}
+    - name: Mia_rig_13_Eleonore_R_Middle_02
+      parentName: Mia_rig_13_Eleonore_R_Middle_01
+      position: {x: -0.01101572, y: 0.033855777, z: 0.001971549}
+      rotation: {x: 0.1895489, y: -0.3123441, z: -0.09431676, w: 0.92607605}
+      scale: {x: 1.0000002, y: 1.0000012, z: 1.0000008}
+    - name: Mia_rig_13_Eleonore_R_Middle_03
+      parentName: Mia_rig_13_Eleonore_R_Middle_02
+      position: {x: -0.01210312, y: 0.01844575, z: -0.001178451}
+      rotation: {x: -0.89678645, y: 0.4413941, z: -0.015198339, w: -0.026727956}
+      scale: {x: 1.0000001, y: 1.0000005, z: 0.99999994}
+    - name: Mia_rig_13_Eleonore_R_Middle_04
+      parentName: Mia_rig_13_Eleonore_R_Middle_03
+      position: {x: -0.02075037, y: 8.8817837e-17, z: 3.552714e-17}
+      rotation: {x: 0.8837659, y: -0.30630696, z: 0.28436455, w: 0.21040642}
+      scale: {x: 1.0000008, y: 1.000001, z: 1.0000017}
+    - name: Mia_rig_13_Eleonore_R_Ring_01
+      parentName: Mia_rig_13_Eleonore_R_Wrist
+      position: {x: -0.017866079, y: 0.07717886, z: 0.0000246731}
+      rotation: {x: -0.033259775, y: -0.01860675, z: -0.0818029, w: 0.9959197}
+      scale: {x: 1, y: 1.0000004, z: 1.0000004}
+    - name: Mia_rig_13_Eleonore_R_Ring_02
+      parentName: Mia_rig_13_Eleonore_R_Ring_01
+      position: {x: -0.013184269, y: 0.03123423, z: -0.0017438959}
+      rotation: {x: 0.08307268, y: -0.3507306, z: 0.10140606, w: 0.92725605}
+      scale: {x: 1, y: 0.99999946, z: 0.9999993}
+    - name: Mia_rig_13_Eleonore_R_Ring_03
+      parentName: Mia_rig_13_Eleonore_R_Ring_02
+      position: {x: -0.006191754, y: 0.02208148, z: -0.00020337448}
+      rotation: {x: -0.81923544, y: 0.5730252, z: -0.017260117, w: 0.01405378}
+      scale: {x: 1.0000006, y: 1, z: 1.0000006}
+    - name: Mia_rig_13_Eleonore_R_Ring_04
+      parentName: Mia_rig_13_Eleonore_R_Ring_03
+      position: {x: -0.01937149, y: -4.440892e-18, z: -1.065814e-16}
+      rotation: {x: 0.8733509, y: -0.30046803, z: 0.306609, w: 0.23014797}
+      scale: {x: 1.000001, y: 1.0000014, z: 1.0000013}
+    - name: Mia_rig_13_Eleonore_R_Thumb_01
+      parentName: Mia_rig_13_Eleonore_R_Wrist
+      position: {x: -0.0012067, y: 0.033833858, z: -0.034982298}
+      rotation: {x: -0.016531713, y: -0.060156286, z: -0.047946446, w: 0.9968997}
+      scale: {x: 1, y: 1.0000017, z: 1.0000014}
+    - name: Mia_rig_13_Eleonore_R_Thumb_02
+      parentName: Mia_rig_13_Eleonore_R_Thumb_01
+      position: {x: -0.0045404336, y: 0.02092498, z: -0.024688179}
+      rotation: {x: -0.09483935, y: -0.13058342, z: -0.09323634, w: 0.98247665}
+      scale: {x: 0.99999976, y: 0.9999998, z: 0.99999946}
+    - name: Mia_rig_13_Eleonore_R_Thumb_03
+      parentName: Mia_rig_13_Eleonore_R_Thumb_02
+      position: {x: -0.014498389, y: 0.021216929, z: -0.01496834}
+      rotation: {x: -0.3883297, y: 0.23796847, z: 0.06512478, w: 0.8878794}
+      scale: {x: 0.99999964, y: 1.0000001, z: 1.0000011}
+    - name: Mia_rig_13_Eleonore_R_Thumb_04
+      parentName: Mia_rig_13_Eleonore_R_Thumb_03
+      position: {x: -0.0060780756, y: 0.019258259, z: 0.001288901}
+      rotation: {x: 0.30248654, y: -0.29991615, z: -0.1709273, w: 0.88844585}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000012}
+    - name: Mia_rig_13_Eleonore_R_Pinkie_01
+      parentName: Mia_rig_13_Eleonore_R_Wrist
+      position: {x: -0.02817804, y: 0.06687256, z: 0.01027367}
+      rotation: {x: -0.027135821, y: -0.020708134, z: -0.09557362, w: 0.9948369}
+      scale: {x: 1, y: 1.0000011, z: 1.000001}
+    - name: Mia_rig_13_Eleonore_R_Pinkie_02
+      parentName: Mia_rig_13_Eleonore_R_Pinkie_01
+      position: {x: -0.01157122, y: 0.025025439, z: -0.002137028}
+      rotation: {x: 0.0730354, y: -0.4111893, z: 0.11656377, w: 0.90111166}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000001}
+    - name: Mia_rig_13_Eleonore_R_Pinkie_03
+      parentName: Mia_rig_13_Eleonore_R_Pinkie_02
+      position: {x: -0.004073678, y: 0.01562417, z: 0.0002735373}
+      rotation: {x: 0.024406692, y: -0.018619316, z: -0.09013622, w: 0.9954563}
+      scale: {x: 1.0000005, y: 1.0000011, z: 1.0000018}
+    - name: Mia_rig_13_Eleonore_R_Pinkie_04
+      parentName: Mia_rig_13_Eleonore_R_Pinkie_03
+      position: {x: -0.0063865045, y: 0.011434489, z: -0.00007139761}
+      rotation: {x: 0.029746398, y: 0.000000022351736, z: -0.000000007101333, w: 0.99955755}
+      scale: {x: 1.0000001, y: 1.0000015, z: 1.0000014}
+    - name: Mia_rig_13_Eleonore_R_Leg
+      parentName: Mia_rig_13_Eleonore_Hip
+      position: {x: 0.0148967095, y: 0.001542309, z: 0.08799455}
+      rotation: {x: 0.0020276157, y: 0.048047595, z: 0.18530828, w: -0.981503}
+      scale: {x: 1.0000012, y: 1.0000012, z: 1.0000026}
+    - name: Mia_rig_13_Eleonore_R_Knee
+      parentName: Mia_rig_13_Eleonore_R_Leg
+      position: {x: 0.4056473, y: -0.00000026610638, z: 0.0000004921854}
+      rotation: {x: -0.0012154324, y: 0.007423206, z: -0.98682904, w: 0.16159175}
+      scale: {x: 1, y: 1.0000001, z: 0.9999998}
+    - name: Mia_rig_13_Eleonore_R_Ankle
+      parentName: Mia_rig_13_Eleonore_R_Knee
+      position: {x: -0.423322, y: 8.569678e-13, z: -4.0323298e-14}
+      rotation: {x: -0.0029122357, y: 0.02096232, z: -0.6231711, w: 0.78179914}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.000001}
+    - name: Mia_rig_13_Eleonore_R_Instep
+      parentName: Mia_rig_13_Eleonore_R_Ankle
+      position: {x: -0.1253464, y: 1.275091e-15, z: -1.158185e-14}
+      rotation: {x: -0.26234636, y: 0.06023632, z: -0.19049779, w: 0.9440639}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000008}
+    - name: Mia_rig_13_Eleonore_R_Tip_toe
+      parentName: Mia_rig_13_Eleonore_R_Instep
+      position: {x: -0.07163678, y: 1.776357e-16, z: 1.829648e-15}
+      rotation: {x: 0.3324367, y: -0.6205732, z: 0.33894703, w: -0.6240911}
+      scale: {x: 1.0000017, y: 1.0000012, z: 1.0000018}
+    - name: Mia_rig_13_Eleonore_L_Leg
+      parentName: Mia_rig_13_Eleonore_Hip
+      position: {x: 0.014896359, y: 0.001542111, z: -0.08686506}
+      rotation: {x: 0.0481702, y: -0.0019744334, z: 0.981809, w: 0.18364851}
+      scale: {x: 1.0000012, y: 1.0000005, z: 1.0000033}
+    - name: Mia_rig_13_Eleonore_L_Knee
+      parentName: Mia_rig_13_Eleonore_L_Leg
+      position: {x: -0.4056475, y: -1.221245e-16, z: 0}
+      rotation: {x: 0.00742744, y: 0.0011908165, z: 0.15830354, w: 0.9873618}
+      scale: {x: 1.0000008, y: 1.0000013, z: 1.0000006}
+    - name: Mia_rig_13_Eleonore_L_Ankle
+      parentName: Mia_rig_13_Eleonore_L_Knee
+      position: {x: -0.423322, y: 1.776357e-17, z: 1.776357e-16}
+      rotation: {x: 0.5551229, y: -0.4549978, z: -0.4262557, w: 0.5505649}
+      scale: {x: 1.0000006, y: 1.0000014, z: 1.0000011}
+    - name: Mia_rig_13_Eleonore_L_Instep
+      parentName: Mia_rig_13_Eleonore_L_Ankle
+      position: {x: -0.1253462, y: 7.0721205e-16, z: 1.698197e-14}
+      rotation: {x: 0.26913077, y: -0.1888548, z: 0.061988086, w: 0.94236934}
+      scale: {x: 1.0000013, y: 1.0000013, z: 1.0000006}
+    - name: Mia_rig_13_Eleonore_L_Tip_toe
+      parentName: Mia_rig_13_Eleonore_L_Instep
+      position: {x: -0.07163679, y: 1.008971e-14, z: -6.8389737e-15}
+      rotation: {x: -0.6205393, y: -0.3325019, z: 0.62405336, w: 0.33901462}
+      scale: {x: 0.9999987, y: 0.9999999, z: 1}
+    - name: Mia_rig_13_Eleonore_BS
+      parentName: idle_present_v03(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Blend2
+      parentName: Mia_rig_13_Eleonore_BS
+      position: {x: 1, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Blend3
+      parentName: Mia_rig_13_Eleonore_BS
+      position: {x: 2, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Blend4
+      parentName: Mia_rig_13_Eleonore_BS
+      position: {x: 3, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Blend5
+      parentName: Mia_rig_13_Eleonore_BS
+      position: {x: 4, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Blend6
+      parentName: Mia_rig_13_Eleonore_BS
+      position: {x: 5, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mia_rig_13_Eleonore_Blend7
+      parentName: Mia_rig_13_Eleonore_BS
+      position: {x: 6, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

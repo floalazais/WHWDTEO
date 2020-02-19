@@ -17,13 +17,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 826d82a0df5b6a4698442fb16fbccb63
     GuidInternal: 
-    m_lastTime: -8586297827672738397
+    m_lastTime: -8586214858803436761
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
     ParentPhysicalPath: 
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8586297827672738397
+    m_lastTime: -8586214858803426787
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -184,14 +184,58 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d3c16c6180e9214b811cce79000f0705
     GuidInternal: 
-    m_lastTime: -8586297661886380443
-    List: []
+    m_lastTime: -8586199217723977874
+    List:
+    - name: Verb_Room
+      guid: a3e841f621df5b49a5c3b91a9a4201f5
+      id: 3881977292
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Verb_Room
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Verb_Room
+    - name: Verb_Tel
+      guid: c68980b691058b4ab818e3e2c43e0671
+      id: 3425285356
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Verb_Tel
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Verb_Tel
+    - name: Verb_Voices
+      guid: b096687a3b417c4b9d7062e6a7d2f219
+      id: 499544900
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Verb_Voices
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Verb_Voices
+    - name: Verb_Void
+      guid: d009c374c7cd1e4a83255799794efb9c
+      id: 2516427327
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Verb_Void
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Verb_Void
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: b222b46ee4f2a243959616747331dcc5
     GuidInternal: 
-    m_lastTime: -8586297661886380443
+    m_lastTime: -8586199929940197525
     List:
     - name: Soundbank_WHWDTEO
       guid: a3b75edf5ea5ed47ac4612fb56c6e681
@@ -207,17 +251,3249 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 607f7b4e00248847877af15e8f82926c
     GuidInternal: 
-    m_lastTime: -8586297661886430314
+    m_lastTime: -8586199217724037712
     List:
-    - name: Event_Sine_Test
-      guid: 24acb70a5313e4408f36fb9ac32c3fc3
-      id: 2614624848
+    - name: Play_1000_Hz
+      guid: 65a38d4ac3fe7e43ba85fdd664665480
+      id: 1561902362
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Event_Sine_Test
+      - ElementName: Play_1000_Hz
         ObjectType: 3
-      Path: Default Work Unit\Event_Sine_Test
+      Path: Default Work Unit\Play_1000_Hz
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_APP_MAIN
+      guid: 8ad9f86c84b02c4fb3516e2c07ed6835
+      id: 3183169333
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_APP_MAIN
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_APP_MAIN
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Apparition_Peluche
+      guid: ca4ad17e547f1441b1c0cc5779e757f2
+      id: 954874942
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Apparition_Peluche
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Apparition_Peluche
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Begin_Memory
+      guid: a9c687dc0f9f2d49a41d1eb4eb6789c8
+      id: 209410981
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Begin_Memory
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Begin_Memory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_boite_musique_pose
+      guid: 87edd664339f534db6c08adaa89be909
+      id: 3876386679
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_boite_musique_pose
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_boite_musique_pose
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_boite_musique_prise
+      guid: 14374cc8c9240546b8f7ddf8b2987825
+      id: 2596626359
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_boite_musique_prise
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_boite_musique_prise
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Bouton_Tel
+      guid: 0472c42728041e4f8f3f51bc6bfd3010
+      id: 3454515561
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Bouton_Tel
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Bouton_Tel
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Breath_Idle
+      guid: 575a4e4e6f8146489ba98e2a7a2a17d6
+      id: 2446688129
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Breath_Idle
+        ObjectType: 3
+      Path: Default Work Unit\Play_Breath_Idle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CARRELAGE
+      guid: 2343e873bb12db41bfcbdac5af80b3cc
+      id: 748170922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_CARRELAGE
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_CARRELAGE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Concentrate_1
+      guid: a51a2b82c61cd044927ade0af371e928
+      id: 914670302
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Concentrate_1
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Concentrate_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Concentrate_2
+      guid: 742a1257b2fa944baa33fc9413fb1178
+      id: 914670301
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Concentrate_2
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Concentrate_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_01
+      guid: e6427cb3856143499a7699f10fa9cb4f
+      id: 1139314818
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_02
+      guid: 702175dbf97cc6479c30f51a198a10ee
+      id: 1139314817
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_02_Bis
+      guid: ea75344dfa34ce49b8865085b130912b
+      id: 450872754
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_02_Bis
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_02_Bis
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_03
+      guid: 67bb1758f487364faed908e5a5129349
+      id: 1139314816
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_04
+      guid: c96fb75114c89844b3728ad3dc3cc3ce
+      id: 1139314823
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_05
+      guid: 2cae8e0c9f55664c9c95ca48e9b240ee
+      id: 1139314822
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_06
+      guid: c64d2e4f8765444caa7339c8498433ae
+      id: 1139314821
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_07
+      guid: c0063bf5d95e6b4c81abf9408c1d84bf
+      id: 1139314820
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_08
+      guid: 6205cd2c273ca04bb48415c5fa4593d1
+      id: 1139314827
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_09
+      guid: b6fac630a545a44797229996191a9cc8
+      id: 1139314826
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dialogue_10
+      guid: 18dddd406b4bd64c922f37cc06b4971f
+      id: 1122537232
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Dialogue_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Dialogue_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_DISP_MAIN
+      guid: 178372e94536b147b3ff427e9b34621b
+      id: 597989206
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_DISP_MAIN
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_DISP_MAIN
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_DISP_MAIN_Music_Box
+      guid: d9e64caf299df446bb7804319a877d84
+      id: 194378304
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_DISP_MAIN_Music_Box
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_DISP_MAIN_Music_Box
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Enlevage_Pile_1
+      guid: a17eeaa277971d458be84c55431e698b
+      id: 3489676532
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Enlevage_Pile_1
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Enlevage_Pile_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Enlevage_Pile_2
+      guid: aa0da594c10dab49909405c43a156036
+      id: 3489676535
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Enlevage_Pile_2
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Enlevage_Pile_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Etiquette
+      guid: 6eb89eb6c5056c48b08c34354b51e06e
+      id: 1435121358
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Etiquette
+        ObjectType: 3
+      Path: Default Work Unit\Play_Etiquette
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Fermeture_Armoire
+      guid: 49b11aa512e8634ca550d47c3f8f49d9
+      id: 4281628385
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Fermeture_Armoire
+        ObjectType: 3
+      Path: Default Work Unit\Play_Fermeture_Armoire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Glitch_Rd_Hope
+      guid: b533c7bc2e383449a220207fb7d0e328
+      id: 941401263
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Glitch_Rd_Hope
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Glitch_Rd_Hope
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_01
+      guid: 7dc7321e5b13124b8ffbe8c7d4f4da3f
+      id: 1823518425
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_02
+      guid: a9e332becbf53542960293239d2dc727
+      id: 1823518426
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_03
+      guid: c6a926cbe140fe49b0209f9515d5f02d
+      id: 1823518427
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_04
+      guid: 9fd3827e4d98664e950abba6b7974284
+      id: 1823518428
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_05
+      guid: 0538236edd7a9448958b7575df576587
+      id: 1823518429
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_06
+      guid: 3afef030b185db469b46e6c567ffafc1
+      id: 1823518430
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_07
+      guid: 7f2b891fc25bff4db8cb2f97f6d26ddb
+      id: 1823518431
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_08
+      guid: 4bacbec8d4160e488e0254ac9f68e613
+      id: 1823518416
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_09
+      guid: edd7b0ae04b9e046a31647c2539f98e0
+      id: 1823518417
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_10
+      guid: a1c22bf0ded2bd4d8200e39dfe73cb8d
+      id: 1840296011
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_11
+      guid: d594081b59d0a8478b005081d5fea69a
+      id: 1840296010
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_12
+      guid: dc8fb44fef2d4a4f9787fb8b5c71b43c
+      id: 1840296009
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_12
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_12
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_13
+      guid: d31966ad5b19674d9cdac6875121e410
+      id: 1840296008
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_13
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_13
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_14
+      guid: 00aa4ece9b6c104da0a0279bd60e4082
+      id: 1840296015
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_14
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_14
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_15
+      guid: 922a12d33c66e542b9f687c8e53d2d0c
+      id: 1840296014
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_15
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_15
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16
+      guid: d71ff6b9dce4394cb8e8e026164f5ee0
+      id: 1840296013
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_01
+      guid: 8d17cff5aa74514fa8c237df4128ebd3
+      id: 1052969492
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_02
+      guid: 6f2d8a258686124c81903a495510d89e
+      id: 1052969495
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_03
+      guid: 96f759f59ac81841b8462886f3084cb6
+      id: 1052969494
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_04
+      guid: dacc3627797d20458ad5299a6e80ef9a
+      id: 1052969489
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_05
+      guid: 4940b96e346a6b49af35f85aaa745f40
+      id: 1052969488
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_06
+      guid: 25c69739af79be4cb4500b4ef106bfc9
+      id: 1052969491
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_07
+      guid: 4703928c484b884686bec06138461b1a
+      id: 1052969490
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_08
+      guid: b7f29886aa320c47b15e10e36c0d811c
+      id: 1052969501
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_09
+      guid: 6049e7c0f9415b40b2abf351f3ff74b7
+      id: 1052969500
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_10
+      guid: 61b56386f719bb47bf5af51a702b5a1c
+      id: 1036191906
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_16_Fio_11
+      guid: 755b764122bcae429e6468ecc1810af0
+      id: 1036191907
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_16_Fio_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_16_Fio_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_17
+      guid: 318a1ff5479df449b6597d9ab7c7b5ea
+      id: 1840296012
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_17
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_17
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hope_CASS_18
+      guid: a67727dbf609cb45a0cb560e15f5dcee
+      id: 1840296003
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Hope_CASS_18
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Hope_CASS_18
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Letter_01
+      guid: 581bae47e5f195459294e483b2a965a7
+      id: 2046641660
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Letter_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Letter_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Letter_02
+      guid: ed50d9b448e7b64a9b74fbf2b6d4e4b3
+      id: 2046641663
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Letter_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Letter_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Letter_03
+      guid: 74b1199af195f147818a38e29752eb7e
+      id: 2046641662
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Letter_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Letter_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Letter_04
+      guid: 564f44d9d0b6d74a9d8c769a8e80eb4b
+      id: 2046641657
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Letter_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Letter_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Letter_05
+      guid: cba850e011d24d46a7f43d2a2ab29b6f
+      id: 2046641656
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Letter_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Letter_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Letter_06
+      guid: 5b5b7543883cd44fb3a9dc1576572fcf
+      id: 2046641659
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Letter_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Letter_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mains_Armoire
+      guid: 1ecaa6d9ee3aa04c8d084c912a221a8a
+      id: 4277384980
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Mains_Armoire
+        ObjectType: 3
+      Path: Default Work Unit\Play_Mains_Armoire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mains_Armoire_02
+      guid: 2e1b82cd55a83d4fafb93e965263cabe
+      id: 1199909305
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Mains_Armoire_02
+        ObjectType: 3
+      Path: Default Work Unit\Play_Mains_Armoire_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Manip_Recorder_Test
+      guid: e3dda42bede207478bf93e25a638e350
+      id: 484972529
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Manip_Recorder_Test
+        ObjectType: 3
+      Path: Default Work Unit\Play_Manip_Recorder_Test
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Melodie_3
+      guid: b1f0fa01d1adab40834350696ac67182
+      id: 2485381553
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Melodie_3
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Melodie_3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Melodie_3_Dep
+      guid: b91a7801d86b5d4f9514e1f218ea4f11
+      id: 3536469375
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Melodie_3_Dep
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Melodie_3_Dep
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Melodie_3_Void
+      guid: 3fb4efb564b14140bbbd223af07e60fa
+      id: 1035698050
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Melodie_3_Void
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Melodie_3_Void
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_01
+      guid: 92a4e95bfa32d545afd3d9aa7823f1e7
+      id: 1740686055
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_02
+      guid: 1f3681be29039e4b891ed1295281a0bb
+      id: 1740686052
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_03
+      guid: bc87998575e53b4da73c83a1888998ba
+      id: 1740686053
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_04
+      guid: 545fff72251f85498f549bf386a834d1
+      id: 1740686050
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_05
+      guid: 4234d1c1fa5ea14ea9f5f3233ac557fb
+      id: 1740686051
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_06
+      guid: f8607fc1cedd2b4799b639571103ff2f
+      id: 1740686048
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_07
+      guid: 96cfc77ba92f4741ac8e53d65dc6e778
+      id: 1740686049
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_08
+      guid: 815284e626ddff4d839800c6ae53400d
+      id: 1740686062
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_09
+      guid: c3749f672aa7f844b6af7417b1e8434f
+      id: 1740686063
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_10
+      guid: 628977537f012f47932ad49b3ef726a0
+      id: 1757463641
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_11
+      guid: 9d2da11c8d6bc74b884de4e4558aff4d
+      id: 1757463640
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_12
+      guid: 27891333db60b84b8d88cff914352859
+      id: 1757463643
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_12
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_12
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_13_V2
+      guid: 3e9aa22b65813247bec4b06e072b1fff
+      id: 1397097277
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_13_V2
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_13_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_14_V2
+      guid: 7ab4f4a5bae3b844b0d641a4203a2835
+      id: 2799725000
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_14_V2
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_14_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_15
+      guid: 3bac596371595145a408c72f5f48ee69
+      id: 1757463644
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_15
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_15
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Ex_16
+      guid: d9d3b016492a694ca912f79c5b941d71
+      id: 1757463647
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Ex_16
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Ex_16
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_01_V2
+      guid: fffbd74b948d4b409f08bb52160aca2b
+      id: 468282211
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_01_V2
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_01_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_02
+      guid: d1b546366767c4409287eae5ea2b0461
+      id: 2805072979
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_03
+      guid: 90977dff42d12948aa56a615f8a06f1e
+      id: 2805072978
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_04_V2
+      guid: 0ae189f694a3b345a3808cb976092f9a
+      id: 712029824
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_04_V2
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_04_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_05_V2
+      guid: e8385ab2a0dd1642bd424e203e79c552
+      id: 3498468431
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_05_V2
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_05_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_06
+      guid: 0ef3da1e198b8044a8a39c3b1a240ee9
+      id: 2805072983
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_07
+      guid: 53d59b34c8600d44b41dcbc4e0b37069
+      id: 2805072982
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_08
+      guid: 9dc12e446ed1334eaf5ab4028931760c
+      id: 2805072985
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_09
+      guid: 8ef70c6938c37441af515f3261973cc0
+      id: 2805072984
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_10
+      guid: 1bf56fd25704194580179ea2b1c16a7c
+      id: 2788295422
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_11
+      guid: bf7420ad6b7f124283150ccf79766679
+      id: 2788295423
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Memo_12
+      guid: 0df634a74c548d4b8a0f8a5e27ef434d
+      id: 2788295420
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Mia_Memo_12
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Mia_Memo_12
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mia_Presence_Baisse_Armoire
+      guid: 24c0a013ba1faa4494de4e331819c100
+      id: 3768271001
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Mia_Presence_Baisse_Armoire
+        ObjectType: 3
+      Path: Default Work Unit\Play_Mia_Presence_Baisse_Armoire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Moving_Objects
+      guid: 4f5e82dfd1d561408a06ae4b9b7321d2
+      id: 2384534605
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Moving_Objects
+        ObjectType: 3
+      Path: Default Work Unit\Play_Moving_Objects
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Music_Past
+      guid: 6e1ee3c9ba15ee42b51a405f11ea1b40
+      id: 2348222202
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Music_Past
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Music_Past
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Music_Plush
+      guid: 68c46799356d5448a3252c31889d2ba4
+      id: 4282761058
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Music_Plush
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Music_Plush
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Music_Plush_2
+      guid: c6ec9e6c2b6b394c95ff47f0297b4d75
+      id: 3465800809
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Music_Plush_2
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Music_Plush_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Musique_Present
+      guid: 0f614492d0d3d344a0c727cd4692eaa0
+      id: 2797209151
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Musique_Present
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Musique_Present
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Open_Clock_V2
+      guid: c6f1a524b471194db529cf438ee1e61d
+      id: 860256672
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Open_Clock_V2
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Open_Clock_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Ouverture_Armoire
+      guid: f275bd894600104abb465dc043e16732
+      id: 2684492123
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Ouverture_Armoire
+        ObjectType: 3
+      Path: Default Work Unit\Play_Ouverture_Armoire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_PARQUET
+      guid: 7540ad8cf2382b4b8f2b179f9c643b77
+      id: 3203194330
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_PARQUET
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_PARQUET
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_PARQUET_CINE
+      guid: 3fa86ce1ba968b46bd67cc49d567d8aa
+      id: 2391513050
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_PARQUET_CINE
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_PARQUET_CINE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_PARQUET_CINE_ARRET
+      guid: b1f91c32564f17479f5db557a78809a8
+      id: 1414566793
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_PARQUET_CINE_ARRET
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_PARQUET_CINE_ARRET
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_PARQUET_PAST
+      guid: e4289d7349dd2140a00d004a4ab6d5ef
+      id: 3031895429
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_PARQUET_PAST
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_PARQUET_PAST
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_01
+      guid: 785b479c80910042bafa02c4d9578d4e
+      id: 3466067214
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_02
+      guid: d68129245330e249adbe57ccd306ce72
+      id: 3466067213
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_03
+      guid: 0dbf90e03f241848a8fe98cc0eb43a77
+      id: 3466067212
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_04
+      guid: 4aba031a063eb841912ccfb0f9774eed
+      id: 3466067211
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_05
+      guid: 762db9f5de58214ababfd2cae3a8c3d8
+      id: 3466067210
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_06
+      guid: 2ee43ecf03855a49996cf18decee8269
+      id: 3466067209
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_07
+      guid: d87532aaba77ce4fa642d8d59bd9c1f2
+      id: 3466067208
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_07_Fin
+      guid: 00a012625d90b042b862bf0c567f0f48
+      id: 4089706302
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_07_Fin
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_07_Fin
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08
+      guid: 76c390a50a7d85409489c42ee7b8ffce
+      id: 3466067207
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_02
+      guid: 41bfaa5f9b7ac24fb1f3d9c5f0ba81f8
+      id: 1636798856
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_03
+      guid: d1454bea2d1dd54b844e036ad1657652
+      id: 1636798857
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_04
+      guid: 3496f6bad326bb44bb57bc51ddaad87f
+      id: 1636798862
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_05
+      guid: 47d2225515092342997964d9eb5d6bb6
+      id: 1636798863
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_06
+      guid: 26e1675f84549c4b8722edc1ea985df7
+      id: 1636798860
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_07
+      guid: 25726198b3624e4cacd576f022cf05f8
+      id: 1636798861
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_08
+      guid: 2102e535479ca8499e6a5dd607ca04b7
+      id: 1636798850
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_09
+      guid: 2b6bf1efb0a4d441b0a0e9e28f5ead82
+      id: 1636798851
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_10
+      guid: 24a9ce430f33494fb128e4eb0af5be38
+      id: 1653576573
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_11
+      guid: c3fcf3e6b52aa24c94bb69bff3bce9f1
+      id: 1653576572
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_08_12
+      guid: be2e5b0e3f1fca4ba0f2c75373fa4999
+      id: 1653576575
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_08_12
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_08_12
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2
+      guid: 3fdcc3f79db7174baee2fdbaff8ef6a9
+      id: 522911553
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_01
+      guid: 15e959d26d48204ab87d9076485e71eb
+      id: 2848534157
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_02
+      guid: 1c25b75512dba64aa1c71c17b4f39775
+      id: 2848534158
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_03
+      guid: 7e08ebeedcc33b48a751e92167cbdafb
+      id: 2848534159
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_04
+      guid: 656ea139e647144193319d8100626a2a
+      id: 2848534152
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_05
+      guid: 7954280ab3260b4d8e3053a88695d7c6
+      id: 2848534153
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_06
+      guid: b62fdfdc6b8fd247a9e5e5d68f053c36
+      id: 2848534154
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_07
+      guid: 41840dcb2001434f861d5f8595a1df7c
+      id: 2848534155
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_08
+      guid: cd19b8cd9515f5499aa50000ebc6313d
+      id: 2848534148
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_09
+      guid: 69c21065ca9eea4caf04bd93a2d7fd22
+      id: 2848534149
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_10
+      guid: 0e67c59fb6c8d04990c8fd1508464015
+      id: 2865311871
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_09_V2_11
+      guid: f01e5fdf07c1f54b85f1aeb09bc815bf
+      id: 2865311870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_09_V2_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_09_V2_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_11
+      guid: ba766d5e9f2d4f44b25440f9efdbc060
+      id: 3449289629
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_12
+      guid: 8bf05c05d79f724aa37769b4981ec5fe
+      id: 3449289630
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_12
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_12
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_13
+      guid: 9ff7f18e127aca4fad183735872685c7
+      id: 3449289631
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_13
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_13
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_15
+      guid: ad283d67bb3f894190b155b1d776f98f
+      id: 3449289625
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_15
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_15
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_16
+      guid: 7d9fcc634e032449be52a8a7c1c190ed
+      id: 3449289626
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_16
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_16
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_17
+      guid: 9a8ae9096c0ac54fa5ffa1d110c2eab0
+      id: 3449289627
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_17
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_17
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18
+      guid: 29126926d2d9b04d8e201f98a8012ea6
+      id: 3449289620
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_01
+      guid: e1b8a9f8d341444c95fb7167bbc983fc
+      id: 948615994
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_02
+      guid: 50fc706e051fd54a8366d47e4b983725
+      id: 948615993
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_03
+      guid: ea5f5b864701184694bc5f93c2f26be9
+      id: 948615992
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_04
+      guid: 476044657fdac044a4558e6c8d4a85d6
+      id: 948615999
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_05
+      guid: 32a7a99dd8118344ba9419582f223c6a
+      id: 948615998
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_06
+      guid: e349122a77ebc04f926c26ac62ebbc1d
+      id: 948615997
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_07
+      guid: a0241e9eab537c48aa1a06183518e2ce
+      id: 948615996
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_07
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_08
+      guid: 7cecfe89e5f79f43a89c29a6284fc139
+      id: 948615987
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_08
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_09
+      guid: 53cd181a031aa0498f2590335de2c260
+      id: 948615986
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_09
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_09
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_10
+      guid: 58459353744a3a41a7af86a6e0a1139a
+      id: 931838280
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_10
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_10
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_18_11
+      guid: eee23d5786a9f74798bfefcd0129d14b
+      id: 931838281
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_18_11
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_18_11
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_19
+      guid: b733e80a91160948a5ba07fcaee057f2
+      id: 3449289621
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_19
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_19
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_20
+      guid: 5b096663f5a7814885eef18fd78c32ab
+      id: 3499622485
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_20
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_20
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_21
+      guid: 4d6f2d19c158884e8a6e8fe18afa107f
+      id: 3499622484
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_21
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_21
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Past_Mia_22
+      guid: 4f3b5bdd9762c84ca67aae2c86dfb7bc
+      id: 3499622487
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_Past_Mia_22
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_Past_Mia_22
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Petite_Prise_Recorder
+      guid: fe7fdc38cee2a44498171c7b6668f215
+      id: 2343593654
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Petite_Prise_Recorder
+        ObjectType: 3
+      Path: Default Work Unit\Play_Petite_Prise_Recorder
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Play
+      guid: 12575b48295f3643af9536317dc4e0ff
+      id: 2189502264
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Play
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_PORTE_INTRO
+      guid: 79e63c63b7ade74c8e314f00614c9322
+      id: 642838391
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PORTE_INTRO
+        ObjectType: 3
+      Path: Default Work Unit\Play_PORTE_INTRO
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Boite
+      guid: 752a0475616d6340926d6754c5726ca1
+      id: 3226930151
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Boite
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Boite
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Clock
+      guid: 25d4b0ac7017b440a6980779c67bc789
+      id: 1935781326
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Pose_Clock
+        ObjectType: 3
+      Path: Default Work Unit\Play_Pose_Clock
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Lampe
+      guid: 99ee946f0c8cbd46a4ae64d655ff98f3
+      id: 709408955
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Lampe
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Lampe
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Lego
+      guid: ad7f439f8d9be8418ff679fb72060e97
+      id: 2390064263
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Lego
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Lego
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Peluche
+      guid: 2dfc1f83e84d254db9318c26b26f6c5e
+      id: 2957552462
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Peluche
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Peluche
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Rec_Ex
+      guid: b7490b7a5c94b0459de8681fd237f652
+      id: 3424087718
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Rec_Ex
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Rec_Ex
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Pose_Voiture
+      guid: 0f3acd07ae83044992b4470ddbdbf23e
+      id: 1701696044
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Pose_Voiture
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Pose_Voiture
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Assise
+      guid: 7ee0658b2795864c8aa0526bb95c5a1f
+      id: 896473784
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Assise
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Assise
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Cine
+      guid: ccb51b0a8e2d9d4b94b3178c3adcf661
+      id: 661469859
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Cine
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Cine
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Epaules
+      guid: 3575f89125899342963ac33e20864c86
+      id: 845530455
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Epaules
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Epaules
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Ex
+      guid: 2a9ff20de3659a4193da1d0d3809a83d
+      id: 2296494659
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Ex
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Ex
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Idle_Intro
+      guid: 8e258918c8679e4d815eeebc99fbbaa4
+      id: 1754089693
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Idle_Intro
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Idle_Intro
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Idle_Mia
+      guid: bdc199cbc0e3454394cd642ccad73735
+      id: 1269431952
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Idle_Mia
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Idle_Mia
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Porte_Mia
+      guid: fbf04a2112d9d6449909fb4182b4297d
+      id: 3648087584
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Porte_Mia
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Porte_Mia
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Presence_Retourne_Cine
+      guid: 35775183a09d8543b6adc4c92f7d5391
+      id: 2354337498
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Presence_Retourne_Cine
+        ObjectType: 3
+      Path: Default Work Unit\Play_Presence_Retourne_Cine
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Boite
+      guid: b46b9e0cb0eaa442866c936bd3979bec
+      id: 2601207083
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Boite
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Boite
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_clock
+      guid: 7fb178ad2a47d54c989b180bca2791f5
+      id: 2835590266
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Prise_clock
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Prise_clock
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Lampe
+      guid: 16a6c07c0b76a0409e2ec8d48fd3542d
+      id: 905399727
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Lampe
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Lampe
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Lego
+      guid: 84bb9339b2c0cd4999fb7391bc295d23
+      id: 3161785051
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Lego
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Lego
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Peluche
+      guid: 84c4238c2b4eb148a503e138c9965633
+      id: 910571882
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Peluche
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Peluche
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Peluche_Present
+      guid: f347f889c25a004f876e671ae6221f86
+      id: 3089234502
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Prise_Peluche_Present
+        ObjectType: 3
+      Path: Default Work Unit\Play_Prise_Peluche_Present
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Rec_Ex
+      guid: cd3537437269c34ca257f6dfadf6552c
+      id: 681040866
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Rec_Ex
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Rec_Ex
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Recorder
+      guid: e8b501ae3f7633479e1dfd7392f7373e
+      id: 4098328714
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Prise_Recorder
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Prise_Recorder
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Prise_Voiture
+      guid: 71cc0f8099ab0d42bc033f93aee7367c
+      id: 2197458016
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Prise_Voiture
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Prise_Voiture
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Put_Batteries_01
+      guid: f98921e2123b624b8a2554900c37f3c5
+      id: 2323719683
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Put_Batteries_01
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Put_Batteries_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Put_Batteries_02
+      guid: 31945182cc2cbb46b044d10ec21942ba
+      id: 2323719680
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Put_Batteries_02
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Put_Batteries_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_QTE_Failed_01
+      guid: 5e372afb43ba1e4f950bc9f8973cf5dc
+      id: 1436273380
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_QTE_Failed_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_QTE_Failed_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_QTE_Failed_02
+      guid: ec65e54cc4a4c745b57edb06e58ddf3d
+      id: 1436273383
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_QTE_Failed_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_QTE_Failed_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_QTE_Failed_03_01
+      guid: 65f31d2814bb3b4f88ad9d37cdc9168e
+      id: 2495163956
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_QTE_Failed_03_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_QTE_Failed_03_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_QTE_Failed_03_03
+      guid: d1eff6397353b847bc654bc4d1827456
+      id: 2495163958
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Play_QTE_Failed_03_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Play_QTE_Failed_03_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Random_Lettres
+      guid: fb3655747e424246a7943fae6df29a2c
+      id: 2615986883
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Random_Lettres
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Random_Lettres
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Rd_Pose_Feuille
+      guid: 4001b862a6ae654f980586ea0db58ee3
+      id: 3034598759
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Rd_Pose_Feuille
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Rd_Pose_Feuille
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Rd_Prise_Feuille
+      guid: d48a4a3bfb55194d97084675b9961c7d
+      id: 1686996049
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Rd_Prise_Feuille
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Rd_Prise_Feuille
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Rewind
+      guid: 27903591978f15439ce043383aa16512
+      id: 869704911
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Play_Rewind
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Play_Rewind
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_RoomTone
+      guid: 1e97c81f85f6e34b96ed1be1c24e6631
+      id: 2748311587
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_RoomTone
+        ObjectType: 3
+      Path: Default Work Unit\Play_RoomTone
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_RoomTone_Void
+      guid: 86b441bf58890f47af6e42843bb566fb
+      id: 3077280372
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_RoomTone_Void
+        ObjectType: 3
+      Path: Default Work Unit\Play_RoomTone_Void
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Secoue_Rec
+      guid: b8806b58da484344895798136eeffc55
+      id: 572484265
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Secoue_Rec
+        ObjectType: 3
+      Path: Default Work Unit\Play_Secoue_Rec
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TAPIS
+      guid: 445ebaadafd1b44a81a7e5974a6d5968
+      id: 2174069889
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_TAPIS
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_TAPIS
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TAPIS_CINE
+      guid: 5c699ce540d6e24ea6b7bd73df6f91d5
+      id: 2837945979
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_TAPIS_CINE
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_TAPIS_CINE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TAPIS_PAST
+      guid: 94712a5521d207408101f08689e30cac
+      id: 1047403144
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Steps
+        ObjectType: 4
+      - ElementName: Play_TAPIS_PAST
+        ObjectType: 3
+      Path: Default Work Unit\Steps\Play_TAPIS_PAST
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Tel_Mia
+      guid: a94619702acbe04d93985ea35cb51995
+      id: 4042723243
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Tel_Mia
+        ObjectType: 3
+      Path: Default Work Unit\Play_Tel_Mia
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Tombe_Mia_Void
+      guid: 29f697f86284cc44956bb487b6a6fa81
+      id: 4061506236
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Play_Tombe_Mia_Void
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Play_Tombe_Mia_Void
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Tombe_Peluche
+      guid: f2f01bd317951547b229ef0a8a143618
+      id: 3613865634
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Objects
+        ObjectType: 4
+      - ElementName: Play_Tombe_Peluche
+        ObjectType: 3
+      Path: Default Work Unit\Objects\Play_Tombe_Peluche
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Concentrate_1
+      guid: d05340dbe4c6e14fa05ff76464385a86
+      id: 2501847116
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Concentrate_1
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Concentrate_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Concentrate_2
+      guid: ff95ad851503e84fac24cbaf28a015e2
+      id: 2501847119
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Concentrate_2
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Concentrate_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Enlevage_Pile_1
+      guid: c238b1bb38c9c5418e69bf33af1a48e3
+      id: 2004396906
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Enlevage_Pile_1
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Enlevage_Pile_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Enlevage_Pile_2
+      guid: 231aa1f9294e6d46a9ae3804e3025a1a
+      id: 2004396905
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Enlevage_Pile_2
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Enlevage_Pile_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Glitch_Rd_Hope
+      guid: b8d0bf17b768584d877bcb027a0738a8
+      id: 2980578653
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Glitch_Rd_Hope
+        ObjectType: 3
+      Path: Default Work Unit\Stop_Glitch_Rd_Hope
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Letter_01
+      guid: 0b5b2693f3f86a49a7340479daa54a79
+      id: 1554646654
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Stop_Letter_01
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Stop_Letter_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Letter_02
+      guid: 911e3851938767468b0f465d23c24e7d
+      id: 1554646653
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Stop_Letter_02
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Stop_Letter_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Letter_03
+      guid: bef3f5994f283c4f8d6b585e4d3b6028
+      id: 1554646652
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Stop_Letter_03
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Stop_Letter_03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Letter_04
+      guid: c179516240b7874580d1c3648efd9078
+      id: 1554646651
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Stop_Letter_04
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Stop_Letter_04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Letter_05
+      guid: c11391e4b7940243a6f51fd658163c78
+      id: 1554646650
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Stop_Letter_05
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Stop_Letter_05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Letter_06
+      guid: 49febe49eb5a4749a7abeac99708f36d
+      id: 1554646649
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_Actors
+        ObjectType: 4
+      - ElementName: Stop_Letter_06
+        ObjectType: 3
+      Path: Default Work Unit\Events_Actors\Stop_Letter_06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Melodie_3
+      guid: 4346371284a4d24695e5da79959b4edb
+      id: 2582676671
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Stop_Melodie_3
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Stop_Melodie_3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Melodie_3_Dep
+      guid: 7a5a54a65910134abec191106578aee6
+      id: 3803061433
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Stop_Melodie_3_Dep
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Stop_Melodie_3_Dep
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Memory
+      guid: 52855e09ac2b25448b9e5d75b9f39848
+      id: 927738153
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Stop_Memory
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Stop_Memory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Memory_Present
+      guid: 570ba595b565d1449dc57ce8ceb30604
+      id: 1205522085
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Memory_Present
+        ObjectType: 3
+      Path: Default Work Unit\Stop_Memory_Present
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Past
+      guid: c3e6145468345d408fc630ba33a70f37
+      id: 2678990432
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Stop_Music_Past
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Stop_Music_Past
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Musique_Present
+      guid: 5ad4027f0a0bb34f809b592d92d2cfe1
+      id: 3480463013
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Events_SD
+        ObjectType: 4
+      - ElementName: Stop_Musique_Present
+        ObjectType: 3
+      Path: Default Work Unit\Events_SD\Stop_Musique_Present
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Open_Clock_V2
+      guid: cec67f4522089640b9010f10065d3d41
+      id: 329860938
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Open_Clock_V2
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Open_Clock_V2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Play
+      guid: 3e717ce66c54d0408d2ec546734ccc69
+      id: 3453994894
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Play
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Prise_clock
+      guid: e05fba24f8d808408a632740454f0498
+      id: 4084559168
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Prise_clock
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Prise_clock
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Prise_Recorder
+      guid: 65fff26cdbe06e40acab87f6eb353d3b
+      id: 2491040840
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Prise_Recorder
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Prise_Recorder
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Put_Batteries_01
+      guid: ce12489641a4214a9a429b2e871f7f21
+      id: 3990896133
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Put_Batteries_01
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Put_Batteries_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Put_Batteries_02
+      guid: e244cd30c31b3846b5fac4c4f84a848e
+      id: 3990896134
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Put_Batteries_02
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Put_Batteries_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Rewind
+      guid: f815f1049a516e49938aceb76cd12ff2
+      id: 564679353
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: QTE
+        ObjectType: 4
+      - ElementName: Stop_Rewind
+        ObjectType: 3
+      Path: Default Work Unit\QTE\Stop_Rewind
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_RoomTone
+      guid: 4e1c346281e38340bec6c0e97d2bae37
+      id: 1330556493
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_RoomTone
+        ObjectType: 3
+      Path: Default Work Unit\Stop_RoomTone
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_RoomTone_Void
+      guid: b8a0c428cf330648aedc670a60555d9e
+      id: 1450249478
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_RoomTone_Void
+        ObjectType: 3
+      Path: Default Work Unit\Stop_RoomTone_Void
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -226,13 +3502,193 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 43ef5a6d7c266c4d9c6114aca9858d4b
     GuidInternal: 
-    m_lastTime: -8586297827684416174
-    List: []
+    m_lastTime: -8586199217724107527
+    List:
+    - name: Blend_Idle_Walk
+      guid: c763dd63d4c16d4d84f8348ee408163e
+      id: 3308552321
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Blend_Idle_Walk
+        ObjectType: 13
+      Path: Default Work Unit\Blend_Idle_Walk
+    - name: Bypass_Delay
+      guid: 5c96ceb76eed1a46b863891c57cf8d57
+      id: 2222622681
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Bypass_Delay
+        ObjectType: 13
+      Path: Default Work Unit\Bypass_Delay
+    - name: Filtre_Environnement
+      guid: 1ea444c505ece24dae60623e0cf35591
+      id: 2198573912
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Filtre_Environnement
+        ObjectType: 13
+      Path: Default Work Unit\Filtre_Environnement
+    - name: Hope_Cinematique_Lfo_Test
+      guid: d9846ff130b6674fae4cc3d911706782
+      id: 1606664044
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Hope_Cinematique_Lfo_Test
+        ObjectType: 13
+      Path: Default Work Unit\Hope_Cinematique_Lfo_Test
+    - name: lfo_Satu_2
+      guid: 83b6678057b1204085a59ba36b6a1d2e
+      id: 70665991
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: lfo_Satu_2
+        ObjectType: 13
+      Path: Default Work Unit\lfo_Satu_2
+    - name: Priority
+      guid: ac2274915dd30d43ae873594896c8764
+      id: 960462717
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Priority
+        ObjectType: 13
+      Path: Default Work Unit\Priority
+    - name: SicheChain_MiaPast
+      guid: 504fd374f3f75046ac0204882e6e5300
+      id: 1100290866
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SicheChain_MiaPast
+        ObjectType: 13
+      Path: Default Work Unit\SicheChain_MiaPast
+    - name: Side_Chain
+      guid: 327312e152e06f4bb5727f5082de7630
+      id: 479396230
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Side_Chain
+        ObjectType: 13
+      Path: Default Work Unit\Side_Chain
+    - name: Side_Chain_Hands
+      guid: 9e56e90dc3dadd449ed8037f24d917b4
+      id: 1510197277
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Side_Chain_Hands
+        ObjectType: 13
+      Path: Default Work Unit\Side_Chain_Hands
+    - name: Side_Chain_Steps
+      guid: c85668e4f0a4224f9995df3cbade9781
+      id: 632125398
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Side_Chain_Steps
+        ObjectType: 13
+      Path: Default Work Unit\Side_Chain_Steps
+    - name: SideChain_MusicBox
+      guid: 94656862d553af4db746d4de2d33db3d
+      id: 3191459950
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SideChain_MusicBox
+        ObjectType: 13
+      Path: Default Work Unit\SideChain_MusicBox
+    - name: SideChain_Peluche
+      guid: 580e901b66ea9a409ab54a975e09490d
+      id: 4193061084
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SideChain_Peluche
+        ObjectType: 13
+      Path: Default Work Unit\SideChain_Peluche
+    - name: SideChain_Present
+      guid: 5ffc263b20494843abde98531cbe2e59
+      id: 3664907955
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SideChain_Present
+        ObjectType: 13
+      Path: Default Work Unit\SideChain_Present
+    - name: Test_GP_Stretch
+      guid: eef09575ee8dbe46be75a69da263fc91
+      id: 3572213451
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Test_GP_Stretch
+        ObjectType: 13
+      Path: Default Work Unit\Test_GP_Stretch
+    - name: Void_Voice_Blending
+      guid: 594e60f940f125458c93689ea7d4340c
+      id: 108787772
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Void_Voice_Blending
+        ObjectType: 13
+      Path: Default Work Unit\Void_Voice_Blending
+    - name: Volume_Glitch_Hope
+      guid: 2194886261f5634e96454ad4cb900d85
+      id: 4141454442
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Glitch_Hope
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Glitch_Hope
+    - name: Volume_Intro_Glitch
+      guid: e37f73644592794a9ff2370eb71c7f1d
+      id: 1774161628
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Intro_Glitch
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Intro_Glitch
+    - name: Volume_Moving_Object
+      guid: bfd6372d3a16c4478fc8c044e466e295
+      id: 2678370142
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Moving_Object
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Moving_Object
+    - name: Volume_Presence
+      guid: 4f965badc1402c48ac68f0f7b970abed
+      id: 2589316061
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Presence
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Presence
+    - name: Wet_Delay_Void
+      guid: 53af59ea6721654f939132b1ed4fdd08
+      id: 419718256
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Wet_Delay_Void
+        ObjectType: 13
+      Path: Default Work Unit\Wet_Delay_Void
   - PhysicalPath: Game Parameters\Factory Motion.wwu
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776
     GuidInternal: 
-    m_lastTime: -8586297827684416174
+    m_lastTime: -8586214858879254363
     List:
     - name: Playback_Rate
       guid: e37e38283ac11643b9c3db5c521624af
@@ -256,7 +3712,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5577163b42fb8b4598bf96f557afb3b9
     GuidInternal: 
-    m_lastTime: -8586297827684416174
+    m_lastTime: -8586214858879254363
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -352,7 +3808,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 97bdcb0b5177774a85bb6ac940f8cc3f
     GuidInternal: 
-    m_lastTime: -8586297827684406202
+    m_lastTime: -8586214858879254363
     List:
     - name: Density_FA_SSGrain
       guid: 9ef2b363f3048748ba1a4d7694644b24
@@ -413,23 +3869,61 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 84be996a4915e64ab2832a9200572ebd
     GuidInternal: 
-    m_lastTime: -8586297827672748367
-    List: []
+    m_lastTime: -8586214858803496598
+    List:
+    - name: Active_Delay
+      guid: a7a18a843cd21e4fb9cf2128b65f40bf
+      id: 955522575
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Active_Delay
+        ObjectType: 9
+      Path: Default Work Unit\Active_Delay
+      values:
+      - name: None
+        guid: e6d9426defc3314ab64db4d9ca973cde
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Off
+        guid: 0d9af7af8ffdf944a7a7011469c5e45d
+        id: 930712164
+        PathAndIcons:
+        - ElementName: Off
+          ObjectType: 8
+      - name: On
+        guid: f8a2cb0101a320469ac6698172e3dd7c
+        id: 1651971902
+        PathAndIcons:
+        - ElementName: On
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7426cf17c30960409c7de159a47fec6b
     GuidInternal: 
-    m_lastTime: -8586297827672748367
+    m_lastTime: -8586214858803466682
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5ac867cfc721834cb21183cd905a5400
     GuidInternal: 
-    m_lastTime: -8586297827672748367
+    m_lastTime: -8586214858803466682
     List: []
   ExpandedItems:
   - /Wwise_EachOther
+  - /Wwise_EachOther/Events
+  - /Wwise_EachOther/Events/Default Work Unit
+  - /Wwise_EachOther/Events/Default Work Unit/Events_Actors
+  - /Wwise_EachOther/Events/Default Work Unit/Events_SD
+  - /Wwise_EachOther/Events/Default Work Unit/Objects
+  - /Wwise_EachOther/Events/Default Work Unit/QTE
+  - /Wwise_EachOther/Events/Default Work Unit/Steps
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
